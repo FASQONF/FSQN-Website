@@ -1,89 +1,78 @@
 .teamSection {
     background-color: #000;
     color: #fff;
-    padding: 4rem 2rem;
+    padding: 0 20px;
     text-align: center;
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 970px;
     margin: 0 auto;
   }
   
-  /* Заголовок */
   .title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 128%;
+    font-family: "Franie Test","Montserrat", serif;
+
   }
   
   .title span {
-    color: #00ff00; /* зелёный акцент */
+    color: #0e0;
   }
   
   .subtitle {
-    font-size: 1rem;
-    color: #ccc;
-    max-width: 700px;
-    margin: 0 auto 3rem auto;
-    line-height: 1.5;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
   }
   
-  /* Сетка (3 карточки в ряд) */
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    justify-items: center; /* чтобы карточки были по центру колонки */
+    justify-items: center; 
   }
   
-  /* Карточка */
   .card {
-    /* background-color: #111; */
-    border-radius: 1rem;
-    /* padding: 2rem; */
     text-align: center;
     width: 100%;
-    max-width: 222px; /* фиксируем ширину, чтобы они были уже */
+    max-width: 230px; 
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  /* Обёртка для аватара (чуть больше фото) */
   .avatarWrapper {
     width: 222px;
     height: 222px;
-    /* border-radius: 50%; */
-    /* overflow: hidden; */
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000; /* под аватаром */
+    background-color: #000; 
   }
   
-  /* Само фото */
   .avatar {
-    /* object-fit: contain; */
-    /* border-radius: 50%; */
     border-bottom-left-radius: 10%;
   }
   
-  /* Имя (крупнее, белый цвет) */
   .memberName {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
   }
   
-  /* Роль (Founder, Co-Founder) – выделим цветом */
   .memberRole {
     font-size: 1.1rem;
-    color: #00ff00; /* зелёный */
+    color: #00ff00; 
     margin-bottom: 0.5rem;
   }
   
-  /* Блок с флагом и страной */
   .countryBlock {
     display: inline-flex;
     align-items: center;
@@ -100,16 +89,14 @@
     color: #ccc;
   }
   
-  /* Описание */
   .description {
     font-size: 0.95rem;
     color: #ccc;
     line-height: 1.4;
-    max-width: 250px; /* чтобы текст не был слишком растянут */
-    margin: 0 auto;
+    max-width: 250px;
+    /* margin: 0 auto; */
   }
   
-  /* Адаптив: 1 колонка на мобильном */
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;

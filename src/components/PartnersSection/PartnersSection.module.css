@@ -1,87 +1,107 @@
 .partnersSection {
-    background-color: #000; /* чёрный фон */
-    color: #fff;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Заголовок */
-  .title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .title span {
-    color: #00ff00; /* зелёный для слова "Partners" */
-  }
-  
-  /* Подзаголовок */
-  .subtitle {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 2.5rem;
-  }
-  
-  /* Сетка из 6 карточек (3 в ряд на десктопе) */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  
-  /* Карточка */
-  .card {
-    background-color: #111; /* чуть светлее, чем фон */
-    border-bottom-left-radius: 10%;
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Обёртка для логотипа */
-  .logoWrapper {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .partnerLogo {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-  
-  .partnerName {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .partnerDescription {
-    font-size: 0.95rem;
-    color: #ccc;
-    line-height: 1.4;
-    max-width: 250px; /* чтобы не растягивалось слишком широко */
-    margin: 0 auto;
-  }
-  
-  /* Адаптив для планшета: 2 колонки */
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  /* Адаптив для мобильного: 1 колонка */
+  position: relative;       /* Чтобы можно было разместить фон */
+  background-color: #000;   /* Чёрный фон */
+  color: #fff;
+  padding: 100px 20px;      /* Исправили: 100 вместо 100 20px */
+  text-align: center;
 
+  /* Добавляем фоновое изображение */
+  background: #000 url("/images/glass.png") no-repeat center center;
+  background-size: contain;
+  background-position: center 50px;
   
+}
+
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+/* Заголовок */
+.title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 128%;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: "Franie Test","Montserrat", serif;
+}
+
+/* Слово “&” (второе span) и “Partners” (третье span) */
+.title span {
+  color: #00ff00;
+}
+
+/* Первое span (“&”) — сделаем чуть полупрозрачным (пример из кода) */
+.title span:first-child {
+  color: rgba(255, 255, 255, 0.33);
+}
+
+/* Подзаголовок */
+.subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+}
+
+/* Сетка из 6 карточек (3 в ряд на десктопе) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  border: 0.5px solid #2f2f2f;
+  border-radius: 0 0 0 24px;
+  background: #101010;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Логотип */
+.logoWrapper {
+  width: auto;
+  height: 60px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partnerName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.partnerDescription {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+  max-width: 250px; /* ограничиваем ширину текста */
+  margin: 0 auto;
+}
+
+/* Адаптив для планшета: 2 колонки */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Адаптив для мобильного: 1 колонка */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

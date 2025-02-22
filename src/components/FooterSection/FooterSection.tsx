@@ -1,101 +1,115 @@
-"use client";
+// Footer.jsx
+import React from 'react'
+import Link from 'next/link'
+import styles from './Footer.module.css'
+import Image from 'next/image'
 
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./FooterSection.module.css";
-
-export default function FooterSection() {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        {/* Левая часть */}
-        <div className={styles.leftBlock}>
-          {/* Логотип */}
-          <div className={styles.logoWrapper}>
-            <Image
-              src="/logo.svg"
-              alt="Fasqon logo"
-              width={60}
-              height={60}
-              className={styles.logo}
-            />
+      {/* Верхний контейнер с тремя блоками */}
+      <div className={styles.topContainer}>
+      <div className={styles.logoContainer}>
+        <Image
+            src="/logo.svg" 
+            alt="Logo"
+            width={40}
+            height={40}
+            className={styles.logoImage}
+          />
+          </div>
+        {/* Левая часть: Лого + Email + Адреса */}
+        <div className={styles.leftSide}>
+          {/* Лого */}
+         
+
+          {/* Email */}
+          <div className={styles.inlineRow}>
+            <svg
+              className={styles.icon}
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 13.065L.055 5.108A2 2 0 0 1 2 
+                3h20a2 2 0 0 1 1.945 2.108L12 
+                13.065zM12 15L.06 6.109A2 2 0 0 0 
+                0 7.5v9.993A2.5 2.5 0 0 0 2.5 20h19a2.5 
+                2.5 0 0 0 2.5-2.5V7.5a2 2 0 0 0-.06-1.391L12 15z"
+              />
+            </svg>
+            <a
+              href="mailto:office@fasqon.com"
+              className={styles.textGray}
+            >
+              office@fasqon.com
+            </a>
           </div>
 
-          {/* Адреса и Email (с иконками) */}
-          <div className={styles.infoBlock}>
-            <div className={styles.infoItem}>
-              <Image
-                src="/icons/location.svg"
-                alt="Location"
-                width={20}
-                height={20}
+          {/* Адрес №1 */}
+          <div className={styles.inlineRow}>
+            <svg
+              className={styles.icon}
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2C8.13 2 5 5.13 
+                5 9c0 5.25 7 13 7 13s7-7.75 
+                7-13c0-3.87-3.13-7-7-7zm0 
+                9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
+                2.5-2.5 2.5 1.12 2.5 2.5-1.12 
+                2.5-2.5 2.5z"
               />
-              <p>Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal</p>
-            </div>
-            <div className={styles.infoItem}>
-              <Image
-                src="/icons/location.svg"
-                alt="Location"
-                width={20}
-                height={20}
-              />
-              <p>
-                Lagoas Park, Building 7 - 1st floor South, office 13, 
-                2740-244 Porto Salvo, Portugal
-              </p>
-            </div>
-            <div className={styles.infoItem}>
-              <Image
-                src="/icons/email.svg"
-                alt="Email"
-                width={20}
-                height={20}
-              />
-              <p>
-                <a href="mailto:office@fasqon.com" className={styles.email}>
-                  office@fasqon.com
-                </a>
-              </p>
-            </div>
+            </svg>
+            <p className={styles.textGray}>
+              Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal
+            </p>
           </div>
 
-          {/* Соц.иконки */}
-          <div className={styles.social}>
-            <Link href="https://twitter.com/" target="_blank">
-              <Image src="/icons/twitter.svg" alt="Twitter" width={24} height={24} />
-            </Link>
-            <Link href="https://t.me/" target="_blank">
-              <Image src="/icons/telegram.svg" alt="Telegram" width={24} height={24} />
-            </Link>
-            <Link href="https://discord.gg/" target="_blank">
-              <Image src="/icons/discord.svg" alt="Discord" width={24} height={24} />
-            </Link>
-            {/* Добавь остальные соцсети, если нужно */}
-          </div>
-
-          {/* Копирайт */}
-          <div className={styles.copyright}>
-            <p>Copyright © Fasqon</p>
+          {/* Адрес №2 */}
+          <div className={styles.inlineRow}>
+            <svg
+              className={styles.icon}
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2C8.13 2 5 5.13 
+                5 9c0 5.25 7 13 7 13s7-7.75 
+                7-13c0-3.87-3.13-7-7-7zm0 
+                9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
+                2.5-2.5 2.5 1.12 2.5 2.5-1.12 
+                2.5-2.5 2.5z"
+              />
+            </svg>
+            <p className={styles.textGray}>
+              Lagoas Park, Building 7 - 1st floor South, office 13, 2740-244 Porto Salvo, Portugal
+            </p>
           </div>
         </div>
 
-        {/* Правая часть: Компания + кнопки */}
-        <div className={styles.rightBlock}>
-          <div className={styles.companyInfo}>
-            <p>Fasqon, Unipessoal LDA (Zona Franca da Madeira)</p>
-            <p>NIPC: 51739346 (Portugal)</p>
-            <p>Access registration code: 2853-2787-4837</p>
-          </div>
+        {/* Средняя часть: Доп. инфо (NIPC и т.д.) */}
+        <div className={styles.middleSide}>
+          <p className={styles.textGray}>
+            Fasqon, Unipessoal LDA (Zona Franca da Maderia)
+          </p>
+          <p className={styles.textGray}>
+            NIPC: 517935436 (Portugal)
+          </p>
+          <p className={styles.textGray}>
+            Access registration code (Código de acesso): 2853-2787-4837
+          </p>
+          <div className={styles.rightSide}>
           <div className={styles.buttons}>
-            <Link href="/documents" className={styles.btn}>
-              Documents
+            <Link href="#" className={styles.button}>
+              
+                Documents
+              
             </Link>
-            <Link href="/contact" className={styles.btn}>
-              Contact Us
+            <Link href="#" className={styles.button}>
+             
+                Contact Us
+              
             </Link>
           </div>
+        </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

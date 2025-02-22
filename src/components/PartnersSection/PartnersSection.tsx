@@ -3,7 +3,6 @@
 import Image from "next/image";
 import styles from "./PartnersSection.module.css";
 
-// Пример массива партнёров
 const partners = [
   {
     name: "PureFi",
@@ -42,7 +41,7 @@ export default function PartnersSection() {
     <section className={styles.partnersSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Backers & <span>Partners</span>
+          Backers <span>&</span> <span>Partners</span>
         </h2>
         <p className={styles.subtitle}>
           Backed and supported by highly professional companies on the market
@@ -52,13 +51,7 @@ export default function PartnersSection() {
           {partners.map((partner) => (
             <div key={partner.name} className={styles.card}>
               <div className={styles.logoWrapper}>
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={60}
-                  height={60}
-                  className={styles.partnerLogo}
-                />
+                <img src={partner.logo} alt={partner.name} />
               </div>
               <h3 className={styles.partnerName}>{partner.name}</h3>
               <p className={styles.partnerDescription}>{partner.description}</p>

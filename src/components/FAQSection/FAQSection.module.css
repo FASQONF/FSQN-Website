@@ -1,8 +1,8 @@
 .faqSection {
     background-color: #000;
     color: #fff;
-    padding: 4rem 2rem;
-    max-width: 1160px;
+    padding: 0 20px;
+    max-width: 1200px;
     margin:  0 auto;
   }
   
@@ -32,20 +32,26 @@
     background-color: #111; /* Тёмно-серый */
     border-radius: 0.5rem;
     padding: 1rem;
+    min-height: 88px;
     cursor: pointer;
   }
   
   /* Вопрос + иконка */
   .questionRow {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
   }
   
   /* Текст вопроса */
   .question {
-    font-size: 1rem;
     font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    letter-spacing: 0.06em;
+    color: #fff;
+    max-width: 80%;
   }
   
   /* Иконка плюс/минус */
@@ -56,6 +62,7 @@
     border-radius: 4px;
     font-size: 1.2rem;
     display: flex;
+    justify-self:  flex-end;
     align-items: center;
     justify-content: center;
   }

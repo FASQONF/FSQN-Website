@@ -1,0 +1,111 @@
+/* Footer.module.css */
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  margin-top: 100px;
+  padding: 40px 20px;
+  /* Шрифты, если нужно, можно задать тут или глобально */
+  font-family: sans-serif;
+}
+
+/* Основной контейнер с тремя колонками (left/middle/right) */
+.topContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Мобильная версия: всё в столбик */
+  gap: 24px;
+}
+
+/* Каждая из "колонок" будет своим блоком */
+.leftSide,
+.middleSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Лого + название */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoBox {
+  background-color: #00ff00; /* Зеленый квадрат */
+  color: #000;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Иконки и текст в одну строку */
+.inlineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Общие стили для текста (адрес, email, прочее) */
+.textGray {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Иконка (SVG) */
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #00ff00; /* зелёный цвет иконок */
+  margin-top: 2px; /* небольшая компенсация, чтобы иконка была визуально по центру */
+  flex-shrink: 0;
+}
+
+/* Кнопки */
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+/* Нижняя часть (копирайт) */
+.bottomContainer {
+  max-width: 1200px;
+  margin: 24px auto 0 auto;
+  text-align: center;
+}
+
+.copyright {
+  color: #999;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Адаптив: на экранах >= 768px раскладываем три колонки в строку */
+@media (min-width: 768px) {
+  .topContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

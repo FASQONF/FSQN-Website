@@ -12,7 +12,7 @@ import UltimateUX from "@/components/UltimateUserExperience/UltimateUX";
 import TeamSection from "@/components/TeamSection/TeamSection";
 import PartnersSection from "@/components/PartnersSection/PartnersSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
-import FooterSection from "@/components/FooterSection/FooterSection";
+import Footer from "@/components/FooterSection/FooterSection";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
         <PartnersSection/>
         <FAQSection/>
       </main>
-    <FooterSection/>
+    <Footer/>
     </div>
   );
 }
