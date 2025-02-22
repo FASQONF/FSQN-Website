@@ -1,0 +1,140 @@
+.heroSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000; /* Чёрный фон */
+    color: #fff;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    flex-wrap: wrap; /* чтобы на узких экранах блоки переносились */
+  }
+  
+  /* Левая часть: текст */
+  .content {
+    flex: 1;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-family: "Franie Test","Montserrat", serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120%;
+    margin-bottom: 40px;
+  }
+  
+  .title span {
+    color: #00ff00; /* зелёный акцент */
+  }
+  
+  .description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+
+  }
+  
+  .ctaButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(11.837349891662598px);
+    background: #30f427;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 135%;
+    color: #0e0e0e;
+    border-radius: 75px;
+    padding: 7px 22px;
+    width: 234px;
+    height: 47px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #66ff66;
+    transform: translateY(-2px);
+  }
+  
+  /* Правая часть: телефоны + кристаллы */
+  .images {
+    flex: 1;
+    position: relative; /* чтобы мы могли абсолютно позиционировать внутри */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Контейнер для телефонов */
+  .phoneContainer {
+    position: relative; 
+    width: 450px;   /* подгони под свой макет */
+    height: 600px;  /* подгони под свой макет */
+  }
+  
+  /* Первый телефон: слегка наклоним */
+  .phoneLeft {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    /* transform: rotate(-5deg); */
+    z-index: 2; /* чтобы был поверх второго телефона */
+  }
+  
+  /* Второй телефон: слегка наклоним */
+  .phoneRight {
+    position: absolute;
+    top: 60px;
+    right: -140px;
+    /* transform: rotate(5deg); */
+    z-index: 1;
+  }
+  
+  /* Кристаллы: одна картинка */
+  .crystalsImage {
+    position: absolute;
+    /* Расположим кристаллы за телефонами */
+    bottom: 20px;
+    right: -80px;
+    z-index: 0; 
+    width: 740px; /* Можешь настроить размер под свой макет */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Адаптив под мобильные экраны */
+  @media (max-width: 768px) {
+    .heroSection {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+  
+    .images {
+      margin-top: 2rem;
+      width: 100%;
+      justify-content: flex-start;
+    }
+  
+    .phoneContainer {
+      width: 300px;
+      height: 400px;
+    }
+  
+    .phoneLeft,
+    .phoneRight {
+      width: 150px !important; /* уменьшаем на мобилке */
+      height: auto !important;
+    }
+  
+    .crystalsImage {
+      display: none; /* например, можно скрыть кристаллы на очень узких экранах */
+    }
+  }
+  

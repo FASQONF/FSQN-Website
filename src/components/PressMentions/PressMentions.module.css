@@ -1,0 +1,74 @@
+.pressSection {
+    background-color: #000; /* Или #fff, если нужно светлый фон */
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Внешний контейнер карусели */
+  .carousel {
+    position: relative;
+    overflow: hidden;    /* скрываем выезжающие лого */
+    width: 100%;
+    margin: 0 auto;     /* центрируем */
+    height: 132px;  
+    background-color: #fff;     /* примерно под высоту лого (можно менять) */
+  }
+  
+  /* "Трек" с логотипами */
+  .track {
+    display: flex;
+    /* суммарная ширина будет вычисляться автоматически, но если хочешь –
+       можешь поставить что-то вроде min-width: 200%; */
+    animation: scroll 15s linear infinite;
+    /* 15s – это длительность полного цикла анимации, меняй под нужную скорость */
+    align-items: center;
+    gap: 80px;
+    height: 100%;
+  }
+  
+  /* Каждый элемент с логотипом */
+  .logoItem {
+    flex: 0 0 auto;  /* чтобы не сжимались */
+    width: 230px;    /* ширина под логотип, подбери сам */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Картинка */
+  .logoImage {
+    max-width: 100%;
+    max-height: 50px; /* или 100%, если хочешь растягивать по контейнеру */
+    object-fit: contain;
+    filter: grayscale(100%); /* можно сделать ч/б */
+    transition: filter 0.2s ease;
+  }
+  
+  .logoImage:hover {
+    filter: none; /* возвращаем цвет при ховере */
+  }
+  
+  /* Анимация */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Сдвиг на 50% ширины track (т.к. у нас дублирование массива) */
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Адаптивный пример */
+  @media (max-width: 768px) {
+    .logoItem {
+      width: 100px; /* поменьше на мобилках */
+    }
+  }
+  

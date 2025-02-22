@@ -1,0 +1,216 @@
+/* Основной контейнер секции */
+.sliderSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Занимаем высоту экрана */
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  padding: 2rem 0; /* Убираем лишний отступ снизу */
+}
+
+/* Диаманты (фон) */
+.diamond1,
+.diamond2 {
+  position: absolute;
+  z-index: 0; /* позади всего */
+  opacity: 0.4; /* полупрозрачные */
+}
+
+.diamond1 {
+  top: 10%;
+  left: 5%;
+  transform: rotate(15deg);
+}
+
+.diamond2 {
+  bottom: 10%;
+  right: 5%;
+  transform: rotate(-15deg);
+}
+
+/* Внутренний контейнер, где располагаем телефон, карты, текст */
+.sliderInner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовки */
+.mainTitle {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 128%;
+  text-align: center;
+  font-family: "Franie Test","Montserrat", serif;
+  margin-bottom: 0.5rem;
+  position: relative; 
+  z-index: 2; /* над диамантами */
+}
+
+.mainTitle span {
+  color: #00ff00;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Телефон (фон) */
+.phoneContainer {
+  position: relative;
+  width: 336px;
+  height: 648px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.phoneBg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Обёртка для карт (absolute) */
+.cardsWrapper {
+  position: absolute;
+  top: 50%;  /* примерно по центру .sliderInner */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Каждая карта */
+.card {
+  position: absolute;
+  transition: transform 0.5s ease;
+  width: 400px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Позиции трёх карт:
+   centerCard: по центру (большая)
+   leftCard: слева (уменьшена, наклонена)
+   rightCard: справа (уменьшена, наклонена) */
+.centerCard {
+  transform: translateX(0) scale(1) rotateY(0deg);
+  z-index: 3;
+}
+
+.leftCard {
+  transform: translateX(-300px) scale(0.85) rotateY(-10deg);
+  z-index: 2;
+}
+
+.rightCard {
+  transform: translateX(300px) scale(0.85) rotateY(10deg);
+  z-index: 2;
+}
+
+/* Текст текущей карты (absolute внутри sliderInner),
+   чуть ниже карт (top: ~70%) */
+.cardInfo {
+  position: absolute;
+  top: 79%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 305px;
+  z-index: 2;
+  text-align: center;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 108%;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+/* Преимущества (в самом низу, в потоке) */
+.benefits {
+  margin-top: 2rem;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 333%;
+  text-align: center;
+  color: #0e0;
+  transition: color 0.2s ease;
+}
+
+.benefitItem:hover {
+  color: #fff;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 1.5rem;
+  }
+
+  .phoneContainer {
+    width: 250px;
+    height: 500px;
+  }
+
+  .cardsWrapper {
+    top: 50%;
+  }
+
+  .card {
+    width: 250px;
+    height: 150px;
+  }
+
+  .leftCard {
+    transform: translateX(-200px) scale(0.8) rotateY(-8deg);
+  }
+  .rightCard {
+    transform: translateX(200px) scale(0.8) rotateY(8deg);
+  }
+
+  .cardInfo {
+    top: 75%; /* поднимай/опускай под нужный вид */
+  }
+}

@@ -1,0 +1,110 @@
+.storeSection {
+    position: relative;
+    background-color: #000; /* чёрный фон */
+    color: #fff;
+    padding: 70px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+  }
+  
+  /* Если нужна абсолютная картинка-цепь */
+  .bgImage {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    z-index: 0;
+    opacity:1; /* полупрозрачная */
+  }
+  
+  /* Картинка, если используем next/image fill */
+  .chainImage {
+    object-fit: cover; 
+  }
+  
+  /* Весь контент поверх фона */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* или center, если хочешь */
+  }
+  
+  /* Заголовок */
+  .title {
+    font-family: "Franie Test","Montserrat", serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 128%;
+    margin-bottom: 1rem;
+  }
+  
+  .title span {
+    color: #00ff00; /* зелёный акцент */
+  }
+  
+  /* Описание */
+  .description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 690px;
+    margin-bottom: 90px;
+  }
+  
+  /* Сетка для карточек */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 столбца на десктопе */
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+  
+  .card {
+    backdrop-filter: blur(16px);
+    background: rgba(71, 71, 71, 0.8), rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    border: 0.60px solid #2e2e2e;
+    border-radius: 19px;
+    padding: 19px;
+    height: 151px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-wrap:wrap;
+    gap: 15px;
+    max-width: 192px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .card:hover {
+    background-color: #222;
+  }
+  
+
+  .cardLabel {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 145%;
+    color: #fff;
+  }
+  
+  /* Адаптив */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr); /* планшет: 2 столбца */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+    .grid {
+      grid-template-columns: 1fr; /* мобильный: 1 столбец (или 2, если хочешь) */
+    }
+  }
+  

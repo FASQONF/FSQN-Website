@@ -1,0 +1,132 @@
+.footer {
+    background-color: #000; /* Чёрный фон */
+    color: #fff;
+    padding: 2rem 1rem;
+  }
+  
+  /* Общий контейнер */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap; /* если экран уже, блоки переносятся */
+  }
+  
+  /* Левая часть */
+  .leftBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Логотип */
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Блок с адресами и email */
+  .infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Одна строка (иконка + текст) */
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.4;
+  }
+  
+  /* Ссылка email */
+  .email {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .email:hover {
+    text-decoration: underline;
+  }
+  
+  /* Соц.иконки */
+  .social {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social a {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+  }
+  
+  .social a:hover {
+    opacity: 0.7;
+  }
+  
+  /* Копирайт */
+  .copyright {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  /* Правая часть */
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 250px; /* чтобы не сжималось слишком */
+  }
+  
+  /* Инфа о компании */
+  .companyInfo p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* Кнопки Documents, Contact Us */
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Адаптив: на мобильных всё в колонку */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .leftBlock, .rightBlock {
+      width: 100%;
+    }
+  }
+  
