@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./UltimateUX.module.css";
 
 // Если у тебя отдельный файл types.ts – можешь импортировать оттуда
