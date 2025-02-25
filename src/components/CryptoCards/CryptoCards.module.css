@@ -7,27 +7,88 @@
   color: #fff;
   overflow: hidden;
   text-align: center;
-  padding: 2rem 0; /* Убираем лишний отступ снизу */
+  padding: 0 20px; /* Убираем лишний отступ снизу */
 }
 
 /* Диаманты (фон) */
 .diamond1,
-.diamond2 {
+.diamond2,
+.diamond3  {
   position: absolute;
   z-index: 0; /* позади всего */
-  opacity: 0.4; /* полупрозрачные */
+  opacity: 1;
 }
 
+/* Позиции диамантов (исходное положение) */
 .diamond1 {
-  top: 10%;
-  left: 5%;
-  transform: rotate(15deg);
+  bottom: 10%;
+  left: -12%;
+  animation: diamondMove1 12s ease-in-out infinite;
 }
 
 .diamond2 {
-  bottom: 10%;
-  right: 5%;
-  transform: rotate(-15deg);
+  bottom: 52%;
+  right: 55%;
+  animation: diamondMove2 12s ease-in-out infinite;
+}
+
+.diamond3 {
+  bottom: 40%;
+  right: 16%;
+  animation: diamondMove3 12s ease-in-out infinite;
+}
+@keyframes diamondMove1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(30px, -20px); /* резкий подъём вправо и вверх */
+  }
+  20% {
+    transform: translate(30px, -20px); /* держим положение */
+  }
+  25% {
+    transform: translate(0, 0);       /* быстро возвращаемся */
+  }
+  100% {
+    transform: translate(0, 0);       /* интервал паузы */
+  }
+}
+
+@keyframes diamondMove2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-25px, -30px); /* резкое смещение влево и вверх */
+  }
+  20% {
+    transform: translate(-25px, -30px); /* держим положение */
+  }
+  25% {
+    transform: translate(0, 0);         /* быстро возвращаемся */
+  }
+  100% {
+    transform: translate(0, 0);         /* пауза */
+  }
+}
+
+@keyframes diamondMove3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(20px, 25px); /* резкое смещение вправо и вниз */
+  }
+  20% {
+    transform: translate(20px, 25px); /* держим положение */
+  }
+  25% {
+    transform: translate(0, 0);       /* быстро возвращаемся */
+  }
+  100% {
+    transform: translate(0, 0);       /* пауза */
+  }
 }
 
 /* Внутренний контейнер, где располагаем телефон, карты, текст */
@@ -69,11 +130,14 @@
 .phoneContainer {
   position: relative;
   width: 336px;
-  height: 648px;
+  height: 628px;
   margin: 0 auto;
   z-index: 1;
 }
-
+.phoneContainer{
+  height: 80%;
+  object-fit: cover;
+}
 .phoneBg {
   width: 100%;
   height: auto;
@@ -96,7 +160,7 @@
 .card {
   position: absolute;
   transition: transform 0.5s ease;
-  width: 400px;
+  width: 410px;
   height: 250px;
   cursor: pointer;
 }
@@ -117,17 +181,16 @@
 }
 
 .leftCard {
-  transform: translateX(-300px) scale(0.85) rotateY(-10deg);
+  transform: translateX(-100%) scale(0.75) rotateY(-10deg);
   z-index: 2;
 }
 
 .rightCard {
-  transform: translateX(300px) scale(0.85) rotateY(10deg);
+  transform: translateX(100%) scale(0.75) rotateY(10deg);
   z-index: 2;
 }
 
-/* Текст текущей карты (absolute внутри sliderInner),
-   чуть ниже карт (top: ~70%) */
+
 .cardInfo {
   position: absolute;
   top: 79%;
@@ -160,9 +223,9 @@
 
 /* Преимущества (в самом низу, в потоке) */
 .benefits {
-  margin-top: 2rem;
   z-index: 2;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
@@ -184,6 +247,7 @@
 }
 
 /* Адаптив */
+
 @media (max-width: 768px) {
   .mainTitle {
     font-size: 1.5rem;
@@ -204,13 +268,64 @@
   }
 
   .leftCard {
-    transform: translateX(-200px) scale(0.8) rotateY(-8deg);
+    transform: translateX(-250px) scale(0.8) rotateY(-8deg);
   }
   .rightCard {
-    transform: translateX(200px) scale(0.8) rotateY(8deg);
+    transform: translateX(250px) scale(0.8) rotateY(8deg);
   }
 
   .cardInfo {
     top: 75%; /* поднимай/опускай под нужный вид */
+  }
+  .diamond1 {
+    bottom: 20%;
+    left: -15%;
+  }
+  .diamond1 img{
+    width: 300px;
+    height: 300px;
+  }
+  .diamond2 {
+    bottom: 62%;
+    right: 55%;
+  }
+  .diamond2 img{
+    width: 250px;
+    height: 250px;
+  }
+
+  .diamond3 {
+    bottom: 55%;
+    right: 30px;
+
+  }
+  .diamond3 img{
+    width: 300px;
+    height: 300px;
+  }
+  .sliderSection{
+    min-height: 820px;
+  }
+}
+@media (max-width: 500px) {
+  .benefitItem{
+    font-size: 11px;
+    line-height: 164%;
+  }
+  .benefitItem img {
+    width: 14px;
+    height: 14px;
+  }
+  .diamond1 {
+    bottom: 0;
+    left: -30%;
+  }
+  .diamond3 {
+    bottom: 55%;
+    right: -40px;
+
+  }
+  .cardsWrapper{
+    top: 45%;
   }
 }

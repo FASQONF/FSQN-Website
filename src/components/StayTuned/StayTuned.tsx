@@ -1,23 +1,38 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./StayTuned.module.css";
 
 export default function StayTuned() {
   return (
     <section className={styles.stayTunedSection}>
       <div className={styles.container}>
-        <div className={styles.textBlock}>
+        {/* Текстовый блок – появляется слева направо */}
+        <motion.div
+          className={styles.textBlock}
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <h2 className={styles.title}>
             Stay <span>tuned</span>
           </h2>
           <p className={styles.subtitle}>Follow Fasqon in social media!</p>
-        </div>
+        </motion.div>
 
-        <div className={styles.iconsBlock}>
+        {/* Блок иконок – появляется справа налево */}
+        <motion.div
+          className={styles.iconsBlock}
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {/* X (Twitter) */}
           <a
-            href="https://twitter.com/" 
+            href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
@@ -74,7 +89,7 @@ export default function StayTuned() {
               height={53}
             />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

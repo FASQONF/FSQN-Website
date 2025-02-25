@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./FeaturesSection.module.css";
 
-// Каждый пункт имеет название, описание и картинку-экран (прозрачный PNG)
+// Каждый пункт имеет название, описание и (опционально) картинку-экран
 const features = [
   {
     name: "Crypto Card",
@@ -45,61 +46,68 @@ const features = [
 ];
 
 export default function FeaturesSection() {
- 
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
- 
-  const activeFeature =
-    activeIndex !== null ? features[activeIndex] : null;
+  const activeFeature = activeIndex !== null ? features[activeIndex] : null;
 
   return (
     <section className={styles.features}>
-      <h2 className={styles.sectionTitle}>
+      {/* Заголовок и подзаголовок появляются сверху (top-down) */}
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className={styles.sectionTitle}>
           Discover Fasqon <span>Crypto Wallet</span>
         </h2>
         <p className={styles.subtitle}>All features in one app</p>
-      <div className={styles.featuresSection}>
+      </motion.div>
+
+      {/* Основной блок (телефон и аккордеон) появляются снизу (bottom-up) */}
+      <motion.div
+        className={styles.featuresSection}
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+      >
         <div className={styles.leftSide}>
           <div className={styles.phoneContainer}>
-         <Image
-           src="/images/phones/main.png" // Рамка телефона
-           alt="Phone Frame"
-           width={355}
-           height={716}
-           className={styles.phoneFrame}
-         />
+            <Image
+              src="/images/phones/main.png" // Рамка телефона
+              alt="Phone Frame"
+              width={355}
+              height={716}
+              className={styles.phoneFrame}
+            />
 
-         {/* Прозрачный экран, меняется в зависимости от activeIndex */}
-         {activeFeature && activeFeature.screenImage && (
-           <Image
-             src={activeFeature.screenImage}
-             alt={activeFeature.name}
-             width={300}
-             height={600}
-             className={styles.phoneScreen}
-           />
-         )}
+            {/* Прозрачный экран, меняется в зависимости от activeIndex */}
+            {activeFeature && activeFeature.screenImage && (
+              <Image
+                src={activeFeature.screenImage}
+                alt={activeFeature.name}
+                width={300}
+                height={600}
+                className={styles.phoneScreen}
+              />
+            )}
           </div>
         </div>
         <div className={styles.rightSide}>
           <ul className={styles.featureList}>
             {features.map((feature, idx) => {
               const isOpen = activeIndex === idx;
-
-              // Функция, которая меняет/сбрасывает индекс
               const handleClick = () => {
                 if (isOpen) {
-                  // Если кликнули на уже открытый пункт, можно свернуть (null)
                   setActiveIndex(null);
                 } else {
-                  // Иначе раскрываем пункт idx
                   setActiveIndex(idx);
                 }
               };
 
               return (
                 <li key={feature.name} className={styles.accordionItem}>
-                  {/* Заголовок пункта */}
                   <div
                     className={`${styles.accordionTitle} ${
                       isOpen ? styles.activeItem : ""
@@ -108,8 +116,6 @@ export default function FeaturesSection() {
                   >
                     {feature.name}
                   </div>
-
-                  {/* Текст, который показывается только если isOpen = true */}
                   {isOpen && (
                     <div className={styles.accordionContent}>
                       <p>{feature.description}</p>
@@ -120,7 +126,7 @@ export default function FeaturesSection() {
             })}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./FAQSection.module.css";
 
-// Пример массива из 6 FAQ
 const faqItems = [
   {
     question: "What is FASQON and how does it ensure user privacy?",
@@ -38,34 +38,53 @@ const faqItems = [
 ];
 
 export default function FAQSection() {
-  // openIndex хранит индекс вопроса, который сейчас раскрыт (или null, если все закрыты)
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-  // Первые три вопроса – левая колонка
+  // Разбиваем FAQ на две колонки
   const leftColumnItems = faqItems.slice(0, 3);
-  // Последние три – правая колонка
   const rightColumnItems = faqItems.slice(3, 6);
+
+  // Варианты анимации для карточек — плавное появление с уменьшенным масштабом и небольшим поворотом.
+  const cardVariants = {
+    initial: { scale: 0.8, opacity: 0, rotate: -5 },
+    animate: { scale: 1, opacity: 1, rotate: 0 },
+  };
 
   return (
     <section className={styles.faqSection}>
-      <h2 className={styles.title}>FAQ</h2>
+      {/* Заголовок FAQ – появляется сверху вниз */}
+      <motion.h2
+        className={styles.title}
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        FAQ
+      </motion.h2>
 
       <div className={styles.grid}>
-        {/* Левая колонка (3 вопроса) */}
+        {/* Левая колонка */}
         <div className={styles.column}>
           {leftColumnItems.map((item, index) => {
-            // Индекс для левой колонки – это общий index
-            // Но нам нужно учитывать, что "item" – часть slice(0,3)
-            // Чтобы корректно проверять openIndex, передадим index напрямую (0..2).
             const actualIndex = index; // 0..2
             const isOpen = openIndex === actualIndex;
-
             return (
-              <div key={index} className={styles.faqItem}>
+              <motion.div
+                key={index}
+                className={styles.faqItem}
+                variants={cardVariants}
+                initial="initial"
+                animate="animate"
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+              >
                 <div
                   className={styles.questionRow}
                   onClick={() => handleToggle(actualIndex)}
@@ -76,25 +95,38 @@ export default function FAQSection() {
                   </div>
                 </div>
                 {isOpen && (
-                  <div className={styles.answer}>
+                  <motion.div
+                    className={styles.answer}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
                     <p>{item.answer}</p>
-                  </div>
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
-        {/* Правая колонка (3 вопроса) */}
+        {/* Правая колонка */}
         <div className={styles.column}>
           {rightColumnItems.map((item, index) => {
-            // Индекс для правой колонки – 0..2, но в общем массиве это 3..5
-            // Значит actualIndex = index + 3
-            const actualIndex = index + 3;
+            const actualIndex = index + 3; // 3..5
             const isOpen = openIndex === actualIndex;
-
             return (
-              <div key={actualIndex} className={styles.faqItem}>
+              <motion.div
+                key={actualIndex}
+                className={styles.faqItem}
+                variants={cardVariants}
+                initial="initial"
+                animate="animate"
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+              >
                 <div
                   className={styles.questionRow}
                   onClick={() => handleToggle(actualIndex)}
@@ -105,11 +137,16 @@ export default function FAQSection() {
                   </div>
                 </div>
                 {isOpen && (
-                  <div className={styles.answer}>
+                  <motion.div
+                    className={styles.answer}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
                     <p>{item.answer}</p>
-                  </div>
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>

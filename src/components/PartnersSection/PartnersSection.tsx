@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./PartnersSection.module.css";
 
 const partners = [
@@ -39,23 +40,51 @@ const partners = [
 export default function PartnersSection() {
   return (
     <section className={styles.partnersSection}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>
-          Backers <span>&</span> <span>Partners</span>
-        </h2>
-        <p className={styles.subtitle}>
-          Backed and supported by highly professional companies on the market
-        </p>
+      {/* Фоновое изображение с анимацией увеличения */}
+      <motion.div
+        className={styles.bgMotion}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      />
 
+      <div className={styles.container}>
+        {/* Заголовок */}
+        <motion.h2
+          className={styles.title}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          Backers <span>&</span> <span>Partners</span>
+        </motion.h2>
+
+        {/* Подзаголовок */}
+        <motion.p
+          className={styles.subtitle}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Backed and supported by highly professional companies on the market
+        </motion.p>
+
+        {/* Карточки партнеров */}
         <div className={styles.grid}>
-          {partners.map((partner) => (
-            <div key={partner.name} className={styles.card}>
+          {partners.map((partner, index) => (
+            <motion.div
+              key={partner.name}
+              className={styles.card}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
+            >
               <div className={styles.logoWrapper}>
                 <img src={partner.logo} alt={partner.name} />
               </div>
               <h3 className={styles.partnerName}>{partner.name}</h3>
               <p className={styles.partnerDescription}>{partner.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

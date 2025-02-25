@@ -102,11 +102,44 @@
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+    .card{
+      flex-direction: row;
+      max-width: 100%;
+      justify-content: center;
+      gap: 20px;
+    }
     .title {
       font-size: 1.6rem;
     }
     .subtitle {
       font-size: 0.95rem;
+    }
+    .avatarWrapper {
+      width: 125px;
+      height: 183px;
+    }
+    .avatarWrapper img {
+      width: 125px;
+      height: 183px;
+    }
+    .cardInfo{
+      max-width: 168px;
+      text-align: left;
+    }
+    .memberName{
+      font-size: 14px;
+      line-height: 129%;    
+    }
+    .memberRole{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 114%;
+    }
+    .description{
+      font-weight: 500;
+      font-size: 11px;  
+      line-height: 136%;
+      letter-spacing: 0.08em;
     }
   }
   

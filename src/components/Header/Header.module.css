@@ -1,94 +1,192 @@
 /* Общий контейнер шапки */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #000; /* чёрный фон */
-    height: 60px;
-    max-width: 1380px;
-    padding: 20px 20px;
-    margin: 0 auto;
-    /* padding: 0 2rem; */
-  }
-  
-  /* Левая часть (логотип) */
-  .left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logoImage {
-    object-fit: contain;
-  }
-  
-  /* Центральная часть (навигация) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000; /* чёрный фон */
+  height: 60px;
+  max-width: 1380px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Левая часть (логотип) */
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+/* Центральная часть (навигация) - десктоп */
+.nav {
+  flex: 1; /* чтобы меню центрировалось */
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 80px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0;
+}
+
+/* Общий стиль для ссылок */
+.link,
+.activeLink {
+  color: #fff;
+  text-decoration: none;
+  position: relative; /* нужно для псевдоэлемента */
+  padding: 0.5rem 0;  /* небольшой отступ сверху/снизу */
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #66ff66; /* салатовый при ховере */
+}
+
+/* Активная ссылка (зелёный цвет + линия сверху) */
+.activeLink {
+  color: #00ff00;
+}
+.activeLink::before {
+  content: "";
+  position: absolute;
+  top: -13.5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #00ff00;
+}
+
+/* Правая часть (кнопка White Paper) - десктоп */
+.right {
+  display: flex;
+  align-items: center;
+}
+.whitePaperBtn {
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.whitePaperBtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ======== Бургер (мобилка) ======== */
+.burger {
+  display: none; /* скрываем на десктопе */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+.burgerLine {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* ======== Мобильное меню (выезжает справа) ======== */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateX(100%); /* спрятано за правым краем */
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0 0 0 24px;
+  padding: 15px 10px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 5;
+}
+.showMenu {
+  transform: translateX(0);
+}
+
+/* Тонкая зелёная полоска справа */
+.greenLine {
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #00ff00;
+  border-radius: 2px;
+}
+
+/* Список ссылок в мобильном меню */
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Кнопка White Paper в мобильном меню */
+.mobileWhitePaperBtn {
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.mobileWhitePaperBtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+.burger.hide {
+  display: none;
+}
+/* Затемнение фона (оверлей) */
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+} */
+
+/* ======== Адаптивность ======== */
+@media (max-width: 900px) {
   .nav {
-    flex: 1; /* чтобы меню центрировалось */
-    display: flex;
-    justify-content: center;
+    display: none; /* прячем десктоп-меню */
   }
-  
-  .navList {
-    display: flex;
-    list-style: none;
-    gap: 80px;
-    margin: 0;
-    font-weight: 500;
-    font-size: 16px;
-    padding: 0;
-  }
-  
-  /* Общий стиль для ссылок */
-  .link,
-  .activeLink {
-    color: #fff;
-    text-decoration: none;
-    position: relative; /* нужно для псевдоэлемента */
-    padding: 0.5rem 0;  /* небольшой отступ сверху/снизу */
-    transition: color 0.2s ease;
-  }
-  
-  .link:hover {
-    color: #66ff66; /* салатовый при ховере */
-  }
-  
-  /* Активная ссылка (зелёный цвет + линия сверху) */
-  .activeLink {
-    color: #00ff00;
-  }
-  
-  /* Линия сверху у активного пункта */
-  .activeLink::before {
-    content: "";
-    position: absolute;
-    top: -13.5px;       /* линия появится в верхней границе ссылки */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    border-radius: 10px;
-    background-color: #00ff00;
-  }
-  
-  /* Правая часть (кнопка White Paper) */
   .right {
-    display: flex;
-    align-items: center;
+    display: none; /* прячем десктоп-кнопку */
   }
-  
-  /* Кнопка White Paper с белой рамкой */
-  .whitePaperBtn {
-    border: 1px solid #fff;
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+  .burger {
+    display: flex; /* показываем бургер */
   }
-  
-  .whitePaperBtn:hover {
-    background-color: #fff;
-    color: #000;
-  }
-  
+}

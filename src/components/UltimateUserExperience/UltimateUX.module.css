@@ -26,6 +26,7 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Сетка для десктопа */
 .grid {
   display: grid;
   grid-template-areas:
@@ -46,9 +47,9 @@
   min-height: 200px;
   border: 0.44px solid #2f2f2f;
   border-radius: 21px;
-  
 }
 
+/* Каждая карточка имеет свою grid-area */
 .card01 {
   grid-area: seed;
   display: flex;
@@ -61,7 +62,6 @@
   grid-area: ai;
   background: #ffffff;
   color: #000000;
-  
 }
 
 .card03 {
@@ -123,23 +123,33 @@
 .image01 {
   right: 0;
   top: 0;
+
 }
 
 .image02 {
+  height: 100%;
   right: 0;
-  bottom: 0;
+  bottom: -30px;
 }
 
 .image03 {
+  height: 100%;
   right: 0;
   bottom: 0;
 }
 
 .image04 {
+  height: 100%;
   right: 0;
   bottom: 0;
 }
-
+.image01 img,
+  .image02 img,
+  .image03 img,
+  .image04 img{
+    height: 100%;
+  }
+/* Адаптив для планшетов */
 @media (max-width: 1024px) {
   .grid {
     grid-template-areas:
@@ -150,33 +160,42 @@
   }
 }
 
+/* Адаптив для мобильных (горизонтальный слайдер) */
 @media (max-width: 768px) {
   .container {
     padding: 40px 16px;
+    min-height: 350px;
   }
 
+  /* Вместо display: grid — делаем flex row */
   .grid {
-    grid-template-areas:
-      "seed"
-      "ai"
-      "chat"
-      "protection";
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* плавный снэп на карточку */
+    -webkit-overflow-scrolling: touch; /* для iOS */
+    padding: 0 16px; /* небольшой отступ слева/справа */
   }
 
-  .title {
-    font-size: 36px;
+  .grid::-webkit-scrollbar {
+    display: none; /* скрываем полосу прокрутки (по желанию) */
   }
 
-  .cardContent {
-    max-width: 100%;
-  }
-
-  .cardImage {
+  .card {
+    flex: 0 0 80%; /* ширина карточки ~80% экрана */
+    scroll-snap-align: center; /* центрируем карточку при прокрутке */
     position: relative;
-    right: auto;
-    bottom: auto;
+    height: 287px; /* чуть больше высота, под телефон */
+  }
+
+  /* Убираем абсолютное позиционирование у картинки,
+     чтобы всё выглядело аккуратно в вертикальном стеке */
+  .cardImage {
+    /* right: auto;
+    bottom: auto; */
     max-width: 100%;
-    margin-top: 24px;
+    /* margin-top: 24px; */
   }
 
   .image01,
@@ -184,12 +203,40 @@
   .image03,
   .image04 {
     transform: none;
-    right: auto;
-    bottom: auto;
+    /* right: auto;
+    bottom: auto; */
     max-width: 100%;
+    height: 100%;
   }
-
+ .image02{
+  bottom: -80px;
+ }
+ .image03{
+top: -50px; }
+.image04{
+  top: -20px; }
   .cardContentBottom {
     margin-top: 24px;
+  }
+
+  .card01,
+  .card02,
+  .card03,
+  .card04 {
+    display: block; /* отменяем grid-area */
+  }
+}
+@media (max-width: 600px) {
+  .header{
+    margin-bottom: 30px;
+  }
+  .title {
+    font-size: 28px;
+  line-height: 143%;
+  }
+  .subtitle{
+    font-size: 14px;
+  line-height: 157%;
+  letter-spacing: 0.07em;
   }
 }

@@ -1,11 +1,19 @@
+"use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   return (
     <section className={styles.heroSection}>
-      <div className={styles.content}>
+      {/* Текстовый блок, появляется слева → направо */}
+      <motion.div 
+        className={styles.content}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h1 className={styles.title}>
           Buy, store and earn crypto with <span>Fasqon Wallet</span>
         </h1>
@@ -16,9 +24,15 @@ export default function HeroSection() {
         <a href="#" className={styles.ctaButton}>
           Get my Fasqon card!
         </a>
-      </div>
+      </motion.div>
 
-      <div className={styles.images}>
+      {/* Блок с изображениями (телефоны + кристаллы) */}
+      <motion.div 
+        className={styles.imagesWrapper}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className={styles.phoneContainer}>
           <Image
             src="/images/phone1.png"
@@ -36,16 +50,17 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Одна картинка с кристаллами */}
-       
-      </div>
-      <Image
-          src="/images/diamond.png"
-          alt="Green crystals"
-          width={1300}
-          height={1300}
-          className={styles.crystalsImage}
-        />
+        {/* Кристаллы располагаем внутри того же контейнера */}
+        <div className={styles.crystalsWrapper}>
+          <Image
+            src="/images/diamond.png"
+            alt="Green crystals"
+            width={800}
+            height={800}
+            className={styles.crystalsImage}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }

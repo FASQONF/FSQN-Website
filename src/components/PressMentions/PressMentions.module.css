@@ -68,7 +68,10 @@
   /* Адаптивный пример */
   @media (max-width: 768px) {
     .logoItem {
-      width: 100px; /* поменьше на мобилках */
+      width: 120px; /* поменьше на мобилках */
+    }
+    .pressSection{
+      padding: 1.2rem 0;
     }
   }
   

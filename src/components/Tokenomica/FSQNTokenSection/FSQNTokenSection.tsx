@@ -1,0 +1,79 @@
+"use client";
+
+import Image from "next/image";
+import styles from "./FSQNTokenSection.module.css";
+
+export default function FSQNTokenSection() {
+  return (
+    <section className={styles.fsqnSection}>
+      <div className={styles.container}>
+      <div className={styles.crystal1Wrapper}>
+            <Image
+              src="/images/tokenomics/metal1.png"
+              alt="Crystal 1"
+              fill
+              className={styles.crystalImage}
+            />
+          </div>
+        <div className={styles.phoneBlock}>
+          
+          <div className={styles.crystal2Wrapper}>
+            <Image
+              src="/images/tokenomics/metal2.png"
+              alt="Crystal 2"
+              fill
+              className={styles.crystalImage}
+            />
+          </div>
+
+          <div className={styles.phoneWrapper}>
+            <Image
+              src="/images/tokenomics/phone.png"
+              alt="FSQN token phone screen"
+              width={355}
+              height={716}
+              className={styles.phoneImage}
+            />
+          </div>
+        </div>
+
+        {/* Текстовый блок: Заголовок, описание, иконки */}
+        <div className={styles.textBlock}>
+          <h2 className={styles.title}>
+            FSQN <span>Token</span>
+          </h2>
+          <p className={styles.description}>
+            <span>
+            With our FSQN token, you get access to all the functionality of our
+            platform!
+            </span>
+            <br />
+            <br />
+            The utilitarian FSQN token enables payment for services,
+            access to features, transparent emission distribution, various token
+            sale stages, and participation in a promising project's development.
+          </p>
+
+          <div className={styles.iconsRow}>
+            <div className={styles.iconCard}>
+              <Image
+                src="/images/tokenomics/bsc-icon.png" /* Иконка BSC */
+                alt="BSC"
+                width={189}
+                height={92}
+              />
+            </div>
+            <div className={styles.iconCard}>
+              <Image
+                src="/images/tokenomics/fsqn-icon.png" /* Иконка FSQN */
+                alt="FSQN"
+                width={225}
+                height={88}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

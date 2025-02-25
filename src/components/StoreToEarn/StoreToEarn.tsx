@@ -1,9 +1,28 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./StoreToEarn.module.css";
+import { AnimatedLineDesktop } from "./AnimatedLineDesktop";
+import { AnimatedLineMobile } from "./AnimatedLineMobile";
+// import { useWindowWidth } from "./useWindowWidth"; // импортируем наш хук
+import { useEffect, useState } from "react";
 
-// Пример массива с данными для иконок
+export function useWindowWidth() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+}
 const items = [
   { icon: "/icons/user.svg", label: "User A" },
   { icon: "/icons/crypto.svg", label: "Holds crypto" },
@@ -15,35 +34,82 @@ const items = [
   { icon: "/icons/borrowfunds.svg", label: "Borrowing funds" },
 ];
 
+const contentVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
+};
+
+const gridVariants = {
+  hidden: { y: -30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { staggerChildren: 0.1, duration: 0.8 },
+  },
+};
+
+const cardVariants = {
+  hidden: { y: -30, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
+const bgVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: { scale: 1, opacity: 1, transition: { duration: 1 } },
+};
+
 export default function StoreToEarn() {
+  // Получаем ширину окна
+  const width = useWindowWidth();
+  const isMobile = width < 1024;
+
   return (
     <section className={styles.storeSection}>
-      {/* Фоновая картинка (цепь) – если нужна абсолютная, можно раскомментировать */}
-      
-      <div className={styles.bgImage}>
+      <motion.div
+        className={styles.bgImage}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={bgVariants}
+      >
         <Image
-          src="/images/chain.png" 
+          src="/images/chain.png"
           alt="Chain background"
-          fill // cover всю область
+          fill
           className={styles.chainImage}
         />
-      </div>
-     
+      </motion.div>
 
-      <div className={styles.content}>
+      <motion.div
+        className={styles.content}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={contentVariants}
+      >
         <h2 className={styles.title}>
           Store to <span>Earn</span>
         </h2>
         <p className={styles.description}>
           Earn passive income by simply holding assets in the Fasqon wallet
-          and spending your reward anytime with Fasqon card. 
+          and spending your reward anytime with Fasqon card.
           <br />
-          Hold now. Never pay
+          Hold now. Never pay.
         </p>
+      </motion.div>
 
-        <div className={styles.grid}>
+      <div className={styles.cardsWrapper}>
+        {/* Рендерим анимированную линию в зависимости от ширины экрана */}
+        {isMobile ? <AnimatedLineMobile /> : <AnimatedLineDesktop />}
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={gridVariants}
+        >
           {items.map((item) => (
-            <div key={item.label} className={styles.card}>
+            <motion.div key={item.label} className={styles.card} variants={cardVariants}>
               <Image
                 src={item.icon}
                 alt={item.label}
@@ -52,9 +118,9 @@ export default function StoreToEarn() {
                 className={styles.icon}
               />
               <p className={styles.cardLabel}>{item.label}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

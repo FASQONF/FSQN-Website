@@ -1,0 +1,162 @@
+.roadmapSection {
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+    background: #fff; /* базовый чёрный фон */
+    color: black;
+    text-align: center;
+    height: 100vh;
+    margin:  0 auto;
+  }
+  
+  .backgroundImage {
+    position: absolute;
+    inset: 0;
+    left: 100px;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-height: 1000px; */
+    opacity: 1; /* настройте прозрачность по вкусу */
+  }
+  
+  .backgroundImage img {
+    max-width: 1050px;
+  }
+  .container {
+    position: relative;
+    z-index: 1; /* контент поверх фона */
+    max-width: 1290px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* Заголовок */
+  .title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120%;
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: "Franie Test","Montserrat", serif;
+
+  }
+  .title span {
+    color: #00ff00; /* зелёный для "Map" */
+  }
+  
+  .subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 60px;
+  }
+  
+  /* Сетка карточек */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    position: relative;
+  }
+  
+  /* Каждая карточка */
+  .card {
+    backdrop-filter: blur(15px);
+    background: rgba(16, 16, 16, 0.95);
+    border-radius: 24px;
+    padding: 39px 25px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Добавляем стрелочку ко всем карточкам, кроме первой в строке */
+  .card:not(:nth-child(4n+1))::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -41px;  /* сдвиг влево */
+    transform: translateY(-50%);
+    width: 47px;
+    height: 47px;
+    background: url("/images/tokenomics/arrow.svg") no-repeat center center;
+    background-size: contain;
+  }
+  
+  /* Заголовок года */
+  .cardYear {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 158%;
+    text-align: center;
+    color: #0e0;
+    font-family: "Franie Test","Montserrat", serif;
+  }
+  
+  /* Список пунктов */
+  .itemList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Один пункт */
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 133%;
+    color: #fff;
+  }
+  
+  /* Иконка пункта */
+  .iconWrapper {
+    width: 24px;
+    height: 24px;
+    background-color: #00ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  /* Адаптив для планшета */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card:not(:nth-child(2n+1))::before {
+      left: -20px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  /* Адаптив для мобильного */
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+    .card:not(:last-child)::before {
+      display: none; /* убираем стрелки на мобильном */
+    }
+  }
+  

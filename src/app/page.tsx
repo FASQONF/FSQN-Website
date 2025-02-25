@@ -17,10 +17,6 @@ import Footer from "@/components/FooterSection/FooterSection";
 export default function Home() {
   return (
     <div >
-      {/* Хедер */}
-      <Header />
-
-      {/* Основной контент */}
       <main className={styles.main}>
         <HeroSection/>
         <PressMentions/>
@@ -33,7 +29,6 @@ export default function Home() {
         <PartnersSection/>
         <FAQSection/>
       </main>
-    <Footer/>
     </div>
   );
 }
