@@ -1,11 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./RoadMapSection.module.css";
 
-const roadMapData = [
+// Интерфейс для элемента роадмапа
+interface RoadMapItem {
+  year: string;
+  items: string[];
+}
+
+const roadMapData: RoadMapItem[] = [
   {
     year: "2024",
     items: [
@@ -64,17 +70,22 @@ const cardVariants = {
   hidden: { x: -100, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
 };
-function MobileVerticalSlider({ data }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
 
-  // Обработчики для свайпа
-  const handleTouchStart = (e) => {
+interface MobileVerticalSliderProps {
+  data: RoadMapItem[];
+}
+
+function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+
+  // Обработчики для свайпа (используем тип TouchEvent)
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.touches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.touches[0].clientX);
   };
 
@@ -118,7 +129,7 @@ function MobileVerticalSlider({ data }) {
                 slideClass === "active"
                   ? "0%"
                   : slideClass === "previous"
-                  ? `-${(currentIndex - index) * 60}px` // Смещение на 20px за каждую предыдущую карточку
+                  ? `-${(currentIndex - index) * 60}px`
                   : "100%",
             }}
             transition={{ duration: 0.5 }}
@@ -147,8 +158,9 @@ function MobileVerticalSlider({ data }) {
     </div>
   );
 }
+
 export default function RoadMapSection() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
