@@ -15,7 +15,8 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <h1 className={styles.title}>
-          Buy, store and earn crypto with <span>Fasqon Wallet</span>
+          Next- Gen <span>neobank</span> for sending, spending & earning crypto in the real world
+          {/* Buy, store and earn crypto with <span>Fasqon Wallet</span> */}
         </h1>
         <p className={styles.description}>
           Discover Fasqon’s unmatched earning opportunities and crypto debit card.

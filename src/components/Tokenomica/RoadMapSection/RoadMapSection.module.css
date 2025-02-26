@@ -5,7 +5,7 @@
     background: #fff; /* базовый чёрный фон */
     color: black;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     margin:  0 auto;
   }
   
@@ -134,7 +134,54 @@
     justify-content: center;
     border-radius: 4px;
   }
-  
+
+/* Мобильный слайдер */
+.mobileSlider {
+  position: relative;
+  margin-top: 80px;
+  margin: 0 auto;
+  margin-top: 130px;
+  margin-bottom: 50px;
+  height: 450px; /* Высота слайдера */
+  /* overflow: hidden; */
+  touch-action: pan-y;
+}
+
+.slide {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  /* transform: translateX(-50%); */
+  backdrop-filter: blur(15px);
+  background: rgba(16, 16, 16, 0.95);
+  border-radius: 24px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Активная карточка */
+.slide.active {
+  z-index: 2;
+  width: 300px;
+  height: 450px;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Предыдущие карточки */
+.slide.previous {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 450px;
+  transform: translateX(-50%) translateY(-60px); /* Смещение на 20px вверх */
+  opacity: 1; /* Полупрозрачность */
+}
+
+/* Следующая карточка */
+.slide.next {
+  display: none; /* Скрываем следующую карточку */
+}
   /* Адаптив для планшета */
   @media (max-width: 1024px) {
     .grid {
@@ -144,14 +191,17 @@
      display: none;
     }
     .roadmapSection{
-      height: 100%;
+      padding-top: 40px;
       min-height: 100vh;
-      padding-bottom: 50px;
+      height: none;
     }
   }
   
   /* Адаптив для мобильного */
   @media (max-width: 600px) {
+    .card{
+      padding: 10px;
+    }
     .grid {
       grid-template-columns: 1fr;
     }
@@ -160,6 +210,9 @@
     }
     .card:not(:last-child)::before {
       display: none; /* убираем стрелки на мобильном */
+    }
+    .backgroundImage{
+      left: 0;
     }
   }
   

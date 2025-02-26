@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./RoadMapSection.module.css";
@@ -44,38 +45,120 @@ const roadMapData = [
   },
 ];
 
-/* Варианты для появления заголовка (сверху вниз) */
 const headerVariants = {
   hidden: { y: -50, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
 };
 
-/* Варианты для фонового изображения (увеличение) */
 const bgVariants = {
   hidden: { scale: 0.8, opacity: 0 },
   visible: { scale: 1, opacity: 1, transition: { duration: 1 } },
 };
 
-/* Варианты для карточек (desktop) */
 const gridVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 1,
-    },
-  },
+  visible: { transition: { staggerChildren: 1 } },
 };
 
 const cardVariants = {
   hidden: { x: -100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 1 },
-  },
+  visible: { x: 0, opacity: 1, transition: { duration: 1 } },
 };
+function MobileVerticalSlider({ data }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
+  // Обработчики для свайпа
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStart - touchEnd;
+    const threshold = 50; // минимальная дистанция для свайпа
+    if (swipeDistance > threshold && currentIndex < data.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    } else if (swipeDistance < -threshold && currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  return (
+    <div
+      className={styles.mobileSlider}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Отображаем текущую и предыдущие карточки */}
+      {data.map((block, index) => {
+        let slideClass = "";
+        if (index === currentIndex) {
+          slideClass = "active"; // Активная карточка
+        } else if (index < currentIndex) {
+          slideClass = "previous"; // Предыдущие карточки
+        } else {
+          slideClass = "next"; // Следующая карточка (скрыта)
+        }
+
+        return (
+          <motion.div
+            key={block.year}
+            className={`${styles.slide} ${styles[slideClass]}`}
+            initial={{ y: "100%" }}
+            animate={{
+              y:
+                slideClass === "active"
+                  ? "0%"
+                  : slideClass === "previous"
+                  ? `-${(currentIndex - index) * 60}px` // Смещение на 20px за каждую предыдущую карточку
+                  : "100%",
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={styles.card}>
+              <h3 className={styles.cardYear}>{block.year}</h3>
+              <ul className={styles.itemList}>
+                {block.items.map((item, idx) => (
+                  <li key={idx} className={styles.item}>
+                    <div className={styles.iconWrapper}>
+                      <Image
+                        src="/icons/check.svg"
+                        alt="Check"
+                        width={16}
+                        height={16}
+                      />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
 export default function RoadMapSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className={styles.roadmapSection}>
       {/* Фоновое изображение */}
@@ -115,35 +198,38 @@ export default function RoadMapSection() {
           Key stages of FASQON development
         </motion.p>
 
-        {/* Для десктопа */}
-        <motion.div
-          className={styles.grid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={gridVariants}
-        >
-          {roadMapData.map((block) => (
-            <motion.div key={block.year} className={styles.card} variants={cardVariants}>
-              <h3 className={styles.cardYear}>{block.year}</h3>
-              <ul className={styles.itemList}>
-                {block.items.map((item, idx) => (
-                  <li key={idx} className={styles.item}>
-                    <div className={styles.iconWrapper}>
-                      <Image
-                        src="/icons/check.svg"
-                        alt="Check"
-                        width={16}
-                        height={16}
-                      />
-                    </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </motion.div>
+        {isMobile ? (
+          <MobileVerticalSlider data={roadMapData} />
+        ) : (
+          <motion.div
+            className={styles.grid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={gridVariants}
+          >
+            {roadMapData.map((block) => (
+              <motion.div key={block.year} className={styles.card} variants={cardVariants}>
+                <h3 className={styles.cardYear}>{block.year}</h3>
+                <ul className={styles.itemList}>
+                  {block.items.map((item, idx) => (
+                    <li key={idx} className={styles.item}>
+                      <div className={styles.iconWrapper}>
+                        <Image
+                          src="/icons/check.svg"
+                          alt="Check"
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );
