@@ -44,7 +44,8 @@ export default function PartnersSection() {
       <motion.div
         className={styles.bgMotion}
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
 
@@ -53,7 +54,8 @@ export default function PartnersSection() {
         <motion.h2
           className={styles.title}
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8 }}
         >
           Backers <span>&</span> <span>Partners</span>
@@ -63,7 +65,8 @@ export default function PartnersSection() {
         <motion.p
           className={styles.subtitle}
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           Backed and supported by highly professional companies on the market
@@ -76,7 +79,8 @@ export default function PartnersSection() {
               key={partner.name}
               className={styles.card}
               initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
               transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
             >
               <div className={styles.logoWrapper}>

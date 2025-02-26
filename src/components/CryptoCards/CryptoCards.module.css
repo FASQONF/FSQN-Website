@@ -245,7 +245,9 @@
 .benefitItem:hover {
   color: #fff;
 }
-
+.cardImage{
+ 
+}
 /* Адаптив */
 
 @media (max-width: 768px) {

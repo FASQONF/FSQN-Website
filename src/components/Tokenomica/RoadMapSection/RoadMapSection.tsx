@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./RoadMapSection.module.css";
 
 const roadMapData = [
@@ -43,21 +44,87 @@ const roadMapData = [
   },
 ];
 
+/* Варианты для появления заголовка (сверху вниз) */
+const headerVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
+};
+
+/* Варианты для фонового изображения (увеличение) */
+const bgVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: { scale: 1, opacity: 1, transition: { duration: 1 } },
+};
+
+/* Варианты для карточек (desktop) */
+const gridVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
+
 export default function RoadMapSection() {
   return (
     <section className={styles.roadmapSection}>
       {/* Фоновое изображение */}
-      
+      <motion.div
+        className={styles.backgroundImage}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={bgVariants}
+      >
+        <Image
+          src="/images/tokenomics/chain.png"
+          alt="Roadmap Background"
+          fill
+          objectFit="cover"
+          quality={100}
+        />
+      </motion.div>
 
       <div className={styles.container}>
-        <h2 className={styles.title}>
+        <motion.h2
+          className={styles.title}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headerVariants}
+        >
           Road <span>Map</span>
-        </h2>
-        <p className={styles.subtitle}>Key stages of FASQON development</p>
+        </motion.h2>
+        <motion.p
+          className={styles.subtitle}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headerVariants}
+        >
+          Key stages of FASQON development
+        </motion.p>
 
-        <div className={styles.grid}>
+        {/* Для десктопа */}
+        <motion.div
+          className={styles.grid}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={gridVariants}
+        >
           {roadMapData.map((block) => (
-            <div key={block.year} className={styles.card}>
+            <motion.div key={block.year} className={styles.card} variants={cardVariants}>
               <h3 className={styles.cardYear}>{block.year}</h3>
               <ul className={styles.itemList}>
                 {block.items.map((item, idx) => (
@@ -74,19 +141,9 @@ export default function RoadMapSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div className={styles.backgroundImage}>
-        <Image
-          src="/images/tokenomics/chain.png"
-          alt="Roadmap Background"
-          fill
-        //   height={1000}
-          objectFit="cover"
-          quality={100}
-        />
-      </div>
+        </motion.div>
       </div>
     </section>
   );

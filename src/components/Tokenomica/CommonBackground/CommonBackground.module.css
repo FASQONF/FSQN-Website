@@ -1,0 +1,10 @@
+.background {
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    /* transform: translate(-50%, -50%); */
+    width: 100%;    /* уменьшаем размеры контейнера */
+    height: 100%;
+    z-index: 0;
+  }
+  

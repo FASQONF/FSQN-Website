@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FeaturesSection.module.css";
+import { useState } from "react";
 
-// Каждый пункт имеет название, описание и (опционально) картинку-экран
 const features = [
   {
     name: "Crypto Card",
@@ -45,13 +44,27 @@ const features = [
   },
 ];
 
+const contentVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 1 } },
+};
+
+const accordionVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+};
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const activeFeature = activeIndex !== null ? features[activeIndex] : null;
 
+  const handleToggle = (index: number) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section className={styles.features}>
-      {/* Заголовок и подзаголовок появляются сверху (top-down) */}
+      {/* Заголовок и подзаголовок появляются сверху */}
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -64,7 +77,7 @@ export default function FeaturesSection() {
         <p className={styles.subtitle}>All features in one app</p>
       </motion.div>
 
-      {/* Основной блок (телефон и аккордеон) появляются снизу (bottom-up) */}
+      {/* Основной блок: телефон и аккордеон */}
       <motion.div
         className={styles.featuresSection}
         initial={{ y: 100, opacity: 0 }}
@@ -81,8 +94,6 @@ export default function FeaturesSection() {
               height={716}
               className={styles.phoneFrame}
             />
-
-            {/* Прозрачный экран, меняется в зависимости от activeIndex */}
             {activeFeature && activeFeature.screenImage && (
               <Image
                 src={activeFeature.screenImage}
@@ -98,29 +109,28 @@ export default function FeaturesSection() {
           <ul className={styles.featureList}>
             {features.map((feature, idx) => {
               const isOpen = activeIndex === idx;
-              const handleClick = () => {
-                if (isOpen) {
-                  setActiveIndex(null);
-                } else {
-                  setActiveIndex(idx);
-                }
-              };
-
               return (
                 <li key={feature.name} className={styles.accordionItem}>
                   <div
-                    className={`${styles.accordionTitle} ${
-                      isOpen ? styles.activeItem : ""
-                    }`}
-                    onClick={handleClick}
+                    className={`${styles.accordionTitle} ${isOpen ? styles.activeItem : ""}`}
+                    onClick={() => handleToggle(idx)}
                   >
                     {feature.name}
                   </div>
-                  {isOpen && (
-                    <div className={styles.accordionContent}>
-                      <p>{feature.description}</p>
-                    </div>
-                  )}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        className={styles.accordionContent}
+                        variants={accordionVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        // layout убран
+                      >
+                        <p>{feature.description}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </li>
               );
             })}

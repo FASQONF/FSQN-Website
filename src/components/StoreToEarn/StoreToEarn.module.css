@@ -151,7 +151,7 @@
     font-size: 1.5rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 650px) {
   .storeSection{
     flex-direction: column;
     justify-content: none;

@@ -1,408 +1,229 @@
-// 'use client'
-// import React, { useEffect, useRef, CSSProperties } from 'react';
+'use client'
+import React, { useState, useEffect, useRef } from 'react';
+import styles from "./TokenomicsSection.module.css";
+import { motion } from 'framer-motion';
 
-// interface StyleTypes {
-//   [key: string]: CSSProperties;
-// }
+const TokenomicsSection = () => {
+  // State to track which segment is being hovered
+  const [hoveredSegment, setHoveredSegment] = useState(null);
+  const chartRef = useRef(null);
+  
+  // Distribution data with id, name, percentage, and segment color
+  const segments = [
+    { id: 'team', name: 'Team', percentage: 16, color: '#232323', hoverColor: '#4A4A4A', position: { top: '10%', left: '15%' } },
+    { id: 'liquidity', name: 'Liquidity Reserve', percentage: 15, color: '#E0E0E0', hoverColor: '#FFFFFF', position: { top: '10%', right: '10%' } },
+    { id: 'ecosystem', name: 'Ecosystem incentives', percentage: 15, color: '#529052', hoverColor: '#7AE47A', position: { top: '40%', right: '-10%' } },
+    { id: 'marketing', name: 'Marketing', percentage: 10, color: '#A4E5A4', hoverColor: '#D1FFD1', position: { top: '40%', left: '-5%' } },
+    { id: 'farming', name: 'Farming & Staking', percentage: 10, color: '#00FF00', hoverColor: '#80FF80', position: { top: '60%', left: '-9%' } },
+    { id: 'ido', name: 'IDO', percentage: 3, color: '#494949', hoverColor: '#777777', position: { top: '78%', left: '9%' } },
+    { id: 'airdrop', name: 'TMA Airdrop', percentage: 2, color: '#37C637', hoverColor: '#6FFF6F', position: { top: '70%', left: '-3%' } },
+    { id: 'seed', name: 'Seed', percentage: 3, color: '#C4D6C4', hoverColor: '#E8FFE8', position: { bottom: '30%', right: '0%' } },
+    { id: 'advisors', name: 'Advisors', percentage: 2, color: '#FFFFFF', hoverColor: '#FFFFFF', position: { bottom: '20%', right: '5%' } },
+    { id: 'private', name: 'Private Sale', percentage: 26, color: '#2F8D2D', hoverColor: '#5AE157', position: { bottom: '10%', right: '15%' } },
+  ];
 
-// const styles: StyleTypes = {
-//   section: {
-//     backgroundColor: '#000',
-//     color: '#fff',
-//     padding: '4rem 2rem',
-//     textAlign: 'center',
-//   },
+  // Animation on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Show animation when chart is in view
+            const paths = entry.target.querySelectorAll(`.${styles.segment}`);
+            paths.forEach((path, index) => {
+              setTimeout(() => {
+                path.style.opacity = '1';
+                path.style.transform = 'scale(1)';
+              }, index * 100);
+            });
 
-//   container: {
-//     maxWidth: '1200px',
-//     margin: '0 auto',
-//     position: 'relative',
-//   },
+            // Show labels
+            const labels = entry.target.querySelectorAll(`.${styles.label}`);
+            labels.forEach((label, index) => {
+              setTimeout(() => {
+                label.style.opacity = '1';
+                label.style.transform = 'translateY(0)';
+              }, index * 100 + 500);
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-//   title: {
-//     fontSize: '2.5rem',
-//     fontWeight: 700,
-//     marginBottom: '0.5rem',
-//     lineHeight: 1.2,
-//   },
+    if (chartRef.current) {
+      observer.observe(chartRef.current);
+    }
 
-//   titleSpan: {
-//     color: '#00ff00',
-//   },
+    return () => observer.disconnect();
+  }, []);
 
-//   subtitle: {
-//     fontSize: '1rem',
-//     color: '#ccc',
-//     marginBottom: '2rem',
-//   },
+  return (
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>
+          Token<span className={styles.titleSpan}>omics</span>
+        </h2>
+        <p className={styles.subtitle}>FSQN token distribution</p>
 
-//   chartContainer: {
-//     position: 'relative',
-//     width: '747px',
-//     height: '747px',
-//     margin: '0 auto',
-//   },
+        <div ref={chartRef} className={styles.chartContainer}>
+          {/* SVG Chart */}
+          {/* <img src="/images/tokenomics/fsqn-logo.png" alt="" /> */}
+          <svg width="700" height="700" viewBox="0 0 747 747" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g>
+            <motion.image
+                href="/images/tokenomics/fsqn-logo.png"
+                x={(747 - 200) / 2} 
+                y={(747 - 200) / 2}
+                width="200"
+                height="200"
+                initial={{ opacity: 0, scale: 0.2 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 3, ease: "easeOut" }}
+              />
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'team' ? styles.segmentHovered : ''}`}
+                d="M126.46 283.067C124.592 282.386 123.628 280.318 124.335 278.459C141.137 234.276 169.416 195.344 206.285 165.693C243.155 136.042 287.247 116.772 334.006 109.839C335.973 109.548 337.786 110.933 338.051 112.903L352.595 221.062C352.86 223.033 351.476 224.84 349.512 225.153C323.776 229.245 299.53 239.989 279.191 256.347C258.851 272.704 243.156 294.081 233.638 318.34C232.912 320.191 230.849 321.155 228.982 320.474L126.46 283.067Z"
+                fill={hoveredSegment === 'team' ? segments[0].hoverColor : segments[0].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('team')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Liquidity Reserve - 15% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'marketing' ? styles.segmentHovered : ''}`}
+                d="M117.059 429.636C115.117 430.061 113.195 428.832 112.795 426.884C102.799 378.129 106.678 327.544 123.992 280.883C124.684 279.019 126.771 278.097 128.625 278.814L230.418 318.16C232.273 318.877 233.191 320.96 232.519 322.832C223.413 348.185 221.316 375.529 226.449 401.975C226.828 403.927 225.603 405.846 223.661 406.271L117.059 429.636Z"
+                fill={hoveredSegment === 'marketing' ? segments[1].hoverColor : segments[1].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('marketing')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Ecosystem incentives - 15% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'farming' ? styles.segmentHovered : ''}`}
+                d="M181.903 552.894C180.452 554.253 178.171 554.18 176.832 552.711C144.462 517.211 122.308 473.606 112.723 426.529C112.327 424.581 113.612 422.696 115.566 422.326L222.789 402.001C224.742 401.631 226.622 402.916 227.039 404.86C232.487 430.251 244.447 453.79 261.741 473.162C263.065 474.645 262.994 476.921 261.544 478.28L181.903 552.894Z"
+                fill={hoveredSegment === 'farming' ? segments[2].hoverColor : segments[2].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('farming')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Marketing - 10% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'ido' ? styles.segmentHovered : ''}`}
+                d="M198.783 569.361C197.46 570.846 195.182 570.978 193.716 569.635C189.322 565.609 185.064 561.437 180.95 557.126C179.578 555.688 179.664 553.408 181.12 552.055L261.087 477.79C262.544 476.437 264.818 476.524 266.206 477.948C267.814 479.598 269.46 481.211 271.143 482.785C272.595 484.144 272.728 486.416 271.405 487.9L198.783 569.361Z"
+                fill={hoveredSegment === 'ido' ? segments[3].hoverColor : segments[3].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('ido')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Farming & Staking - 10% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'private' ? styles.segmentHovered : ''}`}
+                d="M588.295 524.206C589.922 525.348 590.318 527.594 589.154 529.206C568.476 557.842 542.296 582.085 512.132 600.509C480.944 619.558 446.166 631.978 409.966 636.995C373.766 642.011 336.921 639.516 301.728 629.666C267.691 620.139 235.905 603.929 208.219 581.995C206.661 580.761 206.43 578.491 207.686 576.95L276.607 492.333C277.862 490.792 280.127 490.564 281.698 491.782C296.986 503.634 314.434 512.419 333.084 517.639C352.89 523.182 373.625 524.586 393.997 521.763C414.37 518.94 433.942 511.95 451.494 501.23C468.021 491.135 482.423 477.936 493.912 462.374C495.092 460.774 497.334 460.378 498.962 461.52L588.295 524.206Z"
+                fill={hoveredSegment === 'private' ? segments[4].hoverColor : segments[4].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('private')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* IDO - 3% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'airdrop' ? styles.segmentHovered : ''}`}
+                d="M209.025 578.034C207.78 579.584 205.512 579.833 203.979 578.566C202.393 577.255 200.821 575.926 199.266 574.579C197.763 573.277 197.632 571 198.953 569.515L271.504 487.99C272.826 486.505 275.099 486.376 276.616 487.661C276.699 487.732 276.782 487.802 276.865 487.872C278.384 489.155 278.634 491.417 277.389 492.967L209.025 578.034Z"
+                fill={hoveredSegment === 'airdrop' ? segments[5].hoverColor : segments[5].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('airdrop')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* TMA Airdrop - 2% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'advisors' ? styles.segmentHovered : ''}`}
+                d="M606.339 494.476C608.103 495.393 608.792 497.567 607.852 499.319C603.096 508.176 597.841 516.756 592.114 525.019C590.982 526.653 588.731 527.027 587.113 525.873L498.27 462.494C496.651 461.339 496.279 459.093 497.394 457.448C499.979 453.633 502.387 449.702 504.609 445.666C505.568 443.924 507.738 443.235 509.502 444.152L606.339 494.476Z"
+                fill={hoveredSegment === 'advisors' ? segments[6].hoverColor : segments[6].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('advisors')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Seed - 3% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'seed' ? styles.segmentHovered : ''}`}
+                d="M622.112 457.427C623.996 458.063 625.01 460.106 624.348 461.981C620.105 474.005 615.004 485.707 609.083 496.999C608.16 498.76 605.973 499.408 604.225 498.461L508.267 446.48C506.519 445.533 505.874 443.35 506.778 441.579C509.565 436.125 512.015 430.506 514.114 424.752C514.795 422.884 516.834 421.871 518.717 422.507L622.112 457.427Z"
+                fill={hoveredSegment === 'seed' ? segments[7].hoverColor : segments[7].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('seed')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Advisors - 2% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'ecosystem' ? styles.segmentHovered : ''}`}
+                d="M576.439 207.062C577.977 205.801 580.247 206.025 581.487 207.58C609.071 242.178 627.604 283.128 635.38 326.727C643.156 370.326 639.923 415.157 626.001 457.159C625.375 459.046 623.322 460.041 621.443 459.39L518.327 423.654C516.449 423.003 515.458 420.954 516.064 419.06C523.485 395.856 525.139 371.172 520.855 347.153C516.571 323.134 506.486 300.543 491.5 281.336C490.277 279.768 490.498 277.503 492.036 276.242L576.439 207.062Z"
+                fill={hoveredSegment === 'ecosystem' ? segments[8].hoverColor : segments[8].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('ecosystem')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+              
+              {/* Private Sale - 26% */}
+              <path 
+                className={`${styles.segment} ${hoveredSegment === 'liquidity' ? styles.segmentHovered : ''}`}
+                d="M338.022 113.375C337.754 111.405 339.134 109.588 341.107 109.347C385.412 103.922 430.39 109.728 471.893 126.258C513.396 142.788 550.051 169.494 578.494 203.893C579.761 205.425 579.514 207.693 577.965 208.939L492.927 277.339C491.378 278.585 489.115 278.336 487.832 276.817C471.971 258.041 451.718 243.442 428.849 234.334C405.98 225.226 381.236 221.903 356.809 224.634C354.833 224.855 353.019 223.48 352.751 221.51L338.022 113.375Z"
+                fill={hoveredSegment === 'liquidity' ? segments[9].hoverColor : segments[9].color}
+                stroke="white" 
+                strokeOpacity="0.3" 
+                strokeWidth="0.9"
+                onMouseEnter={() => setHoveredSegment('liquidity')}
+                onMouseLeave={() => setHoveredSegment(null)}
+              />
+            </g>
+          </svg>
+          
+          <div className={styles.labels}>
+          {segments.map((segment) => (
+            <div 
+              key={segment.id}
+              className={`${styles.label} ${hoveredSegment === segment.id ? styles.highlight : ''}`}
+              style={segment.position}
+              onMouseEnter={() => setHoveredSegment(segment.id)}
+              onMouseLeave={() => setHoveredSegment(null)}
+            >
+              <p className={styles.labelText}>
+               <span>{segment.name}</span> <br />
+                <span className={styles.percentageSpan}>{segment.percentage}%</span>
+              </p>
+            </div>
+          ))}
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+  );
+};
 
-//   label: {
-//     position: 'absolute',
-//     fontSize: '0.9rem',
-//     color: '#fff',
-//     padding: '0.5rem',
-//     pointerEvents: 'none' as const,
-//     opacity: 0,
-//     transform: 'translateY(20px)',
-//     transition: 'opacity 0.5s ease, transform 0.5s ease',
-//   },
-
-//   visible: {
-//     opacity: 1,
-//     transform: 'translateY(0)',
-//   },
-
-//   // Label positions
-//   labelTeam: {
-//     position: 'absolute',
-//     top: '10%',
-//     left: '45%',
-//   },
-//   labelLiquidity: {
-//     position: 'absolute',
-//     top: '20%',
-//     right: '10%',
-//   },
-//   labelEcosystem: {
-//     position: 'absolute',
-//     top: '50%',
-//     right: '5%',
-//   },
-//   labelMarketing: {
-//     position: 'absolute',
-//     top: '75%',
-//     right: '15%',
-//   },
-//   labelFarming: {
-//     position: 'absolute',
-//     bottom: '10%',
-//     left: '45%',
-//   },
-//   labelIDO: {
-//     position: 'absolute',
-//     bottom: '15%',
-//     left: '15%',
-//   },
-//   labelAirdrop: {
-//     position: 'absolute',
-//     top: '40%',
-//     left: '0%',
-//   },
-//   labelSeed: {
-//     position: 'absolute',
-//     top: '30%',
-//     left: '0%',
-//   },
-//   labelAdvisors: {
-//     position: 'absolute',
-//     top: '60%',
-//     left: '15%',
-//   },
-//   labelPrivate: {
-//     position: 'absolute',
-//     top: '0%',
-//     left: '15%',
-//   },
-
-//   labelText: {
-//     margin: 0,
-//     padding: 0,
-//   },
-
-//   percentageSpan: {
-//     fontWeight: 'bold',
-//     color: '#00ff00',
-//   }
-// };
-
-// export default function TokenomicsSection() {
-//   const sectionRef = useRef<HTMLElement>(null);
-//   const chartRef = useRef<HTMLDivElement>(null);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             // Animate SVG paths
-//             const paths = entry.target.querySelectorAll('path');
-//             paths.forEach((path, index) => {
-//               setTimeout(() => {
-//                 path.style.animation = `revealPath 2s ease forwards`;
-//               }, index * 200);
-//             });
-
-//             // Animate labels
-//             const labels = entry.target.querySelectorAll('[data-label]');
-//             labels.forEach((label, index) => {
-//               setTimeout(() => {
-//                 if (label instanceof HTMLElement) {
-//                   label.style.opacity = '1';
-//                   label.style.transform = 'translateY(0)';
-//                 }
-//               }, index * 200 + 1000);
-//             });
-//           }
-//         });
-//       },
-//       { threshold: 0.3 }
-//     );
-
-//     if (chartRef.current) {
-//       observer.observe(chartRef.current);
-//     }
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <section ref={sectionRef} style={styles.section}>
-//       <div style={styles.container}>
-//         <h2 style={styles.title}>
-//           Token<span style={styles.titleSpan}>omics</span>
-//         </h2>
-//         <p style={styles.subtitle}>FSQN token distribution</p>
-
-//         <div ref={chartRef} style={styles.chartContainer}>
-//           <svg width="747" height="747" viewBox="0 0 747 747" fill="none" xmlns="http://www.w3.org/2000/svg">
-//             <style>
-//               {`
-//                 @keyframes revealPath {
-//                   from { stroke-dashoffset: 1000; }
-//                   to { stroke-dashoffset: 0; }
-//                 }
-//                 path {
-//                   stroke-dasharray: 1000;
-//                   stroke-dashoffset: 1000;
-//                 }
-//               `}
-//             </style>
-//             <g opacity="0.9">
-//                 <foreignObject x="97.1025" y="82.8008" width="287.924" height="270.292"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_0_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-1-inside-1_642_7849" fill="white">
-//                 <path d="M126.46 283.067C124.592 282.386 123.628 280.318 124.335 278.459C141.137 234.276 169.416 195.344 206.285 165.693C243.155 136.042 287.247 116.772 334.006 109.839C335.973 109.548 337.786 110.933 338.051 112.903L352.595 221.062C352.86 223.033 351.476 224.84 349.512 225.153C323.776 229.245 299.53 239.989 279.191 256.347C258.851 272.704 243.156 294.081 233.638 318.34C232.912 320.191 230.849 321.155 228.982 320.474L126.46 283.067Z"/>
-//                 </mask>
-//                 <path d="M126.46 283.067C124.592 282.386 123.628 280.318 124.335 278.459C141.137 234.276 169.416 195.344 206.285 165.693C243.155 136.042 287.247 116.772 334.006 109.839C335.973 109.548 337.786 110.933 338.051 112.903L352.595 221.062C352.86 223.033 351.476 224.84 349.512 225.153C323.776 229.245 299.53 239.989 279.191 256.347C258.851 272.704 243.156 294.081 233.638 318.34C232.912 320.191 230.849 321.155 228.982 320.474L126.46 283.067Z" fill="#232323"/>
-//                 <path d="M126.46 283.067C124.592 282.386 123.628 280.318 124.335 278.459C141.137 234.276 169.416 195.344 206.285 165.693C243.155 136.042 287.247 116.772 334.006 109.839C335.973 109.548 337.786 110.933 338.051 112.903L352.595 221.062C352.86 223.033 351.476 224.84 349.512 225.153C323.776 229.245 299.53 239.989 279.191 256.347C258.851 272.704 243.156 294.081 233.638 318.34C232.912 320.191 230.849 321.155 228.982 320.474L126.46 283.067Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-1-inside-1_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="80.373" y="251.571" width="184.765" height="210.548"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_1_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter1_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-2-inside-2_642_7849" fill="white">
-//                 <path d="M117.059 429.636C115.117 430.061 113.195 428.832 112.795 426.884C102.799 378.129 106.678 327.544 123.992 280.883C124.684 279.019 126.771 278.097 128.625 278.814L230.418 318.16C232.273 318.877 233.191 320.96 232.519 322.832C223.413 348.185 221.316 375.529 226.449 401.975C226.828 403.927 225.603 405.846 223.661 406.271L117.059 429.636Z"/>
-//                 </mask>
-//                 <path d="M117.059 429.636C115.117 430.061 113.195 428.832 112.795 426.884C102.799 378.129 106.678 327.544 123.992 280.883C124.684 279.019 126.771 278.097 128.625 278.814L230.418 318.16C232.273 318.877 233.191 320.96 232.519 322.832C223.413 348.185 221.316 375.529 226.449 401.975C226.828 403.927 225.603 405.846 223.661 406.271L117.059 429.636Z" fill="#E0E0E0"/>
-//                 <path d="M117.059 429.636C115.117 430.061 113.195 428.832 112.795 426.884C102.799 378.129 106.678 327.544 123.992 280.883C124.684 279.019 126.771 278.097 128.625 278.814L230.418 318.16C232.273 318.877 233.191 320.96 232.519 322.832C223.413 348.185 221.316 375.529 226.449 401.975C226.828 403.927 225.603 405.846 223.661 406.271L117.059 429.636Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-2-inside-2_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="85.6514" y="374.938" width="209.434" height="211.328"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_2_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter2_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-3-inside-3_642_7849" fill="white">
-//                 <path d="M181.903 552.894C180.452 554.253 178.171 554.18 176.832 552.711C144.462 517.211 122.308 473.606 112.723 426.529C112.327 424.581 113.612 422.696 115.566 422.326L222.789 402.001C224.742 401.631 226.622 402.916 227.039 404.86C232.487 430.251 244.447 453.79 261.741 473.162C263.065 474.645 262.994 476.921 261.544 478.28L181.903 552.894Z"/>
-//                 </mask>
-//                 <path d="M181.903 552.894C180.452 554.253 178.171 554.18 176.832 552.711C144.462 517.211 122.308 473.606 112.723 426.529C112.327 424.581 113.612 422.696 115.566 422.326L222.789 402.001C224.742 401.631 226.622 402.916 227.039 404.86C232.487 430.251 244.447 453.79 261.741 473.162C263.065 474.645 262.994 476.921 261.544 478.28L181.903 552.894Z" fill="#529052"/>
-//                 <path d="M181.903 552.894C180.452 554.253 178.171 554.18 176.832 552.711C144.462 517.211 122.308 473.606 112.723 426.529C112.327 424.581 113.612 422.696 115.566 422.326L222.789 402.001C224.742 401.631 226.622 402.916 227.039 404.86C232.487 430.251 244.447 453.79 261.741 473.162C263.065 474.645 262.994 476.921 261.544 478.28L181.903 552.894Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-3-inside-3_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="152.972" y="449.825" width="151.749" height="153.138"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_3_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter3_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-4-inside-4_642_7849" fill="white">
-//                 <path d="M198.783 569.361C197.46 570.846 195.182 570.978 193.716 569.635C189.322 565.609 185.064 561.437 180.95 557.126C179.578 555.688 179.664 553.408 181.12 552.055L261.087 477.79C262.544 476.437 264.818 476.524 266.206 477.948C267.814 479.598 269.46 481.211 271.143 482.785C272.595 484.144 272.728 486.416 271.405 487.9L198.783 569.361Z"/>
-//                 </mask>
-//                 <path d="M198.783 569.361C197.46 570.846 195.182 570.978 193.716 569.635C189.322 565.609 185.064 561.437 180.95 557.126C179.578 555.688 179.664 553.408 181.12 552.055L261.087 477.79C262.544 476.437 264.818 476.524 266.206 477.948C267.814 479.598 269.46 481.211 271.143 482.785C272.595 484.144 272.728 486.416 271.405 487.9L198.783 569.361Z" fill="#A4E5A4"/>
-//                 <path d="M198.783 569.361C197.46 570.846 195.182 570.978 193.716 569.635C189.322 565.609 185.064 561.437 180.95 557.126C179.578 555.688 179.664 553.408 181.12 552.055L261.087 477.79C262.544 476.437 264.818 476.524 266.206 477.948C267.814 479.598 269.46 481.211 271.143 482.785C272.595 484.144 272.728 486.416 271.405 487.9L198.783 569.361Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-4-inside-4_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="179.878" y="433.866" width="442.346" height="238.046"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_4_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter4_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-5-inside-5_642_7849" fill="white">
-//                 <path d="M588.295 524.206C589.922 525.348 590.318 527.594 589.154 529.206C568.476 557.842 542.296 582.085 512.132 600.509C480.944 619.558 446.166 631.978 409.966 636.995C373.766 642.011 336.921 639.516 301.728 629.666C267.691 620.139 235.905 603.929 208.219 581.995C206.661 580.761 206.43 578.491 207.686 576.95L276.607 492.333C277.862 490.792 280.127 490.564 281.698 491.782C296.986 503.634 314.434 512.419 333.084 517.639C352.89 523.182 373.625 524.586 393.997 521.763C414.37 518.94 433.942 511.95 451.494 501.23C468.021 491.135 482.423 477.936 493.912 462.374C495.092 460.774 497.334 460.378 498.962 461.52L588.295 524.206Z"/>
-//                 </mask>
-//                 <path d="M588.295 524.206C589.922 525.348 590.318 527.594 589.154 529.206C568.476 557.842 542.296 582.085 512.132 600.509C480.944 619.558 446.166 631.978 409.966 636.995C373.766 642.011 336.921 639.516 301.728 629.666C267.691 620.139 235.905 603.929 208.219 581.995C206.661 580.761 206.43 578.491 207.686 576.95L276.607 492.333C277.862 490.792 280.127 490.564 281.698 491.782C296.986 503.634 314.434 512.419 333.084 517.639C352.89 523.182 373.625 524.586 393.997 521.763C414.37 518.94 433.942 511.95 451.494 501.23C468.021 491.135 482.423 477.936 493.912 462.374C495.092 460.774 497.334 460.378 498.962 461.52L588.295 524.206Z" fill="#00FF00"/>
-//                 <path d="M588.295 524.206C589.922 525.348 590.318 527.594 589.154 529.206C568.476 557.842 542.296 582.085 512.132 600.509C480.944 619.558 446.166 631.978 409.966 636.995C373.766 642.011 336.921 639.516 301.728 629.666C267.691 620.139 235.905 603.929 208.219 581.995C206.661 580.761 206.43 578.491 207.686 576.95L276.607 492.333C277.862 490.792 280.127 490.564 281.698 491.782C296.986 503.634 314.434 512.419 333.084 517.639C352.89 523.182 373.625 524.586 393.997 521.763C414.37 518.94 433.942 511.95 451.494 501.23C468.021 491.135 482.423 477.936 493.912 462.374C495.092 460.774 497.334 460.378 498.962 461.52L588.295 524.206Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-5-inside-5_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="171.044" y="459.779" width="139.54" height="151.997"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_5_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter5_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-6-inside-6_642_7849" fill="white">
-//                 <path d="M209.025 578.034C207.78 579.584 205.512 579.833 203.979 578.566C202.393 577.255 200.821 575.926 199.266 574.579C197.763 573.277 197.632 571 198.953 569.515L271.504 487.99C272.826 486.505 275.099 486.376 276.616 487.661C276.699 487.732 276.782 487.802 276.865 487.872C278.384 489.155 278.634 491.417 277.389 492.967L209.025 578.034Z"/>
-//                 </mask>
-//                 <path d="M209.025 578.034C207.78 579.584 205.512 579.833 203.979 578.566C202.393 577.255 200.821 575.926 199.266 574.579C197.763 573.277 197.632 571 198.953 569.515L271.504 487.99C272.826 486.505 275.099 486.376 276.616 487.661C276.699 487.732 276.782 487.802 276.865 487.872C278.384 489.155 278.634 491.417 277.389 492.967L209.025 578.034Z" fill="white"/>
-//                 <path d="M209.025 578.034C207.78 579.584 205.512 579.833 203.979 578.566C202.393 577.255 200.821 575.926 199.266 574.579C197.763 573.277 197.632 571 198.953 569.515L271.504 487.99C272.826 486.505 275.099 486.376 276.616 487.661C276.699 487.732 276.782 487.802 276.865 487.872C278.384 489.155 278.634 491.417 277.389 492.967L209.025 578.034Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-6-inside-6_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="469.754" y="416.745" width="170.92" height="142.197"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_6_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter6_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-7-inside-7_642_7849" fill="white">
-//                 <path d="M606.339 494.476C608.103 495.393 608.792 497.567 607.852 499.319C603.096 508.176 597.841 516.756 592.114 525.019C590.982 526.653 588.731 527.027 587.113 525.873L498.27 462.494C496.651 461.339 496.279 459.093 497.394 457.448C499.979 453.633 502.387 449.702 504.609 445.666C505.568 443.924 507.738 443.235 509.502 444.152L606.339 494.476Z"/>
-//                 </mask>
-//                 <path d="M606.339 494.476C608.103 495.393 608.792 497.567 607.852 499.319C603.096 508.176 597.841 516.756 592.114 525.019C590.982 526.653 588.731 527.027 587.113 525.873L498.27 462.494C496.651 461.339 496.279 459.093 497.394 457.448C499.979 453.633 502.387 449.702 504.609 445.666C505.568 443.924 507.738 443.235 509.502 444.152L606.339 494.476Z" fill="#494949"/>
-//                 <path d="M606.339 494.476C608.103 495.393 608.792 497.567 607.852 499.319C603.096 508.176 597.841 516.756 592.114 525.019C590.982 526.653 588.731 527.027 587.113 525.873L498.27 462.494C496.651 461.339 496.279 459.093 497.394 457.448C499.979 453.633 502.387 449.702 504.609 445.666C505.568 443.924 507.738 443.235 509.502 444.152L606.339 494.476Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-7-inside-7_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="479.371" y="395.316" width="177.58" height="135.98"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_7_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter7_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-8-inside-8_642_7849" fill="white">
-//                 <path d="M622.112 457.427C623.996 458.063 625.01 460.106 624.348 461.981C620.105 474.005 615.004 485.707 609.083 496.999C608.16 498.76 605.973 499.408 604.225 498.461L508.267 446.48C506.519 445.533 505.874 443.35 506.778 441.579C509.565 436.125 512.015 430.506 514.114 424.752C514.795 422.884 516.834 421.871 518.717 422.507L622.112 457.427Z"/>
-//                 </mask>
-//                 <path d="M622.112 457.427C623.996 458.063 625.01 460.106 624.348 461.981C620.105 474.005 615.004 485.707 609.083 496.999C608.16 498.76 605.973 499.408 604.225 498.461L508.267 446.48C506.519 445.533 505.874 443.35 506.778 441.579C509.565 436.125 512.015 430.506 514.114 424.752C514.795 422.884 516.834 421.871 518.717 422.507L622.112 457.427Z" fill="#37C637"/>
-//                 <path d="M622.112 457.427C623.996 458.063 625.01 460.106 624.348 461.981C620.105 474.005 615.004 485.707 609.083 496.999C608.16 498.76 605.973 499.408 604.225 498.461L508.267 446.48C506.519 445.533 505.874 443.35 506.778 441.579C509.565 436.125 512.015 430.506 514.114 424.752C514.795 422.884 516.834 421.871 518.717 422.507L622.112 457.427Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-8-inside-8_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="463.713" y="179.247" width="208.201" height="312.742"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_8_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter8_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-9-inside-9_642_7849" fill="white">
-//                 <path d="M576.439 207.062C577.977 205.801 580.247 206.025 581.487 207.58C609.071 242.178 627.604 283.128 635.38 326.727C643.156 370.326 639.923 415.157 626.001 457.159C625.375 459.046 623.322 460.041 621.443 459.39L518.327 423.654C516.449 423.003 515.458 420.954 516.064 419.06C523.485 395.856 525.139 371.172 520.855 347.153C516.571 323.134 506.486 300.543 491.5 281.336C490.277 279.768 490.498 277.503 492.036 276.242L576.439 207.062Z"/>
-//                 </mask>
-//                 <path d="M576.439 207.062C577.977 205.801 580.247 206.025 581.487 207.58C609.071 242.178 627.604 283.128 635.38 326.727C643.156 370.326 639.923 415.157 626.001 457.159C625.375 459.046 623.322 460.041 621.443 459.39L518.327 423.654C516.449 423.003 515.458 420.954 516.064 419.06C523.485 395.856 525.139 371.172 520.855 347.153C516.571 323.134 506.486 300.543 491.5 281.336C490.277 279.768 490.498 277.503 492.036 276.242L576.439 207.062Z" fill="#C4D6C4"/>
-//                 <path d="M576.439 207.062C577.977 205.801 580.247 206.025 581.487 207.58C609.071 242.178 627.604 283.128 635.38 326.727C643.156 370.326 639.923 415.157 626.001 457.159C625.375 459.046 623.322 460.041 621.443 459.39L518.327 423.654C516.449 423.003 515.458 420.954 516.064 419.06C523.485 395.856 525.139 371.172 520.855 347.153C516.571 323.134 506.486 300.543 491.5 281.336C490.277 279.768 490.498 277.503 492.036 276.242L576.439 207.062Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-9-inside-9_642_7849)"/>
-//                 </g>
-//                 <foreignObject x="310.989" y="80.374" width="313.317" height="242.761"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(13.5px);clip-path:url(#bgblur_9_642_7849_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter9_d_642_7849)" data-figma-bg-blur-radius="27">
-//                 <mask id="path-10-inside-10_642_7849" fill="white">
-//                 <path d="M338.022 113.375C337.754 111.405 339.134 109.588 341.107 109.347C385.412 103.922 430.39 109.728 471.893 126.258C513.396 142.788 550.051 169.494 578.494 203.893C579.761 205.425 579.514 207.693 577.965 208.939L492.927 277.339C491.378 278.585 489.115 278.336 487.832 276.817C471.971 258.041 451.718 243.442 428.849 234.334C405.98 225.226 381.236 221.903 356.809 224.634C354.833 224.855 353.019 223.48 352.751 221.51L338.022 113.375Z"/>
-//                 </mask>
-//                 <path d="M338.022 113.375C337.754 111.405 339.134 109.588 341.107 109.347C385.412 103.922 430.39 109.728 471.893 126.258C513.396 142.788 550.051 169.494 578.494 203.893C579.761 205.425 579.514 207.693 577.965 208.939L492.927 277.339C491.378 278.585 489.115 278.336 487.832 276.817C471.971 258.041 451.718 243.442 428.849 234.334C405.98 225.226 381.236 221.903 356.809 224.634C354.833 224.855 353.019 223.48 352.751 221.51L338.022 113.375Z" fill="#2F8D2D"/>
-//                 <path d="M338.022 113.375C337.754 111.405 339.134 109.588 341.107 109.347C385.412 103.922 430.39 109.728 471.893 126.258C513.396 142.788 550.051 169.494 578.494 203.893C579.761 205.425 579.514 207.693 577.965 208.939L492.927 277.339C491.378 278.585 489.115 278.336 487.832 276.817C471.971 258.041 451.718 243.442 428.849 234.334C405.98 225.226 381.236 221.903 356.809 224.634C354.833 224.855 353.019 223.48 352.751 221.51L338.022 113.375Z" stroke="white" stroke-opacity="0.3" stroke-width="0.9" mask="url(#path-10-inside-10_642_7849)"/>
-//                 </g>
-//                 </g>
-//                 <defs>
-//                 <filter id="filter0_d_642_7849" x="97.1025" y="82.8008" width="287.924" height="270.292" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_0_642_7849_clip_path"><path transform="translate(-97.1025 -82.8008)" d="M126.46 283.067C124.592 282.386 123.628 280.318 124.335 278.459C141.137 234.276 169.416 195.344 206.285 165.693C243.155 136.042 287.247 116.772 334.006 109.839C335.973 109.548 337.786 110.933 338.051 112.903L352.595 221.062C352.86 223.033 351.476 224.84 349.512 225.153C323.776 229.245 299.53 239.989 279.191 256.347C258.851 272.704 243.156 294.081 233.638 318.34C232.912 320.191 230.849 321.155 228.982 320.474L126.46 283.067Z"/>
-//                 </clipPath><filter id="filter1_d_642_7849" x="80.373" y="251.571" width="184.765" height="210.548" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_1_642_7849_clip_path"><path transform="translate(-80.373 -251.571)" d="M117.059 429.636C115.117 430.061 113.195 428.832 112.795 426.884C102.799 378.129 106.678 327.544 123.992 280.883C124.684 279.019 126.771 278.097 128.625 278.814L230.418 318.16C232.273 318.877 233.191 320.96 232.519 322.832C223.413 348.185 221.316 375.529 226.449 401.975C226.828 403.927 225.603 405.846 223.661 406.271L117.059 429.636Z"/>
-//                 </clipPath><filter id="filter2_d_642_7849" x="85.6514" y="374.938" width="209.434" height="211.328" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_2_642_7849_clip_path"><path transform="translate(-85.6514 -374.938)" d="M181.903 552.894C180.452 554.253 178.171 554.18 176.832 552.711C144.462 517.211 122.308 473.606 112.723 426.529C112.327 424.581 113.612 422.696 115.566 422.326L222.789 402.001C224.742 401.631 226.622 402.916 227.039 404.86C232.487 430.251 244.447 453.79 261.741 473.162C263.065 474.645 262.994 476.921 261.544 478.28L181.903 552.894Z"/>
-//                 </clipPath><filter id="filter3_d_642_7849" x="152.972" y="449.825" width="151.749" height="153.138" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_3_642_7849_clip_path"><path transform="translate(-152.972 -449.825)" d="M198.783 569.361C197.46 570.846 195.182 570.978 193.716 569.635C189.322 565.609 185.064 561.437 180.95 557.126C179.578 555.688 179.664 553.408 181.12 552.055L261.087 477.79C262.544 476.437 264.818 476.524 266.206 477.948C267.814 479.598 269.46 481.211 271.143 482.785C272.595 484.144 272.728 486.416 271.405 487.9L198.783 569.361Z"/>
-//                 </clipPath><filter id="filter4_d_642_7849" x="179.878" y="433.866" width="442.346" height="238.046" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_4_642_7849_clip_path"><path transform="translate(-179.878 -433.866)" d="M588.295 524.206C589.922 525.348 590.318 527.594 589.154 529.206C568.476 557.842 542.296 582.085 512.132 600.509C480.944 619.558 446.166 631.978 409.966 636.995C373.766 642.011 336.921 639.516 301.728 629.666C267.691 620.139 235.905 603.929 208.219 581.995C206.661 580.761 206.43 578.491 207.686 576.95L276.607 492.333C277.862 490.792 280.127 490.564 281.698 491.782C296.986 503.634 314.434 512.419 333.084 517.639C352.89 523.182 373.625 524.586 393.997 521.763C414.37 518.94 433.942 511.95 451.494 501.23C468.021 491.135 482.423 477.936 493.912 462.374C495.092 460.774 497.334 460.378 498.962 461.52L588.295 524.206Z"/>
-//                 </clipPath><filter id="filter5_d_642_7849" x="171.044" y="459.779" width="139.54" height="151.997" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_5_642_7849_clip_path"><path transform="translate(-171.044 -459.779)" d="M209.025 578.034C207.78 579.584 205.512 579.833 203.979 578.566C202.393 577.255 200.821 575.926 199.266 574.579C197.763 573.277 197.632 571 198.953 569.515L271.504 487.99C272.826 486.505 275.099 486.376 276.616 487.661C276.699 487.732 276.782 487.802 276.865 487.872C278.384 489.155 278.634 491.417 277.389 492.967L209.025 578.034Z"/>
-//                 </clipPath><filter id="filter6_d_642_7849" x="469.754" y="416.745" width="170.92" height="142.197" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_6_642_7849_clip_path"><path transform="translate(-469.754 -416.745)" d="M606.339 494.476C608.103 495.393 608.792 497.567 607.852 499.319C603.096 508.176 597.841 516.756 592.114 525.019C590.982 526.653 588.731 527.027 587.113 525.873L498.27 462.494C496.651 461.339 496.279 459.093 497.394 457.448C499.979 453.633 502.387 449.702 504.609 445.666C505.568 443.924 507.738 443.235 509.502 444.152L606.339 494.476Z"/>
-//                 </clipPath><filter id="filter7_d_642_7849" x="479.371" y="395.316" width="177.58" height="135.98" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_7_642_7849_clip_path"><path transform="translate(-479.371 -395.316)" d="M622.112 457.427C623.996 458.063 625.01 460.106 624.348 461.981C620.105 474.005 615.004 485.707 609.083 496.999C608.16 498.76 605.973 499.408 604.225 498.461L508.267 446.48C506.519 445.533 505.874 443.35 506.778 441.579C509.565 436.125 512.015 430.506 514.114 424.752C514.795 422.884 516.834 421.871 518.717 422.507L622.112 457.427Z"/>
-//                 </clipPath><filter id="filter8_d_642_7849" x="463.713" y="179.247" width="208.201" height="312.742" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="5.4" dy="5.4"/>
-//                 <feGaussianBlur stdDeviation="13.5"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_8_642_7849_clip_path"><path transform="translate(-463.713 -179.247)" d="M576.439 207.062C577.977 205.801 580.247 206.025 581.487 207.58C609.071 242.178 627.604 283.128 635.38 326.727C643.156 370.326 639.923 415.157 626.001 457.159C625.375 459.046 623.322 460.041 621.443 459.39L518.327 423.654C516.449 423.003 515.458 420.954 516.064 419.06C523.485 395.856 525.139 371.172 520.855 347.153C516.571 323.134 506.486 300.543 491.5 281.336C490.277 279.768 490.498 277.503 492.036 276.242L576.439 207.062Z"/>
-//                 </clipPath><filter id="filter9_d_642_7849" x="310.989" y="80.374" width="313.317" height="242.761" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-//                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-//                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-//                 <feOffset dx="9" dy="9"/>
-//                 <feGaussianBlur stdDeviation="18"/>
-//                 <feComposite in2="hardAlpha" operator="out"/>
-//                 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
-//                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_642_7849"/>
-//                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_642_7849" result="shape"/>
-//                 </filter>
-//                 <clipPath id="bgblur_9_642_7849_clip_path"><path transform="translate(-310.989 -80.374)" d="M338.022 113.375C337.754 111.405 339.134 109.588 341.107 109.347C385.412 103.922 430.39 109.728 471.893 126.258C513.396 142.788 550.051 169.494 578.494 203.893C579.761 205.425 579.514 207.693 577.965 208.939L492.927 277.339C491.378 278.585 489.115 278.336 487.832 276.817C471.971 258.041 451.718 243.442 428.849 234.334C405.98 225.226 381.236 221.903 356.809 224.634C354.833 224.855 353.019 223.48 352.751 221.51L338.022 113.375Z"/>
-//                 </clipPath></defs>
-//           </svg>
-
-//           {/* Labels */}
-//           <div data-label style={{...styles.label, ...styles.labelTeam}}>
-//             <p style={styles.labelText}>Team<br /><span style={styles.percentageSpan}>16%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelLiquidity}}>
-//             <p style={styles.labelText}>Liquidity Reserve<br /><span style={styles.percentageSpan}>15%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelEcosystem}}>
-//             <p style={styles.labelText}>Ecosystem incentives<br /><span style={styles.percentageSpan}>15%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelMarketing}}>
-//             <p style={styles.labelText}>Marketing<br /><span style={styles.percentageSpan}>10%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelFarming}}>
-//             <p style={styles.labelText}>Farming &amp; Staking<br /><span style={styles.percentageSpan}>10%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelIDO}}>
-//             <p style={styles.labelText}>IDO<br /><span style={styles.percentageSpan}>3%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelAirdrop}}>
-//             <p style={styles.labelText}>TMA Airdrop<br /><span style={styles.percentageSpan}>2%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelSeed}}>
-//             <p style={styles.labelText}>Seed<br /><span style={styles.percentageSpan}>3%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelAdvisors}}>
-//             <p style={styles.labelText}>Advisors<br /><span style={styles.percentageSpan}>2%</span></p>
-//           </div>
-//           <div data-label style={{...styles.label, ...styles.labelPrivate}}>
-//             <p style={styles.labelText}>Private Sale<br /><span style={styles.percentageSpan}>26%</span></p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
+export default TokenomicsSection;

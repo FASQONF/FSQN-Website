@@ -1,130 +1,224 @@
-.tokenomicsSection {
-    background-color: #000;
-    color: #fff;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
+.section {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Title animations and styles */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.titleSpan {
+  color: #00ff00;
+  position: relative;
+  display: inline-block;
+}
+
+.titleSpan::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00ff00;
+  animation: underlineExpand 1.2s ease forwards 0.5s;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease forwards 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.chartContainer {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.label {
+  position: absolute;
+  font-size: 0.9rem;
+  color: #fff;
+  padding: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 10;
+}
+.labelText span:first-child{
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+  max-width: 80px;
+}
+.label:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.labelText {
+  display: flex;
+  gap: 5px;
+  text-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.labelText::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -12px;            
+  top: 50%;            
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #00ff00;
+}
+.percentageSpan {
+  font-weight: bold;
+  color: #00ff00;
+}
+
+.highlight {
+  background-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.segment {
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  filter: drop-shadow(0 0 0 rgba(0, 255, 0, 0));
+}
+
+.segmentHovered {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7));
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  /* Заголовок */
-  .title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .title span {
-    color: #00ff00;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* Подзаголовок */
-  .subtitle {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 2rem;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Обёртка для диаграммы */
-  .chartWrapper {
-    position: relative;
+}
+
+@keyframes underlineExpand {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media (max-width: 910px) {
+  .chartContainer {
     width: 600px;
     height: 600px;
-    margin: 0 auto;
   }
-  
-  /* Если нужно задать дополнительные стили для SVG */
-  .chartSVG {
-    display: block;
-    margin: 0 auto;
+  .chartContainer svg{
+    width: 550px;
+    height: 550px;
   }
-  
-  /* Пример меток вокруг диаграммы */
-  .labelsWrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+@media (max-width: 760px) {
+  .chartContainer {
     width: 100%;
     height: 100%;
-    pointer-events: none; /* метки не должны мешать взаимодействию */
   }
-  
-  .label {
-    position: absolute;
-    font-size: 0.9rem;
-    color: #fff;
-    /* базовые стили метки, далее подгоните позиционирование */
+  .chartContainer svg{
+    width: 550px;
+    height: 550px;
   }
-  
-  /* Пример координат для метки "Team" */
-  .labelTeam {
-    top: 10%;
-    left: 45%;
-  }
-  
-  /* Пример координат для метки "Liquidity Reserve" */
-  .labelLiquidity {
-    top: 20%;
-    right: 10%;
-  }
-  
-  /* Другие метки – задайте свои координаты */
-  .labelEcosystem {
-    top: 50%;
-    right: 5%;
-  }
-  .labelMarketing {
-    top: 75%;
-    right: 15%;
-  }
-  .labelFarming {
-    bottom: 10%;
-    left: 45%;
-  }
-  .labelIDO {
-    bottom: 15%;
-    left: 15%;
-  }
-  .labelAirdrop {
-    top: 40%;
-    left: 0%;
-  }
-  .labelSeed {
-    top: 30%;
-    left: 0%;
-  }
-  .labelAdvisors {
-    top: 60%;
-    left: 15%;
-  }
-  .labelPrivate {
-    top: 0%;
-    left: 15%;
-  }
-  
-  /* Мобильный вариант */
-  @media (max-width: 768px) {
-    .chartWrapper {
-      width: 300px;
-      height: 300px;
+    /* Сбрасываем абсолютное позиционирование меток */
+    .chartContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .chartSVG {
-      width: 300px;
-      height: 300px;
+    
+    .labels{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 400px;
+      max-height: 400px;
+      gap: 40px;
+      row-gap: 10px;
     }
-    /* Перенастройте метки для меньшего экрана, если необходимо */
-    .labelTeam {
-      top: 5%;
-      left: 40%;
+    .label {
+      position: static;
+      transform: none;
+      width: 150px;
+      opacity: 1; /* Метки сразу видны, если требуется */
+      margin: 0.5rem 0;
     }
-    .labelLiquidity {
-      top: 10%;
-      right: 0%;
-    }
-    /* ...и т.д. */
+}
+@media (max-width: 550px) {
+  .chartContainer svg{
+    width: 400px;
+    height: 400px;
   }
-  
+  .labels{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 320px;
+    max-height: 400px;
+    gap: 10px;
+    row-gap: 10px;
+  }
+  .label{
+    width: 130px;
+    }
+  .labelText{
+    display: flex;
+    width: 110px;
+justify-content: center;
+  }
+}

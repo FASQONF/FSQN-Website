@@ -1,30 +1,48 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./FSQNTokenSection.module.css";
 
 export default function FSQNTokenSection() {
   return (
     <section className={styles.fsqnSection}>
       <div className={styles.container}>
-      <div className={styles.crystal1Wrapper}>
-            <Image
-              src="/images/tokenomics/metal1.png"
-              alt="Crystal 1"
-              fill
-              className={styles.crystalImage}
-            />
-          </div>
-        <div className={styles.phoneBlock}>
-          
-          <div className={styles.crystal2Wrapper}>
+        {/* Кристалл 1 (фон) с анимацией справа -> влево */}
+        <motion.div
+          className={styles.crystal1Wrapper}
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <Image
+            src="/images/tokenomics/metal1.png"
+            alt="Crystal 1"
+            fill
+            className={styles.crystalImage}
+          />
+        </motion.div>
+
+        {/* Блок с телефоном и кристаллом 2 */}
+        <motion.div
+          className={styles.phoneBlock}
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <motion.div
+            className={styles.crystal2Wrapper}
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
             <Image
               src="/images/tokenomics/metal2.png"
               alt="Crystal 2"
               fill
               className={styles.crystalImage}
             />
-          </div>
+          </motion.div>
 
           <div className={styles.phoneWrapper}>
             <Image
@@ -35,17 +53,22 @@ export default function FSQNTokenSection() {
               className={styles.phoneImage}
             />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Текстовый блок: Заголовок, описание, иконки */}
-        <div className={styles.textBlock}>
+        {/* Текстовый блок (заголовок, описание, иконки) появляется слева -> направо */}
+        <motion.div
+          className={styles.textBlock}
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <h2 className={styles.title}>
             FSQN <span>Token</span>
           </h2>
           <p className={styles.description}>
             <span>
-            With our FSQN token, you get access to all the functionality of our
-            platform!
+              With our FSQN token, you get access to all the functionality of our
+              platform!
             </span>
             <br />
             <br />
@@ -72,7 +95,7 @@ export default function FSQNTokenSection() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

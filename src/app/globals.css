@@ -1,6 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://db.onlinewebfonts.com/c/37bd36d3b639ac472b79d48f73ebe02b?family=Franie+Test');
+@font-face {
+  font-family: "Franie Test";
+  src: url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.eot");
+  src: url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/37bd36d3b639ac472b79d48f73ebe02b.svg#Franie Test")format("svg");
+}
 html,
 body {
   width: 100vw;

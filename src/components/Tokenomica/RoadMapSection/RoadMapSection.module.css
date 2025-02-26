@@ -140,10 +140,13 @@
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .card:not(:nth-child(2n+1))::before {
-      left: -20px;
-      width: 30px;
-      height: 30px;
+    .card::before {
+     display: none;
+    }
+    .roadmapSection{
+      height: 100%;
+      min-height: 100vh;
+      padding-bottom: 50px;
     }
   }
   

@@ -54,14 +54,33 @@
   }
   
   /* Адаптив */
-  @media (max-width: 768px) {
+  @media (max-width: 668px) {
     .container {
       flex-direction: column; /* текст сверху, иконки снизу */
       align-items: flex-start;
     }
-  
+    .stayTunedSection {
+      background-color: #fff; /* белый фон */
+      color: #000;
+      padding: 1rem 20px; 
+      text-align: left;
+    }
+    
+    .title{
+      font-size: 28px;
+      margin-bottom: 10px;
+      line-height: 143%;
+    }
+    .subtitle{
+      font-size: 14px;
+      line-height: 157%;
+    }
     .iconsBlock {
       margin-top: 1rem;
+    }
+    .iconLink img {
+      width: 37;
+      height: 37;
     }
   }
   

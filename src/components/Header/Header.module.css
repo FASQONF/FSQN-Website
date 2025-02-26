@@ -9,6 +9,7 @@
   padding: 20px 20px;
   margin: 0 auto;
   position: relative;
+  z-index: 10;
 }
 
 /* Левая часть (логотип) */

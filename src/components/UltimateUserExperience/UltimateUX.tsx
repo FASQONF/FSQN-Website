@@ -1,7 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 import styles from "./UltimateUX.module.css";
 
 interface FeatureItem {
@@ -41,8 +43,15 @@ const features: FeatureItem[] = [
   },
 ];
 
-// Функция для определения анимации карточки по её id
-function getAnimationProps(id: string) {
+function getAnimationProps(id: string, disableAnimation: boolean) {
+  // Если анимация отключена, возвращаем одинаковые значения initial и animate
+  if (disableAnimation) {
+    return {
+      initial: { opacity: 1, x: 0, y: 0, rotate: 0 },
+      animate: { opacity: 1, x: 0, y: 0, rotate: 0 },
+    };
+  }
+  // Иначе возвращаем исходные варианты
   switch (id) {
     case "01":
       return {
@@ -73,13 +82,20 @@ function getAnimationProps(id: string) {
 }
 
 export default function UltimateUX() {
+  // Определяем, мобильное ли устройство (например, ширина < 768px)
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const disableAnimation = isMobile; // Для мобильных отключаем появление
+
   return (
     <div className={styles.container}>
-      {/* Заголовок и подзаголовок (анимация сверху вниз) */}
+      {/* Заголовок и подзаголовок */}
       <motion.div
         className={styles.header}
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={disableAnimation ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        whileInView={
+          disableAnimation ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }
+        }
+        viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8 }}
       >
         <h1 className={styles.title}>
@@ -88,10 +104,10 @@ export default function UltimateUX() {
         <p className={styles.subtitle}>Discover the best with Fasqon</p>
       </motion.div>
 
-      {/* Сетка (на десктопе) / Горизонтальный слайдер (на мобилке) */}
+      {/* Сетка карточек */}
       <div className={styles.grid}>
         {features.map((feature) => {
-          const animationProps = getAnimationProps(feature.id);
+          const animationProps = getAnimationProps(feature.id, disableAnimation);
           const delay = parseInt(feature.id, 10) * 0.2;
           return (
             <motion.div
@@ -100,7 +116,8 @@ export default function UltimateUX() {
                 feature.id === "02" ? styles.whiteCard : ""
               }`}
               initial={animationProps.initial}
-              animate={animationProps.animate}
+              whileInView={animationProps.animate}
+              viewport={{ once: true, amount: 0.8 }}
               transition={{ duration: 0.8, delay }}
             >
               {feature.id === "01" ? (

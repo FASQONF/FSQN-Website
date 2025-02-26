@@ -44,7 +44,8 @@ export default function TeamSection() {
         <motion.div
           className={styles.header}
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
           <h2 className={styles.title}>
@@ -64,7 +65,8 @@ export default function TeamSection() {
               key={member.name}
               className={styles.card}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
               <div className={styles.avatarWrapper}>

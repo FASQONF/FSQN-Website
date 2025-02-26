@@ -1,127 +1,254 @@
 .fsqnSection {
-    background-color: #000; 
-    color: #fff;
-    padding: 4rem 20px;
-    position: relative;
+  background-color: #000; 
+  color: #fff;
+  padding: 4rem 20px;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Блок с телефоном (и кристаллами) */
+.phoneBlock {
+  position: relative;
+}
+
+.crystal1Wrapper {
+  position: absolute;
+  top: -50px;
+  right: -200px;
+  width: 603px;
+  height: 614px;
+  z-index: 0;
+  animation: crystalMove1 6s ease-in-out infinite;
+}
+
+.crystal2Wrapper {
+  position: absolute;
+  bottom: 0;
+  left: -270px;
+  width: 471px;
+  height: 476px;
+  z-index: 0;
+  animation: crystalMove2 6s ease-in-out infinite;
+}
+@keyframes crystalMove1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
   }
-  
+  10% {
+    transform: translate(25px, -25px) scale(1.05) rotate(2deg);
+  }
+  30% {
+    transform: translate(25px, -25px) scale(1.05) rotate(2deg);
+  }
+  /* Медленный возврат с небольшим overshoot */
+  70% {
+    transform: translate(5px, -5px) scale(0.98) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes crystalMove2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  10% {
+    transform: translate(-25px, 25px) scale(0.95) rotate(-2deg);
+  }
+  30% {
+    transform: translate(-25px, 25px) scale(0.95) rotate(-2deg);
+  }
+  /* Медленный возврат с небольшим overshoot */
+  70% {
+    transform: translate(-5px, 5px) scale(1.02) rotate(1deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+
+.crystalImage {
+  object-fit: contain;
+}
+
+/* Телефон */
+.phoneWrapper {
+  position: relative;
+  z-index: 1;
+  width: 350px;  
+  height: 700px; 
+  margin: 0 auto; 
+}
+
+.phoneImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Текстовый блок (заголовок, описание, иконки) */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-family: "Franie Test","Montserrat", serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 120%;
+  margin-bottom: 0.5rem;
+}
+
+.title span {
+  color: #00ff00;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  max-width: 590px;
+}
+
+/* Иконки */
+.iconsRow {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.iconCard {
+  height: 140px;
+  width: 276px;
+  border: 0.5px solid #2f2f2f;
+  border-radius: 32px;
+  padding: 24px;
+  background: #101010;
+}
+
+/* ====== Адаптивные стили ====== */
+
+/* Для планшетов и десктопов (ширина >= 768px) */
+@media (min-width: 768px) {
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* На мобильных – колонка, на десктопе – можно row-reverse, если нужно */
-    display: flex;
-    flex-direction: column; 
-    gap: 2rem;
-  }
-  
-  /* Блок с телефоном (и кристаллами) */
-  .phoneBlock {
-    position: relative;
-  }
-  
-  /* Кристалл 1 */
-  .crystal1Wrapper {
-    position: absolute;
-    top: -50px;
-    right: -200px;
-    width: 603px;
-    height: 614px;
-    z-index: 0;
-  }
-  .crystal2Wrapper {
-    position: absolute;
-    bottom: 0;
-    left:-270px;
-    width: 471px;
-    height: 476px;
-    z-index: 0;
-  }
-  
-  .crystalImage {
-    object-fit: contain;
-  }
-  
-  /* Телефон */
-  .phoneWrapper {
-    position: relative;
-    z-index: 1;
-    width: 350px;  
-    height: 700px; 
-    margin: 0 auto; 
-  }
-  
-  .phoneImage {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  /* Текстовый блок (заголовок, описание, иконки) */
-  .textBlock {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .textBlock {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .phoneBlock {
+    align-self: flex-end;
+    padding-right: 50px;
+  }
+}
+
+/* Для мобильных (ширина < 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+    gap: 0;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .subtitle {
+    font-size: 15px;
     text-align: center;
   }
-  
-  /* Заголовок */
+  .phoneWrapper {
+    width: 250px;
+    height: 500px;
+  }
+  .crystal1Wrapper {
+    top: -30px;
+    right: -150px;
+    width: 450px;
+    height: 450px;
+  }
+  .crystal2Wrapper {
+    bottom: -10px;
+    left: -180px;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Для очень маленьких экранов (ширина < 550px) */
+@media (max-width: 550px) {
+  .container {
+    padding: 1rem;
+  }
   .title {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 120%;
-    font-family: "Franie Test","Montserrat", serif;
+    font-size: 28px;
   }
-  
-  .title span {
-    color: #00ff00;
+  .subtitle {
+    font-size: 13px;
   }
-  
-  /* Описание */
-  .description {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 144%;
-    letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 590px;
+  .phoneWrapper {
+    width: 220px;
+    height: 440px;
   }
-  .description span { 
-    font-weight: 700;
+  .crystal1Wrapper {
+    top: -20px;
+    right: -120px;
+    width: 350px;
+    height: 350px;
   }
-  /* Иконки */
+  .crystal2Wrapper {
+    bottom: -20px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+  }
   .iconsRow {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
   
   .iconCard {
-    height: 140px;
-    width: 276px;
-    border: 0.50px solid #2f2f2f;
-    border-radius: 32px;
-    padding: 24px;
+    width: 149px;
+    height: 76px;
+    border: 0.5px solid #2f2f2f;
+    border-radius: 17px;
+    padding: 15px;
     background: #101010;
   }
-
-  
-  /* Адаптив: на десктопе можно изменить порядок */
-  @media (min-width: 768px) {
-    .container {
-      /* Телефон справа, текст слева */
-      flex-direction: row-reverse; 
-      align-items: center;
-      justify-content: space-between;
-    }
-    .phoneBlock {
-        align-self: flex-end;
-        justify-content: flex-end;
-        padding-right: 50px;
-        bottom: 0;
-    }
-    .textBlock {
-      align-items: flex-start;
-      text-align: left;
-    }
-  }
-  
+ .iconCard:first-child img{
+  width: 103px;
+  height: 51px;
+ }
+ .iconCard:last-child img{
+  width: 122px;
+  height: 48px;
+ }
+}
