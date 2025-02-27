@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/FooterSection/FooterSection";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
 
 
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <Header/>
+        <CookieBanner/>
         {children}
         <Footer/>
       </body>

@@ -32,7 +32,7 @@ export default function StayTuned() {
         >
           {/* X (Twitter) */}
           <a
-            href="https://twitter.com/"
+            href="https://x.com/fasqon"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
@@ -47,7 +47,7 @@ export default function StayTuned() {
 
           {/* Telegram */}
           <a
-            href="https://t.me/"
+            href="https://t.me/fasqonofficial"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
@@ -59,10 +59,22 @@ export default function StayTuned() {
               height={53}
             />
           </a>
-
+          <a
+            href="https://t.me/fasqonchat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.iconLink}
+          >
+            <Image
+              src="/icons/telegram2.svg"
+              alt="Telegram"
+              width={53}
+              height={53}
+            />
+          </a>
           {/* Instagram */}
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/fasqon_official/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
@@ -74,10 +86,22 @@ export default function StayTuned() {
               height={53}
             />
           </a>
-
+          <a
+            href="https://medium.com/@fasqon.official"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.iconLink}
+          >
+            <Image
+              src="/icons/medium.svg"
+              alt="Instagram"
+              width={53}
+              height={53}
+            />
+          </a>
           {/* Discord */}
           <a
-            href="https://discord.gg/"
+            href="https://discord.com/invite/gkRd9vSEr8"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}

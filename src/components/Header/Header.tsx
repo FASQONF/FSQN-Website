@@ -54,10 +54,10 @@ export default function Header() {
 
       {/* Кнопка White Paper (десктоп) */}
       <div className={styles.right}>
-        <Link href="/tokenimicks" className={styles.whitePaperBtn}>
+        <Link href="/tokenomics" className={styles.whitePaperBtn}>
         Tokenomics
         </Link>
-        <Link href="/white-paper" className={styles.whitePaperBtn}>
+        <Link href="https://dev.fasqon.com/FASQON_EN.pdf" className={styles.whitePaperBtn}>
           White Paper
         </Link>
       </div>
@@ -100,7 +100,7 @@ export default function Header() {
           Tokenomics
         </Link>
         <Link
-          href="/white-paper"
+          href="https://dev.fasqon.com/FASQON_EN.pdf"
           className={styles.mobileWhitePaperBtn}
           onClick={() => setMenuOpen(false)}
         >

@@ -66,10 +66,10 @@
     transform: translate(-25px, -30px); /* держим положение */
   }
   25% {
-    transform: translate(0, 0);         /* быстро возвращаемся */
+    transform: translate(0, 0);     
   }
   100% {
-    transform: translate(0, 0);         /* пауза */
+    transform: translate(0, 0);       
   }
 }
 
@@ -91,14 +91,12 @@
   }
 }
 
-/* Внутренний контейнер, где располагаем телефон, карты, текст */
 .sliderInner {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Заголовки */
 .mainTitle {
   font-weight: 700;
   font-size: 50px;
@@ -107,7 +105,7 @@
   font-family: "Franie Test","Montserrat", serif;
   margin-bottom: 0.5rem;
   position: relative; 
-  z-index: 2; /* над диамантами */
+  z-index: 2; 
 }
 
 .mainTitle span {
@@ -126,7 +124,6 @@
   z-index: 2;
 }
 
-/* Телефон (фон) */
 .phoneContainer {
   position: relative;
   width: 336px;
@@ -144,10 +141,9 @@
   object-fit: cover;
 }
 
-/* Обёртка для карт (absolute) */
 .cardsWrapper {
   position: absolute;
-  top: 50%;  /* примерно по центру .sliderInner */
+  top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -156,7 +152,6 @@
   align-items: center;
 }
 
-/* Каждая карта */
 .card {
   position: absolute;
   transition: transform 0.5s ease;
@@ -172,10 +167,7 @@
   object-fit: contain;
 }
 
-/* Позиции трёх карт:
-   centerCard: по центру (большая)
-   leftCard: слева (уменьшена, наклонена)
-   rightCard: справа (уменьшена, наклонена) */
+
 .centerCard {
   transform: translateX(0) scale(1) rotateY(0deg);
   z-index: 3;
@@ -222,7 +214,6 @@
   margin-bottom: 1rem;
 }
 
-/* Преимущества (в самом низу, в потоке) */
 .benefits {
   z-index: 2;
   display: flex;
@@ -249,7 +240,6 @@
 .cardImage{
  
 }
-/* Адаптив */
 
 @media (max-width: 768px) {
   .mainTitle {
@@ -278,7 +268,7 @@
   }
 
   .cardInfo {
-    top: 75%; /* поднимай/опускай под нужный вид */
+    top: 75%; 
   }
   .diamond1 {
     bottom: 20%;

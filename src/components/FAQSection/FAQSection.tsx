@@ -8,32 +8,32 @@ const faqItems = [
   {
     question: "What is FASQON and how does it ensure user privacy?",
     answer:
-      "FASQON is a next-gen blockchain platform focused on user privacy by leveraging advanced encryption, zero-knowledge proofs, and secure key management.",
+      "Fasqon is a private AI-powered ecosystem designed for secure communication, crypto-fiat transactions, and confidential data storage. It uses seed phrase authentication instead of phone numbers or emails, ensuring user data remains protected. Messages and transactions are encrypted, and Fasqon does not store any personal information on centralized servers.",
   },
   {
     question: "How does FASQON’s private bank card work?",
     answer:
-      "FASQON’s private bank card integrates seamlessly with your crypto wallet, allowing you to spend digital assets in real-world transactions while ensuring privacy.",
+      "Fasqon offers a crypto-friendly bank card linked to a personal IBAN, allowing users to spend crypto and fiat seamlessly. The card can be topped up via SEPA transfers, P2P payments, and crypto deposits. For transactions up to €200, no KYC is required, ensuring accessibility while maintaining security standards.",
   },
   {
     question: "How does the FASQON blockchain messenger work?",
     answer:
-      "It’s a decentralized messaging protocol that uses end-to-end encryption and distributed storage, ensuring no central entity can access or censor conversations.",
+      "Fasqon’s messenger is a secure, encrypted communication tool that does not require a SIM card for registration. Users sign up using a seed phrase, ensuring a private and secure connection. The messenger supports P2P transactions, allowing users to send payments directly through chat. All messages and transactions are encrypted end-to-end.",
   },
   {
     question: "Can I participate in token sales on FASQON, and what are the stages?",
     answer:
-      "Yes, FASQON is currently in the fundraising stage for its token sale. The investment stages include Seed Round, Private Sale, and an upcoming IDO (Initial DEX Offering).",
+      "Yes, Fasqon’s token, FSQN, is available in different sales stages. The private sale rounds have set prices, with the next phase being a private round at $0.015 per token, followed by an IDO at $0.03. Users can participate in these sales through official Fasqon channels and partner exchanges.",
   },
   {
     question: "How can I register on FASQON, and what information is required?",
     answer:
-      "Registering on FASQON requires a valid email, basic KYC (if needed for certain services), and the creation of a secure seed phrase for wallet access.",
+      "Registration on Fasqon does not require personal data such as a phone number or email. Instead, users create an account with a seed phrase, ensuring a high level of privacy and security. This method eliminates the risk of identity leaks while granting full control over funds and communications.",
   },
   {
     question: "What unique features does FASQON offer?",
     answer:
-      "FASQON offers multi-chain support, advanced AI-driven security, private bank cards, and a blockchain-based messenger for secure, censorship-resistant communication.",
+      "Fasqon combines a Web3 wallet, a private bank card, a secure messenger, and AI-powered financial tools in a single platform. Key features include a personal IBAN, crypto-fiat conversions, P2P payments, encrypted messaging, AI assistants for financial automation, and a Play-to-Airdrop rewards system.",
   },
 ];
 
@@ -44,17 +44,14 @@ export default function FAQSection() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-  // Разбиваем FAQ на две колонки
   const leftColumnItems = faqItems.slice(0, 3);
   const rightColumnItems = faqItems.slice(3, 6);
 
-  // Варианты анимации для FAQ пункта
   const cardVariants = {
     initial: { scale: 0.8, opacity: 0, rotate: -5 },
     whileInView: { scale: 1, opacity: 1, rotate: 0 },
   };
 
-  // Анимация для содержимого аккордеона (ответа)
   const answerVariants = {
     hidden: { height: 0, opacity: 0 },
     whileInView: { height: "auto", opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
@@ -121,10 +118,9 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* Правая колонка */}
         <div className={styles.column}>
           {rightColumnItems.map((item, index) => {
-            const actualIndex = index + 3; // 3..5
+            const actualIndex = index + 3; 
             const isOpen = openIndex === actualIndex;
             return (
               <motion.div

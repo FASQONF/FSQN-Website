@@ -1,0 +1,97 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .modalContent {
+    background: linear-gradient(135deg, #1e1e1e, #262626);
+    color: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.8rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    position: relative;
+    /* Тонкие белые рамки с градиентом */
+    border: 1px solid;
+    border: linear-gradient(45deg, #fff, #e6e6e6) 1;
+    font-family: "Montserrat", sans-serif;
+    animation: fadeIn 0.3s ease-out;
+    border-radius: 30px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .modalHeader h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    /* Градиентный текст с плавным переходом */
+    background: linear-gradient(45deg, #fff, #d9d9d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .closeButton {
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    color: #ff6666;
+  }
+  
+  .modalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .documentButton {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .documentButton:hover {
+    background: linear-gradient(45deg, #fff, #d9d9d9);
+    color: #000;
+  }
+  

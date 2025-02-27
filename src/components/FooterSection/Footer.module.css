@@ -99,6 +99,19 @@
   color: #999;
   font-size: 14px;
   margin-top: 8px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.social{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.social img:hover{
+  scale: 1.2;
+  rotate: 10deg;
+  transition: all 0.2s ease-in;
 }
 
 /* Адаптив: на экранах >= 768px раскладываем три колонки в строку */
