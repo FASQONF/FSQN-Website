@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 
-// Обновлённый массив ссылок – теперь якорные ссылки
 const navLinks = [
   { name: "Wallet", href: "#features" },
   { name: "Crypto card", href: "#crypto-cards" },
@@ -15,10 +14,27 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const router = useRouter();
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Обработчик для якорных ссылок
+  const handleAnchorClick = (href:any) => (e:any) => {
+    e.preventDefault();
+    // Если мы не на главной, то переход на главную с якорем:
+    if (pathname !== "/") {
+      router.push("/" + href);
+    } else {
+      // Если уже на главной, ищем элемент с id (без "#") и прокручиваем плавно
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <header className={styles.header}>
@@ -38,31 +54,34 @@ export default function Header() {
       {/* Десктоп-меню */}
       <nav className={styles.nav}>
         <ul className={styles.navList}>
-          {navLinks.map((link) => {
-            // Если это якорная ссылка, то сравниваем pathname с "#" не имеет смысла,
-            // поэтому можно просто применять нужный класс.
-            return (
-              <li key={link.name}>
-                <Link href={link.href} className={styles.link}>
-                  {link.name}
-                </Link>
-              </li>
-            );
-          })}
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                onClick={handleAnchorClick(link.href)}
+                className={styles.link}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
-      {/* Кнопка White Paper (десктоп) */}
+      {/* Правая часть - кнопки Tokenomics и White Paper */}
       <div className={styles.right}>
         <Link href="/tokenomics" className={styles.whitePaperBtn}>
-        Tokenomics
+          Tokenomics
         </Link>
-        <Link href="https://dev.fasqon.com/FASQON_EN.pdf" className={styles.whitePaperBtn}>
+        <Link
+          href="https://dev.fasqon.com/FASQON_EN.pdf"
+          className={styles.whitePaperBtn}
+        >
           White Paper
         </Link>
       </div>
 
-      {/* Бургер - рендерим ТОЛЬКО если меню закрыто */}
+      {/* Бургер (мобильное меню) */}
       {!menuOpen && (
         <div className={styles.burger} onClick={toggleMenu}>
           <span className={styles.burgerLine}></span>
@@ -75,20 +94,18 @@ export default function Header() {
       {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
 
       {/* Мобильное меню */}
-      <div
-        className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}
-      >
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
         <div className={styles.greenLine}></div>
         <ul className={styles.mobileNavList}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link
+              <a
                 href={link.href}
+                onClick={handleAnchorClick(link.href)}
                 className={styles.link}
-                onClick={() => setMenuOpen(false)}
               >
                 {link.name}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

@@ -124,10 +124,9 @@
     color: #fff;
   }
   
-  /* Иконка пункта */
+
   .iconWrapper {
-    /* width: 24px;
-    height: 24px; */
+
     background-color: #00ff00;
     display: flex;
     align-items: center;
@@ -141,7 +140,7 @@
     height: 16px;
   }
 
-/* Мобильный слайдер */
+
 .mobileSlider {
   position: relative;
   margin-top: 80px;
@@ -149,7 +148,6 @@
   margin-top: 130px;
   margin-bottom: 50px;
   height: 450px; /* Высота слайдера */
-  /* overflow: hidden; */
   touch-action: pan-y;
 }
 
@@ -184,9 +182,8 @@
   opacity: 1; /* Полупрозрачность */
 }
 
-/* Следующая карточка */
 .slide.next {
-  display: none; /* Скрываем следующую карточку */
+  display: none; 
 }
   /* Адаптив для планшета */
   @media (max-width: 1024px) {
