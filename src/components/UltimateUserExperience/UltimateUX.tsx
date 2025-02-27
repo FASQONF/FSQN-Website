@@ -18,7 +18,7 @@ const features: FeatureItem[] = [
     id: "01",
     title: "Seed Phrase Registration",
     description:
-      "Sign up easily with a unique seed phrase, ensuring your privacy",
+      "Easily sign up using a unique seed phrase to ensure your privacy",
     image: "/images/ux/seed-phrase.png",
   },
   {

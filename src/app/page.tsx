@@ -1,6 +1,8 @@
+"use client";
+
 import styles from "./page.module.css";
 
-// Импортируем наш Header
+// Импортируем наш Header и секции
 import Header from "@/components/Header/Header";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import PressMentions from "@/components/PressMentions/PressMentions";
@@ -16,18 +18,26 @@ import Footer from "@/components/FooterSection/FooterSection";
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <main className={styles.main}>
-        <HeroSection/>
-        <PressMentions/>
-        <FeaturesSection/>
-        <CryptoCards/>
-        <StoreToEarn/>
-        <StayTuned/>
-        <UltimateUX/>
-        <TeamSection/>
-        <PartnersSection/>
-        <FAQSection/>
+        <HeroSection />
+        <PressMentions />
+        <div id="features">
+          <FeaturesSection />
+        </div>
+        <div id="crypto-cards">
+          <CryptoCards />
+        </div>
+        <div id="passive-income">
+          <StoreToEarn />
+        </div>
+        <StayTuned />
+        <UltimateUX />
+        <div id="about-us">
+          <TeamSection />
+        </div>
+        <PartnersSection />
+        <FAQSection />
       </main>
     </div>
   );

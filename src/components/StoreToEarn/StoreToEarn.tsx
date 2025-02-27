@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import styles from "./StoreToEarn.module.css";
 import { AnimatedLineDesktop } from "./AnimatedLineDesktop";
 import { AnimatedLineMobile } from "./AnimatedLineMobile";
-// import { useWindowWidth } from "./useWindowWidth"; // импортируем наш хук
 import { useEffect, useState } from "react";
 
 export function useWindowWidth() {
@@ -23,6 +22,7 @@ export function useWindowWidth() {
 
   return width;
 }
+
 const items = [
   { icon: "/icons/user.svg", label: "User A" },
   { icon: "/icons/crypto.svg", label: "Holds crypto" },
@@ -34,6 +34,7 @@ const items = [
   { icon: "/icons/borrowfunds.svg", label: "Borrowing funds" },
 ];
 
+// Анимации
 const contentVariants = {
   hidden: { y: -50, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
@@ -59,12 +60,12 @@ const bgVariants = {
 };
 
 export default function StoreToEarn() {
-  // Получаем ширину окна
   const width = useWindowWidth();
-  const isMobile = width < 1024;
+  const isMobile = width && width < 1024;
 
   return (
     <section className={styles.storeSection}>
+      {/* Фоновое изображение */}
       <motion.div
         className={styles.bgImage}
         initial="hidden"
@@ -80,6 +81,7 @@ export default function StoreToEarn() {
         />
       </motion.div>
 
+      {/* Контент (заголовок и описание) */}
       <motion.div
         className={styles.content}
         initial="hidden"
@@ -94,13 +96,23 @@ export default function StoreToEarn() {
           Earn passive income by simply holding assets in the Fasqon wallet
           and spending your reward anytime with Fasqon card.
           <br />
-          Hold now. Never pay.
+          Hold now. Pay never.
         </p>
       </motion.div>
 
+      {/* Обёртка для карточек и анимированной линии */}
       <div className={styles.cardsWrapper}>
-        {/* Рендерим анимированную линию в зависимости от ширины экрана */}
-        {isMobile ? <AnimatedLineMobile /> : <AnimatedLineDesktop />}
+        {/* Анимированная линия */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className={styles.animatedLineWrapper}
+        >
+          {isMobile ? <AnimatedLineMobile /> : <AnimatedLineDesktop />}
+        </motion.div>
+        {/* Сетка карточек */}
         <motion.div
           className={styles.grid}
           initial="hidden"

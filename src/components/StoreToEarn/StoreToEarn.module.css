@@ -67,7 +67,7 @@
   pointer-events: none; 
   z-index: 0; /* под карточками; поднимите, если нужно поверх */
 }
-.lineDesktop {
+.AnimatedLineDesktop {
   display: block;
 }
 .animatedLine {
@@ -80,7 +80,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none; 
-  z-index: 0; /* под карточками; поднимите, если нужно поверх */
+  z-index: 1; /* под карточками; поднимите, если нужно поверх */
 }
 
 .grid {
@@ -131,6 +131,8 @@
   }
   .animatedLine{
     display: block;
+    height: auto;
+    top: 60px;
   }
   .content{
     max-width: 192px;
@@ -165,5 +167,9 @@
   }
   .content{
     max-width: 100%;
+  }
+  .animatedLine{
+    height: 80%;
+    /* top: 0; */
   }
 }

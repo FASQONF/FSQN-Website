@@ -167,6 +167,7 @@
 
 .cardImage {
   width: 100%;
+  border-radius: 15px;
   height: auto;
   object-fit: contain;
 }

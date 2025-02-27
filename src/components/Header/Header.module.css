@@ -71,6 +71,7 @@
 /* Правая часть (кнопка White Paper) - десктоп */
 .right {
   display: flex;
+  gap: 10px;
   align-items: center;
 }
 .whitePaperBtn {
@@ -155,6 +156,7 @@
   color: #fff;
   font-weight: 700;
   font-size: 16px;
+  margin-bottom: 10px;
   padding: 0.5rem 1.2rem;
   border-radius: 9999px;
   text-decoration: none;

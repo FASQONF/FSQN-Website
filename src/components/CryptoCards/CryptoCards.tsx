@@ -68,7 +68,7 @@ export default function CryptoCards() {
         <h2 className={styles.mainTitle}>
           Fasqon <span>Crypto Card</span>
         </h2>
-        <p className={styles.subtitle}>Payment anywhere, anytime</p>
+        <p className={styles.subtitle}>Payments anywhere, anytime</p>
 
         {/* Телефон (фон) */}
         <div className={styles.phoneContainer}>
@@ -126,7 +126,7 @@ export default function CryptoCards() {
         </div>
         <div className={styles.benefitItem}>
           <Image src="/icons/check.svg" alt="No KYC" width={24} height={24} />
-          <span>No KYC (up to 200 eur)</span>
+          <span>No KYC (up to €200)</span>
         </div>
         <div className={styles.benefitItem}>
           <Image src="/icons/check.svg" alt="Cashback" width={24} height={24} />

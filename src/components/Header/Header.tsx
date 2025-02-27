@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Header.module.css";
 
+// Обновлённый массив ссылок – теперь якорные ссылки
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Features", href: "/features" },
-  { name: "Tokenomics", href: "/tokenomics" },
-  { name: "About", href: "/about" },
-  { name: "Join Us", href: "/join-us" },
+  { name: "Wallet", href: "#features" },
+  { name: "Crypto card", href: "#crypto-cards" },
+  { name: "Passive Income", href: "#passive-income" },
+  { name: "About Us", href: "#about-us" },
 ];
 
 export default function Header() {
@@ -39,13 +39,11 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            // Если это якорная ссылка, то сравниваем pathname с "#" не имеет смысла,
+            // поэтому можно просто применять нужный класс.
             return (
               <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={isActive ? styles.activeLink : styles.link}
-                >
+                <Link href={link.href} className={styles.link}>
                   {link.name}
                 </Link>
               </li>
@@ -56,6 +54,9 @@ export default function Header() {
 
       {/* Кнопка White Paper (десктоп) */}
       <div className={styles.right}>
+        <Link href="/tokenimicks" className={styles.whitePaperBtn}>
+        Tokenomics
+        </Link>
         <Link href="/white-paper" className={styles.whitePaperBtn}>
           White Paper
         </Link>
@@ -70,32 +71,34 @@ export default function Header() {
         </div>
       )}
 
-      {/* Оверлей (если нужно) */}
+      {/* Оверлей */}
       {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
 
-      {/* Мобильное меню (справа) */}
+      {/* Мобильное меню */}
       <div
         className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}
       >
         <div className={styles.greenLine}></div>
-
         <ul className={styles.mobileNavList}>
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={isActive ? styles.activeLink : styles.link}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            );
-          })}
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link
+                href={link.href}
+                className={styles.link}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
-
+        <Link
+          href="/tokenomics"
+          className={styles.mobileWhitePaperBtn}
+          onClick={() => setMenuOpen(false)}
+        >
+          Tokenomics
+        </Link>
         <Link
           href="/white-paper"
           className={styles.mobileWhitePaperBtn}
