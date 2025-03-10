@@ -5,10 +5,12 @@ import RoadMapSection from "@/components/Tokenomica/RoadMapSection/RoadMapSectio
 import Graf from "@/components/Tokenomica/TokenomicsSection/TokenomicsSection";
 import TokenomicsSection from "@/components/Tokenomica/TokenomicsSection/TokenomicsSection";
 import TokenUtilitySection from "@/components/Tokenomica/TokenUtilitySection/TokenUtilitySection";
+import { Suspense } from "react";
 
 export default function Page() {
     return (
       <main>
+         <Suspense fallback={null}>
        <FSQNTokenSection/>
        <StayTuned/>
        <div style={{ position: "relative"}}>
@@ -17,6 +19,7 @@ export default function Page() {
        <Graf/>
        </div>
        <RoadMapSection/>
+       </Suspense>
       </main>
     );
   }

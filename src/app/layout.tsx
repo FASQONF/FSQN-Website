@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/FooterSection/FooterSection";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import { Suspense } from "react";
 
 
 export const metadata: Metadata = {
@@ -46,10 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        <Suspense fallback={null}>
         <Header/>
         <CookieBanner/>
         {children}
         <Footer/>
+        </Suspense>
       </body>
     </html>
   );

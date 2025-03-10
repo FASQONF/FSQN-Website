@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import styles from "./page.module.css";
 
 // Import our sections
@@ -40,6 +40,7 @@ export default function Home() {
   return (
     <div>
       <main className={styles.main}>
+      <Suspense fallback={null}>
         <HeroSection />
         <PressMentions />
         <div id="features">
@@ -58,6 +59,7 @@ export default function Home() {
         </div>
         <PartnersSection />
         <FAQSection />
+        </Suspense>
       </main>
     </div>
   );
