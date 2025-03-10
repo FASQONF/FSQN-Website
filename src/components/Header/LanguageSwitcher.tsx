@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import styles from "./LanguageSwitcher.module.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,7 +12,7 @@ const languages = [
   { code: "pt", label: "PT" },
 ];
 
-export default function LanguageSwitcher() {
+ function LanguageSwitcherComponent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -67,5 +67,12 @@ export default function LanguageSwitcher() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+export default function LanguageSwitcher() {
+  return (
+    <Suspense fallback={null}>
+      <LanguageSwitcherComponent />
+    </Suspense>
   );
 }

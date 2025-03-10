@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { usePathname, useSearchParams } from "next/navigation";
 import { AnimatedLineDesktop } from "./AnimatedLineDesktop";
@@ -25,7 +25,7 @@ export function useWindowWidth() {
   return width;
 }
 
-export default function StoreToEarn() {
+function StoreToEarnComponent() {
   const width = useWindowWidth();
   const isMobile = width < 1024;
   const t = useTranslation();
@@ -97,5 +97,12 @@ export default function StoreToEarn() {
         </motion.div>
       </div>
     </section>
+  );
+}
+export default function StoreToEarn() {
+  return (
+    <Suspense fallback={null}>
+      <StoreToEarnComponent />
+    </Suspense>
   );
 }

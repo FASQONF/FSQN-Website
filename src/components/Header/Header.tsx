@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
@@ -8,7 +8,7 @@ import styles from "./Header.module.css";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "@/hooks/useTranslation";
 
-export default function Header() {
+function HeaderComponent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -153,5 +153,12 @@ export default function Header() {
         </a>
       </div>
     </header>
+  );
+}
+export default function Header() {
+  return (
+    <Suspense fallback={null}>
+      <HeaderComponent />
+    </Suspense>
   );
 }
