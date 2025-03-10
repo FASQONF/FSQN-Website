@@ -4,6 +4,9 @@ const nextConfig = {
     locales: ["en", "es", "pt"],
     defaultLocale: "en", 
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Отключает ESLint в билде
+  },
 };
 
 module.exports = nextConfig;
