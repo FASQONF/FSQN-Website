@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import styles from "./BackgroundChain.module.css";
-
 export default function BackgroundChain() {
   return (
     <motion.div
@@ -12,10 +10,10 @@ export default function BackgroundChain() {
       animate={{ opacity: 1, scale: 1, transition: { duration: 2 } }}
     >
       {/* Замените путь к картинке на ваш */}
-      <Image
+      <img
         src="/images/tokenomics/chain.png"
         alt="Chain background"
-        fill
+        // fill
         className={styles.chainImage}
       />
     </motion.div>

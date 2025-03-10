@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import styles from "./CommonBackground.module.css";
-
+import bg from '../../../../public/images/tokenomics/bg-common.png'
 export default function CommonBackground() {
   return (
     <motion.div
@@ -17,13 +16,11 @@ export default function CommonBackground() {
         animate={{ rotate: [0, 2, 0, -2, 0] }}
         transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatDelay: 5 }}
       >
-        <Image
-          src="/images/tokenomics/bg-common.png"
+        <img
+          src={bg.src}
           alt="Common Background"
           width={1800}
           height={1800}
-          objectFit="contain"
-          quality={90}
         />
       </motion.div>
     </motion.div>

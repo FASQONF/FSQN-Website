@@ -2,24 +2,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from "./TokenomicsSection.module.css";
 import { motion } from 'framer-motion';
-
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 const TokenomicsSection = () => {
   // State to track which segment is being hovered
   const [hoveredSegment, setHoveredSegment] = useState(null);
   const chartRef = useRef(null);
-  
+  const t = useTranslation();
+
   // Distribution data with id, name, percentage, and segment color
   const segments = [
-    { id: 'team', name: 'Team', percentage: 16, color: '#232323', hoverColor: '#4A4A4A', position: { top: '10%', left: '15%' } },
-    { id: 'liquidity', name: 'Liquidity Reserve', percentage: 15, color: '#E0E0E0', hoverColor: '#FFFFFF', position: { top: '10%', right: '10%' } },
-    { id: 'ecosystem', name: 'Ecosystem incentives', percentage: 15, color: '#529052', hoverColor: '#7AE47A', position: { top: '40%', right: '-10%' } },
-    { id: 'marketing', name: 'Marketing', percentage: 10, color: '#A4E5A4', hoverColor: '#D1FFD1', position: { top: '40%', left: '-5%' } },
-    { id: 'farming', name: 'Farming & Staking', percentage: 10, color: '#00FF00', hoverColor: '#80FF80', position: { top: '60%', left: '-9%' } },
-    { id: 'ido', name: 'IDO', percentage: 3, color: '#494949', hoverColor: '#777777', position: { top: '78%', left: '9%' } },
-    { id: 'airdrop', name: 'TMA Airdrop', percentage: 2, color: '#37C637', hoverColor: '#6FFF6F', position: { top: '70%', left: '-3%' } },
-    { id: 'seed', name: 'Seed', percentage: 3, color: '#C4D6C4', hoverColor: '#E8FFE8', position: { bottom: '30%', right: '0%' } },
-    { id: 'advisors', name: 'Advisors', percentage: 2, color: '#FFFFFF', hoverColor: '#FFFFFF', position: { bottom: '20%', right: '5%' } },
-    { id: 'private', name: 'Private Sale', percentage: 26, color: '#2F8D2D', hoverColor: '#5AE157', position: { bottom: '10%', right: '15%' } },
+    { id: 'team', name: `${t.tokenomicsSection.segments[0].name}`, percentage: 16, color: '#232323', hoverColor: '#4A4A4A', position: { top: '10%', left: '15%' } },
+    { id: 'liquidity', name: `${t.tokenomicsSection.segments[1].name}`, percentage: 15, color: '#E0E0E0', hoverColor: '#FFFFFF', position: { top: '10%', right: '10%' } },
+    { id: 'ecosystem', name: `${t.tokenomicsSection.segments[2].name}`, percentage: 15, color: '#529052', hoverColor: '#7AE47A', position: { top: '40%', right: '-10%' } },
+    { id: 'marketing', name: `${t.tokenomicsSection.segments[3].name}`, percentage: 10, color: '#A4E5A4', hoverColor: '#D1FFD1', position: { top: '40%', left: '-5%' } },
+    { id: 'farming', name:`${t.tokenomicsSection.segments[4].name}`, percentage: 10, color: '#00FF00', hoverColor: '#80FF80', position: { top: '60%', left: '-9%' } },
+    { id: 'ido', name: `${t.tokenomicsSection.segments[5].name}`, percentage: 3, color: '#494949', hoverColor: '#777777', position: { top: '78%', left: '9%' } },
+    { id: 'airdrop', name: `${t.tokenomicsSection.segments[6].name}`, percentage: 2, color: '#37C637', hoverColor: '#6FFF6F', position: { top: '70%', left: '-3%' } },
+    { id: 'seed', name: `${t.tokenomicsSection.segments[7].name}`, percentage: 3, color: '#C4D6C4', hoverColor: '#E8FFE8', position: { bottom: '30%', right: '0%' } },
+    { id: 'advisors', name: `${t.tokenomicsSection.segments[8].name}`, percentage: 2, color: '#FFFFFF', hoverColor: '#FFFFFF', position: { bottom: '20%', right: '5%' } },
+    { id: 'private', name: `${t.tokenomicsSection.segments[9].name}`, percentage: 26, color: '#2F8D2D', hoverColor: '#5AE157', position: { bottom: '10%', right: '15%' } },
   ];
 
   // Animation on scroll
@@ -66,10 +68,9 @@ const TokenomicsSection = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Token<span className={styles.titleSpan}>omics</span>
+         {parse(t.tokenomicsSection.title)}
         </h2>
-        <p className={styles.subtitle}>FSQN token distribution</p>
-
+        <p className={styles.subtitle}>{t.tokenomicsSection.subtitle}</p>
         <div ref={chartRef} className={styles.chartContainer}>
           {/* SVG Chart */}
           {/* <img src="/images/tokenomics/fsqn-logo.png" alt="" /> */}

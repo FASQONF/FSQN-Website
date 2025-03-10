@@ -1,10 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./HeroSection.module.css";
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 
 export default function HeroSection() {
+  const t = useTranslation();
+
   return (
     <section className={styles.heroSection}>
       {/* Текстовый блок, появляется слева → направо */}
@@ -15,14 +18,13 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <h1 className={styles.title}>
-        Your crypto <span>neobank</span> for daily payments{/* Buy, store and earn crypto with <span>Fasqon Wallet</span> */}
+        {parse(t.title)}
         </h1>
         <p className={styles.description}>
-          Discover Fasqon’s unmatched earning opportunities and crypto debit card.
-          Enjoy the best crypto rates, cashback on Apple &amp; Google Pay and much more.
+        {t.description}
         </p>
         <a href="#" className={styles.ctaButton}>
-          Get my Fasqon card!
+        {t.cta}
         </a>
       </motion.div>
 
@@ -34,14 +36,14 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <div className={styles.phoneContainer}>
-          <Image
+          <img
             src="/images/phone1.png"
             alt="Fasqon Wallet phone 1"
             width={355}
             height={588}
             className={styles.phoneLeft}
           />
-          <Image
+          <img
             src="/images/phone2.png"
             alt="Fasqon Wallet phone 2"
             width={374}
@@ -52,7 +54,7 @@ export default function HeroSection() {
 
         {/* Кристаллы располагаем внутри того же контейнера */}
         <div className={styles.crystalsWrapper}>
-          <Image
+          <img
             src="/images/diamond.png"
             alt="Green crystals"
             width={800}

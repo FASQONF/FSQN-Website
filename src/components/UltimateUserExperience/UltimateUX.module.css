@@ -40,13 +40,12 @@
 
 .card {
   background: #111111;
-  border-radius: 24px;
   padding: 25px;
   position: relative;
   overflow: hidden;
   min-height: 200px;
   border: 0.44px solid #2f2f2f;
-  border-radius: 21px;
+  border-bottom-left-radius:21px ;
 }
 
 /* Каждая карточка имеет свою grid-area */

@@ -175,7 +175,47 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 9998;
 }
+/* Add these styles to your Header.module.css file */
 
+.languageSelector {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.activeLang {
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+
+.activeLang::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: #00E599; /* Your brand green color */
+}
+
+.mobileRight{
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
+  align-items: center;
+}
 /* Адаптив для мобильных */
 @media (max-width: 900px) {
   .nav {

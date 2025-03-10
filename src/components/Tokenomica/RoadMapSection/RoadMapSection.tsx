@@ -4,52 +4,15 @@ import React, { useState, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./RoadMapSection.module.css";
-
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 // Интерфейс для элемента роадмапа
 interface RoadMapItem {
   year: string;
   items: string[];
 }
 
-const roadMapData: RoadMapItem[] = [
-  {
-    year: "2024",
-    items: [
-      "Pre-sale Round B",
-      "Wallet MVP development",
-      "Launch telegram mini app",
-      "Register crypto-fiat license",
-    ],
-  },
-  {
-    year: "2025",
-    items: [
-      "Mass app marketing campaign",
-      "Strategic partnerships",
-      "IDO",
-      "Wallet closed Alpha test",
-      "CEX listings",
-      "Czech Republic banking license",
-      "Reach 1M active users",
-    ],
-  },
-  {
-    year: "2026",
-    items: [
-      "Series A fundraising",
-      "Expanding to the regions of Asia and the Middle East",
-    ],
-  },
-  {
-    year: "2027-2030",
-    items: [
-      "Attracting 10M+ active users",
-      "Expansion and scaling (increasing transaction volume, more integrations, new products)",
-      "AI assistants and additional services",
-      "Full ownership profitability with a goal of achieving 30% margin by 2030",
-    ],
-  },
-];
+
 
 const headerVariants = {
   hidden: { y: -50, opacity: 0 },
@@ -161,6 +124,7 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
 
 export default function RoadMapSection() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const t = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -181,12 +145,12 @@ export default function RoadMapSection() {
         viewport={{ once: true, amount: 0.5 }}
         variants={bgVariants}
       >
-        <Image
+        <img
           src="/images/tokenomics/chain.png"
           alt="Roadmap Background"
-          fill
-          objectFit="cover"
-          quality={100}
+          // fill
+          // objectFit="cover"
+          // quality={100}
         />
       </motion.div>
 
@@ -198,7 +162,7 @@ export default function RoadMapSection() {
           viewport={{ once: true, amount: 0.5 }}
           variants={headerVariants}
         >
-          Road <span>Map</span>
+            {parse(t.roadmapSection.title)}
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -207,11 +171,11 @@ export default function RoadMapSection() {
           viewport={{ once: true, amount: 0.5 }}
           variants={headerVariants}
         >
-          Key stages of FASQON development
+         {t.roadmapSection.subtitle}
         </motion.p>
 
         {isMobile ? (
-          <MobileVerticalSlider data={roadMapData} />
+          <MobileVerticalSlider data={t.roadmapSection.years} />
         ) : (
           <motion.div
             className={styles.grid}
@@ -220,11 +184,11 @@ export default function RoadMapSection() {
             viewport={{ once: true, amount: 0.5 }}
             variants={gridVariants}
           >
-            {roadMapData.map((block) => (
+          {t.roadmapSection.years.map((block:any) => (
               <motion.div key={block.year} className={styles.card} variants={cardVariants}>
                 <h3 className={styles.cardYear}>{block.year}</h3>
                 <ul className={styles.itemList}>
-                  {block.items.map((item, idx) => (
+                  {block.items.map((item:any, idx:any) => (
                     <li key={idx} className={styles.item}>
                       <div className={styles.iconWrapper}>
                         <Image

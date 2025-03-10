@@ -94,7 +94,24 @@
     color: #ccc;
     line-height: 1.4;
     max-width: 250px;
-    /* margin: 0 auto; */
+  }
+  .linkedinLink {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    transition: color 0.3s;
+  }
+  
+  .linkedinLink:hover {
+    color: #00ff00; /* LinkedIn blue */
+  }
+  
+  .linkedinIcon {
+    width: 21px;
+    height: 21px;
   }
   
   @media (max-width: 768px) {
@@ -121,10 +138,18 @@
     .avatarWrapper img {
       width: 125px;
       height: 183px;
+      object-fit: cover;
     }
     .cardInfo{
       max-width: 168px;
       text-align: left;
+    }
+    .linkedinLink{
+      justify-content: flex-start;
+    }
+    .linkedinIcon{
+      width: 16px;
+      height: 16px;
     }
     .memberName{
       font-size: 14px;

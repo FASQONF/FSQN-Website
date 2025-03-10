@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./CryptoCards.module.css";
-import { cardsData } from "./cardsData";
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 
 export default function CryptoCards() {
-  // Индекс текущей (центральной) карты
+  const t = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const length = cardsData.length; // Например, 3
+  const length = t.cryptoCardsSection.cards.length;
 
   // При клике на карту делаем её центральной
   const handleCardClick = (index: number) => {
@@ -27,13 +27,13 @@ export default function CryptoCards() {
   };
 
   // Текущая (центральная) карта
-  const currentCard = cardsData[currentIndex];
+  const currentCard = t.cryptoCardsSection.cards[currentIndex];
 
   return (
     <section className={styles.sliderSection}>
       {/* Фоновые диаманты */}
       <div className={styles.diamond1}>
-        <Image
+        <img
           src="/images/cards/diamond1.png"
           alt="Diamond 1"
           width={450}
@@ -41,7 +41,7 @@ export default function CryptoCards() {
         />
       </div>
       <div className={styles.diamond2}>
-        <Image
+        <img
           src="/images/cards/diamond2.png"
           alt="Diamond 2"
           width={300}
@@ -49,7 +49,7 @@ export default function CryptoCards() {
         />
       </div>
       <div className={styles.diamond3}>
-        <Image
+        <img
           src="/images/cards/diamond3.png"
           alt="Diamond 3"
           width={400}
@@ -65,14 +65,11 @@ export default function CryptoCards() {
         transition={{ duration: 1 }}
       >
         {/* Заголовки */}
-        <h2 className={styles.mainTitle}>
-          Fasqon <span>Crypto Card</span>
-        </h2>
-        <p className={styles.subtitle}>Payments anywhere, anytime</p>
-
+        <h2 className={styles.mainTitle}>{parse(t.cryptoCardsSection.title)}</h2>
+        <p className={styles.subtitle}>{t.cryptoCardsSection.subtitle}</p>
         {/* Телефон (фон) */}
         <div className={styles.phoneContainer}>
-          <Image
+          <img
             src="/images/cards/phone.png"
             alt="Phone background"
             width={336}
@@ -83,13 +80,12 @@ export default function CryptoCards() {
 
         {/* Обёртка для карт */}
         <div className={styles.cardsWrapper}>
-          {cardsData.map((card, idx) => (
-            <div
+          {t.cryptoCardsSection.cards.map((card:any, idx:any) => (            <div
               key={card.title}
               className={`${styles.card} ${getPositionClass(idx)}`}
               onClick={() => handleCardClick(idx)}
             >
-              <Image
+              <img
                 src={card.cardImg}
                 alt={card.title}
                 width={400}
@@ -111,27 +107,12 @@ export default function CryptoCards() {
 
       {/* Преимущества (иконки) внизу */}
       <div className={styles.benefits}>
-        <div className={styles.benefitItem}>
-          <Image src="/icons/check.svg" alt="Web3 IBAN" width={24} height={24} />
-          <span>Personal Web3 IBAN</span>
-        </div>
-        <div className={styles.benefitItem}>
-          <Image
-            src="/icons/check.svg"
-            alt="Apple & Google Pay"
-            width={24}
-            height={24}
-          />
-          <span>Google & Apple Pay</span>
-        </div>
-        <div className={styles.benefitItem}>
-          <Image src="/icons/check.svg" alt="No KYC" width={24} height={24} />
-          <span>No KYC (up to €200)</span>
-        </div>
-        <div className={styles.benefitItem}>
-          <Image src="/icons/check.svg" alt="Cashback" width={24} height={24} />
-          <span>Cashback up to 5%</span>
-        </div>
+        {t.cryptoCardsSection.benefits.map((benefit:any, index:any) => (
+          <div key={index} className={styles.benefitItem}>
+            <img src={benefit.icon} alt={benefit.text} width={24} height={24} />
+            <span>{benefit.text}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

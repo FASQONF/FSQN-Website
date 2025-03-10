@@ -30,7 +30,7 @@
   /* FAQ блок */
   .faqItem {
     background-color: #111; /* Тёмно-серый */
-    border-radius: 0.5rem;
+    border-bottom-left-radius:21px ;
     padding: 1rem;
     min-height: 88px;
     cursor: pointer;

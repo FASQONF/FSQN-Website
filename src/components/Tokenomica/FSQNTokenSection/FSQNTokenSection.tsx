@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./FSQNTokenSection.module.css";
-
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 export default function FSQNTokenSection() {
+  const t = useTranslation();
+
   return (
     <section className={styles.fsqnSection}>
       <div className={styles.container}>
@@ -15,10 +17,10 @@ export default function FSQNTokenSection() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <Image
+          <img
             src="/images/tokenomics/metal1.png"
             alt="Crystal 1"
-            fill
+            // fill
             className={styles.crystalImage}
           />
         </motion.div>
@@ -36,16 +38,16 @@ export default function FSQNTokenSection() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <Image
+            <img
               src="/images/tokenomics/metal2.png"
               alt="Crystal 2"
-              fill
+              // fill
               className={styles.crystalImage}
             />
           </motion.div>
 
           <div className={styles.phoneWrapper}>
-            <Image
+            <img
               src="/images/tokenomics/phone.png"
               alt="FSQN token phone screen"
               width={355}
@@ -62,24 +64,12 @@ export default function FSQNTokenSection() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h2 className={styles.title}>
-            FSQN <span>Token</span>
-          </h2>
-          <p className={styles.description}>
-            <span>
-              With our FSQN token, you get access to all the functionality of our
-              platform!
-            </span>
-            <br />
-            <br />
-            The utilitarian FSQN token enables payment for services,
-            access to features, transparent emission distribution, various token
-            sale stages, and participation in a promising project's development.
-          </p>
+          <h2 className={styles.title}>{parse(t.fsqnTokenSection.title)}</h2>
+          <p className={styles.description}>{parse(t.fsqnTokenSection.description)}</p>
 
           <div className={styles.iconsRow}>
             <div className={styles.iconCard}>
-              <Image
+              <img
                 src="/images/tokenomics/bsc-icon.png" /* Иконка BSC */
                 alt="BSC"
                 width={189}
@@ -87,7 +77,7 @@ export default function FSQNTokenSection() {
               />
             </div>
             <div className={styles.iconCard}>
-              <Image
+              <img
                 src="/images/tokenomics/fsqn-icon.png" /* Иконка FSQN */
                 alt="FSQN"
                 width={225}

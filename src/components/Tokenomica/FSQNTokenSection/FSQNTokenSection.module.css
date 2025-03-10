@@ -220,9 +220,17 @@
     width: 350px;
     height: 350px;
   }
+  .crystal1Wrapper img{
+    width: 350px;
+    height: 350px;
+  }
   .crystal2Wrapper {
     bottom: -20px;
     left: -150px;
+    width: 300px;
+    height: 300px;
+  }
+  .crystal2Wrapper img{
     width: 300px;
     height: 300px;
   }

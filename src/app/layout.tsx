@@ -9,22 +9,18 @@ import CookieBanner from "@/components/CookieBanner/CookieBanner";
 export const metadata: Metadata = {
   title: {
     default: "Fasqon - Next Generation Web3 Solutions",
-    template: "%s | Fasqon", 
+    template: "%s | Fasqon",
   },
   description: "Fasqon offers next-gen Web3 solutions for retail and business. Discover advanced crypto payment, private bank cards, and more.",
-
-  // Можно добавить ключевые слова
-  keywords: ["Web3", "crypto", "Fasqon", "payment solutions", "bank card", "blockchain"],
-
-  // Open Graph (og) данные
+  
   openGraph: {
     title: "Fasqon - Next Generation Web3 Solutions",
-    description: "Fasqon provides secure and private crypto services for retail and business.",
-    url: "https://fasqon.com", // твой домен
+    description: "Fasqon is a next gen web3 neobank for daily payments.Get your crypto card right now!",
+    url: "https://fasqon.com",
     siteName: "Fasqon",
     images: [
       {
-        url: "https://fasqon.com/og-image.jpg", // путь к твоему изображению
+        url: "https://fasqon.com/og-image.jpg", // Use a JPG/PNG instead of SVG for better compatibility
         width: 1200,
         height: 630,
         alt: "Fasqon OG Image",
@@ -33,21 +29,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-
- 
-  twitter: {
-    card: "summary_large_image",
-    title: "Fasqon - Next Generation Web3 Solutions",
-    description: "Advanced crypto payments, private bank cards, and blockchain messaging.",
-    images: ["https://fasqon.com/og-image.jpg"],
-    creator: "@Fasqon", 
-  },
-
-
-  alternates: {
-    canonical: "https://fasqon.com", 
-  },
-};
+  
+  other: {
+    'telegram:title': "Fasqon - Next Generation Web3 Solutions",
+    'telegram:description': "Fasqon is a next gen web3 neobank for daily payments.Get your crypto card right now!",
+    'telegram:image': "https://fasqon.com/og-image.jpg"
+  }
+}
 
 export default function RootLayout({
   children,

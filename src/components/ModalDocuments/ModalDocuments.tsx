@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import styles from "./ModalDocuments.module.css";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface ModalDocumentsProps {
   isOpen: boolean;
@@ -11,6 +11,8 @@ interface ModalDocumentsProps {
 }
 
 export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps) {
+  const t = useTranslation();
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -28,7 +30,7 @@ export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps)
             transition={{ duration: 0.3 }}
           >
             <div className={styles.modalHeader}>
-              <h3>Legal documents</h3>
+              <h3>{t.modalDocuments.title}</h3>
               <button
                 className={styles.closeButton}
                 onClick={onClose}
@@ -39,24 +41,34 @@ export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps)
 
             <div className={styles.modalBody}>
               {/* Список документов */}
-              <Link href="https://fasqon.com/PRIVACY%20STATEMENT.pdf" className={styles.documentButton}>
-                Privacy Policy
-              </Link>
-              <Link href="https://fasqon.com/Anti-money.pdf" className={styles.documentButton}>
-                Anti-Money Laundering Policy
-              </Link>
-              <Link href="https://fasqon.com/Tokens-risk-disclosure-statement.pdf" className={styles.documentButton}>
-                Tokens Risk Disclosure
-              </Link>
-              <Link href="https://fasqon.com/Token-sale-agreement.pdf" className={styles.documentButton}>
-                Token Sale Agreement
-              </Link>
-              <Link href="https://fasqon.com/TERMS%20OF%20USE.pdf" className={styles.documentButton}>
-                Terms Of Use
-              </Link>
-              <Link href="https://fasqon.com/Cookies.pdf" className={styles.documentButton}>
-                Cookies
-              </Link>
+              <a
+                href="/PRIVACY_STATEMENT.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentButton}
+              >
+                {t.modalDocuments.privacyPolicy}
+              </a>
+              <a href="/Anti-money.pdf" className={styles.documentButton}   target="_blank"
+                rel="noopener noreferrer">
+                {t.modalDocuments.amlPolicy}
+              </a>
+              <a href="/Tokens-risk-disclosure-statement.pdf" className={styles.documentButton}  target="_blank"
+                rel="noopener noreferrer">
+                {t.modalDocuments.tokensRisk}
+              </a>
+              <a href="/Token-sale-agreement.pdf" className={styles.documentButton}  target="_blank"
+                rel="noopener noreferrer">
+                {t.modalDocuments.tokenSale}
+              </a>
+              <a href="/TERMS_OF_USE.pdf" className={styles.documentButton}  target="_blank"
+                rel="noopener noreferrer">
+                {t.modalDocuments.termsOfUse}
+              </a>
+              <a href="/Cookies.pdf" className={styles.documentButton}  target="_blank"
+                rel="noopener noreferrer">
+                {t.modalDocuments.cookies}
+              </a>
             </div>
           </motion.div>
         </motion.div>

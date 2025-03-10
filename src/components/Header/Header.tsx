@@ -3,44 +3,63 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import styles from "./Header.module.css";
-
-const navLinks = [
-  { name: "Wallet", href: "#features" },
-  { name: "Crypto card", href: "#crypto-cards" },
-  { name: "Passive Income", href: "#passive-income" },
-  { name: "About Us", href: "#about-us" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [menuOpen, setMenuOpen] = React.useState(false);
-
+  const t = useTranslation();
+  
+  // Get the current language parameter
+  const currentLang = searchParams.get("lang") || "en";
+  
+  const navLinks = [
+    { name: t.header.navLinks.wallet, href: "#features" },
+    { name: t.header.navLinks.cryptoCard, href: "#crypto-cards" },
+    { name: t.header.navLinks.passiveIncome, href: "#passive-income" },
+    { name: t.header.navLinks.aboutUs, href: "#about-us" },
+  ];
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Обработчик для якорных ссылок
-  const handleAnchorClick = (href:any) => (e:any) => {
+  // Improved handler for anchor links
+  const handleAnchorClick = (href: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    // Если мы не на главной, то переход на главную с якорем:
+    
+    // Extract the anchor ID without the "#"
+    const anchorId = href.substring(1);
+    
+    // If we're not on the home page, navigate to home with anchor and preserve language
     if (pathname !== "/") {
-      router.push("/" + href);
+      router.push(`/?lang=${currentLang}#${anchorId}`);
     } else {
-      // Если уже на главной, ищем элемент с id (без "#") и прокручиваем плавно
-      const element = document.getElementById(href.substring(1));
+      // If already on home, find element with id and scroll smoothly
+      const element = document.getElementById(anchorId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+      
+      // Update URL with the anchor for better user experience
+      window.history.pushState({}, "", `/?lang=${currentLang}#${anchorId}`);
     }
+    
     setMenuOpen(false);
+  };
+
+  // Create URL with the current language parameter
+  const createUrlWithLang = (path: string) => {
+    return `${path}?lang=${currentLang}`;
   };
 
   return (
     <header className={styles.header}>
-      {/* Левая часть (логотип) */}
+      {/* Left part (logo) */}
       <div className={styles.left}>
-        <Link href="/">
+        <Link href={createUrlWithLang("/")}>
           <Image
             src="/logo.svg"
             alt="Logo"
@@ -51,7 +70,7 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Десктоп-меню */}
+      {/* Desktop menu */}
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {navLinks.map((link) => (
@@ -68,32 +87,39 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Правая часть - кнопки Tokenomics и White Paper */}
+      {/* Right part - Tokenomics and White Paper buttons */}
       <div className={styles.right}>
-        <Link href="/tokenomics" className={styles.whitePaperBtn}>
-          Tokenomics
+        <Link href={createUrlWithLang("/tokenomics")} className={styles.whitePaperBtn}>
+          {t.header.tokenomics}
         </Link>
         <Link
-          href="https://dev.fasqon.com/FASQON_EN.pdf"
+          href="/FASQON_WP_EN.pdf"
           className={styles.whitePaperBtn}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          White Paper
+          {t.header.whitePaper}
         </Link>
+        {/* <LanguageSwitcher /> */}
       </div>
 
-      {/* Бургер (мобильное меню) */}
+      {/* Burger (mobile menu) */}
       {!menuOpen && (
-        <div className={styles.burger} onClick={toggleMenu}>
-          <span className={styles.burgerLine}></span>
-          <span className={styles.burgerLine}></span>
-          <span className={styles.burgerLine}></span>
+        <div className={styles.mobileRight}>
+           <div className={styles.burger} onClick={toggleMenu}>
+              <span className={styles.burgerLine}></span>
+              <span className={styles.burgerLine}></span>
+              <span className={styles.burgerLine}></span>
+            </div>
+            <LanguageSwitcher />
         </div>
+       
       )}
 
-      {/* Оверлей */}
+      {/* Overlay */}
       {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
 
-      {/* Мобильное меню */}
+      {/* Mobile menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
         <div className={styles.greenLine}></div>
         <ul className={styles.mobileNavList}>
@@ -110,19 +136,21 @@ export default function Header() {
           ))}
         </ul>
         <Link
-          href="/tokenomics"
+          href={createUrlWithLang("/tokenomics")}
           className={styles.mobileWhitePaperBtn}
           onClick={() => setMenuOpen(false)}
         >
-          Tokenomics
+          {t.header.tokenomics}
         </Link>
-        <Link
-          href="https://dev.fasqon.com/FASQON_EN.pdf"
+        <a
+          href="/FASQON_WP_EN.pdf"
           className={styles.mobileWhitePaperBtn}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
         >
-          White Paper
-        </Link>
+          {t.header.whitePaper}
+        </a>
       </div>
     </header>
   );

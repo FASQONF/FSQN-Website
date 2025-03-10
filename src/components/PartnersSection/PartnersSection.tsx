@@ -1,43 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./PartnersSection.module.css";
-
-const partners = [
-  {
-    name: "PureFi",
-    logo: "/images/partners/purefi.png",
-    description: "Bridging Compliance and Security in Web3 Ecosystems",
-  },
-  {
-    name: "AMLBot",
-    logo: "/images/partners/amlbot.png",
-    description: "One-stop assessment compliance solution for crypto business",
-  },
-  {
-    name: "Green Light Equity (GLE)",
-    logo: "/images/partners/gle.png",
-    description: "An alternative investments group",
-  },
-  {
-    name: "Vareger Group OÜ",
-    logo: "/images/partners/vareger.png",
-    description: "Has implemented software for banks and fintech projects",
-  },
-  {
-    name: "Trustify Legal",
-    logo: "/images/partners/trustify.png",
-    description: "Responsible for compliance with legal regulations and licensing",
-  },
-  {
-    name: "Hot Killers",
-    logo: "/images/partners/hotkillers.png",
-    description: "Marketing support team, which has raised over $100 million for the projects",
-  },
-];
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 
 export default function PartnersSection() {
+  const t = useTranslation();
+
   return (
     <section className={styles.partnersSection}>
       {/* Фоновое изображение с анимацией увеличения */}
@@ -58,7 +28,7 @@ export default function PartnersSection() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8 }}
         >
-          Backers <span>&</span> <span>Partners</span>
+           {parse(t.partnersSection.title)}
         </motion.h2>
 
         {/* Подзаголовок */}
@@ -69,12 +39,12 @@ export default function PartnersSection() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Backed and supported by highly professional companies on the market
+          {t.partnersSection.subtitle}
         </motion.p>
 
         {/* Карточки партнеров */}
         <div className={styles.grid}>
-          {partners.map((partner, index) => (
+          {t.partnersSection.partners.map((partner: any, index: number) => (
             <motion.div
               key={partner.name}
               className={styles.card}

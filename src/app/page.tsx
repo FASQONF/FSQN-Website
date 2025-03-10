@@ -1,9 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import styles from "./page.module.css";
 
-// Импортируем наш Header и секции
-import Header from "@/components/Header/Header";
+// Import our sections
 import HeroSection from "@/components/HeroSection/HeroSection";
 import PressMentions from "@/components/PressMentions/PressMentions";
 import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
@@ -17,6 +17,26 @@ import FAQSection from "@/components/FAQSection/FAQSection";
 import Footer from "@/components/FooterSection/FooterSection";
 
 export default function Home() {
+  // Handle hash navigation when the page loads
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      // Get the element ID from the hash
+      const elementId = window.location.hash.substring(1);
+      
+      // Find the element
+      const element = document.getElementById(elementId);
+      
+      // If the element exists, scroll to it after a small delay
+      // The delay ensures all content is loaded
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div>
       <main className={styles.main}>

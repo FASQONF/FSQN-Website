@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./TokenUtilitySection.module.css";
-
+import { useTranslation } from "@/hooks/useTranslation";
+import parse from "html-react-parser";
 const titleVariants = {
   hidden: { y: -50, opacity: 0 },
   visible: { 
@@ -46,6 +46,8 @@ const linesVariants = {
 };
 
 export default function TokenUtilitySection() {
+  const t = useTranslation();
+
   return (
     <section className={styles.tokenUtilitySection}>
       <div className={styles.container}>
@@ -56,7 +58,7 @@ export default function TokenUtilitySection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          Token <span>Utility</span>
+           {parse(t.tokenUtilitySection.title)}
         </motion.h2>
 
         <motion.div 
@@ -68,18 +70,18 @@ export default function TokenUtilitySection() {
         >
           <div className={styles.descCol}>
             <p>
-              Access the enhanced features of our messenger/wallet by maintaining a certain token balance.
+              {t.tokenUtilitySection.description[0]}
             </p>
             <p>
-              Receive discounts on commissions and service fees by using FSQN tokens for payments.
+            {t.tokenUtilitySection.description[1]}
             </p>
           </div>
           <div className={styles.descCol}>
             <p>
-              Benefit from our daily buyback strategy, with 25% of profits used to purchase and burn tokens.
+            {t.tokenUtilitySection.description[2]}
             </p>
             <p>
-              Explore trading opportunities within our platform for potential gains.
+            {t.tokenUtilitySection.description[3]}
             </p>
           </div>
         </motion.div>
@@ -100,18 +102,18 @@ export default function TokenUtilitySection() {
           </motion.div>
 
           <motion.div className={styles.firstLine} variants={cardVariants}>
-            <div className={styles.card}>Get Card</div>
-            <div className={styles.card}>Payments</div>
-            <div className={styles.card}>Internal Trxs</div>
-            <div className={styles.card}>Passive income mode</div>
+            <div className={styles.card}> {t.tokenUtilitySection.cards[0][0]}</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[0][1]}</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[0][2]}</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[0][3]}</div>
           </motion.div>
           <motion.div className={styles.secondLine} variants={cardVariants}>
-            <div className={styles.card}>Treasury</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[1]}</div>
           </motion.div>
           <motion.div className={styles.thirdLine} variants={cardVariants}>
-            <div className={styles.card}>40% Ecosystem growth</div>
-            <div className={styles.card}>50% User incentives</div>
-            <div className={styles.card}>10% Monthly Burn</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[2][0]}</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[2][1]}</div>
+            <div className={styles.card}>{t.tokenUtilitySection.cards[2][2]}</div>
           </motion.div>
         </motion.div>
       </div>

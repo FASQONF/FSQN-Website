@@ -1,0 +1,15 @@
+# Включаем модуль переписывания URL
+RewriteEngine On
+
+# Отключаем кэширование для всех файлов
+<IfModule mod_headers.c>
+  # Устанавливаем заголовки, запрещающие кэширование
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</IfModule>
+
+# Дополнительно можно добавить принудительные перенаправления, если требуется
+# Например, убрать завершающий слеш:
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]

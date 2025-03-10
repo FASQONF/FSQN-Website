@@ -46,6 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   backdrop-filter: blur(11.8px);
   background: #30f427;
   font-weight: 700;

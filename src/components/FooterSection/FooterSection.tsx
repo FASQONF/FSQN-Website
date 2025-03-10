@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import Image from "next/image";
-
-// Импортируем компонент модального окна
 import ModalDocuments from "../ModalDocuments/ModalDocuments";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Footer() {
   const [showDocumentsModal, setShowDocumentsModal] = useState(false);
+  const t = useTranslation();
 
   const openModal = () => setShowDocumentsModal(true);
   const closeModal = () => setShowDocumentsModal(false);
@@ -41,7 +41,7 @@ export default function Footer() {
               />
             </svg>
             <a href="mailto:office@fasqon.com" className={styles.textGray}>
-              office@fasqon.com
+            {t.footerSection.email}
             </a>
           </div>
 
@@ -56,12 +56,9 @@ export default function Footer() {
                 2.5-2.5 2.5z"
               />
             </svg>
-            <p className={styles.textGray}>
-              Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal
-            </p>
+            <p className={styles.textGray}>{t.footerSection.address1}</p>
           </div>
 
-          {/* Адрес №2 */}
           <div className={styles.inlineRow}>
             <svg className={styles.icon} viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 
@@ -72,13 +69,11 @@ export default function Footer() {
                 2.5-2.5 2.5z"
               />
             </svg>
-            <p className={styles.textGray}>
-              Lagoas Park, Building 7 - 1st floor South, office 13, 2740-244 Porto Salvo, Portugal
-            </p>
+            <p className={styles.textGray}>{t.footerSection.address2}</p>
           </div>
           <div className={styles.copyright}>
-              <p className={styles.textGray}>Copyright©Fasqon</p>
-              <div className={styles.social}>
+          <p className={styles.textGray}>{t.footerSection.copyright}</p>
+          <div className={styles.social}>
                   {/* X (Twitter) */}
           <a
             href="https://x.com/fasqon"
@@ -121,7 +116,6 @@ export default function Footer() {
               height={23}
             />
           </a>
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/fasqon_official/"
             target="_blank"
@@ -168,27 +162,23 @@ export default function Footer() {
 
         {/* Средняя часть: Доп. инфо (NIPC и т.д.) */}
         <div className={styles.middleSide}>
-          <p className={styles.textGray}>Fasqon, Unipessoal LDA (Zona Franca da Maderia)</p>
-          <p className={styles.textGray}>NIPC: 517935436 (Portugal)</p>
-          <p className={styles.textGray}>
-            Access registration code (Código de acesso): 2853-2787-4837
-          </p>
+          <p className={styles.textGray}>{t.footerSection.companyName}</p>
+          <p className={styles.textGray}>{t.footerSection.nipc}</p>
+          <p className={styles.textGray}>{t.footerSection.accessCode}</p>
 
           <div className={styles.rightSide}>
             <div className={styles.buttons}>
               {/* Кнопка «Documents» открывает модалку */}
               <button onClick={openModal} className={styles.button}>
-                Documents
+              {t.footerSection.documents}
               </button>
               <Link href="#" className={styles.button}>
-                Contact Us
+              {t.footerSection.contactUs}
               </Link>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Подключаем модалку и передаём пропы */}
       <ModalDocuments
         isOpen={showDocumentsModal}
         onClose={() => setShowDocumentsModal(false)}
