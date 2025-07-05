@@ -93,7 +93,7 @@ function HeaderComponent() {
           {t.header.tokenomics}
         </Link>
         <Link
-          href="/FASQON_WP_EN.pdf"
+          href="/Presentation.pdf"
           className={styles.whitePaperBtn}
           target="_blank"
           rel="noopener noreferrer"
@@ -143,7 +143,7 @@ function HeaderComponent() {
           {t.header.tokenomics}
         </Link>
         <a
-          href="/FASQON_WP_EN.pdf"
+          href="/Presentation.pdf"
           className={styles.mobileWhitePaperBtn}
           target="_blank"
           rel="noopener noreferrer"
