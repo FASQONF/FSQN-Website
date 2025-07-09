@@ -57,30 +57,32 @@
   position: relative;
 }
 
-/* SVG с анимацией */
 .animatedLine {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; 
-  z-index: 0; /* под карточками; поднимите, если нужно поверх */
+  pointer-events: none;
+  z-index: 0;
 }
+
 .AnimatedLineDesktop {
   display: block;
 }
+
 .animatedLine {
   display: none;
 }
+
 .AnimatedLineDesktop {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; 
-  z-index: 1; /* под карточками; поднимите, если нужно поверх */
+  pointer-events: none;
+  z-index: 1;
 }
 
 .grid {
@@ -102,7 +104,6 @@
   height: 151px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
   gap: 15px;
   max-width: 192px;
   transition: background-color 0.2s ease;
@@ -120,24 +121,28 @@
 }
 
 @media (max-width: 1024px) {
-  .storeSection{
+  .storeSection {
     display: flex;
     justify-content: center;
     justify-content: space-around;
     gap: 20px;
   }
-  .AnimatedLineDesktop{
+
+  .AnimatedLineDesktop {
     display: none;
   }
-  .animatedLine{
+
+  .animatedLine {
     display: block;
     height: auto;
     top: 60px;
   }
-  .content{
+
+  .content {
     max-width: 192px;
     margin: 0;
   }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
@@ -145,31 +150,34 @@
 }
 
 @media (max-width: 768px) {
-  .storeSection{
+  .storeSection {
     padding: 30px 20px;
-    /* max-height: 852px; */
   }
+
   .title {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 650px) {
-  .storeSection{
+  .storeSection {
     flex-direction: column;
     justify-content: none;
     gap: 0;
   }
-  .cardsWrapper{
+
+  .cardsWrapper {
     display: flex;
     width: 100%;
     justify-content: center;
     margin: 0 auto;
   }
-  .content{
+
+  .content {
     max-width: 100%;
   }
-  .animatedLine{
+
+  .animatedLine {
     height: 80%;
-    /* top: 0; */
   }
 }

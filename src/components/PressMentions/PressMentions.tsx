@@ -2,7 +2,6 @@
 
 import styles from "./PressMentions.module.css";
 
-// Список логотипов (пути к файлам в /public/images/...)
 const logos = [
   { src: "/images/partners/cryptomode.png", alt: "CryptoMode" },
   { src: "/images/partners/Chaiwire.png", alt: "Chainwire" },
@@ -11,8 +10,7 @@ const logos = [
 ];
 
 export default function PressMentions() {
-  // Чтобы бесшовно прокручивать, дублируем массив логотипов
-  const repeatedLogos = [...logos, ...logos,...logos];
+  const repeatedLogos = [...logos, ...logos, ...logos];
 
   return (
     <section className={styles.pressSection}>

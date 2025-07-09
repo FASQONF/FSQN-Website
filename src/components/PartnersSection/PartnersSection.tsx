@@ -2,15 +2,26 @@
 
 import { motion } from "framer-motion";
 import styles from "./PartnersSection.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
 
+interface PartnerItem {
+  name: string;
+  logo: string;
+  description: string;
+}
+interface PartnersSectionType {
+  title: string;
+  subtitle: string;
+  partners: PartnerItem[];
+}
+
 export default function PartnersSection() {
-  const t = useTranslation();
+  const { translations } = useLocalization();
+  const section = (translations.partnersSection as unknown) as PartnersSectionType;
 
   return (
     <section className={styles.partnersSection}>
-      {/* Фоновое изображение с анимацией увеличения */}
       <motion.div
         className={styles.bgMotion}
         initial={{ scale: 0.8, opacity: 0 }}
@@ -20,7 +31,7 @@ export default function PartnersSection() {
       />
 
       <div className={styles.container}>
-        {/* Заголовок */}
+        {/* Header */}
         <motion.h2
           className={styles.title}
           initial={{ y: -50, opacity: 0 }}
@@ -28,10 +39,10 @@ export default function PartnersSection() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8 }}
         >
-           {parse(t.partnersSection.title)}
+          {parse(section.title)}
         </motion.h2>
 
-        {/* Подзаголовок */}
+        {/* Header 2 */}
         <motion.p
           className={styles.subtitle}
           initial={{ y: -50, opacity: 0 }}
@@ -39,12 +50,12 @@ export default function PartnersSection() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {t.partnersSection.subtitle}
+          {section.subtitle}
         </motion.p>
 
-        {/* Карточки партнеров */}
+        {/* Partners */}
         <div className={styles.grid}>
-          {t.partnersSection.partners.map((partner: any, index: number) => (
+          {section.partners.map((partner, index) => (
             <motion.div
               key={partner.name}
               className={styles.card}

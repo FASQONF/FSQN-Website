@@ -4,15 +4,14 @@ import React, { useState, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./RoadMapSection.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
-// Интерфейс для элемента роадмапа
+
+
 interface RoadMapItem {
   year: string;
   items: string[];
 }
-
-
 
 const headerVariants = {
   hidden: { y: -50, opacity: 0 },
@@ -43,7 +42,6 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
   const [touchStart, setTouchStart] = useState<number>(0);
   const [touchEnd, setTouchEnd] = useState<number>(0);
 
-  // Обработчики для свайпа (используем тип TouchEvent)
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.touches[0].clientX);
   };
@@ -54,7 +52,7 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
 
   const handleTouchEnd = () => {
     const swipeDistance = touchStart - touchEnd;
-    const threshold = 50; // минимальная дистанция для свайпа
+    const threshold = 50;
     if (swipeDistance > threshold && currentIndex < data.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else if (swipeDistance < -threshold && currentIndex > 0) {
@@ -71,15 +69,14 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Отображаем текущую и предыдущие карточки */}
       {data.map((block, index) => {
         let slideClass = "";
         if (index === currentIndex) {
-          slideClass = "active"; // Активная карточка
+          slideClass = "active";
         } else if (index < currentIndex) {
-          slideClass = "previous"; // Предыдущие карточки
+          slideClass = "previous";
         } else {
-          slideClass = "next"; // Следующая карточка (скрыта)
+          slideClass = "next";
         }
 
         return (
@@ -92,8 +89,8 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
                 slideClass === "active"
                   ? "0%"
                   : slideClass === "previous"
-                  ? `-${(currentIndex - index) * 60}px`
-                  : "100%",
+                    ? `-${(currentIndex - index) * 60}px`
+                    : "100%",
             }}
             transition={{ duration: 0.5 }}
           >
@@ -122,22 +119,34 @@ function MobileVerticalSlider({ data }: MobileVerticalSliderProps) {
   );
 }
 
+interface YearBlock {
+  year: string;
+  items: string[];
+}
+
 export default function RoadMapSection() {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const t = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
+  const { t, translations } = useLocalization();
+
+  // Safely pull out your roadmap data; fallback to empty if missing
+  const roadmapSection =
+    (translations['roadmapSection'] as {
+      years?: YearBlock[];
+    }) || {};
+  const years: YearBlock[] = roadmapSection.years || [];
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
     };
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <section className={styles.roadmapSection}>
-      {/* Фоновое изображение */}
+      {/* Background image animation */}
       <motion.div
         className={styles.backgroundImage}
         initial="hidden"
@@ -147,10 +156,7 @@ export default function RoadMapSection() {
       >
         <img
           src="/images/tokenomics/chain.png"
-          alt="Roadmap Background"
-          // fill
-          // objectFit="cover"
-          // quality={100}
+          alt={t('roadmapSection.backgroundAlt') /* add this key to your JSON */}
         />
       </motion.div>
 
@@ -162,7 +168,7 @@ export default function RoadMapSection() {
           viewport={{ once: true, amount: 0.5 }}
           variants={headerVariants}
         >
-            {parse(t.roadmapSection.title)}
+          {parse(t('roadmapSection.title'))}
         </motion.h2>
         <motion.p
           className={styles.subtitle}
@@ -171,11 +177,11 @@ export default function RoadMapSection() {
           viewport={{ once: true, amount: 0.5 }}
           variants={headerVariants}
         >
-         {t.roadmapSection.subtitle}
+          {parse(t('roadmapSection.subtitle'))}
         </motion.p>
 
         {isMobile ? (
-          <MobileVerticalSlider data={t.roadmapSection.years} />
+          <MobileVerticalSlider data={years} />
         ) : (
           <motion.div
             className={styles.grid}
@@ -184,21 +190,29 @@ export default function RoadMapSection() {
             viewport={{ once: true, amount: 0.5 }}
             variants={gridVariants}
           >
-          {t.roadmapSection.years.map((block:any) => (
-              <motion.div key={block.year} className={styles.card} variants={cardVariants}>
-                <h3 className={styles.cardYear}>{block.year}</h3>
+            {years.map((block) => (
+              <motion.div
+                key={block.year}
+                className={styles.card}
+                variants={cardVariants}
+              >
+                <h3 className={styles.cardYear}>
+                  {parse(t(`roadmapSection.years.${years.indexOf(block)}.year`))}
+                </h3>
                 <ul className={styles.itemList}>
-                  {block.items.map((item:any, idx:any) => (
+                  {block.items.map((itemKey, idx) => (
                     <li key={idx} className={styles.item}>
                       <div className={styles.iconWrapper}>
                         <Image
                           src="/icons/check.svg"
-                          alt="Check"
+                          alt="Check mark"
                           width={16}
                           height={16}
                         />
                       </div>
-                      <span>{item}</span>
+                      <span>
+                        {parse(t(`roadmapSection.years.${years.indexOf(block)}.items.${idx}`))}
+                      </span>
                     </li>
                   ))}
                 </ul>

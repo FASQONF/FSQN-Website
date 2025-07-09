@@ -22,7 +22,6 @@
     padding: 1.8rem;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
     position: relative;
-    /* Тонкие белые рамки с градиентом */
     border: 1px solid;
     border: linear-gradient(45deg, #fff, #e6e6e6) 1;
     font-family: "Montserrat", sans-serif;
@@ -51,7 +50,6 @@
   .modalHeader h3 {
     margin: 0;
     font-size: 1.6rem;
-    /* Градиентный текст с плавным переходом */
     background: linear-gradient(45deg, #fff, #d9d9d9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

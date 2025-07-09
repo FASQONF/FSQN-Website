@@ -1,0 +1,324 @@
+{
+  "title": "Your crypto <span>neobank</span> for daily payments",
+  "description": "Discover Fasqon’s unmatched earning opportunities and crypto debit card.\n  Enjoy the best crypto rates, cashback on Apple & Google Pay, and much more. \n  Our cutting-edge Web3 banking solutions ensure seamless transactions with enhanced security.",
+  "cta": "Get my Fasqon card!",
+  "header": {
+    "navLinks": {
+      "wallet": "Wallet",
+      "cryptoCard": "Crypto card",
+      "passiveIncome": "Passive Income",
+      "aboutUs": "About Us"
+    },
+    "tokenomics": "Tokenomics",
+    "whitePaper": "White Paper"
+  },
+  "featuresSection": {
+    "title": "Discover Fasqon <span>Crypto Wallet</span>",
+    "subtitle": "All features in one app",
+    "features": [
+      {
+        "name": "Crypto Card",
+        "description": "Discover a virtual or physical cryptocurrency card from Fasqon and spend cryptocurrency wherever and whenever you like.",
+        "screenImage": ""
+      },
+      {
+        "name": "Buy",
+        "description": "Easily purchase cryptocurrency using your Fasqon Wallet. Enjoy low fees and instant transactions.",
+        "screenImage": "/images/phones/buy.png"
+      },
+      {
+        "name": "Sell",
+        "description": "Convert your crypto back to fiat whenever you want, with transparent rates and quick payouts.",
+        "screenImage": "/images/phones/sell.png"
+      },
+      {
+        "name": "Swap",
+        "description": "Swap between different cryptocurrencies in seconds, without leaving your wallet interface.",
+        "screenImage": "/images/phones/swap.png"
+      },
+      {
+        "name": "Earn",
+        "description": "Stake or lend your crypto assets and earn passive income with Fasqon’s secure staking program.",
+        "screenImage": "/images/phones/hold.png"
+      },
+      {
+        "name": "Talk",
+        "description": "Stay connected with built-in messaging and support chat. Ask questions, share tips, and grow together.",
+        "screenImage": "/images/phones/talk.png"
+      }
+    ]
+  },
+  "cryptoCardsSection": {
+    "title": "Fasqon <span>Crypto Card</span>",
+    "subtitle": "Payments anywhere, anytime",
+    "cards": [
+      {
+        "title": "Gold Crypto Card",
+        "description": "Available in virtual and physical formats, offering higher limits and premium perks. Supports Apple Pay & Google Pay, making crypto spending frictionless.",
+        "cardImg": "/images/cards/Card2.png"
+      },
+      {
+        "title": "Platinum Crypto Card",
+        "description": "A physical card with a unique IBAN for direct deposits and transfers. Enjoy global spending, ATM withdrawals, and seamless card-to-card transactions.",
+        "cardImg": "/images/cards/Card1.png"
+      },
+      {
+        "title": "Basic Crypto Card",
+        "description": "A virtual crypto card for seamless online and in-store payments via Apple Pay & Google Pay. Instantly issued with secure verification.",
+        "cardImg": "/images/cards/Card3.png"
+      }
+    ],
+    "benefits": [
+      { "icon": "/icons/check.svg", "text": "Personal Web3 IBAN" },
+      { "icon": "/icons/check.svg", "text": "Google & Apple Pay" },
+      { "icon": "/icons/check.svg", "text": "No KYC (up to €200)" },
+      { "icon": "/icons/check.svg", "text": "Cashback up to 5%" }
+    ]
+  },
+  "storeToEarn": {
+    "title": "Store to <span>Earn</span>",
+    "description": "Earn passive income by simply holding assets in the Fasqon wallet\n    and spending your reward anytime with Fasqon card.<br /> Hold now. Pay never.",
+    "items": [
+      { "icon": "/icons/user.svg", "label": "User A" },
+      { "icon": "/icons/crypto.svg", "label": "Holds crypto" },
+      { "icon": "/icons/wallet.svg", "label": "Fasqon Cold Wallet" },
+      { "icon": "/icons/lending.svg", "label": "Lending Pool" },
+      { "icon": "/icons/incentives.svg", "label": "Users incentives" },
+      { "icon": "/icons/borrowingfee.svg", "label": "Borrowing fee" },
+      { "icon": "/icons/user2.svg", "label": "User B" },
+      { "icon": "/icons/borrowfunds.svg", "label": "Borrowing funds" }
+    ]
+  },
+  "stayTuned": {
+    "title": "Stay <span>tuned</span>",
+    "subtitle": "Follow Fasqon in social media!"
+  },
+  "ultimateUX": {
+    "title": "Ultimate <span>User Experience</span>",
+    "subtitle": "Discover the best with Fasqon",
+    "features": [
+      {
+        "id": "01",
+        "title": "Seed Phrase Registration",
+        "description": "Easily sign up using a unique seed phrase to ensure your privacy",
+        "image": "/images/ux/seed-phrase.png"
+      },
+      {
+        "id": "02",
+        "title": "AI Assistants",
+        "description": "Provide security, anti-fraud, education and entertainment",
+        "image": "/images/ux/ai-assistant.png"
+      },
+      {
+        "id": "03",
+        "title": "Safe Chatting",
+        "description": "Secret P2P messaging mode between devices",
+        "image": "/images/ux/safe-chat.png"
+      },
+      {
+        "id": "04",
+        "title": "Fraud & Theft Protection",
+        "description": "Multi-factor authentication that enhances security",
+        "image": "/images/ux/protection.png"
+      }
+    ]
+  },
+  "teamSection": {
+    "title": "Our <span>Team</span>",
+    "subtitle": "The company was founded in February 2023 in Portugal, by a team of individuals seriously concerned with the lack of convenient payment solutions for retail and business in web3.",
+    "members": [
+      {
+        "name": "Orest Petryna",
+        "role": "Founder",
+        "country": "Portugal",
+        "flag": "/images/flags/portugal.svg",
+        "image": "/images/team/orest.jpeg",
+        "mobileImage": "/images/team/orest.jpeg",
+        "description": "Experienced in managing international e-commerce and Fintech companies, with a focus on strategic growth and innovation.",
+        "linkedin": "https://www.linkedin.com/in/orestpetryna"
+      },
+      {
+        "name": "Serhiy Khrun",
+        "role": "Co-Founder",
+        "country": "Poland",
+        "flag": "/images/flags/poland.svg",
+        "image": "/images/team/serhiy.jpeg",
+        "mobileImage": "/images/team/serhiy.jpeg",
+        "description": "Specializes in developing advanced payment solutions, with a deep understanding of financial technologies and user experience.",
+        "linkedin": "https://www.linkedin.com/in/serhiykhrun"
+      },
+      {
+        "name": "Sergio Latansky",
+        "role": "CBDO",
+        "country": "Spain",
+        "flag": "/images/flags/spain.svg",
+        "image": "/images/team/sergio.jpeg",
+        "mobileImage": "/images/team/sergio.jpeg",
+        "description": "Expert in identifying growth opportunities, analyzing financial data, and leading high-performing teams to achieve business goals.",
+        "linkedin": "https://www.linkedin.com/in/sergiolatansky"
+      }
+    ]
+  },
+  "partnersSection": {
+    "title": "Backers <span>&</span> <span>Partners</span>",
+    "subtitle": "Backed and supported by highly professional companies on the market",
+    "partners": [
+      {
+        "name": "PureFi",
+        "logo": "/images/partners/purefi.png",
+        "description": "Bridging Compliance and Security in Web3 Ecosystems"
+      },
+      {
+        "name": "AMLBot",
+        "logo": "/images/partners/amlbot.png",
+        "description": "One-stop assessment compliance solution for crypto business"
+      },
+      {
+        "name": "Green Light Equity (GLE)",
+        "logo": "/images/partners/gle.png",
+        "description": "An alternative investments group"
+      },
+      {
+        "name": "Vareger Group OÜ",
+        "logo": "/images/partners/vareger.png",
+        "description": "Has implemented software for banks and fintech projects"
+      },
+      {
+        "name": "Trustify Legal",
+        "logo": "/images/partners/trustify.png",
+        "description": "Responsible for compliance with legal regulations and licensing"
+      },
+      {
+        "name": "Hot Killers",
+        "logo": "/images/partners/hotkillers.png",
+        "description": "Marketing support team, which has raised over $100 million for the projects"
+      }
+    ]
+  },
+  "faqSection": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "What is FASQON and how does it ensure user privacy?",
+        "answer": "Fasqon is a private AI-powered ecosystem designed for secure communication, crypto-fiat transactions, and confidential data storage. It uses seed phrase authentication instead of phone numbers or emails, ensuring user data remains protected. Messages and transactions are encrypted, and Fasqon does not store any personal information on centralized servers."
+      },
+      {
+        "question": "How does FASQON’s private bank card work?",
+        "answer": "Fasqon offers a crypto-friendly bank card linked to a personal IBAN, allowing users to spend crypto and fiat seamlessly. The card can be topped up via SEPA transfers, P2P payments, and crypto deposits. For transactions up to €200, no KYC is required, ensuring accessibility while maintaining security standards."
+      },
+      {
+        "question": "How does the FASQON blockchain messenger work?",
+        "answer": "Fasqon’s messenger is a secure, encrypted communication tool that does not require a SIM card for registration. Users sign up using a seed phrase, ensuring a private and secure connection. The messenger supports P2P transactions, allowing users to send payments directly through chat. All messages and transactions are encrypted end-to-end."
+      },
+      {
+        "question": "Can I participate in token sales on FASQON, and what are the stages?",
+        "answer": "Yes, Fasqon’s token, FSQN, is available in different sales stages. The private sale rounds have set prices, with the next phase being a private round at $0.015 per token, followed by an IDO at $0.03. Users can participate in these sales through official Fasqon channels and partner exchanges."
+      },
+      {
+        "question": "How can I register on FASQON, and what information is required?",
+        "answer": "Registration on Fasqon does not require personal data such as a phone number or email. Instead, users create an account with a seed phrase, ensuring a high level of privacy and security. This method eliminates the risk of identity leaks while granting full control over funds and communications."
+      },
+      {
+        "question": "What unique features does FASQON offer?",
+        "answer": "Fasqon combines a Web3 wallet, a private bank card, a secure messenger, and AI-powered financial tools in a single platform. Key features include a personal IBAN, crypto-fiat conversions, P2P payments, encrypted messaging, AI assistants for financial automation, and a Play-to-Airdrop rewards system."
+      }
+    ]
+  },
+  "footerSection": {
+    "companyName": "Fasqon, Unipessoal LDA (Zona Franca da Madeira)",
+    "nipc": "NIPC: 517395436 (Portugal)",
+    "accessCode": "Access registration code (Código de acesso): 2853-2787-4837",
+    "email": "office@fasqon.com",
+    "copyright": "Copyright©Fasqon",
+    "address1": "Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal",
+    "address2": "Lagoas Park, Building 7 - 1st floor South, office 13, 2740-244 Porto Salvo, Portugal",
+    "documents": "Documents",
+    "contactUs": "Contact Us"
+  },
+  "modalDocuments": {
+    "title": "Legal documents",
+    "privacyPolicy": "Privacy Policy",
+    "amlPolicy": "Anti-Money Laundering Policy",
+    "tokensRisk": "Tokens Risk Disclosure",
+    "tokenSale": "Token Sale Agreement",
+    "termsOfUse": "Terms Of Use",
+    "cookies": "Cookies"
+  },
+  "fsqnTokenSection": {
+    "title": "FSQN <span>Token</span>",
+    "description": "<span>With our FSQN token, you get access to all the functionality of our platform!</span><br /><br />\n      The utilitarian FSQN token enables payment for services, access to features, transparent emission distribution, \n      various token sale stages, and participation in a promising project's development."
+  },
+  "tokenUtilitySection": {
+    "title": "Token <span>Utility</span>",
+    "description": [
+      "Access the enhanced features of our messenger/wallet by maintaining a certain token balance.",
+      "Receive discounts on commissions and service fees by using FSQN tokens for payments.",
+      "Benefit from our daily buyback strategy, with 25% of profits used to purchase and burn tokens.",
+      "Explore trading opportunities within our platform for potential gains."
+    ],
+    "cards": [
+      ["Get Card", "Payments", "Internal Trxs", "Passive income mode"],
+      ["Treasury"],
+      ["40% Ecosystem growth", "50% User incentives", "10% Monthly Burn"]
+    ]
+  },
+  "tokenomicsSection": {
+    "title": "Token<span class='titleSpan'>omics</span>",
+    "subtitle": "FSQN token distribution",
+    "segments": [
+      { "id": "team", "name": "Team", "percentage": 16 },
+      { "id": "liquidity", "name": "Liquidity Reserve", "percentage": 15 },
+      { "id": "ecosystem", "name": "Ecosystem incentives", "percentage": 15 },
+      { "id": "marketing", "name": "Marketing", "percentage": 10 },
+      { "id": "farming", "name": "Farming & Staking", "percentage": 10 },
+      { "id": "ido", "name": "IDO", "percentage": 3 },
+      { "id": "airdrop", "name": "TMA Airdrop", "percentage": 2 },
+      { "id": "seed", "name": "Seed", "percentage": 3 },
+      { "id": "advisors", "name": "Advisors", "percentage": 2 },
+      { "id": "private", "name": "Private Sale", "percentage": 26 }
+    ]
+  },
+  "roadmapSection": {
+    "title": "Road <span>Map</span>",
+    "subtitle": "Key stages of FASQON development",
+    "years": [
+      {
+        "year": "2024",
+        "items": [
+          "Pre-sale Round B",
+          "Wallet MVP development",
+          "Launch telegram mini app",
+          "Register crypto-fiat license"
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          "Mass app marketing campaign",
+          "Strategic partnerships",
+          "IDO",
+          "Wallet closed Alpha test",
+          "CEX listings",
+          "Czech Republic banking license",
+          "Reach 1M active users"
+        ]
+      },
+      {
+        "year": "2026",
+        "items": [
+          "Series A fundraising",
+          "Expanding to the regions of Asia and the Middle East"
+        ]
+      },
+      {
+        "year": "2027-2030",
+        "items": [
+          "Attracting 10M+ active users",
+          "Expansion and scaling (increasing transaction volume, more integrations, new products)",
+          "AI assistants and additional services",
+          "Full ownership profitability with a goal of achieving 30% margin by 2030"
+        ]
+      }
+    ]
+  }
+}

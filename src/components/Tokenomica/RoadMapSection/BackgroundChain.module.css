@@ -1,15 +1,14 @@
 .chainWrapper {
-    position: absolute;
-    top: 0;
-    left: 100px;
-    right: 0;
-    bottom: 0;
-    overflow: hidden; /* чтобы изображение не выходило */
-    z-index: 0; /* чтобы фон был позади контента */
-  }
-  
-  .chainImage {
-    object-fit: cover; /* или contain, если нужно */
-    opacity: 0.3; /* при желании сделать цепь полупрозрачной */
-  }
-  
+  position: absolute;
+  top: 0;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.chainImage {
+  object-fit: cover;
+  opacity: 0.3;
+}

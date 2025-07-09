@@ -3,22 +3,45 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./CryptoCards.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '../../context/LocalizationContext';
 import parse from "html-react-parser";
 
-export default function CryptoCards() {
-  const t = useTranslation();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const length = t.cryptoCardsSection.cards.length;
+interface CryptoCardItem {
+  title: string;
+  description: string;
+  cardImg: string;
+}
 
-  // При клике на карту делаем её центральной
+interface CryptoBenefit {
+  icon: string;
+  text: string;
+}
+
+interface CryptoCardsSection {
+  title: string;
+  subtitle: string;
+  cards: CryptoCardItem[];
+  benefits: CryptoBenefit[];
+}
+
+export default function CryptoCards() {
+  const { t, translations } = useLocalization();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const section = (
+    (translations.cryptoCardsSection as unknown) as CryptoCardsSection
+  ) ?? { title: "", subtitle: "", cards: [], benefits: [] };
+
+  const cards = Array.isArray(section.cards) ? section.cards : [];
+  const benefits = Array.isArray(section.benefits) ? section.benefits : [];
+
+  const length = cards.length;
+
   const handleCardClick = (index: number) => {
     if (index !== currentIndex) {
       setCurrentIndex(index);
     }
   };
 
-  // Определяем класс (left/center/right) для каждой карты
   const getPositionClass = (index: number) => {
     const relativePos = (index - currentIndex + length) % length;
     if (relativePos === 0) return styles.centerCard;
@@ -26,12 +49,11 @@ export default function CryptoCards() {
     return styles.leftCard;
   };
 
-  // Текущая (центральная) карта
-  const currentCard = t.cryptoCardsSection.cards[currentIndex];
+  const currentCard = cards[currentIndex] || { title: "", description: "" };
 
   return (
     <section className={styles.sliderSection}>
-      {/* Фоновые диаманты */}
+      {/* Bg diamonds */}
       <div className={styles.diamond1}>
         <img
           src="/images/cards/diamond1.png"
@@ -56,7 +78,6 @@ export default function CryptoCards() {
           height={400}
         />
       </div>
-      {/* Основной контент секции – анимируется, когда секция в зоне видимости */}
       <motion.div
         className={styles.sliderInner}
         initial={{ y: 50, opacity: 0 }}
@@ -64,10 +85,10 @@ export default function CryptoCards() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1 }}
       >
-        {/* Заголовки */}
-        <h2 className={styles.mainTitle}>{parse(t.cryptoCardsSection.title)}</h2>
-        <p className={styles.subtitle}>{t.cryptoCardsSection.subtitle}</p>
-        {/* Телефон (фон) */}
+        {/* Headers */}
+        <h2 className={styles.mainTitle}>{parse(t("cryptoCardsSection.title"))}</h2>
+        <p className={styles.subtitle}>{parse(t("cryptoCardsSection.subtitle"))}</p>
+        {/* Phone bg */}
         <div className={styles.phoneContainer}>
           <img
             src="/images/cards/phone.png"
@@ -78,25 +99,25 @@ export default function CryptoCards() {
           />
         </div>
 
-        {/* Обёртка для карт */}
+        {/* Cards container */}
         <div className={styles.cardsWrapper}>
-          {t.cryptoCardsSection.cards.map((card:any, idx:any) => (            <div
-              key={card.title}
-              className={`${styles.card} ${getPositionClass(idx)}`}
-              onClick={() => handleCardClick(idx)}
-            >
-              <img
-                src={card.cardImg}
-                alt={card.title}
-                width={400}
-                height={250}
-                className={styles.cardImage}
-              />
-            </div>
+          {cards.map((card: any, idx: any) => (<div
+            key={card.title}
+            className={`${styles.card} ${getPositionClass(idx)}`}
+            onClick={() => handleCardClick(idx)}
+          >
+            <img
+              src={card.cardImg}
+              alt={card.title}
+              width={400}
+              height={250}
+              className={styles.cardImage}
+            />
+          </div>
           ))}
         </div>
 
-        {/* Текст о центральной карте */}
+        {/* Main text */}
         <div className={styles.cardInfo}>
           <h3 className={styles.cardTitle}>{currentCard.title}</h3>
           <p className={styles.cardDescription}>
@@ -105,9 +126,9 @@ export default function CryptoCards() {
         </div>
       </motion.div>
 
-      {/* Преимущества (иконки) внизу */}
+      {/* Benefits icons */}
       <div className={styles.benefits}>
-        {t.cryptoCardsSection.benefits.map((benefit:any, index:any) => (
+        {benefits.map((benefit: any, index: any) => (
           <div key={index} className={styles.benefitItem}>
             <img src={benefit.icon} alt={benefit.text} width={24} height={24} />
             <span>{benefit.text}</span>

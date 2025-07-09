@@ -3,10 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./StayTuned.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+
+
 export default function StayTuned() {
-  const t = useTranslation();
+  const { t } = useLocalization();
 
   return (
     <section className={styles.stayTunedSection}>
@@ -19,8 +21,8 @@ export default function StayTuned() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <h2 className={styles.title}>{parse(t.stayTuned.title)}</h2>
-          <p className={styles.subtitle}>{t.stayTuned.subtitle}</p>
+          <h2 className={styles.title}>{parse(t("stayTuned.title"))}</h2>
+          <p className={styles.subtitle}>{t("stayTuned.subtitle")}</p>
         </motion.div>
 
         {/* Блок иконок – появляется справа налево */}

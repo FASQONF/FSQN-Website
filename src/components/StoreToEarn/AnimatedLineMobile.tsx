@@ -39,7 +39,7 @@ export function AnimatedLineMobile() {
           repeat: Infinity,
           repeatType: "loop",
           times: [
-            0.0,  0.1, 0.13,
+            0.0, 0.1, 0.13,
             0.23, 0.26,
             0.36, 0.39,
             0.49, 0.52,

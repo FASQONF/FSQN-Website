@@ -5,18 +5,18 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 import Image from "next/image";
 import ModalDocuments from "../ModalDocuments/ModalDocuments";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 
 export default function Footer() {
   const [showDocumentsModal, setShowDocumentsModal] = useState(false);
-  const t = useTranslation();
+  const { t } = useLocalization();
 
   const openModal = () => setShowDocumentsModal(true);
   const closeModal = () => setShowDocumentsModal(false);
 
   return (
     <footer className={styles.footer}>
-      {/* Верхний контейнер с тремя блоками */}
+      {/* Top Container */}
       <div className={styles.topContainer}>
         <div className={styles.logoContainer}>
           <Image
@@ -28,7 +28,7 @@ export default function Footer() {
           />
         </div>
 
-        {/* Левая часть: Email + Адреса */}
+        {/* Left Part: Email + Address */}
         <div className={styles.leftSide}>
           {/* Email */}
           <div className={styles.inlineRow}>
@@ -41,11 +41,11 @@ export default function Footer() {
               />
             </svg>
             <a href="mailto:office@fasqon.com" className={styles.textGray}>
-            {t.footerSection.email}
+              {t("footerSection.email")}
             </a>
           </div>
 
-          {/* Адрес №1 */}
+          {/* Address №1 */}
           <div className={styles.inlineRow}>
             <svg className={styles.icon} viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 
@@ -56,7 +56,7 @@ export default function Footer() {
                 2.5-2.5 2.5z"
               />
             </svg>
-            <p className={styles.textGray}>{t.footerSection.address1}</p>
+            <p className={styles.textGray}>{t("footerSection.address1")}</p>
           </div>
 
           <div className={styles.inlineRow}>
@@ -69,111 +69,110 @@ export default function Footer() {
                 2.5-2.5 2.5z"
               />
             </svg>
-            <p className={styles.textGray}>{t.footerSection.address2}</p>
+            <p className={styles.textGray}>{t("footerSection.address2")}</p>
           </div>
           <div className={styles.copyright}>
-          <p className={styles.textGray}>{t.footerSection.copyright}</p>
-          <div className={styles.social}>
-                  {/* X (Twitter) */}
-          <a
-            href="https://x.com/fasqon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/twitter.svg"
-              alt="X (Twitter)"
-              width={18}
-              height={18}
-            />
-          </a>
+            <p className={styles.textGray}>{t("footerSection.copyright")}</p>
+            <div className={styles.social}>
+              {/* X (Twitter) */}
+              <a
+                href="https://x.com/fasqon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/twitter.svg"
+                  alt="X (Twitter)"
+                  width={18}
+                  height={18}
+                />
+              </a>
 
-          {/* Telegram */}
-          <a
-            href="https://t.me/fasqonofficial"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/telegram.svg"
-              alt="Telegram"
-              width={23}
-              height={23}
-            />
-          </a>
-          <a
-            href="https://t.me/fasqonchat"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/telegram2.svg"
-              alt="Telegram"
-              width={23}
-              height={23}
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/fasqon_official/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/instagram.svg"
-              alt="Instagram"
-              width={23}
-              height={23}
-            />
-          </a>
-          <a
-            href="https://medium.com/@fasqon.official"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/medium.svg"
-              alt="Instagram"
-              width={23}
-              height={23}
-            />
-          </a>
-          {/* Discord */}
-          <a
-            href="https://discord.com/invite/gkRd9vSEr8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <Image
-              src="/icons/mobile/discord.svg"
-              alt="Discord"
-              width={23}
-              height={23}
-            />
-          </a>
-              </div>
+              {/* Telegram */}
+              <a
+                href="https://t.me/fasqonofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/telegram.svg"
+                  alt="Telegram"
+                  width={23}
+                  height={23}
+                />
+              </a>
+              <a
+                href="https://t.me/fasqonchat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/telegram2.svg"
+                  alt="Telegram"
+                  width={23}
+                  height={23}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/fasqon_official/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/instagram.svg"
+                  alt="Instagram"
+                  width={23}
+                  height={23}
+                />
+              </a>
+              <a
+                href="https://medium.com/@fasqon.official"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/medium.svg"
+                  alt="Instagram"
+                  width={23}
+                  height={23}
+                />
+              </a>
+              {/* Discord */}
+              <a
+                href="https://discord.com/invite/gkRd9vSEr8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iconLink}
+              >
+                <Image
+                  src="/icons/mobile/discord.svg"
+                  alt="Discord"
+                  width={23}
+                  height={23}
+                />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Средняя часть: Доп. инфо (NIPC и т.д.) */}
+        {/* Middle: Additional Info (NIPC) */}
         <div className={styles.middleSide}>
-          <p className={styles.textGray}>{t.footerSection.companyName}</p>
-          <p className={styles.textGray}>{t.footerSection.nipc}</p>
-          <p className={styles.textGray}>{t.footerSection.accessCode}</p>
+          <p className={styles.textGray}>{t("footerSection.companyName")}</p>
+          <p className={styles.textGray}>{t("footerSection.nipc")}</p>
+          <p className={styles.textGray}>{t("footerSection.accessCode")}</p>
 
           <div className={styles.rightSide}>
             <div className={styles.buttons}>
-              {/* Кнопка «Documents» открывает модалку */}
               <button onClick={openModal} className={styles.button}>
-              {t.footerSection.documents}
+                {t("footerSection.documents")}
               </button>
               <Link href="#" className={styles.button}>
-              {t.footerSection.contactUs}
+                {t("footerSection.contactUs")}
               </Link>
             </div>
           </div>

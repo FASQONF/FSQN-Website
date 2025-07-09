@@ -1,104 +1,103 @@
 .cookieBanner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #000 0%, #222 100%);
-    color: #fff;
-    padding: 1.2rem;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
-  }
-  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #000 0%, #222 100%);
+  color: #fff;
+  padding: 1.2rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textBlock {
+  max-width: 700px;
+}
+
+.textBlock h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.textBlock p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.textBlock a {
+  color: #0f0;
+  text-decoration: underline;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.acceptBtn,
+.rejectBtn {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.acceptBtn {
+  background-color: #0f0;
+  color: #000;
+}
+
+.acceptBtn:hover {
+  background-color: #66ff66;
+  transform: scale(1.05);
+}
+
+.rejectBtn {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.rejectBtn:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
   .bannerContent {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
   }
-  
+
   .textBlock {
-    max-width: 700px;
+    text-align: center;
+    width: 100%;
   }
-  
-  .textBlock h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  
-  .textBlock p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .textBlock a {
-    color: #0f0;
-    text-decoration: underline;
-  }
-  
+
   .buttonGroup {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
   }
-  
-  .acceptBtn,
-  .rejectBtn {
-    border: none;
-    border-radius: 9999px;
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-  }
-  
-  .acceptBtn {
-    background-color: #0f0;
-    color: #000;
-  }
-  
-  .acceptBtn:hover {
-    background-color: #66ff66;
-    transform: scale(1.05);
-  }
-  
-  .rejectBtn {
-    background-color: #444;
-    color: #fff;
-    border: 1px solid #fff;
-  }
-  
-  .rejectBtn:hover {
-    background-color: #666;
-    transform: scale(1.05);
-  }
-  
-  /* Адаптив для мобильных */
-  @media (max-width: 600px) {
-    .bannerContent {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .textBlock {
-      text-align: center;
-      width: 100%;
-    }
-    
-    .buttonGroup {
-      margin-top: 0.5rem;
-      width: 100%;
-      justify-content: center;
-    }
-  }
-  
+}

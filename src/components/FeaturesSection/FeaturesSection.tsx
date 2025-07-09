@@ -3,8 +3,21 @@
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FeaturesSection.module.css";
 import { useState } from "react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+
+
+interface Feature {
+  name: string;
+  description: string;
+  screenImage?: string;
+}
+
+interface FeaturesSectionTranslations {
+  title: string;
+  subtitle: string;
+  features: Feature[];
+}
 
 const contentVariants = {
   hidden: { y: -50, opacity: 0 },
@@ -20,10 +33,17 @@ const accordionVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
   exit: { opacity: 0, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
 };
+
 export default function FeaturesSection() {
-  const t = useTranslation();
+  const { t, translations } = useLocalization();
+  const section =
+    ((translations as any).featuresSection as FeaturesSectionTranslations)
+    ?? { title: '', subtitle: '', features: [] };
+
+  const features = Array.isArray(section.features) ? section.features : [];
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const activeFeature = activeIndex !== null ? t.featuresSection.features[activeIndex] : null;
+
+  const activeFeature = activeIndex !== null ? features[activeIndex] : null;
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -36,8 +56,8 @@ export default function FeaturesSection() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1 }}
       >
-        <h2 className={styles.sectionTitle}>{parse(t.featuresSection.title)}</h2>
-        <p className={styles.subtitle}>{t.featuresSection.subtitle}</p>
+        <h2 className={styles.sectionTitle}>{parse(t("featuresSection.title"))}</h2>
+        <p className={styles.subtitle}>{t("featuresSection.subtitle")}</p>
       </motion.div>
 
       <motion.div
@@ -69,7 +89,8 @@ export default function FeaturesSection() {
         </div>
         <div className={styles.rightSide}>
           <ul className={styles.featureList}>
-          {t.featuresSection.features.map((feature: any, idx: number) => {              const isOpen = activeIndex === idx;
+            {features.map((feature: any, idx: number) => {
+              const isOpen = activeIndex === idx;
               return (
                 <li key={feature.name} className={styles.accordionItem}>
                   <div
@@ -81,13 +102,13 @@ export default function FeaturesSection() {
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
-                      className={styles.accordionContent}
-                      variants={answerVariants}
-                      initial="hidden"
-                      whileInView="whileInView"
-                      exit="exit"
-                      viewport={{ once: true, amount: 0.8 }}
-                    >
+                        className={styles.accordionContent}
+                        variants={answerVariants}
+                        initial="hidden"
+                        whileInView="whileInView"
+                        exit="exit"
+                        viewport={{ once: true, amount: 0.8 }}
+                      >
                         <p>{feature.description}</p>
                       </motion.div>
                     )}

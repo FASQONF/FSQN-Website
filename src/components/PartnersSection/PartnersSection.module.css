@@ -1,29 +1,26 @@
-/* Фоновое анимированное изображение */
 .bgMotion {
   position: absolute;
-  /* transform: translateX(-50%); */
   width: 100%;
-  height: 800px; /* настройте по необходимости */
+  height: 800px;
   background: url("/images/glass.png") no-repeat center center;
   background-size: contain;
   z-index: 0;
 }
 
-/* Остальные стили остаются без изменений */
 .partnersSection {
   position: relative;
   background-color: #000;
   color: #fff;
   padding: 100px 20px;
   text-align: center;
-  overflow: hidden; /* чтобы фон не выходил за границы */
+  overflow: hidden;
 }
 
 .container {
   max-width: 970px;
   margin: 0 auto;
   position: relative;
-  z-index: 1; /* чтобы контент был поверх фонового изображения */
+  z-index: 1;
 }
 
 .title {
@@ -94,7 +91,6 @@
   margin: 0 auto;
 }
 
-/* Адаптив */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

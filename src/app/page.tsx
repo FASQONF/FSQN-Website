@@ -3,7 +3,6 @@
 import { Suspense, useEffect } from "react";
 import styles from "./page.module.css";
 
-// Import our sections
 import HeroSection from "@/components/HeroSection/HeroSection";
 import PressMentions from "@/components/PressMentions/PressMentions";
 import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";

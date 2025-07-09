@@ -3,16 +3,10 @@
 import React, { useState, useEffect, JSX } from "react";
 import styles from "./CookieBanner.module.css";
 
-/**
- * Баннер, который сохраняет решение пользователя о cookies в cookie
- * (cookieConsent=accepted или cookieConsent=rejected).
- * Если cookie не установлено, баннер отображается.
- */
 export default function CookieBanner(): JSX.Element | null {
   const [showBanner, setShowBanner] = useState<boolean>(false);
 
   useEffect(() => {
-    // Проверяем наличие cookie: cookieConsent=accepted или cookieConsent=rejected
     if (typeof document !== "undefined") {
       const hasAccepted = document.cookie.includes("cookieConsent=accepted");
       const hasRejected = document.cookie.includes("cookieConsent=rejected");
@@ -24,18 +18,16 @@ export default function CookieBanner(): JSX.Element | null {
   }, []);
 
   const handleAccept = () => {
-    // Устанавливаем cookie cookieConsent=accepted на 1 год
     document.cookie = "cookieConsent=accepted; path=/; max-age=31536000";
     setShowBanner(false);
   };
 
   const handleReject = () => {
-    // Устанавливаем cookie cookieConsent=rejected на 1 год
     document.cookie = "cookieConsent=rejected; path=/; max-age=31536000";
     setShowBanner(false);
   };
 
-  if (!showBanner) return null; // Если баннер скрыт, ничего не рендерим
+  if (!showBanner) return null;
 
   return (
     <div className={styles.cookieBanner}>

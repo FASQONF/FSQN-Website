@@ -12,14 +12,14 @@
   position: relative;
 }
 
-/* Текстовый блок */
+/* Text container */
 .content {
   flex: 1;
   max-width: 600px;
   margin-bottom: 2rem;
 }
 
-/* Заголовок */
+/* Header */
 .title {
   font-family: "Franie Test", "Montserrat", serif;
   font-weight: 700;
@@ -31,7 +31,6 @@
   color: #00ff00;
 }
 
-/* Описание */
 .description {
   font-weight: 500;
   font-size: 18px;
@@ -41,7 +40,6 @@
   margin-bottom: 40px;
 }
 
-/* CTA кнопка */
 .ctaButton {
   display: flex;
   align-items: center;
@@ -66,7 +64,6 @@
   transform: translateY(-2px);
 }
 
-/* Контейнер для изображений */
 .imagesWrapper {
   flex: 1;
   position: relative;
@@ -83,7 +80,6 @@
   z-index: 2;
 }
 
-/* Первый телефон */
 .phoneLeft {
   position: absolute;
   top: 0;
@@ -93,7 +89,6 @@
 
 }
 
-/* Второй телефон */
 .phoneRight {
   position: absolute;
   top: 60px;
@@ -107,16 +102,16 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(15px, -15px); /* резкое смещение по диагонали (вправо и вверх) */
+    transform: translate(15px, -15px);
   }
   20% {
-    transform: translate(15px, -15px); /* держим позицию */
+    transform: translate(15px, -15px);
   }
   55% {
-    transform: translate(0, 0); /* быстро возвращаемся в исходное положение */
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 0); /* интервал (пауза) */
+    transform: translate(0, 0);
   }
 }
 
@@ -125,20 +120,19 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(-15px, 15px); /* резкое смещение по диагонали (влево и вниз) */
+    transform: translate(-15px, 15px);
   }
   20% {
-    transform: translate(-15px, 15px); /* держим позицию */
+    transform: translate(-15px, 15px);
   }
   55% {
-    transform: translate(0, 0); /* быстро возвращаемся */
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 0); /* пауза между циклами */
+    transform: translate(0, 0);
   }
 }
 
-/* Контейнер для кристаллов (фон) */
 .crystalsWrapper {
   position: absolute;
   bottom: -60px;
@@ -150,12 +144,10 @@
   z-index: 0;
 }
 
-/* Изображение кристаллов */
 .crystalsImage {
   object-fit: contain;
 }
 
-/* Адаптив для мобильных */
 @media only screen and (max-width: 900px) 
 {  .heroSection {
     flex-direction: column-reverse;
@@ -177,7 +169,6 @@
   .description{
     font-size: 15px;
   }
-  /* Первый телефон */
   .phoneLeft {
     width: 284px;
     height: 470px;  
@@ -187,7 +178,6 @@
     z-index: 2;
   }
   
-  /* Второй телефон */
   .phoneRight {
     width: 299px;
     height: 450px;
@@ -218,7 +208,6 @@
     z-index: 2;
   }
   
-  /* Первый телефон */
   .phoneLeft {
     width: 209px;
     height: 347px;
@@ -228,7 +217,6 @@
     z-index: 2;
   }
   
-  /* Второй телефон */
   .phoneRight {
     width: 220px;
     height: 332px;

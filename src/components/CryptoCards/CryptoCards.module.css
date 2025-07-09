@@ -1,25 +1,24 @@
-/* Основной контейнер секции */
+/* Main Container */
 .sliderSection {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* Занимаем высоту экрана */
+  min-height: 100vh;
   background-color: #000;
   color: #fff;
   overflow: hidden;
   text-align: center;
-  padding: 0 20px; /* Убираем лишний отступ снизу */
+  padding: 0 20px;
 }
 
-/* Диаманты (фон) */
+/* Diamonds (bg) */
 .diamond1,
 .diamond2,
 .diamond3  {
   position: absolute;
-  z-index: 0; /* позади всего */
+  z-index: 0;
   opacity: 1;
 }
 
-/* Позиции диамантов (исходное положение) */
 .diamond1 {
   bottom: 10%;
   left: -12%;
@@ -42,16 +41,16 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(30px, -20px); /* резкий подъём вправо и вверх */
+    transform: translate(30px, -20px);
   }
   20% {
-    transform: translate(30px, -20px); /* держим положение */
+    transform: translate(30px, -20px);
   }
   25% {
-    transform: translate(0, 0);       /* быстро возвращаемся */
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 0);       /* интервал паузы */
+    transform: translate(0, 0);
   }
 }
 
@@ -60,10 +59,10 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(-25px, -30px); /* резкое смещение влево и вверх */
+    transform: translate(-25px, -30px);
   }
   20% {
-    transform: translate(-25px, -30px); /* держим положение */
+    transform: translate(-25px, -30px);
   }
   25% {
     transform: translate(0, 0);     
@@ -78,16 +77,16 @@
     transform: translate(0, 0);
   }
   10% {
-    transform: translate(20px, 25px); /* резкое смещение вправо и вниз */
+    transform: translate(20px, 25px);
   }
   20% {
-    transform: translate(20px, 25px); /* держим положение */
+    transform: translate(20px, 25px);
   }
   25% {
-    transform: translate(0, 0);       /* быстро возвращаемся */
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 0);       /* пауза */
+    transform: translate(0, 0);
   }
 }
 

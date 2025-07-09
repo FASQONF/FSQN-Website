@@ -2,17 +2,33 @@
 
 import { motion } from "framer-motion";
 import styles from "./TeamSection.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
-import linkedin from "../../../public/icons/linkedin.png"
+
+interface TeamMember {
+  name: string;
+  role: string;
+  country: string;
+  flag: string;
+  image: string;
+  mobileImage: string;
+  description: string;
+  linkedin: string;
+}
+interface TeamSectionType {
+  title: string;
+  subtitle: string;
+  members: TeamMember[];
+}
 
 export default function TeamSection() {
-  const t = useTranslation();
+  const { translations } = useLocalization();
+  const section = (translations.teamSection as unknown) as TeamSectionType;
 
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
-        {/* Заголовок и описание */}
+        {/* Header & Description */}
         <motion.div
           className={styles.header}
           initial={{ y: -50, opacity: 0 }}
@@ -20,13 +36,14 @@ export default function TeamSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
-         <h2 className={styles.title}>{parse(t.teamSection.title)}</h2>
-         <p className={styles.subtitle}>{t.teamSection.subtitle}</p>
+          <h2 className={styles.title}>{parse(section.title)}</h2>
+          <p className={styles.subtitle}>{section.subtitle}</p>
         </motion.div>
 
-        {/* Карточки команды */}
+        {/* Teams cards */}
         <div className={styles.grid}>
-        {t.teamSection.members.map((member: any, index: number) => (            <motion.div
+          {section.members.map((member, index) => (
+            <motion.div
               key={member.name}
               className={styles.card}
               initial={{ opacity: 0, y: 20 }}
@@ -41,8 +58,8 @@ export default function TeamSection() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    width="222"
-                    height="222"
+                    width={222}
+                    height={222}
                     className={styles.avatar}
                   />
                 </picture>
@@ -55,7 +72,14 @@ export default function TeamSection() {
                     rel="noopener noreferrer"
                     className={styles.linkedinLink}
                   >
-                   <img className={styles.linkedinIcon} src={linkedin.src} alt="linkedin"/>{member.name} 
+                    <img
+                      className={styles.linkedinIcon}
+                      src="/icons/linkedin.png"
+                      alt="LinkedIn"
+                      width={16}
+                      height={16}
+                    />
+                    {member.name}
                   </a>
                 </h3>
                 <p className={styles.memberRole}>{member.role}</p>
@@ -63,8 +87,8 @@ export default function TeamSection() {
                   <img
                     src={member.flag}
                     alt={member.country}
-                    width="24"
-                    height="16"
+                    width={24}
+                    height={16}
                     className={styles.flag}
                   />
                   <span className={styles.countryName}>{member.country}</span>

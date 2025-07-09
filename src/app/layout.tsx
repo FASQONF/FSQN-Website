@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/FooterSection/FooterSection";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import { LocalizationProvider } from '../context/LocalizationContext';
 import { Suspense } from "react";
 
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Fasqon",
   },
   description: "Fasqon offers next-gen Web3 solutions for retail and business. Discover advanced crypto payment, private bank cards, and more.",
-  
+
   openGraph: {
     title: "Fasqon - Next Generation Web3 Solutions",
     description: "Fasqon is a next gen web3 neobank for daily payments.Get your crypto card right now!",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  
+
   other: {
     'telegram:title': "Fasqon - Next Generation Web3 Solutions",
     'telegram:description': "Fasqon is a next gen web3 neobank for daily payments.Get your crypto card right now!",
@@ -47,12 +48,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        <Suspense fallback={null}>
-        <Header/>
-        <CookieBanner/>
-        {children}
-        <Footer/>
-        </Suspense>
+        <LocalizationProvider>
+          <Suspense fallback={null}>
+            <Header />
+            <CookieBanner />
+            {children}
+            <Footer />
+          </Suspense>
+        </LocalizationProvider>
       </body>
     </html>
   );

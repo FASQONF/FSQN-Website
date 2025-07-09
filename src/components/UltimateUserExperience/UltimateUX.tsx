@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import styles from "./UltimateUX.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
 
 
@@ -14,8 +14,19 @@ interface FeatureItem {
   description: string;
   image: string;
 }
+
+interface UltimateUXSection {
+  title: string;
+  subtitle: string;
+  features: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+  }[];
+}
+
 function getAnimationProps(id: string, disableAnimation: boolean) {
-  // Если анимация отключена, возвращаем одинаковые значения initial и animate
   if (disableAnimation) {
     return {
       initial: { opacity: 1, x: 0, y: 0, rotate: 0 },
@@ -53,13 +64,16 @@ function getAnimationProps(id: string, disableAnimation: boolean) {
 }
 
 export default function UltimateUX() {
-  // Определяем, мобильное ли устройство (например, ширина < 768px)
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const disableAnimation = isMobile; // Для мобильных отключаем появление
-  const t = useTranslation();
+  const disableAnimation = isMobile;
+  const { t, translations } = useLocalization();
+
+  const section = (translations.ultimateUX as unknown) as UltimateUXSection;
+  const rawFeatures = section.features ?? [];
+
   return (
     <div className={styles.container}>
-      {/* Заголовок и подзаголовок */}
+      {/* Header */}
       <motion.div
         className={styles.header}
         initial={disableAnimation ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
@@ -69,20 +83,20 @@ export default function UltimateUX() {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8 }}
       >
-       <h1 className={styles.title}>{parse(t.ultimateUX.title)}</h1>
-       <p className={styles.subtitle}>{t.ultimateUX.subtitle}</p>
+        <h1 className={styles.title}>{parse(t("ultimateUX.title"))}</h1>
+        <p className={styles.subtitle}>{t("ultimateUX.subtitle")}</p>
       </motion.div>
 
-      {/* Сетка карточек */}
+      {/* Cards grid */}
       <div className={styles.grid}>
-      {t.ultimateUX.features.map((feature: FeatureItem) => {          const animationProps = getAnimationProps(feature.id, disableAnimation);
+        {rawFeatures.map((feature: FeatureItem) => {
+          const animationProps = getAnimationProps(feature.id, disableAnimation);
           const delay = parseInt(feature.id, 10) * 0.2;
           return (
             <motion.div
               key={feature.id}
-              className={`${styles.card} ${styles["card" + feature.id]} ${
-                feature.id === "02" ? styles.whiteCard : ""
-              }`}
+              className={`${styles.card} ${styles["card" + feature.id]} ${feature.id === "02" ? styles.whiteCard : ""
+                }`}
               initial={animationProps.initial}
               whileInView={animationProps.animate}
               viewport={{ once: true, amount: 0.8 }}

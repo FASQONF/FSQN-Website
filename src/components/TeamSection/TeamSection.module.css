@@ -1,170 +1,181 @@
 .teamSection {
-    background-color: #000;
-    color: #fff;
-    padding: 0 20px;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 970px;
-    margin: 0 auto;
-  }
-  
-  .title {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 128%;
-    font-family: "Franie Test","Montserrat", serif;
+  background-color: #000;
+  color: #fff;
+  padding: 0 20px;
+  text-align: center;
+}
 
-  }
-  
-  .title span {
-    color: #0e0;
-  }
-  
-  .subtitle {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 144%;
-    letter-spacing: 0.06em;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 60px;
-  }
-  
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 128%;
+  font-family: "Franie Test", "Montserrat", serif;
+
+}
+
+.title span {
+  color: #0e0;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.card {
+  text-align: center;
+  width: 100%;
+  max-width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatarWrapper {
+  width: 222px;
+  height: 222px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.avatar {
+  border-bottom-left-radius: 10%;
+}
+
+.memberName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.memberRole {
+  font-size: 1.1rem;
+  color: #00ff00;
+  margin-bottom: 0.5rem;
+}
+
+.countryBlock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.flag {
+  object-fit: contain;
+}
+
+.countryName {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+  max-width: 250px;
+}
+
+.linkedinLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.linkedinLink:hover {
+  color: #00ff00;
+}
+
+.linkedinIcon {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 768px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center; 
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  
+
   .card {
-    text-align: center;
-    width: 100%;
-    max-width: 230px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .avatarWrapper {
-    width: 222px;
-    height: 222px;
-    margin-bottom: 1rem;
-    display: flex;
+    flex-direction: row;
+    max-width: 100%;
     justify-content: center;
-    align-items: center;
-    background-color: #000; 
+    gap: 20px;
   }
-  
-  .avatar {
-    border-bottom-left-radius: 10%;
+
+  .title {
+    font-size: 1.6rem;
   }
-  
-  .memberName {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-  
-  .memberRole {
-    font-size: 1.1rem;
-    color: #00ff00; 
-    margin-bottom: 0.5rem;
-  }
-  
-  .countryBlock {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .flag {
-    object-fit: contain;
-  }
-  
-  .countryName {
-    font-size: 1rem;
-    color: #ccc;
-  }
-  
-  .description {
+
+  .subtitle {
     font-size: 0.95rem;
-    color: #ccc;
-    line-height: 1.4;
-    max-width: 250px;
   }
+
+  .avatarWrapper {
+    width: 125px;
+    height: 183px;
+  }
+
+  .avatarWrapper img {
+    width: 125px;
+    height: 183px;
+    object-fit: cover;
+  }
+
+  .cardInfo {
+    max-width: 168px;
+    text-align: left;
+  }
+
   .linkedinLink {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    transition: color 0.3s;
+    justify-content: flex-start;
   }
-  
-  .linkedinLink:hover {
-    color: #00ff00; /* LinkedIn blue */
-  }
-  
+
   .linkedinIcon {
-    width: 21px;
-    height: 21px;
+    width: 16px;
+    height: 16px;
   }
-  
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .card{
-      flex-direction: row;
-      max-width: 100%;
-      justify-content: center;
-      gap: 20px;
-    }
-    .title {
-      font-size: 1.6rem;
-    }
-    .subtitle {
-      font-size: 0.95rem;
-    }
-    .avatarWrapper {
-      width: 125px;
-      height: 183px;
-    }
-    .avatarWrapper img {
-      width: 125px;
-      height: 183px;
-      object-fit: cover;
-    }
-    .cardInfo{
-      max-width: 168px;
-      text-align: left;
-    }
-    .linkedinLink{
-      justify-content: flex-start;
-    }
-    .linkedinIcon{
-      width: 16px;
-      height: 16px;
-    }
-    .memberName{
-      font-size: 14px;
-      line-height: 129%;    
-    }
-    .memberRole{
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 114%;
-    }
-    .description{
-      font-weight: 500;
-      font-size: 11px;  
-      line-height: 136%;
-      letter-spacing: 0.08em;
-    }
+
+  .memberName {
+    font-size: 14px;
+    line-height: 129%;
   }
-  
+
+  .memberRole {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+  }
+
+  .description {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 136%;
+    letter-spacing: 0.08em;
+  }
+}

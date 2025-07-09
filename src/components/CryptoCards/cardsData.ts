@@ -1,4 +1,3 @@
-// cardsData.ts (или в самом компоненте)
 export const cardsData = [
     {
       title: "Gold Crypto Card",

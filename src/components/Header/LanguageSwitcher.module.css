@@ -34,7 +34,6 @@
     transform: rotate(180deg);
   }
   
-  /* Выпадающий список */
   .dropdown {
     position: absolute;
     top: 110%;

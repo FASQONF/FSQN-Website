@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ModalDocuments.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 
 interface ModalDocumentsProps {
   isOpen: boolean;
@@ -11,7 +11,7 @@ interface ModalDocumentsProps {
 }
 
 export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps) {
-  const t = useTranslation();
+  const { t } = useLocalization();
 
   return (
     <AnimatePresence>
@@ -30,7 +30,7 @@ export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps)
             transition={{ duration: 0.3 }}
           >
             <div className={styles.modalHeader}>
-              <h3>{t.modalDocuments.title}</h3>
+              <h3>{t("modalDocuments.title")}</h3>
               <button
                 className={styles.closeButton}
                 onClick={onClose}
@@ -40,34 +40,34 @@ export default function ModalDocuments({ isOpen, onClose }: ModalDocumentsProps)
             </div>
 
             <div className={styles.modalBody}>
-              {/* Список документов */}
+              {/* Docs */}
               <a
                 href="/PRIVACY_STATEMENT.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.documentButton}
               >
-                {t.modalDocuments.privacyPolicy}
+                {t("modalDocuments.privacyPolicy")}
               </a>
-              <a href="/Anti-money.pdf" className={styles.documentButton}   target="_blank"
+              <a href="/Anti-money.pdf" className={styles.documentButton} target="_blank"
                 rel="noopener noreferrer">
-                {t.modalDocuments.amlPolicy}
+                {t("modalDocuments.amlPolicy")}
               </a>
-              <a href="/Tokens-risk-disclosure-statement.pdf" className={styles.documentButton}  target="_blank"
+              <a href="/Tokens-risk-disclosure-statement.pdf" className={styles.documentButton} target="_blank"
                 rel="noopener noreferrer">
-                {t.modalDocuments.tokensRisk}
+                {t("modalDocuments.tokensRisk")}
               </a>
-              <a href="/Token-sale-agreement.pdf" className={styles.documentButton}  target="_blank"
+              <a href="/Token-sale-agreement.pdf" className={styles.documentButton} target="_blank"
                 rel="noopener noreferrer">
-                {t.modalDocuments.tokenSale}
+                {t("modalDocuments.tokenSale")}
               </a>
-              <a href="/TERMS_OF_USE.pdf" className={styles.documentButton}  target="_blank"
+              <a href="/TERMS_OF_USE.pdf" className={styles.documentButton} target="_blank"
                 rel="noopener noreferrer">
-                {t.modalDocuments.termsOfUse}
+                {t("modalDocuments.termsOfUse")}
               </a>
-              <a href="/Cookies.pdf" className={styles.documentButton}  target="_blank"
+              <a href="/Cookies.pdf" className={styles.documentButton} target="_blank"
                 rel="noopener noreferrer">
-                {t.modalDocuments.cookies}
+                {t("modalDocuments.cookies")}
               </a>
             </div>
           </motion.div>

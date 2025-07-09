@@ -3,12 +3,21 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Suspense, useEffect, useState } from "react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import { usePathname, useSearchParams } from "next/navigation";
 import { AnimatedLineDesktop } from "./AnimatedLineDesktop";
 import { AnimatedLineMobile } from "./AnimatedLineMobile";
 import styles from "./StoreToEarn.module.css";
 import parse from "html-react-parser";
+
+interface StoreToEarnSection {
+  title: string;
+  description: string;
+  items: {
+    icon: string;
+    label: string;
+  }[];
+}
 
 export function useWindowWidth() {
   const [width, setWidth] = useState<number>(0);
@@ -28,10 +37,13 @@ export function useWindowWidth() {
 function StoreToEarnComponent() {
   const width = useWindowWidth();
   const isMobile = width < 1024;
-  const t = useTranslation();
+  const { t, translations } = useLocalization();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const locale = searchParams.get("lang") || "en"; // Определяем язык через параметры URL
+  const locale = searchParams.get("lang") || "en";
+
+  const section = ((translations as any).storeToEarn ?? {}) as StoreToEarnSection;
+  const items = Array.isArray(section.items) ? section.items : [];
 
   return (
     <section className={styles.storeSection} key={pathname + locale}>
@@ -58,8 +70,8 @@ function StoreToEarnComponent() {
         viewport={{ once: true, amount: 0.5 }}
         variants={{ hidden: { y: -50, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}
       >
-        <h2 className={styles.title}>{parse(t.storeToEarn.title)}</h2>
-        <p className={styles.description}>{parse(t.storeToEarn.description)}</p>
+        <h2 className={styles.title}>{parse(t("storeToEarn.title"))}</h2>
+        <p className={styles.description}>{parse(t("storeToEarn.description"))}</p>
       </motion.div>
 
       {/* Wrapper for cards and animated line */}
@@ -82,7 +94,7 @@ function StoreToEarnComponent() {
           viewport={{ once: true, amount: 0.5 }}
           variants={{ hidden: { y: -30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { staggerChildren: 0.1, duration: 0.8 } } }}
         >
-          {t.storeToEarn.items.map((item: any) => (
+          {items.map((item: any) => (
             <motion.div key={item.label} className={styles.card} variants={{ hidden: { y: -30, opacity: 0 }, visible: { y: 0, opacity: 1 } }}>
               <Image
                 src={item.icon}

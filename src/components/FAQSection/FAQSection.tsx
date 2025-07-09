@@ -3,17 +3,28 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FAQSection.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '../../context/LocalizationContext';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+interface FAQSectionType {
+  title: string;
+  items: FAQItem[];
+}
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const t = useTranslation();
+  const { translations } = useLocalization();
+
+  const section = (translations.faqSection as unknown) as FAQSectionType;
 
   const handleToggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
-  const leftColumnItems = t.faqSection.items.slice(0, 3);
-  const rightColumnItems = t.faqSection.items.slice(3, 6);
+  const leftColumnItems = section.items.slice(0, 3);
+  const rightColumnItems = section.items.slice(3, 6);
 
   const cardVariants = {
     initial: { scale: 0.8, opacity: 0, rotate: -5 },
@@ -22,8 +33,16 @@ export default function FAQSection() {
 
   const answerVariants = {
     hidden: { height: 0, opacity: 0 },
-    whileInView: { height: "auto", opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-    exit: { height: 0, opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } },
+    whileInView: {
+      height: "auto",
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    exit: {
+      height: 0,
+      opacity: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -35,14 +54,13 @@ export default function FAQSection() {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-         {t.faqSection.title}
+        {section.title}
       </motion.h2>
 
       <div className={styles.grid}>
-        {/* Левая колонка */}
         <div className={styles.column}>
-          {leftColumnItems.map((item:any, index:any) => {
-            const actualIndex = index; // 0..2
+          {leftColumnItems.map((item, index) => {
+            const actualIndex = index;
             const isOpen = openIndex === actualIndex;
             return (
               <motion.div
@@ -52,20 +70,11 @@ export default function FAQSection() {
                 initial="initial"
                 whileInView="whileInView"
                 viewport={{ once: true, amount: 0.8 }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.2,
-                  ease: "easeOut",
-                }}
+                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               >
-                <div
-                  className={styles.questionRow}
-                  onClick={() => handleToggle(actualIndex)}
-                >
+                <div className={styles.questionRow} onClick={() => handleToggle(actualIndex)}>
                   <p className={styles.question}>{item.question}</p>
-                  <div className={styles.plusIcon}>
-                    {isOpen ? "-" : "+"}
-                  </div>
+                  <div className={styles.plusIcon}>{isOpen ? "-" : "+"}</div>
                 </div>
                 <AnimatePresence>
                   {isOpen && (
@@ -87,8 +96,8 @@ export default function FAQSection() {
         </div>
 
         <div className={styles.column}>
-          {rightColumnItems.map((item:any, index:any) => {
-            const actualIndex = index + 3; 
+          {rightColumnItems.map((item, index) => {
+            const actualIndex = index + 3;
             const isOpen = openIndex === actualIndex;
             return (
               <motion.div
@@ -98,20 +107,11 @@ export default function FAQSection() {
                 initial="initial"
                 whileInView="whileInView"
                 viewport={{ once: true, amount: 0.8 }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.2,
-                  ease: "easeOut",
-                }}
+                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               >
-                <div
-                  className={styles.questionRow}
-                  onClick={() => handleToggle(actualIndex)}
-                >
+                <div className={styles.questionRow} onClick={() => handleToggle(actualIndex)}>
                   <p className={styles.question}>{item.question}</p>
-                  <div className={styles.plusIcon}>
-                    {isOpen ? "-" : "+"}
-                  </div>
+                  <div className={styles.plusIcon}>{isOpen ? "-" : "+"}</div>
                 </div>
                 <AnimatePresence>
                   {isOpen && (

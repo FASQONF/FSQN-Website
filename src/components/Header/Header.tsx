@@ -6,47 +6,44 @@ import Image from "next/image";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import styles from "./Header.module.css";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 
 function HeaderComponent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const t = useTranslation();
-  
+  const { t } = useLocalization();
+
   // Get the current language parameter
   const currentLang = searchParams.get("lang") || "en";
-  
+
   const navLinks = [
-    { name: t.header.navLinks.wallet, href: "#features" },
-    { name: t.header.navLinks.cryptoCard, href: "#crypto-cards" },
-    { name: t.header.navLinks.passiveIncome, href: "#passive-income" },
-    { name: t.header.navLinks.aboutUs, href: "#about-us" },
+    { name: t("header.navLinks.wallet"), href: "#features" },
+    { name: t("header.navLinks.cryptoCard"), href: "#crypto-cards" },
+    { name: t("header.navLinks.passiveIncome"), href: "#passive-income" },
+    { name: t("header.navLinks.aboutUs"), href: "#about-us" },
   ];
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Improved handler for anchor links
   const handleAnchorClick = (href: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     // Extract the anchor ID without the "#"
     const anchorId = href.substring(1);
-    
+
     // If we're not on the home page, navigate to home with anchor and preserve language
     if (pathname !== "/") {
       router.push(`/?lang=${currentLang}#${anchorId}`);
     } else {
-      // If already on home, find element with id and scroll smoothly
       const element = document.getElementById(anchorId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
-      
-      // Update URL with the anchor for better user experience
+
       window.history.pushState({}, "", `/?lang=${currentLang}#${anchorId}`);
     }
-    
+
     setMenuOpen(false);
   };
 
@@ -90,7 +87,7 @@ function HeaderComponent() {
       {/* Right part - Tokenomics and White Paper buttons */}
       <div className={styles.right}>
         <Link href={createUrlWithLang("/tokenomics")} className={styles.whitePaperBtn}>
-          {t.header.tokenomics}
+          {t("header.tokenomics")}
         </Link>
         <Link
           href="/Presentation.pdf"
@@ -98,7 +95,7 @@ function HeaderComponent() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {t.header.whitePaper}
+          {t("header.whitePaper")}
         </Link>
         {/* <LanguageSwitcher /> */}
       </div>
@@ -106,14 +103,14 @@ function HeaderComponent() {
       {/* Burger (mobile menu) */}
       {!menuOpen && (
         <div className={styles.mobileRight}>
-           <div className={styles.burger} onClick={toggleMenu}>
-              <span className={styles.burgerLine}></span>
-              <span className={styles.burgerLine}></span>
-              <span className={styles.burgerLine}></span>
-            </div>
-            <LanguageSwitcher />
+          <div className={styles.burger} onClick={toggleMenu}>
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+          </div>
+          <LanguageSwitcher />
         </div>
-       
+
       )}
 
       {/* Overlay */}
@@ -140,7 +137,7 @@ function HeaderComponent() {
           className={styles.mobileWhitePaperBtn}
           onClick={() => setMenuOpen(false)}
         >
-          {t.header.tokenomics}
+          {t("header.tokenomics")}
         </Link>
         <a
           href="/Presentation.pdf"
@@ -149,7 +146,7 @@ function HeaderComponent() {
           rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
         >
-          {t.header.whitePaper}
+          {t("header.whitePaper")}
         </a>
       </div>
     </header>

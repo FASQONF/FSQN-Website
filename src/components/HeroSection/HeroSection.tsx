@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import styles from "./HeroSection.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
 
 export default function HeroSection() {
-  const t = useTranslation();
+  const { t } = useLocalization();
 
   return (
     <section className={styles.heroSection}>
@@ -18,17 +18,16 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <h1 className={styles.title}>
-        {parse(t.title)}
+        {parse(t("title"))}
         </h1>
         <p className={styles.description}>
-        {t.description}
+        {t("description")}
         </p>
         <a href="#" className={styles.ctaButton}>
-        {t.cta}
+        {t("cta")}
         </a>
       </motion.div>
 
-      {/* Блок с изображениями (телефоны + кристаллы) */}
       <motion.div 
         className={styles.imagesWrapper}
         initial={{ x: 100, opacity: 0 }}
@@ -52,7 +51,6 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Кристаллы располагаем внутри того же контейнера */}
         <div className={styles.crystalsWrapper}>
           <img
             src="/images/diamond.png"

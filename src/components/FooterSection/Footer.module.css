@@ -5,20 +5,18 @@
   color: #fff;
   margin-top: 100px;
   padding: 40px 20px;
-  /* Шрифты, если нужно, можно задать тут или глобально */
   font-family: sans-serif;
 }
 
-/* Основной контейнер с тремя колонками (left/middle/right) */
+/* Main Container (left/middle/right) */
 .topContainer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Мобильная версия: всё в столбик */
+  flex-direction: column;
   gap: 24px;
 }
 
-/* Каждая из "колонок" будет своим блоком */
 .leftSide,
 .middleSide,
 .rightSide {
@@ -27,7 +25,7 @@
   gap: 16px;
 }
 
-/* Лого + название */
+/* Logo + name */
 .logoContainer {
   display: flex;
   align-items: center;
@@ -35,7 +33,7 @@
 }
 
 .logoBox {
-  background-color: #00ff00; /* Зеленый квадрат */
+  background-color: #00ff00;
   color: #000;
   font-weight: bold;
   padding: 8px;
@@ -43,30 +41,26 @@
   font-size: 16px;
 }
 
-/* Иконки и текст в одну строку */
 .inlineRow {
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
 
-/* Общие стили для текста (адрес, email, прочее) */
 .textGray {
   color: #ccc;
   font-size: 14px;
   line-height: 1.4;
 }
 
-/* Иконка (SVG) */
 .icon {
   width: 20px;
   height: 20px;
-  fill: #00ff00; /* зелёный цвет иконок */
-  margin-top: 2px; /* небольшая компенсация, чтобы иконка была визуально по центру */
+  fill: #00ff00;
+  margin-top: 2px;
   flex-shrink: 0;
 }
 
-/* Кнопки */
 .buttons {
   display: flex;
   gap: 16px;
@@ -88,7 +82,6 @@
   color: #000;
 }
 
-/* Нижняя часть (копирайт) */
 .bottomContainer {
   max-width: 1200px;
   margin: 24px auto 0 auto;
@@ -114,7 +107,6 @@
   transition: all 0.2s ease-in;
 }
 
-/* Адаптив: на экранах >= 768px раскладываем три колонки в строку */
 @media (min-width: 768px) {
   .topContainer {
     flex-direction: row;

@@ -64,7 +64,7 @@
 
 .phoneScreen {
   position: absolute;
-  top: 20px; /* настройте под свою графику */
+  top: 20px;
   left: 16px;
   width: 323px;
   height: auto;

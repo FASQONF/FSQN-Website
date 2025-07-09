@@ -1,5 +1,5 @@
 .tokenUtilitySection {
-  background-color: #000; /* Чёрный фон */
+  background-color: #000;
   color: #fff;
   padding: 0 20px;
 }
@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-/* Заголовок */
 .title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -19,15 +18,13 @@
 }
 
 .title span {
-  color: #00ff00; /* зелёный для “Utility” */
+  color: #00ff00;
 }
 
-/* Две колонки описания */
 .descRow {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  /* flex-wrap: wrap; чтобы на узких экранах колонки переносились */
 }
 
 .descCol {
@@ -41,7 +38,6 @@
 .descCol p {
   font-weight: 500;
   font-size: 18px;
-  /* height: 50px; */
   padding-left: 14px;
   line-height: 144%;
   letter-spacing: 0.06em;
@@ -59,26 +55,22 @@
   border-radius: 10px;
 }
 
-/* Сетка карточек (8 штук) */
 .cardsGrid {
   display: flex;
   position: relative;
   flex-direction: column;
   gap: 53px;
-  justify-items: center; /* центрируем карточки */
+  justify-items: center;
 }
 
-/* Контейнер с линиями (по центру, с анимацией клип-пути) */
 .lines {
   position: absolute;
   top: 40px;
-  left: 50%; /* центрируем */
+  left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  /* Можно задать ширину/высоту, если нужно */
 }
 
-/* Сама картинка с линиями */
 .linesImage {
   display: block;
   margin: 0 auto;
@@ -88,35 +80,33 @@
 
 @keyframes revealLines {
   0% {
-    clip-path: inset(0 0 100% 0); /* Скрыто: видна только верхняя линия */
+    clip-path: inset(0 0 100% 0);
     opacity: 0;
   }
   40% {
-    clip-path: inset(0 0 0 0);    /* Полностью видно */
+    clip-path: inset(0 0 0 0);
     opacity: 1;
   }
   60% {
-    clip-path: inset(0 0 0 0);    /* Держим открытым */
+    clip-path: inset(0 0 0 0);
     opacity: 1;
   }
   100% {
-    clip-path: inset(100% 0 0 0); /* Снова скрывается снизу (видна только верхняя линия) */
+    clip-path: inset(100% 0 0 0);
     opacity: 0;
   }
 }
 
 
-/* Ряды карточек */
 .firstLine,
 .secondLine,
 .thirdLine {
   display: flex;
   justify-content: center;
   gap: 18px;
-  z-index: 1; /* поверх линий */
+  z-index: 1;
 }
 
-/* Каждая карточка */
 .card {
   backdrop-filter: blur(16px);
   background: #232323b9;
@@ -145,7 +135,7 @@
   font-size: 14px;
 }
 }
-/* Адаптив (мобильный) */
+
 @media (max-width: 630px) {
   .title {
     font-size: 28px;
