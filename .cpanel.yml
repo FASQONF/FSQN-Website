@@ -1,0 +1,9 @@
+build:
+  - npm install
+  - npm run build
+  - npm run export
+
+deploy:
+  - rm -rf /home/fasqhjwb/public_html/out/*
+  - mkdir -p /home/fasqhjwb/public_html/out
+  - cp -R out/* /home/fasqhjwb/public_html/out/
