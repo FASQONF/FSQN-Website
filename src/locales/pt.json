@@ -166,38 +166,73 @@
     "members": [
       {
         "name": "Orest Petryna",
-        "role": "Fundador",
+        "role": "Founder",
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
-        "image": "/images/team/orest.jpeg",
-        "mobileImage": "/images/team/orest.jpeg",
-        "description": "Experiente na gestão de empresas internacionais de e-commerce e Fintech, com foco no crescimento estratégico e inovação.",
+        "image": "/images/team/orest.png",
+        "mobileImage": "/images/team/orest_s.png",
+        "description": "Contador experiente e empreendedor veterano, com mestrado em tributação empresarial e ampla trajetória profissional.",
         "linkedin": "https://www.linkedin.com/in/orestpetryna"
       },
       {
         "name": "Serhiy Khrun",
-        "role": "Co-Fundador",
-        "country": "Polônia",
+        "role": "Co-Founder",
+        "country": "Poland",
         "flag": "/images/flags/poland.svg",
-        "image": "/images/team/serhiy.jpeg",
-        "mobileImage": "/images/team/serhiy.jpeg",
-        "description": "Especialista no desenvolvimento de soluções avançadas de pagamento, com profundo conhecimento de tecnologias financeiras e experiência do usuário.",
+        "image": "/images/team/serhiy.png",
+        "mobileImage": "/images/team/serhiy_s.png",
+        "description": "Especialista em fintech desenvolvendo soluções de pagamento, com sólida experiência em produto, design e UX.",
         "linkedin": "https://www.linkedin.com/in/serhiykhrun"
       },
       {
         "name": "Sergio Latansky",
-        "role": "CBDO",
-        "country": "Espanha",
-        "flag": "/images/flags/spain.svg",
-        "image": "/images/team/sergio.jpeg",
-        "mobileImage": "/images/team/sergio.jpeg",
-        "description": "Especialista em identificar oportunidades de crescimento, analisar dados financeiros e liderar equipes de alto desempenho para atingir metas empresariais.",
+        "role": "COO",
+        "country": "Spain",
+        "flag": "/images/flags/portugal.svg",
+        "image": "/images/team/sergio.png",
+        "mobileImage": "/images/team/sergio_s.png",
+        "description": "Estrategista de crescimento com experiência em análise financeira, liderança de equipes e alcance de metas empresariais.",
         "linkedin": "https://www.linkedin.com/in/sergiolatansky"
+      },
+      {
+        "name": "Kati Aronson",
+        "role": "CBDO",
+        "country": "Portugal",
+        "flag": "/images/flags/portugal.svg",
+        "image": "/images/team/kati.png",
+        "mobileImage": "/images/team/kati_s.png",
+        "description": "CBDO com experiência em Web3, liderando captação de tokens, estratégia GTM e parcerias Tier 1; mais de US$20 M arrecadados.",
+        "linkedin": "https://www.linkedin.com/in/kati-aronson/"
+      },
+      {
+        "name": "David",
+        "role": "AMA Host, CM",
+        "country": "Canada",
+        "flag": "/images/flags/canada.svg",
+        "image": "/images/team/david.png",
+        "mobileImage": "/images/team/david_s.png",
+        "description": "Voz da comunidade Fasqon e host de AMA, com 4 anos em Web3 e foco em engajamento, confiança e boas vibes.",
+        "linkedin": ""
+      },
+      {
+        "name": "Nikita",
+        "role": "Public Relations",
+        "country": "UAE",
+        "flag": "/images/flags/uae.svg",
+        "image": "/images/team/nikita.png",
+        "mobileImage": "/images/team/nikita_s.png",
+        "description": "Responsável por relações públicas com 5+ anos em agências e graduação; conduz branding, conteúdo e comunicação Web3.",
+        "linkedin": "https://www.linkedin.com/in/nikita-varlygina-b51715160/"
       }
-    ]
+    ],
+    "partner": {
+      "title": "Vareger Group OÜ",
+      "subtitle": "Parceiro de Tecnologia",
+      "description": "A Vareger Group OÜ fornece liderança tecnológica de ponta a ponta, atuando como um CTO externo. Com profunda expertise em Web3 e sistemas de TI complexos, a equipe supervisiona arquitetura, UX, desenvolvimento e escalabilidade."
+    }
   },
   "partnersSection": {
-    "title": "Apoiadores <span>&</span> <span>Parceiros</span>",
+    "title": "Nossos <span>Parceiros</span>",
     "subtitle": "Apoiado e respaldado por empresas altamente profissionais no mercado",
     "partners": [
       {
@@ -214,7 +249,7 @@
       },
       {
         "name": "AMLBot",
-        "logo": "/images/partners/amlbot.png"
+        "logo": "/images/partners/amlBot.png"
       },
       {
         "name": "Trustify Legal",
