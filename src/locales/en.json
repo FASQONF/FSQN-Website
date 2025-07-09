@@ -1,6 +1,6 @@
 {
-  "title": "Your crypto <span>neobank</span> for daily payments",
-  "description": "Discover Fasqon’s unmatched earning opportunities and crypto debit card.\n  Enjoy the best crypto rates, cashback on Apple & Google Pay, and much more. \n  Our cutting-edge Web3 banking solutions ensure seamless transactions with enhanced security.",
+  "title": "Where <span>Crypto and Banking</span> Finally Click",
+  "description": "Why juggle 5 apps?<br /><br />Fasqon's where you bank, spend, earn, chat, play, flex and after vibe - all in one place. Wire euros, clear bills and invoices, cash out crypto on shopping and still earn tokens daily just for keeping your balance!<br /><br /><b>Get $FSQN now while it's hella discounted. As supply burns and Fasqon levels up, so does your bag. Cop your tokens now, lock it on your card, and build with the squad.</b>",
   "cta": "Get my Fasqon card!",
   "header": {
     "navLinks": {
@@ -10,7 +10,7 @@
       "aboutUs": "About Us"
     },
     "tokenomics": "Tokenomics",
-    "whitePaper": "White Paper"
+    "whitePaper": "Presentation"
   },
   "featuresSection": {
     "title": "Discover Fasqon <span>Crypto Wallet</span>",
@@ -50,7 +50,7 @@
   },
   "cryptoCardsSection": {
     "title": "Fasqon <span>Crypto Card</span>",
-    "subtitle": "Payments anywhere, anytime",
+    "subtitle": "Swipe Before the Hype — Load Your Fasqon Card Early",
     "cards": [
       {
         "title": "Gold Crypto Card",
@@ -76,7 +76,8 @@
     ]
   },
   "storeToEarn": {
-    "title": "Store to <span>Earn</span>",
+    "title": "Hold to <span>Earn</span>",
+    "subtitle": "Banking’s Broken. FASQON Fixed It.",
     "description": "Earn passive income by simply holding assets in the Fasqon wallet\n    and spending your reward anytime with Fasqon card.<br /> Hold now. Pay never.",
     "items": [
       { "icon": "/icons/user.svg", "label": "User A" },
@@ -132,9 +133,9 @@
         "role": "Founder",
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
-        "image": "/images/team/orest.jpeg",
-        "mobileImage": "/images/team/orest.jpeg",
-        "description": "Experienced in managing international e-commerce and Fintech companies, with a focus on strategic growth and innovation.",
+        "image": "/images/team/orest.png",
+        "mobileImage": "/images/team/orest_s.png",
+        "description": "An experienced accountant and veteran entrepreneur with a master's degree in business taxation.",
         "linkedin": "https://www.linkedin.com/in/orestpetryna"
       },
       {
@@ -142,56 +143,137 @@
         "role": "Co-Founder",
         "country": "Poland",
         "flag": "/images/flags/poland.svg",
-        "image": "/images/team/serhiy.jpeg",
-        "mobileImage": "/images/team/serhiy.jpeg",
-        "description": "Specializes in developing advanced payment solutions, with a deep understanding of financial technologies and user experience.",
+        "image": "/images/team/serhiy.png",
+        "mobileImage": "/images/team/serhiy_s.png",
+        "description": "Fintech expert building payment solutions, with strong expertise in fintech, product design, and UX.",
         "linkedin": "https://www.linkedin.com/in/serhiykhrun"
       },
       {
         "name": "Sergio Latansky",
-        "role": "CBDO",
+        "role": "COO",
         "country": "Spain",
-        "flag": "/images/flags/spain.svg",
-        "image": "/images/team/sergio.jpeg",
-        "mobileImage": "/images/team/sergio.jpeg",
-        "description": "Expert in identifying growth opportunities, analyzing financial data, and leading high-performing teams to achieve business goals.",
+        "flag": "/images/flags/portugal.svg",
+        "image": "/images/team/sergio.png",
+        "mobileImage": "/images/team/sergio_s.png",
+        "description": "Growth strategist skilled in analyzing financial data, and leading high-performing teams to achieve business goals.",
         "linkedin": "https://www.linkedin.com/in/sergiolatansky"
+      },
+      {
+        "name": "Kati Aronson",
+        "role": "CBDO",
+        "country": "Portugal",
+        "flag": "/images/flags/portugal.svg",
+        "image": "/images/team/kati.png",
+        "mobileImage": "/images/team/kati_s.png",
+        "description": "Seasoned Web3 CBDO driving tokensale fundraising, GTM strategy, and Tier-1 partnerships; $20M+ raised to date.",
+        "linkedin": "https://www.linkedin.com/in/kati-aronson/"
+      },
+      {
+        "name": "David",
+        "role": "AMA Host, CM",
+        "country": "Canada",
+        "flag": "/images/flags/canada.svg",
+        "image": "/images/team/david.png",
+        "mobileImage": "/images/team/david_s.png",
+        "description": "Fasqon’s community voice and AMA host, with 4 years in Web3 and deep focus on engagement, trust, and vibes.",
+        "linkedin": ""
+      },
+      {
+        "name": "Nikita",
+        "role": "Public Relations",
+        "country": "UAE",
+        "flag": "/images/flags/uae.svg",
+        "image": "/images/team/nikita.png",
+        "mobileImage": "/images/team/nikita_s.png",
+        "description": "PR lead with BSc in Public Relations and 5+ years in agency work; drives branding, content, and Web3 comms strategy.",
+        "linkedin": "https://www.linkedin.com/in/nikita-varlygina-b51715160/"
       }
-    ]
+    ],
+    "partner": {
+      "title": "Vareger Group OÜ",
+      "subtitle": "Technology Partner",
+      "description": "Vareger Group OÜ provides end-to-end technology leadership, acting as an external CTO. With deep expertise in Web3 and complex IT systems, the team oversees architecture, UX, development, and scaling."
+    }
   },
   "partnersSection": {
-    "title": "Backers <span>&</span> <span>Partners</span>",
+    "title": "Our <span>Partners</span>",
     "subtitle": "Backed and supported by highly professional companies on the market",
     "partners": [
       {
+        "name": "Vareger Group OÜ",
+        "logo": "/images/partners/vareger.png"
+      },
+      {
+        "name": "Bison Bank",
+        "logo": "/images/partners/bisonBank.png"
+      },
+      {
         "name": "PureFi",
-        "logo": "/images/partners/purefi.png",
-        "description": "Bridging Compliance and Security in Web3 Ecosystems"
+        "logo": "/images/partners/purefi.png"
       },
       {
         "name": "AMLBot",
-        "logo": "/images/partners/amlbot.png",
-        "description": "One-stop assessment compliance solution for crypto business"
-      },
-      {
-        "name": "Green Light Equity (GLE)",
-        "logo": "/images/partners/gle.png",
-        "description": "An alternative investments group"
-      },
-      {
-        "name": "Vareger Group OÜ",
-        "logo": "/images/partners/vareger.png",
-        "description": "Has implemented software for banks and fintech projects"
+        "logo": "/images/partners/amlbot.png"
       },
       {
         "name": "Trustify Legal",
-        "logo": "/images/partners/trustify.png",
-        "description": "Responsible for compliance with legal regulations and licensing"
+        "logo": "/images/partners/trustifyLegal.png"
       },
       {
-        "name": "Hot Killers",
-        "logo": "/images/partners/hotkillers.png",
-        "description": "Marketing support team, which has raised over $100 million for the projects"
+        "name": "Ace Capital",
+        "logo": "/images/partners/aceCapital.png"
+      },
+      {
+        "name": "Cross Curve",
+        "logo": "/images/partners/crossCurve.png"
+      },
+      {
+        "name": "Kaizen Finance",
+        "logo": "/images/partners/kaizenFinance.png"
+      },
+      {
+        "name": "Crypto Executives",
+        "logo": "/images/partners/cryptoExecutives.png"
+      },
+      {
+        "name": "Generis",
+        "logo": "/images/partners/generis.png"
+      },
+      {
+        "name": "FinPR",
+        "logo": "/images/partners/finpr.png"
+      },
+      {
+        "name": "BD Boost3r",
+        "logo": "/images/partners/bdBoost3r.png"
+      },
+      {
+        "name": "Task On",
+        "logo": "/images/partners/taskOn.png"
+      },
+      {
+        "name": "Zealy",
+        "logo": "/images/partners/zealy.png"
+      },
+      {
+        "name": "Galxe",
+        "logo": "/images/partners/galxe.png"
+      },
+      {
+        "name": "GLE",
+        "logo": "/images/partners/gle.png"
+      },
+      {
+        "name": "Waib3",
+        "logo": "/images/partners/waib3.png"
+      },
+      {
+        "name": "White Bit",
+        "logo": "/images/partners/whiteBit.png"
+      },
+      {
+        "name": "Mexc",
+        "logo": "/images/partners/mexc.png"
       }
     ]
   },

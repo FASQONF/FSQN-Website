@@ -41,7 +41,7 @@ export default function Home() {
       <main className={styles.main}>
       <Suspense fallback={null}>
         <HeroSection />
-        <PressMentions />
+        {/* <PressMentions /> */}
         <div id="features">
           <FeaturesSection />
         </div>
@@ -51,7 +51,7 @@ export default function Home() {
         <div id="passive-income">
           <StoreToEarn />
         </div>
-        <StayTuned />
+        {/* <StayTuned /> */}
         <UltimateUX />
         <div id="about-us">
           <TeamSection />

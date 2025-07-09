@@ -39,6 +39,16 @@
   margin-bottom: 1rem;
 }
 
+.subtitle {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
 .title span {
   color: #00ff00;
 }

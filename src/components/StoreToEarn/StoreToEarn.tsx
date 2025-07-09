@@ -71,6 +71,7 @@ function StoreToEarnComponent() {
         variants={{ hidden: { y: -50, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}
       >
         <h2 className={styles.title}>{parse(t("storeToEarn.title"))}</h2>
+        <h3 className={styles.subtitle}>{parse(t("storeToEarn.subtitle"))}</h3>
         <p className={styles.description}>{parse(t("storeToEarn.description"))}</p>
       </motion.div>
 

@@ -2,20 +2,20 @@
   background-color: #000;
   color: #fff;
   padding: 0 20px;
+  min-height: 100vh;
   text-align: center;
 }
 
 .container {
-  max-width: 970px;
-  margin: 0 auto;
+  margin: 0 3%;
 }
 
 .title {
   font-weight: 700;
   font-size: 50px;
   line-height: 128%;
+  margin-bottom: 3rem;
   font-family: "Franie Test", "Montserrat", serif;
-
 }
 
 .title span {
@@ -35,22 +35,28 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 
 .card {
-  text-align: center;
-  width: 100%;
-  max-width: 230px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  max-width: 100%;
 }
 
 .avatarWrapper {
-  width: 222px;
-  height: 222px;
-  margin-bottom: 1rem;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,26 +64,48 @@
 }
 
 .avatar {
-  border-bottom-left-radius: 10%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cardInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .memberName {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin: 0;
 }
 
 .memberRole {
   font-size: 1.1rem;
   color: #00ff00;
-  margin-bottom: 0.5rem;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 8px;
 }
 
 .countryBlock {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 8px;
 }
 
 .flag {
@@ -89,20 +117,12 @@
   color: #ccc;
 }
 
-.description {
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.4;
-  max-width: 250px;
-}
-
 .linkedinLink {
   text-decoration: none;
   color: inherit;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 8px;
   transition: color 0.3s;
 }
 
@@ -111,8 +131,68 @@
 }
 
 .linkedinIcon {
-  width: 21px;
+  width: 42px;
   height: 21px;
+}
+
+.line {
+  width: 100vw;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Partner */
+.partnerBlock {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.partnerImage {
+  max-width: 120%;
+  height: 7rem;
+  object-fit: contain;
+  object-position:  center;
+  transform: translateX(30%);
+}
+
+.textContainer {
+  flex: 2;
+  text-align: left;
+}
+
+.partnerTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Franie Test", "Montserrat", serif;
+  color: #fff;
+}
+
+.partnerSubtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #00ff00;
+}
+
+.partnerText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -136,29 +216,19 @@
     font-size: 0.95rem;
   }
 
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
   .avatarWrapper {
-    width: 125px;
-    height: 183px;
-  }
-
-  .avatarWrapper img {
-    width: 125px;
-    height: 183px;
-    object-fit: cover;
-  }
-
-  .cardInfo {
-    max-width: 168px;
-    text-align: left;
-  }
-
-  .linkedinLink {
-    justify-content: flex-start;
+    width: 120px;
+    height: 120px;
   }
 
   .linkedinIcon {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
   }
 
   .memberName {
@@ -177,5 +247,20 @@
     font-size: 11px;
     line-height: 136%;
     letter-spacing: 0.08em;
+  }
+
+  .partnerTitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .partnerSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .partnerText {
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 }

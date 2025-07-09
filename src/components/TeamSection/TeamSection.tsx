@@ -15,10 +15,16 @@ interface TeamMember {
   description: string;
   linkedin: string;
 }
+interface Partner {
+  title: string;
+  subtitle: string;
+  description: string;
+}
 interface TeamSectionType {
   title: string;
   subtitle: string;
   members: TeamMember[];
+  partner: Partner;
 }
 
 export default function TeamSection() {
@@ -37,7 +43,6 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className={styles.title}>{parse(section.title)}</h2>
-          <p className={styles.subtitle}>{section.subtitle}</p>
         </motion.div>
 
         {/* Teams cards */}
@@ -58,45 +63,69 @@ export default function TeamSection() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    width={222}
-                    height={222}
+                    width={150}
+                    height={150}
                     className={styles.avatar}
                   />
                 </picture>
               </div>
               <div className={styles.cardInfo}>
-                <h3 className={styles.memberName}>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkedinLink}
-                  >
-                    <img
-                      className={styles.linkedinIcon}
-                      src="/icons/linkedin.png"
-                      alt="LinkedIn"
-                      width={16}
-                      height={16}
-                    />
-                    {member.name}
-                  </a>
-                </h3>
+                <h3 className={styles.memberName}>{member.name}</h3>
                 <p className={styles.memberRole}>{member.role}</p>
-                <div className={styles.countryBlock}>
-                  <img
-                    src={member.flag}
-                    alt={member.country}
-                    width={24}
-                    height={16}
-                    className={styles.flag}
-                  />
-                  <span className={styles.countryName}>{member.country}</span>
-                </div>
                 <p className={styles.description}>{member.description}</p>
+                <div className={styles.bottomRow}>
+                  <div className={styles.countryBlock}>
+                    <img
+                      src={member.flag}
+                      alt={member.country}
+                      width={24}
+                      height={16}
+                      className={styles.flag}
+                    />
+                    <span className={styles.countryName}>{member.country}</span>
+                  </div>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.linkedinLink}
+                    >
+                      <img
+                        className={styles.linkedinIcon}
+                        src="/icons/linkedin.svg"
+                        alt="LinkedIn"
+                        width={21}
+                        height={21}
+                      />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
+        </div>
+        <img
+          className={styles.line}
+          src="/icons/line.png"
+        />
+
+        {/* New block below the line */}
+        <div className={styles.partnerBlock}>
+          <div className={styles.imageContainer}>
+            <img
+              src="/images/partners/vareger.png"
+              alt="Vareger"
+              className={styles.partnerImage}
+            />
+          </div>
+          <div className={styles.textContainer}>
+            <h3 className={styles.partnerTitle}>{section.partner.title}</h3>
+            <h4 className={styles.partnerSubtitle}>{section.partner.subtitle}</h4>
+            <p className={styles.partnerText}>
+              {section.partner.description}
+            </p>
+          </div>
         </div>
       </div>
     </section>

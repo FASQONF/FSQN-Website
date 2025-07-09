@@ -1,6 +1,6 @@
 {
-  "title": "Tu <span>neobanco</span> cripto para pagos diarios",
-  "description": "Descubre las oportunidades de ganancias inigualables de Fasqon y su tarjeta de débito cripto.\n  Disfruta de las mejores tasas de criptomonedas, reembolsos en Apple & Google Pay, y mucho más.\n  Nuestras soluciones bancarias Web3 garantizan transacciones seguras y sin interrupciones.",
+  "title": "Donde <span>Crypto y Banca</span> por fin hacen clic",
+  "description": "¿Por qué usar 5 apps?<br /><br />Fasqon es donde haces todo: bancar, gastar, ganar, chatear, jugar, presumir y luego relajar — todo en un solo lugar. Envía euros, paga facturas y recibos, retira cripto para comprar, ¡y aún así ganas tokens cada día solo por mantener tu saldo!<br /><br /><b>Consigue $FSQN ahora con mega descuento. A medida que Fasqon sube de nivel y el suministro se quema, tu bolsa también crece. Hazte con tus tokens, bloquéalos en tu tarjeta y construye con el squad.</b>",
   "cta": "¡Obtén mi tarjeta Fasqon!",
   "header": {
     "navLinks": {
@@ -10,7 +10,7 @@
       "aboutUs": "Sobre nosotros"
     },
     "tokenomics": "Tokenómica",
-    "whitePaper": "Libro Blanco"
+    "whitePaper": "Presentación"
   },
   "featuresSection": {
     "title": "Descubre la <span>Crypto Wallet</span> de Fasqon",
@@ -50,7 +50,7 @@
   },
   "cryptoCardsSection": {
     "title": "Tarjeta Cripto <span>Fasqon</span>",
-    "subtitle": "Pagos en cualquier lugar, en cualquier momento",
+    "subtitle": "Desliza antes del boom — Carga tu tarjeta Fasqon antes que nadie",
     "cards": [
       {
         "title": "Tarjeta Cripto Oro",
@@ -69,24 +69,61 @@
       }
     ],
     "benefits": [
-      { "icon": "/icons/check.svg", "text": "IBAN Web3 personal" },
-      { "icon": "/icons/check.svg", "text": "Google & Apple Pay" },
-      { "icon": "/icons/check.svg", "text": "Sin KYC (hasta €200)" },
-      { "icon": "/icons/check.svg", "text": "Cashback hasta 5%" }
+      {
+        "icon": "/icons/check.svg",
+        "text": "IBAN Web3 personal"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Google & Apple Pay"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Sin KYC (hasta €200)"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Cashback hasta 5%"
+      }
     ]
   },
   "storeToEarn": {
-    "title": "Almacena para <span>Ganar</span>",
+    "title": "Hold to <span>Earn</span>",
+    "subtitle": "La banca está rota. FASQON la arregló.",
     "description": "Gana ingresos pasivos simplemente almacenando activos en la billetera Fasqon\n    y gastando tus recompensas en cualquier momento con la tarjeta Fasqon.<br /> Guarda ahora. No pagues nunca.",
     "items": [
-      { "icon": "/icons/user.svg", "label": "Usuario A" },
-      { "icon": "/icons/crypto.svg", "label": "Posee criptomonedas" },
-      { "icon": "/icons/wallet.svg", "label": "Billetera Fría Fasqon" },
-      { "icon": "/icons/lending.svg", "label": "Fondo de Préstamos" },
-      { "icon": "/icons/incentives.svg", "label": "Incentivos para usuarios" },
-      { "icon": "/icons/borrowingfee.svg", "label": "Tarifa de préstamo" },
-      { "icon": "/icons/user2.svg", "label": "Usuario B" },
-      { "icon": "/icons/borrowfunds.svg", "label": "Fondos de préstamo" }
+      {
+        "icon": "/icons/user.svg",
+        "label": "Usuario A"
+      },
+      {
+        "icon": "/icons/crypto.svg",
+        "label": "Posee criptomonedas"
+      },
+      {
+        "icon": "/icons/wallet.svg",
+        "label": "Billetera Fría Fasqon"
+      },
+      {
+        "icon": "/icons/lending.svg",
+        "label": "Fondo de Préstamos"
+      },
+      {
+        "icon": "/icons/incentives.svg",
+        "label": "Incentivos para usuarios"
+      },
+      {
+        "icon": "/icons/borrowingfee.svg",
+        "label": "Tarifa de préstamo"
+      },
+      {
+        "icon": "/icons/user2.svg",
+        "label": "Usuario B"
+      },
+      {
+        "icon": "/icons/borrowfunds.svg",
+        "label": "Fondos de préstamo"
+      }
     ]
   },
   "stayTuned": {
@@ -164,34 +201,80 @@
     "subtitle": "Apoyado y respaldado por empresas altamente profesionales en el mercado",
     "partners": [
       {
+        "name": "Vareger Group OÜ",
+        "logo": "/images/partners/vareger.png"
+      },
+      {
+        "name": "Bison Bank",
+        "logo": "/images/partners/bisonBank.png"
+      },
+      {
         "name": "PureFi",
-        "logo": "/images/partners/purefi.png",
-        "description": "Conectando el cumplimiento y la seguridad en los ecosistemas Web3"
+        "logo": "/images/partners/purefi.png"
       },
       {
         "name": "AMLBot",
-        "logo": "/images/partners/amlbot.png",
-        "description": "Solución integral de cumplimiento para negocios de criptomonedas"
-      },
-      {
-        "name": "Green Light Equity (GLE)",
-        "logo": "/images/partners/gle.png",
-        "description": "Un grupo de inversiones alternativas"
-      },
-      {
-        "name": "Vareger Group OÜ",
-        "logo": "/images/partners/vareger.png",
-        "description": "Ha implementado software para bancos y proyectos fintech"
+        "logo": "/images/partners/amlbot.png"
       },
       {
         "name": "Trustify Legal",
-        "logo": "/images/partners/trustify.png",
-        "description": "Responsable del cumplimiento de regulaciones legales y licencias"
+        "logo": "/images/partners/trustifyLegal.png"
       },
       {
-        "name": "Hot Killers",
-        "logo": "/images/partners/hotkillers.png",
-        "description": "Equipo de marketing que ha recaudado más de 100 millones de dólares para proyectos"
+        "name": "Ace Capital",
+        "logo": "/images/partners/aceCapital.png"
+      },
+      {
+        "name": "Cross Curve",
+        "logo": "/images/partners/crossCurve.png"
+      },
+      {
+        "name": "Kaizen Finance",
+        "logo": "/images/partners/kaizenFinance.png"
+      },
+      {
+        "name": "Crypto Executives",
+        "logo": "/images/partners/cryptoExecutives.png"
+      },
+      {
+        "name": "Generis",
+        "logo": "/images/partners/generis.png"
+      },
+      {
+        "name": "FinPR",
+        "logo": "/images/partners/finpr.png"
+      },
+      {
+        "name": "BD Boost3r",
+        "logo": "/images/partners/bdBoost3r.png"
+      },
+      {
+        "name": "Task On",
+        "logo": "/images/partners/taskOn.png"
+      },
+      {
+        "name": "Zealy",
+        "logo": "/images/partners/zealy.png"
+      },
+      {
+        "name": "Galxe",
+        "logo": "/images/partners/galxe.png"
+      },
+      {
+        "name": "GLE",
+        "logo": "/images/partners/gle.png"
+      },
+      {
+        "name": "Waib3",
+        "logo": "/images/partners/waib3.png"
+      },
+      {
+        "name": "White Bit",
+        "logo": "/images/partners/whiteBit.png"
+      },
+      {
+        "name": "Mexc",
+        "logo": "/images/partners/mexc.png"
       }
     ]
   },
@@ -257,25 +340,76 @@
       "Explora oportunidades de trading dentro de nuestra plataforma para obtener ganancias potenciales."
     ],
     "cards": [
-      ["Obtener Tarjeta", "Pagos", "Transacciones internas", "Modo de ingresos pasivos"],
-      ["Tesorería"],
-      ["40% Crecimiento del ecosistema", "50% Incentivos para usuarios", "10% Quema mensual"]
+      [
+        "Obtener Tarjeta",
+        "Pagos",
+        "Transacciones internas",
+        "Modo de ingresos pasivos"
+      ],
+      [
+        "Tesorería"
+      ],
+      [
+        "40% Crecimiento del ecosistema",
+        "50% Incentivos para usuarios",
+        "10% Quema mensual"
+      ]
     ]
   },
   "tokenomicsSection": {
     "title": "Token<span>omics</span>",
     "subtitle": "Distribución del token FSQN",
     "segments": [
-      { "id": "team", "name": "Equipo", "percentage": 16 },
-      { "id": "liquidity", "name": "Reserva de liquidez", "percentage": 15 },
-      { "id": "ecosystem", "name": "Incentivos del ecosistema", "percentage": 15 },
-      { "id": "marketing", "name": "Marketing", "percentage": 10 },
-      { "id": "farming", "name": "Farming y Staking", "percentage": 10 },
-      { "id": "ido", "name": "IDO", "percentage": 3 },
-      { "id": "airdrop", "name": "Airdrop TMA", "percentage": 2 },
-      { "id": "seed", "name": "Seed", "percentage": 3 },
-      { "id": "advisors", "name": "Asesores", "percentage": 2 },
-      { "id": "private", "name": "Venta privada", "percentage": 26 }
+      {
+        "id": "team",
+        "name": "Equipo",
+        "percentage": 16
+      },
+      {
+        "id": "liquidity",
+        "name": "Reserva de liquidez",
+        "percentage": 15
+      },
+      {
+        "id": "ecosystem",
+        "name": "Incentivos del ecosistema",
+        "percentage": 15
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing",
+        "percentage": 10
+      },
+      {
+        "id": "farming",
+        "name": "Farming y Staking",
+        "percentage": 10
+      },
+      {
+        "id": "ido",
+        "name": "IDO",
+        "percentage": 3
+      },
+      {
+        "id": "airdrop",
+        "name": "Airdrop TMA",
+        "percentage": 2
+      },
+      {
+        "id": "seed",
+        "name": "Seed",
+        "percentage": 3
+      },
+      {
+        "id": "advisors",
+        "name": "Asesores",
+        "percentage": 2
+      },
+      {
+        "id": "private",
+        "name": "Venta privada",
+        "percentage": 26
+      }
     ]
   },
   "roadmapSection": {

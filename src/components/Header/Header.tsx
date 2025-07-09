@@ -86,9 +86,6 @@ function HeaderComponent() {
 
       {/* Right part - Tokenomics and White Paper buttons */}
       <div className={styles.right}>
-        <Link href={createUrlWithLang("/tokenomics")} className={styles.whitePaperBtn}>
-          {t("header.tokenomics")}
-        </Link>
         <Link
           href="/Presentation.pdf"
           className={styles.whitePaperBtn}

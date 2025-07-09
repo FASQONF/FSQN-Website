@@ -4,32 +4,42 @@ import { motion } from "framer-motion";
 import styles from "./PartnersSection.module.css";
 import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+import { useEffect, useState } from "react";
 
 interface PartnerItem {
   name: string;
   logo: string;
-  description: string;
 }
 interface PartnersSectionType {
   title: string;
-  subtitle: string;
   partners: PartnerItem[];
 }
 
 export default function PartnersSection() {
   const { translations } = useLocalization();
   const section = (translations.partnersSection as unknown) as PartnersSectionType;
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const bisonBank = section.partners.find(partner => partner.name === "Bison Bank");
+  const otherPartners = section.partners.filter(partner => partner.name !== "Bison Bank").slice(0, 19);
+  
+  const displayPartners = isMobileOrTablet && bisonBank 
+    ? [bisonBank, ...otherPartners] 
+    : section.partners.slice(0, 20);
 
   return (
     <section className={styles.partnersSection}>
-      <motion.div
-        className={styles.bgMotion}
-        initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.8 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
-
       <div className={styles.container}>
         {/* Header */}
         <motion.h2
@@ -42,33 +52,21 @@ export default function PartnersSection() {
           {parse(section.title)}
         </motion.h2>
 
-        {/* Header 2 */}
-        <motion.p
-          className={styles.subtitle}
-          initial={{ y: -50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {section.subtitle}
-        </motion.p>
-
-        {/* Partners */}
+        {/* Logo grid */}
         <div className={styles.grid}>
-          {section.partners.map((partner, index) => (
+          {displayPartners.map((partner) => (
             <motion.div
               key={partner.name}
-              className={styles.card}
+              className={`${styles.card} ${partner.name === "Bison Bank" ? styles.bison : ""
+                }`}
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.8 }}
-              transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
+              transition={{ duration: 0.8 }}
             >
               <div className={styles.logoWrapper}>
                 <img src={partner.logo} alt={partner.name} />
               </div>
-              <h3 className={styles.partnerName}>{partner.name}</h3>
-              <p className={styles.partnerDescription}>{partner.description}</p>
             </motion.div>
           ))}
         </div>

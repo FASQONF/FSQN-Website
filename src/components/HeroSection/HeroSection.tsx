@@ -21,9 +21,9 @@ export default function HeroSection() {
         {parse(t("title"))}
         </h1>
         <p className={styles.description}>
-        {t("description")}
+        {parse(t("description"))}
         </p>
-        <a href="#" className={styles.ctaButton}>
+        <a href="/Presentation.pdf" target="_blank" className={styles.ctaButton}>
         {t("cta")}
         </a>
       </motion.div>
