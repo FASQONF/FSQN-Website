@@ -5,8 +5,8 @@ deployment:
     - set -e
 
     # 2) Активируем Node.js-окружение и переходим в папку репозитория
-    - source /home/fasqhjwb/nodevenv/repositories/Fasqon/20/bin/activate
     - cd /home/fasqhjwb/repositories/Fasqon
+    - source /home/fasqhjwb/nodevenv/repositories/Fasqon/20/bin/activate
 
     # 3) Устанавливаем продакшен-зависимости
     - npm ci
@@ -15,4 +15,6 @@ deployment:
     - npm run build
 
     # 5) Синхронизируем папку out/ с public_html
-    - rsync -a --delete out/ /home/fasqhjwb/public_html/
+    - rm -rf /home/fasqhjwb/public_html/*
+    - cp -a out/* /home/fasqhjwb/public_html/
+
