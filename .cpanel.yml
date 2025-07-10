@@ -2,14 +2,6 @@
 deployment:
   tasks:
     - set -e
-
-    - cd /home/fasqhjwb/repositories/Fasqon
-    - source /home/fasqhjwb/nodevenv/repositories/Fasqon/20/bin/activate
-
-    - npm ci
-
-    - npm run build
-
-    - rm -rf /home/fasqhjwb/public_html/*
-    - cp -a out/* /home/fasqhjwb/public_html/
-
+    - cd $HOME/repositories/Fasqon
+    - rm -rf $HOME/public_html/*
+    - cp -a out/* $HOME/public_html/
