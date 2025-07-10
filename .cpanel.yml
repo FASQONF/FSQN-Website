@@ -1,20 +1,15 @@
 ---
 deployment:
   tasks:
-    # 1) Прерываемся при любой ошибке
     - set -e
 
-    # 2) Активируем Node.js-окружение и переходим в папку репозитория
     - cd /home/fasqhjwb/repositories/Fasqon
     - source /home/fasqhjwb/nodevenv/repositories/Fasqon/20/bin/activate
 
-    # 3) Устанавливаем продакшен-зависимости
     - npm ci
 
-    # 4) Сборка статического сайта
     - npm run build
 
-    # 5) Синхронизируем папку out/ с public_html
     - rm -rf /home/fasqhjwb/public_html/*
     - cp -a out/* /home/fasqhjwb/public_html/
 
