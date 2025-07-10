@@ -37,7 +37,6 @@
   .dropdown {
     position: absolute;
     top: 110%;
-    left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
     border-radius: 10px;

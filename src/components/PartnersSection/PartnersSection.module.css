@@ -86,6 +86,10 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;

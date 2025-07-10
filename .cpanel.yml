@@ -1,9 +1,18 @@
-build:
-  - npm install
-  - npm run build
-  - npm run export
+---
+deployment:
+  tasks:
+    # 1) Прерываемся при любой ошибке
+    - set -e
 
-deploy:
-  - rm -rf /home/fasqhjwb/public_html/out/*
-  - mkdir -p /home/fasqhjwb/public_html/out
-  - cp -R out/* /home/fasqhjwb/public_html/out/
+    # 2) Активируем Node.js-окружение и переходим в папку репозитория
+    - source /home/fasqhjwb/nodevenv/repositories/Fasqon/20/bin/activate
+    - cd /home/fasqhjwb/repositories/Fasqon
+
+    # 3) Устанавливаем продакшен-зависимости
+    - npm ci
+
+    # 4) Сборка статического сайта
+    - npm run build
+
+    # 5) Синхронизируем папку out/ с public_html
+    - rsync -a --delete out/ /home/fasqhjwb/public_html/
