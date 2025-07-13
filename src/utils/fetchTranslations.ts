@@ -7,11 +7,9 @@ export interface TranslationObject {
 export type TranslationArray = TranslationValue[];
 export type Translations = TranslationObject;
 
-// Список поддерживаемых языков
 export const SUPPORTED_LANGUAGES = ['en', 'es', 'pt'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 
-// Валидация языкового кода
 function isValidLanguage(lang: string): lang is SupportedLanguage {
     return SUPPORTED_LANGUAGES.includes(lang as SupportedLanguage);
 }
@@ -28,7 +26,6 @@ export async function fetchTranslations(lang: string): Promise<Translations> {
         return localTranslations.default;
     } catch (error) {
         console.error('Error fetching translations:', error);
-        // Try to load English as fallback
         try {
             const fallbackTranslations = await import('../locales/en.json');
             return fallbackTranslations.default;
@@ -39,7 +36,6 @@ export async function fetchTranslations(lang: string): Promise<Translations> {
     }
 }
 
-// Helper function to get translation with fallback
 export function getTranslation(key: string, translations: Translations | null, lang: string = 'en'): string {
     if (!translations) return key;
     if (!isValidLanguage(lang)) {
@@ -47,20 +43,17 @@ export function getTranslation(key: string, translations: Translations | null, l
         lang = 'en';
     }
     
-    // Сначала проверяем, есть ли ключ напрямую в объекте переводов (плоская структура)
     if (key in translations) {
         const value = translations[key];
         return typeof value === 'string' ? value : key;
     }
     
-    // Если ключ не найден напрямую, пробуем обработать как вложенный ключ
     const keys = key.split('.');
     let value: TranslationValue = translations;
     
     for (const k of keys) {
         if (value && typeof value === 'object') {
             if (Array.isArray(value)) {
-                // Если значение - массив, пытаемся получить элемент по индексу
                 const index = parseInt(k, 10);
                 if (!isNaN(index) && index >= 0 && index < value.length) {
                     value = value[index];
@@ -68,7 +61,6 @@ export function getTranslation(key: string, translations: Translations | null, l
                     return key;
                 }
             } else if (k in value) {
-                // Если значение - объект, получаем свойство
                 value = (value as TranslationObject)[k];
             } else {
                 return key;
@@ -78,6 +70,5 @@ export function getTranslation(key: string, translations: Translations | null, l
         }
     }
     
-    // If the final value is a string, return it; otherwise return the key
     return typeof value === 'string' ? value : key;
 }

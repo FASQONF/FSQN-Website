@@ -1,29 +1,62 @@
-# Enable MultiViews option
-Options -MultiViews
-
-# Enable mod_rewrite engine
+# Enable URL rewriting and redirection engine
 RewriteEngine On
 
-# Set base path for rewrite rules
-RewriteBase /
+# Force redirect to HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# If the requested file or directory exists, do not apply further rules
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+# Single-Page-App routing: everything that is not a file or directory goes to index.html
+# Avoid 404 and other possible pages while there are only a couple of pages on the site
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
 
-# Redirect requests to the /out/ folder if file or directory exists there
-RewriteCond %{REQUEST_URI} !^/out/
-RewriteCond %{DOCUMENT_ROOT}/out/$1 -f [OR]
-RewriteCond %{DOCUMENT_ROOT}/out/$1 -d
-RewriteRule ^(.+)$ /out/$1 [L]
+# Default charset and disable directory listing
+AddDefaultCharset UTF-8
+Options -Indexes
 
-# Remove 'index.html' from the URL if present
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^?]*)index\.html[?\s] [NC]
-RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+# Caching of static resources
+<IfModule mod_expires.c>
+  ExpiresActive On
 
-# Fallback: all other requests go to /out/index.html (SPA behavior)
-RewriteRule ^ /out/index.html [L]
+  # Do not cache HTML
+  ExpiresByType text/html                        "access plus 0 seconds"
+  
+  # CSS and JS — 1 month
+  ExpiresByType text/css                         "access plus 1 month"
+  ExpiresByType application/javascript           "access plus 1 month"
+  ExpiresByType text/javascript                  "access plus 1 month"
 
-# Set the default directory index file
-DirectoryIndex /out/index.html
+  # Fonts — 1 year
+  ExpiresByType application/font-woff            "access plus 1 year"
+  ExpiresByType application/font-woff2           "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject    "access plus 1 year"
+  ExpiresByType font/ttf                         "access plus 1 year"
+  ExpiresByType font/eot                         "access plus 1 year"
+
+  # Images — 1 year
+  ExpiresByType image/jpeg                       "access plus 1 year"
+  ExpiresByType image/png                        "access plus 1 year"
+  ExpiresByType image/gif                        "access plus 1 year"
+  ExpiresByType image/svg+xml                    "access plus 1 year"
+
+  # Video — 1 year
+  ExpiresByType video/mp4                        "access plus 1 year"
+</IfModule>
+
+# Caching and security headers
+<IfModule mod_headers.c>
+  # Set Cache-Control header for static files
+  <FilesMatch "\.(css|js|woff2?|ttf|eot|svg|jpe?g|png|gif|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Security headers
+  Header always set Strict-Transport-Security       "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Frame-Options                 "DENY"
+  Header always set X-Content-Type-Options          "nosniff"
+  Header always set X-XSS-Protection                "1; mode=block"
+  Header always set Referrer-Policy                 "no-referrer-when-downgrade"
+  Header always set Permissions-Policy              "geolocation=(), microphone=()"
+  Header always set Content-Security-Policy         "default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';"
+</IfModule>
