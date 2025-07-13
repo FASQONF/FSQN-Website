@@ -37,6 +37,10 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Copy custom .htaccess into output folder
+        run: |
+          cp .htaccess out/.htaccess
+
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
