@@ -34,14 +34,6 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Test FTP connection
-        run: |
-          sudo apt-get update && sudo apt-get install -y lftp
-          lftp -u "${{ secrets.FTP_USERNAME }}","${{ secrets.FTP_PASSWORD }}" \
-               -p "${{ secrets.FTP_PORT || 21 }}" "${{ secrets.FTP_HOST }}" \
-               -e "bye"
-
-
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
