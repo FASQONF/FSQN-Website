@@ -1,7 +1,0 @@
----
-deployment:
-  tasks:
-    - set -e
-    - cd $HOME/repositories/Fasqon
-    - rm -rf $HOME/public_html/*
-    - cp -a out/* $HOME/public_html/
