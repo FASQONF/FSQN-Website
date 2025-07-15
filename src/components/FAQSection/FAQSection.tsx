@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeInOut, Variants } from "framer-motion";
 import styles from "./FAQSection.module.css";
 import { useLocalization } from '../../context/LocalizationContext';
 
@@ -31,18 +31,18 @@ export default function FAQSection() {
     whileInView: { scale: 1, opacity: 1, rotate: 0 },
   };
 
-  const answerVariants = {
+  const answerVariants: Variants = {
     hidden: { height: 0, opacity: 0 },
     whileInView: {
       height: "auto",
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: easeInOut }
     },
     exit: {
       height: 0,
       opacity: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
+      transition: { duration: 0.5, ease: easeInOut }
+    }
   };
 
   return (

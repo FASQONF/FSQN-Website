@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeInOut, Variants } from "framer-motion";
 import styles from "./FeaturesSection.module.css";
 import { useState } from "react";
 import { useLocalization } from '@/context/LocalizationContext';
@@ -19,19 +19,10 @@ interface FeaturesSectionTranslations {
   features: Feature[];
 }
 
-const contentVariants = {
-  hidden: { y: -50, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 1 } },
-};
-const answerVariants = {
+const answerVariants: Variants = {
   hidden: { height: 0, opacity: 0 },
-  whileInView: { height: "auto", opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-  exit: { height: 0, opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } },
-};
-const accordionVariants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
-  exit: { opacity: 0, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+  whileInView: { height: "auto", opacity: 1, transition: { duration: 0.5, ease: easeInOut } },
+  exit: { height: 0, opacity: 0, transition: { duration: 0.5, ease: easeInOut } },
 };
 
 export default function FeaturesSection() {

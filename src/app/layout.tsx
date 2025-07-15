@@ -1,6 +1,5 @@
-
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Script from 'next/script';
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/FooterSection/FooterSection";
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Fasqon",
     images: [
       {
-        url: "https://fasqon.com/og-image.jpg", // Use a JPG/PNG instead of SVG for better compatibility
+        url: "https://fasqon.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Fasqon OG Image",
@@ -47,6 +46,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YTHG925892"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YTHG925892');
+          `}
+        </Script>
+      </head>
       <body >
         <LocalizationProvider>
           <Suspense fallback={null}>
