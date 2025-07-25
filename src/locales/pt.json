@@ -19,7 +19,7 @@
       {
         "name": "Cartão Cripto",
         "description": "Descubra um cartão de criptomoedas virtual ou físico da Fasqon e gaste criptomoedas onde e quando quiser.",
-        "screenImage": ""
+        "screenImage": "/images/phones/main.png"
       },
       {
         "name": "Comprar",
@@ -39,7 +39,7 @@
       {
         "name": "Ganhar",
         "description": "Faça staking ou empreste seus ativos cripto e ganhe renda passiva com o programa de staking seguro da Fasqon.",
-        "screenImage": "/images/phones/hold.png"
+        "screenImage": "/images/phones/earn.png"
       },
       {
         "name": "Conversar",
@@ -131,7 +131,7 @@
     "subtitle": "Siga a Fasqon nas redes sociais!"
   },
   "ultimateUX": {
-    "title": "Experiência <span>do Usuário Suprema</span>",
+    "title": "Seu primeiro banco que realmente é divertido!<br/> <span>Jogue, Ganhe, Deposite e Ostente — Tudo no FASQON</span>",
     "subtitle": "Descubra o melhor com Fasqon",
     "features": [
       {
@@ -159,6 +159,39 @@
         "image": "/images/ux/protection.png"
       }
     ]
+  },
+  "miniAppSection": {
+    "title": "<span>Mini APP do Telegram</span> Fasqon",
+    "subtitle": "Jogue o Jogo. Ganhe $FSQN. Administre o Banco",
+    "features": [
+      {
+        "icon": "/images/miniapp/user-magnet.png",
+        "title": "Imã de Usuários",
+        "description": "Atraia usuários com jogabilidade divertida e viciante. Usa UX familiar e baixa fricção para atrair rapidamente usuários Web2/Web3. É o primeiro passo para uma jornada tokenizada.",
+        "altDescription": "Atraia usuários com jogabilidade divertida e viciante."
+      },
+      {
+        "icon": "/images/miniapp/smooth-onboarding.png",
+        "title": "Onboarding Suave",
+        "description": "Transição perfeita dos jogadores do jogo para a carteira. Sem KYC, sem configuração — basta tocar para desbloquear o acesso. O onboarding se torna parte do jogo, sem fricção e rápido.",
+        "altDescription": "Transição perfeita dos jogadores do jogo para a carteira."
+      },
+      {
+        "icon": "/images/miniapp/growth-funnel.png",
+        "title": "Funil de Crescimento",
+        "description": "Transforme o gameplay em fluxo de usuários. O mini app impulsiona a adoção da carteira enquanto alimenta o tráfego contínuo. É um loop viral embutido para o crescimento do ecossistema.",
+        "altDescription": "O mini app impulsiona a adoção de carteiras enquanto alimenta o tráfego contínuo."
+      },
+      {
+        "icon": "/images/miniapp/engagement-engine.png",
+        "title": "Motor de Engajamento",
+        "description": "Torne as finanças envolventes com loops de jogo. Os usuários jogam, ganham, atualizam e retornam diariamente. Não é bancário — é diversão viciante com valor financeiro real.",
+        "altDescription": "Os usuários jogam, ganham, evoluem e retornam diariamente."
+      }
+    ],
+    "ctaText": "Ganhe até <span>185% de APY</span>",
+    "ctaButtonText": "Construa meu Banco!",
+    "ctaButtonLink": "https://t.me/fasqonbot"
   },
   "teamSection": {
     "title": "Nosso <span>Time</span>",
@@ -310,6 +343,37 @@
       {
         "name": "Mexc",
         "logo": "/images/partners/mexc.png"
+      }
+    ],
+    "mediaTitle": "Destaque na <span>Mídia</span>",
+    "media": [
+      {
+        "name": "Cointelegraph",
+        "logo": "/images/partners/media/cointelegraph.png"
+      },
+      {
+        "name": "Finbold",
+        "logo": "/images/partners/media/finbold.png"
+      },
+      {
+        "name": "Buisness Insider",
+        "logo": "/images/partners/media/buisnessInsider.png"
+      },
+      {
+        "name": "Coin Market Cap",
+        "logo": "/images/partners/media/coinMarketCap.png"
+      },
+      {
+        "name": "Crypto Daily",
+        "logo": "/images/partners/media/cryptoDaily.png"
+      },
+      {
+        "name": "Binance Square",
+        "logo": "/images/partners/media/binanceSquare.png"
+      },
+      {
+        "name": "Cryptomode",
+        "logo": "/images/partners/media/cryptomode.png"
       }
     ]
   },

@@ -19,7 +19,7 @@
       {
         "name": "Crypto Card",
         "description": "Discover a virtual or physical cryptocurrency card from Fasqon and spend cryptocurrency wherever and whenever you like.",
-        "screenImage": ""
+        "screenImage": "/images/phones/main.png"
       },
       {
         "name": "Buy",
@@ -39,7 +39,7 @@
       {
         "name": "Earn",
         "description": "Stake or lend your crypto assets and earn passive income with Fasqon’s secure staking program.",
-        "screenImage": "/images/phones/hold.png"
+        "screenImage": "/images/phones/earn.png"
       },
       {
         "name": "Talk",
@@ -69,10 +69,22 @@
       }
     ],
     "benefits": [
-      { "icon": "/icons/check.svg", "text": "Personal Web3 IBAN" },
-      { "icon": "/icons/check.svg", "text": "Google & Apple Pay" },
-      { "icon": "/icons/check.svg", "text": "No KYC (up to €200)" },
-      { "icon": "/icons/check.svg", "text": "Cashback up to 5%" }
+      {
+        "icon": "/icons/check.svg",
+        "text": "Personal Web3 IBAN"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Google & Apple Pay"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "No KYC (up to €200)"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Cashback up to 5%"
+      }
     ]
   },
   "storeToEarn": {
@@ -80,14 +92,38 @@
     "subtitle": "Banking’s Broken. FASQON Fixed It.",
     "description": "Earn passive income by simply holding assets in the Fasqon wallet\n    and spending your reward anytime with Fasqon card.<br /> Hold now. Pay never.",
     "items": [
-      { "icon": "/icons/user.svg", "label": "User A" },
-      { "icon": "/icons/crypto.svg", "label": "Holds crypto" },
-      { "icon": "/icons/wallet.svg", "label": "Fasqon Cold Wallet" },
-      { "icon": "/icons/lending.svg", "label": "Lending Pool" },
-      { "icon": "/icons/incentives.svg", "label": "Users incentives" },
-      { "icon": "/icons/borrowingfee.svg", "label": "Borrowing fee" },
-      { "icon": "/icons/user2.svg", "label": "User B" },
-      { "icon": "/icons/borrowfunds.svg", "label": "Borrowing funds" }
+      {
+        "icon": "/icons/user.svg",
+        "label": "User A"
+      },
+      {
+        "icon": "/icons/crypto.svg",
+        "label": "Holds crypto"
+      },
+      {
+        "icon": "/icons/wallet.svg",
+        "label": "Fasqon Cold Wallet"
+      },
+      {
+        "icon": "/icons/lending.svg",
+        "label": "Lending Pool"
+      },
+      {
+        "icon": "/icons/incentives.svg",
+        "label": "Users incentives"
+      },
+      {
+        "icon": "/icons/borrowingfee.svg",
+        "label": "Borrowing fee"
+      },
+      {
+        "icon": "/icons/user2.svg",
+        "label": "User B"
+      },
+      {
+        "icon": "/icons/borrowfunds.svg",
+        "label": "Borrowing funds"
+      }
     ]
   },
   "stayTuned": {
@@ -95,34 +131,79 @@
     "subtitle": "Follow Fasqon in social media!"
   },
   "ultimateUX": {
-    "title": "Ultimate <span>User Experience</span>",
+    "title": "Your First Bank That’s Actually Fun!<br/> <span>Play, Earn, Bank & Flex — All in FASQON</span>",
     "subtitle": "Discover the best with Fasqon",
     "features": [
       {
         "id": "01",
-        "title": "Seed Phrase Registration",
-        "description": "Easily sign up using a unique seed phrase to ensure your privacy",
-        "image": "/images/ux/seed-phrase.png"
+        "title": "Crypto Card with <br/>Unique IBAN",
+        "description": "Spend crypto and fiat anywhere with a dedicated IBAN for seamless transactions.",
+        "image": "/images/ux/card.png"
       },
       {
         "id": "02",
-        "title": "AI Assistants",
-        "description": "Provide security, anti-fraud, education and entertainment",
-        "image": "/images/ux/ai-assistant.png"
+        "title": "Telegram Mini-Game & Engagement",
+        "description": "Play, invite friends, and earn crypto with interactive rewards.",
+        "image": "/images/ux/minigame.png"
       },
       {
         "id": "03",
-        "title": "Safe Chatting",
-        "description": "Secret P2P messaging mode between devices",
-        "image": "/images/ux/safe-chat.png"
+        "title": "Secure P2P Messenger",
+        "description": "Chat and transact with <br/>end-to-end encryptionfor secure communication.",
+        "image": "/images/ux/p2p.png"
       },
       {
         "id": "04",
-        "title": "Fraud & Theft Protection",
-        "description": "Multi-factor authentication that enhances security",
-        "image": "/images/ux/protection.png"
+        "title": "AI-Powered Payment Assistant",
+        "description": "Pay instantly with AI automation, eliminating manual entry.",
+        "image": "/images/ux/ai.png"
+      },
+      {
+        "id": "05",
+        "title": "$FSQN Tokent",
+        "description": "Powers transactions, includes a burn mechanism, and enables governance within the ecosystem.",
+        "image": "/images/ux/token.png"
+      },
+      {
+        "id": "06",
+        "title": "Next-Gen <br/>Multicurrency Web3 Wallet",
+        "description": "Securely send, receive, and swap crypto & fiat in one place.",
+        "image": "/images/ux/web3.png"
       }
     ]
+  },
+  "miniAppSection": {
+    "title": "Fasqon <span>Telegram Mini APP</span>",
+    "subtitle": "Play the Game. Earn $FSQN. Run the Bank",
+    "features": [
+      {
+        "icon": "/images/miniapp/user-magnet.png",
+        "title": "User Magnet",
+        "description": "Attract users with fun, addictive gameplay. Uses familiar UX and low friction to pull in Web2/Web3 users fast. It's the first step into a tokenized journey.",
+        "altDescription": "Attract users with fun, addictive gameplay."
+      },
+      {
+        "icon": "/images/miniapp/smooth-onboarding.png",
+        "title": "Smooth Onboarding",
+        "description": "Seamlessly transition players from game to wallet. No KYC, no setup — just tap to unlock access. Onboarding becomes part of the play, frictionless and fast.",
+        "altDescription": "Seamlessly transition players from game to wallet."
+      },
+      {
+        "icon": "/images/miniapp/growth-funnel.png",
+        "title": "Growth Funnel",
+        "description": "Turn gameplay into user flow. The mini app drives wallet adoption while fueling ongoing traffic. It's a built-in viral loop for ecosystem growth.",
+        "altDescription": "The mini app drives wallet adoption while fueling ongoing traffic."
+      },
+      {
+        "icon": "/images/miniapp/engagement-engine.png",
+        "title": "Engagement Engine",
+        "description": "Make finance sticky with game loops. Users play, earn, upgrade, and return daily. It's not banking — it's habit-forming fun with real financial value.",
+        "altDescription": "Users play, earn, upgrade, and return daily."
+      }
+    ],
+    "ctaText": "Earn up to <span>185% APY</span>",
+    "ctaButtonText": "Build my Bank!",
+    "ctaButtonLink": "https://t.me/fasqonbot"
   },
   "teamSection": {
     "title": "Our <span>Team</span>",
@@ -275,6 +356,37 @@
         "name": "Mexc",
         "logo": "/images/partners/mexc.png"
       }
+    ],
+    "mediaTitle": "Featured in <span>Media</span>",
+    "media": [
+      {
+        "name": "Cointelegraph",
+        "logo": "/images/partners/media/cointelegraph.png"
+      },
+      {
+        "name": "Finbold",
+        "logo": "/images/partners/media/finbold.png"
+      },
+      {
+        "name": "Buisness Insider",
+        "logo": "/images/partners/media/buisnessInsider.png"
+      },
+      {
+        "name": "Coin Market Cap",
+        "logo": "/images/partners/media/coinMarketCap.png"
+      },
+      {
+        "name": "Crypto Daily",
+        "logo": "/images/partners/media/cryptoDaily.png"
+      },
+      {
+        "name": "Binance Square",
+        "logo": "/images/partners/media/binanceSquare.png"
+      },
+      {
+        "name": "Cryptomode",
+        "logo": "/images/partners/media/cryptomode.png"
+      }
     ]
   },
   "faqSection": {
@@ -339,25 +451,76 @@
       "Explore trading opportunities within our platform for potential gains."
     ],
     "cards": [
-      ["Get Card", "Payments", "Internal Trxs", "Passive income mode"],
-      ["Treasury"],
-      ["40% Ecosystem growth", "50% User incentives", "10% Monthly Burn"]
+      [
+        "Get Card",
+        "Payments",
+        "Internal Trxs",
+        "Passive income mode"
+      ],
+      [
+        "Treasury"
+      ],
+      [
+        "40% Ecosystem growth",
+        "50% User incentives",
+        "10% Monthly Burn"
+      ]
     ]
   },
   "tokenomicsSection": {
     "title": "Token<span class='titleSpan'>omics</span>",
     "subtitle": "FSQN token distribution",
     "segments": [
-      { "id": "team", "name": "Team", "percentage": 16 },
-      { "id": "liquidity", "name": "Liquidity Reserve", "percentage": 15 },
-      { "id": "ecosystem", "name": "Ecosystem incentives", "percentage": 15 },
-      { "id": "marketing", "name": "Marketing", "percentage": 10 },
-      { "id": "farming", "name": "Farming & Staking", "percentage": 10 },
-      { "id": "ido", "name": "IDO", "percentage": 3 },
-      { "id": "airdrop", "name": "TMA Airdrop", "percentage": 2 },
-      { "id": "seed", "name": "Seed", "percentage": 3 },
-      { "id": "advisors", "name": "Advisors", "percentage": 2 },
-      { "id": "private", "name": "Private Sale", "percentage": 26 }
+      {
+        "id": "team",
+        "name": "Team",
+        "percentage": 16
+      },
+      {
+        "id": "liquidity",
+        "name": "Liquidity Reserve",
+        "percentage": 15
+      },
+      {
+        "id": "ecosystem",
+        "name": "Ecosystem incentives",
+        "percentage": 15
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing",
+        "percentage": 10
+      },
+      {
+        "id": "farming",
+        "name": "Farming & Staking",
+        "percentage": 10
+      },
+      {
+        "id": "ido",
+        "name": "IDO",
+        "percentage": 3
+      },
+      {
+        "id": "airdrop",
+        "name": "TMA Airdrop",
+        "percentage": 2
+      },
+      {
+        "id": "seed",
+        "name": "Seed",
+        "percentage": 3
+      },
+      {
+        "id": "advisors",
+        "name": "Advisors",
+        "percentage": 2
+      },
+      {
+        "id": "private",
+        "name": "Private Sale",
+        "percentage": 26
+      }
     ]
   },
   "roadmapSection": {

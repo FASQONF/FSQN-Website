@@ -8,6 +8,7 @@ import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
 import CryptoCards from "@/components/CryptoCards/CryptoCards";
 import StoreToEarn from "@/components/StoreToEarn/StoreToEarn";
 import UltimateUX from "@/components/UltimateUserExperience/UltimateUX";
+import MiniAppSection from "@/components/MiniApp/MiniApp"
 import TeamSection from "@/components/TeamSection/TeamSection";
 import PartnersSection from "@/components/PartnersSection/PartnersSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
@@ -38,7 +39,6 @@ export default function Home() {
       <main className={styles.main}>
       <Suspense fallback={null}>
         <HeroSection />
-        {/* <PressMentions /> */}
         <div id="features">
           <FeaturesSection />
         </div>
@@ -48,8 +48,8 @@ export default function Home() {
         <div id="passive-income">
           <StoreToEarn />
         </div>
-        {/* <StayTuned /> */}
         <UltimateUX />
+        <MiniAppSection />
         <div id="about-us">
           <TeamSection />
         </div>

@@ -7,7 +7,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .title {
@@ -15,6 +15,10 @@
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+}
+
+.title span {
+  color: #0e0;
 }
 
 .highlight {
@@ -28,9 +32,12 @@
 
 .grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
   grid-template-areas:
-    "seed ai ai"
-    "seed chat protection";
+    "card01 card02 card02"
+    "card01 card03 card04"
+    "card05 card05 card06";
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -48,7 +55,7 @@
 }
 
 .card01 {
-  grid-area: seed;
+  grid-area: card01;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,26 +63,33 @@
 }
 
 .card02 {
-  grid-area: ai;
-  background: #ffffff;
-  color: #000000;
+  grid-area: card02;
 }
 
 .card03 {
-  grid-area: chat;
+  grid-area: card03;
 }
 
 .card04 {
-  grid-area: protection;
+  grid-area: card04;
 }
 
-.whiteCard {
-  background: #ffffff;
-  color: #000000;
+.card05 { 
+  grid-area: card05;
 }
 
-.whiteCard .cardDescription {
-  color: rgba(0, 0, 0, 0.7);
+.card06 { 
+  grid-area: card06;
+}
+
+.card02, .card05 {
+  background: #fff;
+  color: #000;
+}
+
+.card02 .cardDescription,
+.card05 .cardDescription {
+  color: #000;
 }
 
 .cardContent {
@@ -91,17 +105,18 @@
 
 .cardNumber {
   font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: "Montserrat", serif;
+  margin-bottom: 15px;
 }
 
 .cardTitle {
+  font-family: "Montserrat", serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 165%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 0.05em;
-  font-family: "Franie Test", "Montserrat", serif;
 }
 
 .cardDescription {
@@ -148,14 +163,16 @@
   height: 100%;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-areas:
-      "seed ai"
-      "seed chat"
-      "protection protection";
-    gap: 16px;
-  }
+.image05,
+.image06 {
+  height: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.image05 img,
+.image06 img {
+  height: 100%;
 }
 
 @media (max-width: 768px) {

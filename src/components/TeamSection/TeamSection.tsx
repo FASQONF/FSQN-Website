@@ -40,7 +40,7 @@ export default function TeamSection() {
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
           <h2 className={styles.title}>{parse(section.title)}</h2>
         </motion.div>
@@ -54,7 +54,7 @@ export default function TeamSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: index * 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className={styles.avatarWrapper}>
                 <picture>
@@ -110,8 +110,14 @@ export default function TeamSection() {
           src="/icons/line.png"
         />
 
-        {/* New block below the line */}
-        <div className={styles.partnerBlock}>
+        {/* Partner Block */}
+        <motion.div
+          className={styles.partnerBlock}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: section.members.length * 0.1 }}
+        >
           <div className={styles.imageContainer}>
             <img
               src="/images/partners/vareger.png"
@@ -126,7 +132,7 @@ export default function TeamSection() {
               {section.partner.description}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

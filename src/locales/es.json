@@ -19,7 +19,7 @@
       {
         "name": "Tarjeta Cripto",
         "description": "Descubre una tarjeta de criptomonedas virtual o física de Fasqon y gasta criptomonedas donde y cuando quieras.",
-        "screenImage": ""
+        "screenImage": "/images/phones/main.png"
       },
       {
         "name": "Comprar",
@@ -39,7 +39,7 @@
       {
         "name": "Ganar",
         "description": "Apuesta o presta tus activos criptográficos y gana ingresos pasivos con el programa de staking seguro de Fasqon.",
-        "screenImage": "/images/phones/hold.png"
+        "screenImage": "/images/phones/earn.png"
       },
       {
         "name": "Conversar",
@@ -131,7 +131,7 @@
     "subtitle": "¡Sigue a Fasqon en redes sociales!"
   },
   "ultimateUX": {
-    "title": "Experiencia de <span>usuario definitiva</span>",
+    "title": "¡Tu primer banco que realmente es divertido!<br/> <span>Juega, Gana, Ahorra y Presume — Todo en FASQON</span>",
     "subtitle": "Descubre lo mejor con Fasqon",
     "features": [
       {
@@ -159,6 +159,39 @@
         "image": "/images/ux/protection.png"
       }
     ]
+  },
+  "miniAppSection": {
+    "title": "<span>Mini APP de Telegram</span> de Fasqon",
+    "subtitle": "Juega el Juego. Gana $FSQN. Dirige el Banco",
+    "features": [
+      {
+        "icon": "/images/miniapp/user-magnet.png",
+        "title": "Imán de Usuarios",
+        "description": "Atrae usuarios con un juego divertido y adictivo. Utiliza una experiencia familiar y de bajo esfuerzo para atraer rápidamente usuarios de Web2/Web3. Es el primer paso hacia un viaje tokenizado.",
+        "altDescription": "Atrae usuarios con jugabilidad divertida y adictiva."
+      },
+      {
+        "icon": "/images/miniapp/smooth-onboarding.png",
+        "title": "Incorporación Fluida",
+        "description": "Transición fluida de los jugadores del juego a la billetera. Sin KYC, sin configuración: solo toca para desbloquear el acceso. La incorporación se convierte en parte del juego, sin fricciones y rápida.",
+        "altDescription": "Transición fluida de los jugadores desde el juego a la cartera."
+      },
+      {
+        "icon": "/images/miniapp/growth-funnel.png",
+        "title": "Embudo de Crecimiento",
+        "description": "Convierte el juego en un flujo de usuarios. La mini aplicación impulsa la adopción de la billetera mientras genera tráfico continuo. Es un bucle viral integrado para el crecimiento del ecosistema.",
+        "altDescription": "La mini app impulsa la adopción de billeteras mientras alimenta el tráfico continuo."
+      },
+      {
+        "icon": "/images/miniapp/engagement-engine.png",
+        "title": "Motor de Compromiso",
+        "description": "Haz que las finanzas sean atractivas con ciclos de juego. Los usuarios juegan, ganan, mejoran y regresan diariamente. No es banca, es diversión que crea hábitos con valor financiero real.",
+        "altDescription": "Los usuarios juegan, ganan, mejoran y regresan a diario."
+      }
+    ],
+    "ctaText": "Gana hasta un <span>185% de APY</span>",
+    "ctaButtonText": "¡Construye mi Banco!",
+    "ctaButtonLink": "https://t.me/fasqonbot"
   },
   "teamSection": {
     "title": "Nuestro <span>Equipo</span>",
@@ -310,6 +343,37 @@
       {
         "name": "Mexc",
         "logo": "/images/partners/mexc.png"
+      }
+    ],
+    "mediaTitle": "Destacado en <span>Medios</span>",
+    "media": [
+      {
+        "name": "Cointelegraph",
+        "logo": "/images/partners/media/cointelegraph.png"
+      },
+      {
+        "name": "Finbold",
+        "logo": "/images/partners/media/finbold.png"
+      },
+      {
+        "name": "Buisness Insider",
+        "logo": "/images/partners/media/buisnessInsider.png"
+      },
+      {
+        "name": "Coin Market Cap",
+        "logo": "/images/partners/media/coinMarketCap.png"
+      },
+      {
+        "name": "Crypto Daily",
+        "logo": "/images/partners/media/cryptoDaily.png"
+      },
+      {
+        "name": "Binance Square",
+        "logo": "/images/partners/media/binanceSquare.png"
+      },
+      {
+        "name": "Cryptomode",
+        "logo": "/images/partners/media/cryptomode.png"
       }
     ]
   },

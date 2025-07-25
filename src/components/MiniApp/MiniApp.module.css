@@ -1,0 +1,364 @@
+.miniAppSection {
+    position: relative;
+    overflow: visible;
+    background-position: center 200px;
+    max-width: 1200px;
+    padding: 80px 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.miniAppSection::after {
+    content: '';
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: calc(150%);
+    background: url('/images/miniapp/bg.png') no-repeat center top;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.leftContent {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.rightContent {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    color: #fff;
+    font-family: "Franie Test", "Montserrat", serif;
+}
+
+.title span {
+    color: #00ff00;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.featureIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.featureTitle {
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 21px;
+    color: #00ff00;
+    margin-bottom: 10px;
+    font-family: "Franie Test", "Montserrat", serif;
+}
+
+.featureDescription {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.featureDescriptionMobile {
+    margin: 0;
+    display: none;
+}
+
+.ctaSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ctaText {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #fff;
+}
+
+.ctaText span {
+    color: #00ff00;
+}
+
+.ctaButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(11.8px);
+    background: #30f427;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 135%;
+    color: #0e0e0e;
+    border-radius: 75px;
+    padding: 7px 22px;
+    width: 234px;
+    height: 47px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.ctaButton:hover {
+    background-color: #66ff66;
+    transform: translateY(-2px);
+}
+
+.phoneContainer {
+    position: relative;
+    width: 100%;
+    max-width: 355px;
+    height: 716px;
+    z-index: 1;
+}
+
+.phoneFrame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.phoneContainerMobile {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .miniAppSection {
+        padding: 80px 4rem;
+    }
+
+    .header {
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .title,
+    .subtitle {
+        width: 100%;
+    }
+
+    .contentWrapper {
+        flex-direction: row;
+    }
+
+    .leftContent {
+        flex: 2;
+    }
+
+    .rightContent {
+        flex: 1;
+    }
+
+    .featureGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .featureItem {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "icon title"
+            "icon description";
+        column-gap: 20px;
+        row-gap: 8px;
+        align-items: start;
+        text-align: left;
+    }
+
+    .featureIcon {
+        grid-area: icon;
+        width: 60px;
+        height: 60px;
+        margin: 0;
+    }
+
+    .featureTitle {
+        grid-area: title;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .featureDescription {
+        display: none;
+        margin: 0;
+    }
+
+    .featureDescriptionMobile {
+        display: block;
+        grid-area: description;
+    }
+
+    .phoneContainer {
+        max-width: 300px;
+        height: 600px;
+    }
+
+    .ctaSection {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .miniAppSection {
+        padding: 80px 2rem;
+    }
+
+    .leftContent {
+        flex: 1;
+        gap: 30px;
+    }
+
+    .rightContent {
+        flex: 1;
+        width: 100%;
+    }
+
+    .header {
+        align-items: center;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        width: 80%;
+        align-self: start;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .featureGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .featureItem {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "icon title"
+            "icon description";
+        column-gap: 16px;
+        row-gap: 6px;
+        align-items: start;
+        text-align: left;
+    }
+
+    .featureTitle {
+        font-size: 18px;
+    }
+
+    .ctaText {
+        font-size: 20px;
+    }
+
+    .featureIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ctaSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .phoneContainer {
+        width: 100%;
+        max-width: 355px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .phoneContainer::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .phoneFrame {
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+    }
+
+    .phoneContainerMobile {
+        display: block;
+        width: 80%;
+        margin: 20px auto 0;
+    }
+
+    .rightContent {
+        display: none;
+    }
+}

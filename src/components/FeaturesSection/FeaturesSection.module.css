@@ -43,16 +43,19 @@
   line-height: 144%;
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .phoneContainer {
   position: relative;
+  overflow: hidden;
   width: 355px;
   height: 716px;
   margin: 0 auto;
   z-index: 1;
+  transform: translateX(-50px);
+  transition: transform 0.3s ease;
 }
 
 .phoneFrame {
@@ -60,18 +63,6 @@
   width: 100%;
   height: auto;
   z-index: 1;
-}
-
-.phoneScreen {
-  position: absolute;
-  top: 20px;
-  left: 16px;
-  width: 323px;
-  height: auto;
-  z-index: 2;
-  overflow: hidden;
-  object-fit: contain;
-  clip-path: inset(30px 0 110px 0);
 }
 
 .rightSide {
@@ -87,6 +78,7 @@
 
 .accordionItem {
   border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -97,23 +89,15 @@
   line-height: 111%;
   letter-spacing: 0.06em;
   padding: 0.5rem 0;
-  transition: color 0.2s;
 }
 
 .accordionTitle:hover {
   color: #fff;
 }
 
-.activeItem {
-  font-size: 24px;
-  line-height: 83%;
-  letter-spacing: 0.04em;
-  color: #0e0;
-}
-
 .accordionContent {
   overflow: hidden;
-  padding: 0.5rem 0;
+  padding: 0 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 125%;
@@ -124,6 +108,7 @@
 @media (max-width: 768px) {
   .featuresSection {
     flex-direction: column;
+    margin-bottom: 4rem;
   }
   .leftSide,
   .rightSide {
@@ -132,16 +117,37 @@
   }
   .phoneContainer {
     margin: 1rem auto;
+    height: 400px;
+    overflow: hidden;
+    transform: translateX(0);
+  }
+  .phoneContainer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .phoneFrame {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
   }
   .sectionTitle {
     font-size: 40px;
+  }
+  .subtitle {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 500px) {
   .phoneContainer {
     max-width: 300px;
-    height: 100%;
   }
   .sectionTitle {
     font-size: 28px;
