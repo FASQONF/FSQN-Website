@@ -136,27 +136,39 @@
     "features": [
       {
         "id": "01",
-        "title": "Registro com Frase Semente",
-        "description": "Cadastre-se facilmente usando uma frase semente única para garantir sua privacidade",
-        "image": "/images/ux/seed-phrase.png"
+        "title": "Cartão Cripto com <br/>IBAN Único",
+        "description": "Gaste cripto e fiat em qualquer lugar com um IBAN dedicado para transações sem interrupções.",
+        "image": "/images/ux/card.png"
       },
       {
         "id": "02",
-        "title": "Assistentes de IA",
-        "description": "Fornecem segurança, proteção contra fraudes, educação e entretenimento",
-        "image": "/images/ux/ai-assistant.png"
+        "title": "Mini-Jogo e Engajamento no Telegram",
+        "description": "Jogue, convide amigos e ganhe cripto <br/>com recompensas interativas.",
+        "image": "/images/ux/minigame.png"
       },
       {
         "id": "03",
-        "title": "Bate-papo Seguro",
-        "description": "Modo de mensagens P2P secreto entre dispositivos",
-        "image": "/images/ux/safe-chat.png"
+        "title": "Mensageiro P2P Seguro",
+        "description": "Converse e realize transações com <br/>criptografia de ponta a ponta para comunicação segura.",
+        "image": "/images/ux/p2p.png"
       },
       {
         "id": "04",
-        "title": "Proteção contra Fraude e Roubo",
-        "description": "Autenticação multifator que melhora a segurança",
-        "image": "/images/ux/protection.png"
+        "title": "Assistente de Pagamento com IA",
+        "description": "Pague instantaneamente com automação de IA, eliminando a inserção manual.",
+        "image": "/images/ux/ai.png"
+      },
+      {
+        "id": "05",
+        "title": "Token $FSQN",
+        "description": "Impulsiona transações, inclui um mecanismo de queima, <br/>e habilita a governança dentro do ecossistema.",
+        "image": "/images/ux/token.png"
+      },
+      {
+        "id": "06",
+        "title": "Carteira Web3 Multimoeda de <br/>Próxima Geração",
+        "description": "Envie, receba e troque cripto e fiat com segurança em um só lugar.",
+        "image": "/images/ux/web3.png"
       }
     ]
   },
@@ -405,6 +417,14 @@
         "answer": "O Fasqon combina uma carteira Web3, um cartão bancário privado, um mensageiro seguro e ferramentas financeiras baseadas em IA, tudo em uma única plataforma."
       }
     ]
+  },
+  "contactSection": {
+    "tagline": "<span>Neobank de próxima geração</span> para pagamentos diários",
+    "followText": "Mantenha-se informado. <br/>Siga a Fasqon para drops, alpha e vibes.",
+    "ctaText": "Quero meu cartão Fasqon!",
+    "ctaLink": "https://fasqon.com/",
+    "supportPrompt": "<span>Tem alguma dúvida?</span> Fale com o suporte",
+    "supportEmail": "support@fasqon.com"
   },
   "footerSection": {
     "companyName": "Fasqon, Unipessoal LDA (Zona Franca da Madeira)",

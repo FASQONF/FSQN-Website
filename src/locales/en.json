@@ -143,7 +143,7 @@
       {
         "id": "02",
         "title": "Telegram Mini-Game & Engagement",
-        "description": "Play, invite friends, and earn crypto with interactive rewards.",
+        "description": "Play, invite friends, and earn crypto <br/>with interactive rewards.",
         "image": "/images/ux/minigame.png"
       },
       {
@@ -161,7 +161,7 @@
       {
         "id": "05",
         "title": "$FSQN Tokent",
-        "description": "Powers transactions, includes a burn mechanism, and enables governance within the ecosystem.",
+        "description": "Powers transactions, includes a burn mechanism, <br/>and enables governance within the ecosystem.",
         "image": "/images/ux/token.png"
       },
       {
@@ -417,6 +417,14 @@
         "answer": "Fasqon combines a Web3 wallet, a private bank card, a secure messenger, and AI-powered financial tools in a single platform. Key features include a personal IBAN, crypto-fiat conversions, P2P payments, encrypted messaging, AI assistants for financial automation, and a Play-to-Airdrop rewards system."
       }
     ]
+  },
+  "contactSection": {
+    "tagline": "<span>Next Gen Neobank</span> for daily payments",
+    "followText": "Stay in the loop. <br/>Follow Fasqon for drops, alpha, and vibes.",
+    "ctaText": "Get my Fasqon card!",
+    "ctaLink": "https://fasqon.com/",
+    "supportPrompt": "<span>Got a question?</span> Hit up support",
+    "supportEmail": "support@fasqon.com"
   },
   "footerSection": {
     "companyName": "Fasqon, Unipessoal LDA (Zona Franca da Madeira)",

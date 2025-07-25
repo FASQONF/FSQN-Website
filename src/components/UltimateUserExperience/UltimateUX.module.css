@@ -134,42 +134,44 @@
 
 .image01 {
   right: 0;
-  top: 0;
-
+  top: -80px;
+  width: 80%;
 }
 
 .image02 {
-  height: 100%;
   right: 0;
-  bottom: -30px;
+  bottom: -100px;
+  width: 50%;
 }
 
 .image03 {
   height: 100%;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
 }
 
 .image04 {
-  height: 100%;
-  right: 0;
-  bottom: 0;
+  height: 80%;
+  right: -40px;
+  top: 0;
+}
+
+.image05 {
+  width: 70%;
+  right: 0px;
+  bottom: -100px;
+}
+
+.image06 {
+  width: 70%;
+  right: 0px;
+  bottom: -100px;
 }
 
 .image01 img,
 .image02 img,
 .image03 img,
-.image04 img {
-  height: 100%;
-}
-
-.image05,
-.image06 {
-  height: 100%;
-  right: 0;
-  bottom: 0;
-}
-
+.image04 img,
 .image05 img,
 .image06 img {
   height: 100%;

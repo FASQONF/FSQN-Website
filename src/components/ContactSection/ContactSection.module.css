@@ -1,0 +1,240 @@
+.contactSection {
+    position: relative;
+    padding: 100px 2rem;
+    background: url('/images/contact/bg.png') no-repeat center top;
+    background-size: cover;
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+
+.leftContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.rightContent {
+    flex: 0 0 400px;
+}
+
+.rightContent img {
+    width: 60%;
+    height: auto;
+    display: block;
+}
+
+/* Brand */
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brandIcon {
+    width: full;
+    height: 68px;
+}
+
+/* Text */
+.tagline {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.tagline span {
+    color: #00EE00;
+}
+
+.followText {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+/* Socials */
+.socials {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.socialLink {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.socialLink:hover {
+    transform: translateY(-2px);
+}
+
+.socialIcon {
+    width: 56px;
+    height: 56px;
+}
+
+/* CTA */
+.ctaButton {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    background: #30f427;
+    color: #0e0e0e;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 135%;
+    border-radius: 75px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-bottom: 48px;
+}
+
+.ctaButton:hover {
+    background-color: #66ff66;
+    transform: translateY(-2px);
+}
+
+/* Support */
+.supportBarWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.supportBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 128px;
+    border: 1px solid #00EE00;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #00EE00;
+}
+
+.supportPrompt {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.supportPrompt span {
+    color: #00ff00;
+}
+
+.supportEmail {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.supportEmail img {
+    width: 20;
+    height: 20;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+@media (max-width: 1024px) {
+    .leftContent {
+        flex: 0 0 66.666%;
+    }
+
+    .rightContent {
+        flex: 0 0 33.333%;
+    }
+
+    .rightContent img {
+        width: 80%;
+    }
+
+    .contactSection {
+        padding: 80px 3rem;
+        background: url('/images/contact/bg-mobile.png') no-repeat center center;
+        background-size: 120%;
+    }
+
+    .brandName {
+        font-size: 40px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+
+    .followText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactSection {
+        padding: 60px 1.5rem;
+        background-size: 300%;
+    }
+
+    .inner {
+        flex-direction: column;
+    }
+
+    .rightContent {
+        display: none;
+    }
+
+    .leftContent {
+        flex: 1 0 100%;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .supportBar {
+        padding: 12px 32px;
+        margin-top: 3rem;
+        width: auto;
+    }
+
+    .supportPrompt {
+        font-size: 14px;
+    }
+
+    .brandName {
+        font-size: 32px;
+    }
+
+    .brandIcon {
+        height: 48px;
+    }
+
+    .socials {
+        gap: 6px;
+        margin-bottom: 32px;
+    }
+
+    .socialIcon {
+        height: 48px;
+    }
+
+    .ctaButton {
+        margin-bottom: 32px;
+    }
+}
