@@ -88,16 +88,21 @@
 .mediaBlock {
   margin-top: 3rem;
   text-align: center;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-bottom: 2rem;
 }
 
 .mediaGrid {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--m-gap);
   margin: 0 auto;
   padding: 0 clamp(1rem, 5vw, 2rem);
   max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mediaBlock .mediaGrid {
@@ -111,20 +116,11 @@
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-
-  background: linear-gradient(to top right,
-      rgba(0, 238, 0, 1) 0%,
-      rgba(0, 238, 0, 0) 100%) border-box;
-
-  -webkit-mask:
-    linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
+  background: linear-gradient(to top right, rgba(0, 238, 0, 0.7) 0%, rgba(0, 238, 0, 0) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-
   pointer-events: none;
 }
 
@@ -166,7 +162,7 @@
   }
 
   .special .logoWrapper img {
-    max-height: 100px;
+    max-height: 70px;
   }
 }
 
@@ -194,10 +190,11 @@
   .mediaBlock .mediaGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--m-gap);
+    gap: 2px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 5vw, 2rem);
-    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .mediaBlock .mediaGrid .mediaCard:first-child {

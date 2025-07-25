@@ -62,7 +62,7 @@ export default function UltimateUX() {
         className={styles.header}
         initial={disableAnimation ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         whileInView={disableAnimation ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8 }}
       >
         <h1 className={styles.title}>{parse(t("ultimateUX.title"))}</h1>
@@ -79,7 +79,7 @@ export default function UltimateUX() {
               className={`${styles.card} ${styles["card" + feature.id]}`}
               initial={animationProps.initial}
               whileInView={animationProps.animate}
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8, delay }}
             >
               {feature.id === "01" ? (

@@ -181,6 +181,14 @@
     min-height: 350px;
   }
 
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
   .grid {
     display: flex;
     flex-direction: row;
