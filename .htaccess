@@ -1,3 +1,9 @@
+# Security headers: prevent clickjacking and restrict framing to self
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self';"
+</IfModule>
+
 # Enable URL rewriting and redirection engine
 RewriteEngine On
 
@@ -44,7 +50,7 @@ Options -Indexes
   ExpiresByType video/mp4                        "access plus 1 year"
 </IfModule>
 
-# Caching and security headers
+# Caching
 <IfModule mod_headers.c>
   # Set Cache-Control header for static files
   <FilesMatch "\.(css|js|woff2?|ttf|eot|svg|jpe?g|png|gif|mp4)$">
