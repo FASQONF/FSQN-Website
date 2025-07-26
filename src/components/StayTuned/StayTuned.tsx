@@ -13,7 +13,6 @@ export default function StayTuned() {
   return (
     <section className={styles.stayTunedSection}>
       <div className={styles.container}>
-        {/* Текстовый блок – появляется слева направо */}
         <motion.div
           className={styles.textBlock}
           initial={{ x: -100, opacity: 0 }}
@@ -25,7 +24,6 @@ export default function StayTuned() {
           <p className={styles.subtitle}>{t("stayTuned.subtitle")}</p>
         </motion.div>
 
-        {/* Блок иконок – появляется справа налево */}
         <motion.div
           className={styles.iconsBlock}
           initial={{ x: 100, opacity: 0 }}
