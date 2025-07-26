@@ -16,7 +16,7 @@ const TokenomicsSection = () => {
     { id: 'liquidity', percentage: 15, color: '#E0E0E0', hoverColor: '#FFFFFF', position: { top: '10%', right: '10%' } },
     { id: 'ecosystem', percentage: 15, color: '#529052', hoverColor: '#7AE47A', position: { top: '40%', right: '-10%' } },
     { id: 'marketing', percentage: 10, color: '#A4E5A4', hoverColor: '#D1FFD1', position: { top: '40%', left: '-5%' } },
-    { id: 'farming', percentage: 10, color: '#00FF00', hoverColor: '#80FF80', position: { top: '60%', left: '-9%' } },
+    { id: 'farming', percentage: 10, color: '#30f427', hoverColor: '#80FF80', position: { top: '60%', left: '-9%' } },
     { id: 'ido', percentage: 3, color: '#494949', hoverColor: '#777777', position: { top: '78%', left: '9%' } },
     { id: 'airdrop', percentage: 2, color: '#37C637', hoverColor: '#6FFF6F', position: { top: '70%', left: '-3%' } },
     { id: 'seed', percentage: 3, color: '#C4D6C4', hoverColor: '#E8FFE8', position: { bottom: '30%', right: '0%' } },

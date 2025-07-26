@@ -21,13 +21,13 @@
   animation: fadeInDown 1s ease forwards;
   opacity: 0;
   transform: translateY(-20px);
-  color: #00ff00;
+  color: #30f427;
   font-family: "Franie Test", "Montserrat", serif;
 
 }
 
 .titleSpan {
-  color: #00ff00;
+  color: #30f427;
   position: relative;
   display: inline-block;
 }
@@ -39,7 +39,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #00ff00;
+  background-color: #30f427;
   animation: underlineExpand 1.2s ease forwards 0.5s;
 }
 
@@ -102,12 +102,12 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
-  background-color: #00ff00;
+  background-color: #30f427;
 }
 
 .percentageSpan {
   font-weight: bold;
-  color: #00ff00;
+  color: #30f427;
 }
 
 .highlight {

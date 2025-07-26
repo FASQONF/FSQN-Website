@@ -57,11 +57,11 @@
   
   .langOption:hover {
     background: rgba(0, 255, 0, 0.2);
-    color: #00ff00;
+    color: #30f427;
   }
   
   .activeLang {
-    color: #00ff00;
+    color: #30f427;
     font-weight: bold;
   }
   

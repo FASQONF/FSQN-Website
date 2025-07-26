@@ -50,7 +50,7 @@
 }
 
 .activeLink {
-  color: #00ff00;
+  color: #30f427;
 }
 
 .activeLink::before {
@@ -61,7 +61,7 @@
   width: 100%;
   height: 3px;
   border-radius: 10px;
-  background-color: #00ff00;
+  background-color: #30f427;
 }
 
 .right {
@@ -129,7 +129,7 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background-color: #00ff00;
+  background-color: #30f427;
   border-radius: 2px;
 }
 

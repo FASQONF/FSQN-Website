@@ -29,7 +29,7 @@ export function AnimatedLineDesktop({ className }: AnimatedLineProps) {
           L-50,300 
           Z
         "
-        stroke="#00ff00"
+        stroke="#30f427"
         strokeWidth="10"
         strokeLinecap="round"
         strokeLinejoin="round"

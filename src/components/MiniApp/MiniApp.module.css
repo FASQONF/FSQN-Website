@@ -58,7 +58,7 @@
 }
 
 .title span {
-    color: #00ff00;
+    color: #30f427;
 }
 
 .subtitle {
@@ -92,7 +92,7 @@
     font-weight: 100;
     font-size: 24px;
     line-height: 21px;
-    color: #00ff00;
+    color: #30f427;
     margin-bottom: 10px;
     font-family: "Franie Test", "Montserrat", serif;
 }
@@ -124,7 +124,7 @@
 }
 
 .ctaText span {
-    color: #00ff00;
+    color: #30f427;
 }
 
 .ctaButton {

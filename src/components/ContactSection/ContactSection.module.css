@@ -60,7 +60,7 @@
 }
 
 .tagline span {
-    color: #00EE00;
+    color: #30f427;
 }
 
 .followText {
@@ -126,9 +126,9 @@
     align-items: center;
     gap: 8px;
     padding: 12px 128px;
-    border: 1px solid #00EE00;
+    border: 1px solid #30f427;
     border-radius: 20px;
-    box-shadow: 0 0 8px #00EE00;
+    box-shadow: 0 0 8px #30f427;
 }
 
 .supportPrompt {
@@ -137,7 +137,7 @@
 }
 
 .supportPrompt span {
-    color: #00ff00;
+    color: #30f427;
 }
 
 .supportEmail {

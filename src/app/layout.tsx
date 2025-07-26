@@ -23,6 +23,16 @@ export const metadata: Metadata = {
   },
   description: "Fasqon offers next-gen Web3 solutions for retail and business. Discover advanced crypto payment, private bank cards, and more.",
 
+  icons: {
+    icon: [
+      { url: '/icons/fsqn/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icons/fsqn/favicon.png', sizes: '32x32', type: 'image/png' }
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/icons/fsqn/favicon.svg', color: '#30f427' }
+    ]
+  },
+
   openGraph: {
     title: "Fasqon - Next Generation Web3 Solutions",
     description: "Fasqon is a next gen web3 neobank for daily payments. Get your crypto card right now!",
@@ -50,7 +60,8 @@ export const metadata: Metadata = {
   other: {
     'telegram:title': "Fasqon - Next Generation Web3 Solutions",
     'telegram:description': "Fasqon is a next gen web3 neobank for daily payments.Get your crypto card right now!",
-    'telegram:image': "https://fasqon.com/og-image.jpg"
+    'telegram:image': "https://fasqon.com/og-image.jpg",
+    'image_src': "https://fasqon.com/og-image.jpg"
   }
 }
 
@@ -76,6 +87,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body >
+        <meta name="image_src" content="https://fasqon.com/og-image.jpg" />
         <LocalizationProvider>
           <Suspense fallback={null}>
             <Header />

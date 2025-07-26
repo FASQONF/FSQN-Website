@@ -10,7 +10,6 @@ export default function HeroSection() {
 
   return (
     <section className={styles.heroSection}>
-      {/* Текстовый блок, появляется слева → направо */}
       <motion.div 
         className={styles.content}
         initial={{ x: -100, opacity: 0 }}

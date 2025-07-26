@@ -56,7 +56,7 @@
   padding: 0.7rem;
   border: none;
   border-radius: 100px;
-  background-color: #00EE00;
+  background-color: #30f427;
   color: #000;
   font-weight: 600;
   font-size: 16px;
@@ -83,7 +83,7 @@
 }
 
 .xLink :global(svg) {
-  stroke: #00EE00;
+  stroke: #30f427;
 }
 
 .detailsBtn {
@@ -91,7 +91,7 @@
   align-items: center;
   background: none;
   border: none;
-  color: #00EE00;
+  color: #30f427;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -105,7 +105,7 @@
 
 .plusIcon {
   margin-right: 0.25rem;
-  stroke: #00ff00;
+  stroke: #30f427;
 }
 
 @media (max-width: 1024px) {

@@ -34,7 +34,7 @@
 }
 
 .logoBox {
-  background-color: #00ff00;
+  background-color: #30f427;
   color: #000;
   font-weight: bold;
   padding: 8px;
@@ -57,7 +57,7 @@
 .icon {
   width: 20px;
   height: 20px;
-  fill: #00ff00;
+  fill: #30f427;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -79,7 +79,7 @@
 }
 
 .button:hover {
-  background-color: #00ff00;
+  background-color: #30f427;
   color: #000;
 }
 
