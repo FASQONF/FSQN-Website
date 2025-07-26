@@ -68,6 +68,7 @@
         "cardImg": "/images/cards/Card3.png"
       }
     ],
+    "ctaText": "Get my Fasqon card!",
     "benefits": [
       {
         "icon": "/icons/check.svg",
@@ -161,12 +162,12 @@
       {
         "id": "05",
         "title": "$FSQN Tokent",
-        "description": "Powers transactions, includes a burn mechanism, <br/>and enables governance within the ecosystem.",
+        "description": "Powers transactions, includes a burn mechanism, and enables governance within the ecosystem.",
         "image": "/images/ux/token.png"
       },
       {
         "id": "06",
-        "title": "Next-Gen <br/>Multicurrency Web3 Wallet",
+        "title": "Next-Gen Multicurrency Web3 Wallet",
         "description": "Securely send, receive, and swap crypto & fiat in one place.",
         "image": "/images/ux/web3.png"
       }
@@ -422,7 +423,7 @@
     "tagline": "<span>Next Gen Neobank</span> for daily payments",
     "followText": "Stay in the loop. <br/>Follow Fasqon for drops, alpha, and vibes.",
     "ctaText": "Get my Fasqon card!",
-    "ctaLink": "https://fasqon.com/",
+    "ctaLink": "/Presentation.pdf",
     "supportPrompt": "<span>Got a question?</span> Hit up support",
     "supportEmail": "support@fasqon.com"
   },
@@ -430,12 +431,18 @@
     "companyName": "Fasqon, Unipessoal LDA (Zona Franca da Madeira)",
     "nipc": "NIPC: 517395436 (Portugal)",
     "accessCode": "Access registration code (Código de acesso): 2853-2787-4837",
-    "email": "office@fasqon.com",
+    "email": "support@fasqon.com",
     "copyright": "Copyright©Fasqon",
     "address1": "Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal",
     "address2": "Lagoas Park, Building 7 - 1st floor South, office 13, 2740-244 Porto Salvo, Portugal",
     "documents": "Documents",
     "contactUs": "Contact Us"
+  },
+  "helpBanner": {
+    "message": "Hi! Have some questions about the project? I'm here to help!",
+    "primaryText": "Let's Go!",
+    "detailsText": "Details",
+    "closeAria": "Close"
   },
   "modalDocuments": {
     "title": "Legal documents",

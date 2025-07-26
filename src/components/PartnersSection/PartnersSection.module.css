@@ -187,6 +187,10 @@
     max-height: 80px;
   }
 
+  .mediaBlock .logoWrapper img {
+    max-height: 55px;
+  }
+
   .mediaBlock .mediaGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

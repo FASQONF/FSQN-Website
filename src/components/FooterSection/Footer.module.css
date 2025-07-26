@@ -1,6 +1,7 @@
 /* Footer.module.css */
 
 .footer {
+  position: relative;
   background-color: #000;
   color: #fff;
   margin-top: 100px;
@@ -108,6 +109,10 @@
 }
 
 @media (min-width: 768px) {
+  .footer {
+    margin-top: 1rem;
+  }
+
   .topContainer {
     flex-direction: row;
     justify-content: space-between;

@@ -1,6 +1,6 @@
 .contactSection {
     position: relative;
-    padding: 100px 2rem;
+    padding: 4rem 2rem 0rem 2rem;
     background: url('/images/contact/bg.png') no-repeat center top;
     background-size: cover;
 }
@@ -167,7 +167,6 @@
     }
 
     .contactSection {
-        padding: 80px 3rem;
         background: url('/images/contact/bg-mobile.png') no-repeat center center;
         background-size: 120%;
     }
@@ -187,7 +186,6 @@
 
 @media (max-width: 768px) {
     .contactSection {
-        padding: 60px 1.5rem;
         background-size: 300%;
     }
 

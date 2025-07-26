@@ -13,7 +13,7 @@
 /* Diamonds (bg) */
 .diamond1,
 .diamond2,
-.diamond3  {
+.diamond3 {
   position: absolute;
   z-index: 0;
   opacity: 1;
@@ -36,19 +36,24 @@
   right: 16%;
   animation: diamondMove3 12s ease-in-out infinite;
 }
+
 @keyframes diamondMove1 {
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(30px, -20px);
   }
+
   20% {
     transform: translate(30px, -20px);
   }
+
   25% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -58,17 +63,21 @@
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(-25px, -30px);
   }
+
   20% {
     transform: translate(-25px, -30px);
   }
+
   25% {
-    transform: translate(0, 0);     
+    transform: translate(0, 0);
   }
+
   100% {
-    transform: translate(0, 0);       
+    transform: translate(0, 0);
   }
 }
 
@@ -76,15 +85,19 @@
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(20px, 25px);
   }
+
   20% {
     transform: translate(20px, 25px);
   }
+
   25% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -101,10 +114,10 @@
   font-size: 50px;
   line-height: 128%;
   text-align: center;
-  font-family: "Franie Test","Montserrat", serif;
+  font-family: "Franie Test", "Montserrat", serif;
   margin-bottom: 0.5rem;
-  position: relative; 
-  z-index: 2; 
+  position: relative;
+  z-index: 2;
 }
 
 .mainTitle span {
@@ -129,11 +142,10 @@
   height: 628px;
   margin: 0 auto;
   z-index: 1;
-}
-.phoneContainer{
   height: 80%;
   object-fit: cover;
 }
+
 .phoneBg {
   width: 100%;
   height: auto;
@@ -142,7 +154,7 @@
 
 .cardsWrapper {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -213,6 +225,14 @@
   margin-bottom: 1rem;
 }
 
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
 .benefits {
   z-index: 2;
   display: flex;
@@ -233,11 +253,34 @@
   transition: color 0.2s ease;
 }
 
-.benefitItem:hover {
-  color: #fff;
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  backdrop-filter: blur(11.8px);
+  background: #30f427;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 135%;
+  color: #0e0e0e;
+  border-radius: 75px;
+  padding: 7px 22px;
+  width: 234px;
+  height: 47px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.cardImage{
- 
+
+.ctaButton:hover {
+  background-color: #66ff66;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .benefitItem {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -246,7 +289,7 @@
   }
 
   .phoneContainer {
-    width: 250px;
+    width: 220px;
     height: 500px;
   }
 
@@ -262,26 +305,31 @@
   .leftCard {
     transform: translateX(-250px) scale(0.8) rotateY(-8deg);
   }
+
   .rightCard {
     transform: translateX(250px) scale(0.8) rotateY(8deg);
   }
 
   .cardInfo {
-    top: 75%; 
+    top: 75%;
   }
+
   .diamond1 {
     bottom: 20%;
     left: -15%;
   }
-  .diamond1 img{
+
+  .diamond1 img {
     width: 300px;
     height: 300px;
   }
+
   .diamond2 {
     bottom: 62%;
     right: 55%;
   }
-  .diamond2 img{
+
+  .diamond2 img {
     width: 250px;
     height: 250px;
   }
@@ -291,33 +339,40 @@
     right: 30px;
 
   }
-  .diamond3 img{
+
+  .diamond3 img {
     width: 300px;
     height: 300px;
   }
-  .sliderSection{
+
+  .sliderSection {
     min-height: 820px;
   }
 }
+
 @media (max-width: 500px) {
-  .benefitItem{
+  .benefitItem {
     font-size: 11px;
     line-height: 164%;
   }
+
   .benefitItem img {
     width: 14px;
     height: 14px;
   }
+
   .diamond1 {
     bottom: 0;
     left: -30%;
   }
+
   .diamond3 {
     bottom: 55%;
     right: -40px;
 
   }
-  .cardsWrapper{
+
+  .cardsWrapper {
     top: 45%;
   }
 }

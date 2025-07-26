@@ -68,6 +68,7 @@
         "cardImg": "/images/cards/Card3.png"
       }
     ],
+    "ctaText": "¡Consigue mi tarjeta Fasqon!",
     "benefits": [
       {
         "icon": "/icons/check.svg",
@@ -161,12 +162,12 @@
       {
         "id": "05",
         "title": "Token $FSQN",
-        "description": "Impulsa las transacciones, incluye un mecanismo de quema, <br/>y permite la gobernanza dentro del ecosistema.",
+        "description": "Impulsa las transacciones, incluye un mecanismo de quema, y permite la gobernanza dentro del ecosistema.",
         "image": "/images/ux/token.png"
       },
       {
         "id": "06",
-        "title": "Cartera Web3 Multimoneda de <br/>Próxima Generación",
+        "title": "Cartera Web3 Multimoneda de Próxima Generación",
         "description": "Envía, recibe e intercambia cripto y fiat de forma segura en un solo lugar.",
         "image": "/images/ux/web3.png"
       }
@@ -422,7 +423,7 @@
     "tagline": "<span>NeoBanco de próxima generación</span> para pagos diarios",
     "followText": "Mantente al tanto. <br/>Sigue a Fasqon para drops, alpha y vibes.",
     "ctaText": "¡Consigue mi tarjeta Fasqon!",
-    "ctaLink": "https://fasqon.com/",
+    "ctaLink": "/Presentation.pdf",
     "supportPrompt": "<span>¿Tienes una pregunta?</span> Contacta con soporte",
     "supportEmail": "support@fasqon.com"
   },
@@ -430,12 +431,18 @@
     "companyName": "Fasqon, Unipessoal LDA (Zona Franca de Madeira)",
     "nipc": "NIPC: 517395436 (Portugal)",
     "accessCode": "Código de acceso al registro: 2853-2787-4837",
-    "email": "office@fasqon.com",
+    "email": "support@fasqon.com",
     "copyright": "Copyright©Fasqon",
     "address1": "Rua dos Aranhas n.º 51, sala 14, 9000-044, Funchal, Portugal",
     "address2": "Lagoas Park, Edificio 7 - 1er piso sur, oficina 13, 2740-244 Porto Salvo, Portugal",
     "documents": "Documentos",
     "contactUs": "Contáctanos"
+  },
+  "helpBanner": {
+    "message": "¡Hola! ¿Tienes preguntas sobre el proyecto? ¡Estoy aquí para ayudar!",
+    "primaryText": "¡Vamos!",
+    "detailsText": "Detalles",
+    "closeAria": "Cerrar"
   },
   "modalDocuments": {
     "title": "Documentos legales",

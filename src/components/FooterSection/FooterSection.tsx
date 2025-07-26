@@ -6,6 +6,7 @@ import styles from "./Footer.module.css";
 import Image from "next/image";
 import ModalDocuments from "../ModalDocuments/ModalDocuments";
 import { useLocalization } from '@/context/LocalizationContext';
+import HelpBanner from "@/components/HelpBanner/HelpBanner";
 
 export default function Footer() {
   const [showDocumentsModal, setShowDocumentsModal] = useState(false);
@@ -16,6 +17,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <HelpBanner />
       {/* Top Container */}
       <div className={styles.topContainer}>
         <div className={styles.logoContainer}>
@@ -40,7 +42,7 @@ export default function Footer() {
                 2.5 0 0 0 2.5-2.5V7.5a2 2 0 0 0-.06-1.391L12 15z"
               />
             </svg>
-            <a href="mailto:office@fasqon.com" className={styles.textGray}>
+            <a href="mailto:support@fasqon.com" className={styles.textGray}>
               {t("footerSection.email")}
             </a>
           </div>
