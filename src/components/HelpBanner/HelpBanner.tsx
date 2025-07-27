@@ -8,18 +8,10 @@ import { useLocalization } from "@/context/LocalizationContext";
 import styles from "./HelpBanner.module.css";
 
 const HelpBanner: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const { t } = useLocalization();
 
-  useEffect(() => {
-    const closed = localStorage.getItem("helpBannerClosed");
-    if (!closed) {
-      setVisible(true);
-    }
-  }, []);
-
   const handleClose = () => {
-    localStorage.setItem("helpBannerClosed", "true");
     setVisible(false);
   };
 

@@ -38,7 +38,7 @@ const imageVariants: Variants = {
 // Accordion title animation
 const titleVariants: Variants = {
   closed: { fontSize: "18px", lineHeight: "111%", letterSpacing: "0.06em", color: "rgba(255,255,255,0.8)" },
-  open: { fontSize: "24px", lineHeight: "83%", letterSpacing: "0.04em", color: "#0e0" },
+  open: { fontSize: "24px", lineHeight: "83%", letterSpacing: "0.04em", color: "#0e0", textDecoration: "none" },
 };
 
 export default function FeaturesSection() {

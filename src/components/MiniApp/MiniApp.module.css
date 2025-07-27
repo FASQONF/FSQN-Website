@@ -102,12 +102,13 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.8);
+    color: white;
 }
 
 .featureDescriptionMobile {
     margin: 0;
     display: none;
+    color: white;
 }
 
 .ctaSection {

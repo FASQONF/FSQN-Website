@@ -89,6 +89,7 @@
   line-height: 111%;
   letter-spacing: 0.06em;
   padding: 0.5rem 0;
+  text-decoration: underline;
 }
 
 .accordionTitle:hover {
