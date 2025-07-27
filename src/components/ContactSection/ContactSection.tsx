@@ -9,7 +9,7 @@ const SOCIALS = [
     { name: 'X', url: 'https://x.com/fasqon', icon: '/images/contact/icons/x.svg' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/fasqon-official/', icon: '/images/contact/icons/linkedin.svg' },
     { name: 'Telegram', url: 'https://t.me/fasqonofficial', icon: '/images/contact/icons/telegram.svg' },
-    { name: 'Discord', url: 'https://discord.gg/fasqon', icon: '/images/contact/icons/discord.svg' },
+    { name: 'Discord', url: 'https://discord.gg/HBwxXCpxy2', icon: '/images/contact/icons/discord.svg' },
     { name: 'Instagram', url: 'https://www.instagram.com/fasqon_official/', icon: '/images/contact/icons/instagram.svg' },
 ];
 

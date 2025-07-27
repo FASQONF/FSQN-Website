@@ -146,7 +146,7 @@ export default function Footer() {
               </a>
               {/* Discord */}
               <a
-                href="https://discord.com/invite/gkRd9vSEr8"
+                href="https://discord.gg/HBwxXCpxy2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconLink}
