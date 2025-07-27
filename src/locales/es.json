@@ -423,7 +423,7 @@
     "tagline": "<span>NeoBanco de próxima generación</span> para pagos diarios",
     "followText": "Mantente al tanto. <br/>Sigue a Fasqon para drops, alpha y vibes.",
     "ctaText": "¡Consigue mi tarjeta Fasqon!",
-    "ctaLink": "/Presentation.pdf",
+    "ctaLink": "https://t.me/fasqonbot",
     "supportPrompt": "<span>¿Tienes una pregunta?</span> Contacta con soporte",
     "supportEmail": "support@fasqon.com"
   },

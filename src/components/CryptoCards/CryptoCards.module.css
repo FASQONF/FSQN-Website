@@ -126,14 +126,11 @@
 
 .subtitle {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 144%;
   letter-spacing: 0.06em;
-  text-align: center;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
 }
 
 .phoneContainer {
@@ -286,6 +283,10 @@
 @media (max-width: 768px) {
   .mainTitle {
     font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 20px;
   }
 
   .phoneContainer {

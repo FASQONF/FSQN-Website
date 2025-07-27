@@ -127,7 +127,7 @@ export default function CryptoCards() {
       </motion.div>
 
       <div className={styles.ctaWrapper}>
-        <a href="/Presentation.pdf" target="_blank"
+        <a href="https://t.me/fasqonbot" target="_blank"
           className={styles.ctaButton}>
           {t("cryptoCardsSection.ctaText")}
         </a>

@@ -22,7 +22,7 @@ export default function HeroSection() {
         <p className={styles.description}>
         {parse(t("description"))}
         </p>
-        <a href="/Presentation.pdf" target="_blank" className={styles.ctaButton}>
+        <a href="https://t.me/fasqonbot" target="_blank" className={styles.ctaButton}>
         {t("cta")}
         </a>
       </motion.div>
