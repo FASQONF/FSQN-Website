@@ -126,6 +126,13 @@ export default function CryptoCards() {
         </div>
       </motion.div>
 
+      <div className={styles.ctaWrapper}>
+        <a href="/Presentation.pdf" target="_blank"
+          className={styles.ctaButton}>
+          {t("cryptoCardsSection.ctaText")}
+        </a>
+      </div>
+
       {/* Benefits icons */}
       <div className={styles.benefits}>
         {benefits.map((benefit: any, index: any) => (

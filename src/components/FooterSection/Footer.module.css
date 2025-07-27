@@ -1,6 +1,7 @@
 /* Footer.module.css */
 
 .footer {
+  position: relative;
   background-color: #000;
   color: #fff;
   margin-top: 100px;
@@ -33,7 +34,7 @@
 }
 
 .logoBox {
-  background-color: #00ff00;
+  background-color: #30f427;
   color: #000;
   font-weight: bold;
   padding: 8px;
@@ -56,7 +57,7 @@
 .icon {
   width: 20px;
   height: 20px;
-  fill: #00ff00;
+  fill: #30f427;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -78,7 +79,7 @@
 }
 
 .button:hover {
-  background-color: #00ff00;
+  background-color: #30f427;
   color: #000;
 }
 
@@ -108,6 +109,10 @@
 }
 
 @media (min-width: 768px) {
+  .footer {
+    margin-top: 1rem;
+  }
+
   .topContainer {
     flex-direction: row;
     justify-content: space-between;

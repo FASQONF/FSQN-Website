@@ -21,7 +21,7 @@ export function AnimatedLineMobile() {
           L100,10
           Z
         "
-        stroke="#00ff00"
+        stroke="#30f427"
         strokeWidth="8"
         strokeLinecap="round"
         strokeLinejoin="round"

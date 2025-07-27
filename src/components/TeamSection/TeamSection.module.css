@@ -1,5 +1,5 @@
 .teamSection {
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
   padding: 0 20px;
   min-height: 100vh;
@@ -12,7 +12,7 @@
 
 .title {
   font-weight: 700;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 128%;
   margin-bottom: 3rem;
   font-family: "Franie Test", "Montserrat", serif;
@@ -84,7 +84,7 @@
 
 .memberRole {
   font-size: 1.1rem;
-  color: #00ff00;
+  color: #30f427;
   margin: 0;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .linkedinLink:hover {
-  color: #00ff00;
+  color: #30f427;
 }
 
 .linkedinIcon {
@@ -185,7 +185,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
-  color: #00ff00;
+  color: #30f427;
 }
 
 .partnerText {

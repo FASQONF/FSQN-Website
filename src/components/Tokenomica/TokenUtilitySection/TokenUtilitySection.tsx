@@ -94,7 +94,7 @@ export default function TokenUtilitySection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          {/* Фоновая картинка с линиями */}
+          {/* Background Image */}
           <motion.div
             className={styles.lines}
             variants={linesVariants}
