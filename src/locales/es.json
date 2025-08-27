@@ -1,6 +1,6 @@
 {
   "title": "Donde <span>Crypto y Banca</span> por fin hacen clic",
-  "description": "¿Por qué usar 5 apps?<br /><br />Fasqon es donde haces todo: bancar, gastar, ganar, chatear, jugar, presumir y luego relajar — todo en un solo lugar. Envía euros, paga facturas y recibos, retira cripto para comprar, ¡y aún así ganas tokens cada día solo por mantener tu saldo!<br /><br /><b>Consigue $FSQN ahora con mega descuento. A medida que Fasqon sube de nivel y el suministro se quema, tu bolsa también crece. Hazte con tus tokens, bloquéalos en tu tarjeta y construye con el squad.</b>",
+  "description": "Conoce Fasqon: una plataforma Web3 todo en uno que combina la funcionalidad de la banca tradicional con la infraestructura financiera nativa de las criptomonedas, diseñada para potenciar a los emprendedores digitales de hoy.",
   "cta": "¡Obtén mi tarjeta Fasqon!",
   "header": {
     "navLinks": {
@@ -387,6 +387,26 @@
       {
         "name": "Cryptomode",
         "logo": "/images/partners/media/cryptomode.png"
+      },
+      {
+        "name": "Morningstar",
+        "logo": "/images/partners/media/morningstar.png"
+      },
+      {
+        "name": "Cointrust",
+        "logo": "/images/partners/media/cointrust.png"
+      },
+      {
+        "name": "Menafn",
+        "logo": "/images/partners/media/menafn.png"
+      },
+      {
+        "name": "Blockchainwire",
+        "logo": "/images/partners/media/blockchainwire.png"
+      },
+      {
+        "name": "Cryptoreporter",
+        "logo": "/images/partners/media/cryptoreporter.png"
       }
     ]
   },

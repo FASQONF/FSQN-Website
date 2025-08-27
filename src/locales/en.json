@@ -1,6 +1,6 @@
 {
   "title": "Where <span>Crypto and Banking</span> Finally Click",
-  "description": "Why juggle 5 apps?<br /><br />Fasqon's where you bank, spend, earn, chat, play, flex and after vibe - all in one place. Wire euros, clear bills and invoices, cash out crypto on shopping and still earn tokens daily just for keeping your balance!<br /><br /><b>Get $FSQN now while it's hella discounted. As supply burns and Fasqon levels up, so does your bag. Cop your tokens now, lock it on your card, and build with the squad.</b>",
+  "description": "Meet Fasqon - all-in-one Web3 platform that blends traditional banking functionality with crypto-native financial infrastructure, designed to empower today's digital-first entrepreneurs.",
   "cta": "Get my Fasqon card!",
   "header": {
     "navLinks": {
@@ -387,6 +387,26 @@
       {
         "name": "Cryptomode",
         "logo": "/images/partners/media/cryptomode.png"
+      },
+      {
+        "name": "Morningstar",
+        "logo": "/images/partners/media/morningstar.png"
+      },
+      {
+        "name": "Cointrust",
+        "logo": "/images/partners/media/cointrust.png"
+      },
+      {
+        "name": "Menafn",
+        "logo": "/images/partners/media/menafn.png"
+      },
+      {
+        "name": "Blockchainwire",
+        "logo": "/images/partners/media/blockchainwire.png"
+      },
+      {
+        "name": "Cryptoreporter",
+        "logo": "/images/partners/media/cryptoreporter.png"
       }
     ]
   },

@@ -104,6 +104,7 @@
 .mediaBlock .mediaGrid {
   position: relative;
   border-radius: 12px;
+  padding: 10px 30px;
 }
 
 .mediaBlock .mediaGrid::before {
@@ -135,10 +136,12 @@
   max-height: 70px;
 }
 
+/* First raw only 3
 .mediaCard:nth-child(-n+3) {
   flex-basis: calc((100% - 2 * clamp(0.5rem, 2vw, 1.5rem)) / 3);
   max-width: calc((100% - 2 * clamp(0.5rem, 2vw, 1.5rem)) / 3);
 }
+*/
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .partnersSection::before {
@@ -197,10 +200,10 @@
     box-sizing: border-box;
   }
 
-  .mediaBlock .mediaGrid .mediaCard:first-child {
+  /*.mediaBlock .mediaGrid .mediaCard:first-child {
     grid-column: 1 / -1;
     max-width: 100%;
-  }
+  }*/
 
   .mediaBlock .mediaGrid .mediaCard {
     width: 100%;
