@@ -1,7 +1,8 @@
 {
   "title": "Onde <span>Cripto <br />e Bancos</span> finalmente se conectam",
   "description": "Conheça a Fasqon: uma plataforma Web3 tudo-em-um que une a funcionalidade do sistema bancário tradicional à infraestrutura financeira nativa do cripto, projetada para capacitar os empreendedores digitais da atualidade.",
-  "cta": "Obtenha meu cartão Fasqon!",
+  "cta": "Vá para a venda de tokens!",
+  "banerTitle": "<span>JUNTE-SE AO $FSQN</span><br />AIRDROP<br />CAMPANHA!",
   "header": {
     "navLinks": {
       "wallet": "Carteira",
@@ -68,7 +69,7 @@
         "cardImg": "/images/cards/Card3.png"
       }
     ],
-    "ctaText": "Quero meu cartão Fasqon!",
+    "ctaText": "Vá para a venda de tokens!",
     "benefits": [
       {
         "icon": "/icons/check.svg",
@@ -442,8 +443,7 @@
   "contactSection": {
     "tagline": "<span>Neobank de próxima geração</span> para pagamentos diários",
     "followText": "Mantenha-se informado. <br/>Siga a Fasqon para drops, alpha e vibes.",
-    "ctaText": "Quero meu cartão Fasqon!",
-    "ctaLink": "https://t.me/fasqonbot",
+    "ctaText": "Vá para a venda de tokens!",
     "supportPrompt": "<span>Tem alguma dúvida?</span> Fale com o suporte",
     "supportEmail": "support@fasqon.com"
   },

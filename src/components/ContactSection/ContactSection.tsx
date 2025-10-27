@@ -54,7 +54,7 @@ export default function ContactSection() {
                         </div>
 
                         <a
-                            href={t("contactSection.ctaLink")}
+                            href="https://tokensale.fasqon.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.ctaButton}

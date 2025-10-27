@@ -1,7 +1,8 @@
 {
   "title": "Where <span>Crypto and Banking</span> Finally Click",
   "description": "Meet Fasqon - all-in-one Web3 platform that blends traditional banking functionality with crypto-native financial infrastructure, designed to empower today's digital-first entrepreneurs.",
-  "cta": "Get my Fasqon card!",
+  "cta": "Go to the Tokensale!",
+  "banerTitle": "<span>JOIN $FSQN</span><br />AIRDROP<br />CAMPAIGN!",
   "header": {
     "navLinks": {
       "wallet": "Wallet",
@@ -68,7 +69,7 @@
         "cardImg": "/images/cards/Card3.png"
       }
     ],
-    "ctaText": "Get my Fasqon card!",
+    "ctaText": "Go to the Tokensale!",
     "benefits": [
       {
         "icon": "/icons/check.svg",
@@ -442,8 +443,7 @@
   "contactSection": {
     "tagline": "<span>Next Gen Neobank</span> for daily payments",
     "followText": "Stay in the loop. <br/>Follow Fasqon for drops, alpha, and vibes.",
-    "ctaText": "Get my Fasqon card!",
-    "ctaLink": "https://t.me/fasqonbot",
+    "ctaText": "Go to the Tokensale!",
     "supportPrompt": "<span>Got a question?</span> Hit up support",
     "supportEmail": "support@fasqon.com"
   },

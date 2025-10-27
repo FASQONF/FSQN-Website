@@ -4,6 +4,7 @@ import { Suspense, useEffect } from "react";
 import styles from "./page.module.css";
 
 import HeroSection from "@/components/HeroSection/HeroSection";
+import AirdropBanner from '@/components/AirdropBanner/AirdropBanner';
 import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
 import CryptoCards from "@/components/CryptoCards/CryptoCards";
 import StoreToEarn from "@/components/StoreToEarn/StoreToEarn";
@@ -40,6 +41,7 @@ export default function Home() {
       <main className={styles.main}>
       <Suspense fallback={null}>
         <HeroSection />
+        <AirdropBanner />
         <div id="features">
           <FeaturesSection />
         </div>
