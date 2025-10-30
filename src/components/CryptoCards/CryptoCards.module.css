@@ -109,37 +109,12 @@
   margin: 0 auto;
 }
 
-.mainTitle {
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 128%;
-  text-align: center;
-  font-family: "Franie Test", "Montserrat", serif;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-.mainTitle span {
-  color: #30f427;
-}
-
-.subtitle {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 144%;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2rem;
-}
-
 .phoneContainer {
   position: relative;
   width: 336px;
-  height: 628px;
   margin: 0 auto;
   z-index: 1;
-  height: 80%;
+  height: 70%;
   object-fit: cover;
 }
 
@@ -219,7 +194,6 @@
   letter-spacing: 0.06em;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
 }
 
 .ctaWrapper {
@@ -278,17 +252,18 @@
   .benefitItem {
     font-size: 14px;
   }
+
+  .benefits {
+    gap: 1.5rem;
+  }
+
+  .benefitItem {
+    font-size: 14px;
+    line-height: 164%;
+  }
 }
 
 @media (max-width: 768px) {
-  .mainTitle {
-    font-size: 1.5rem;
-  }
-
-  .subtitle {
-    font-size: 20px;
-  }
-
   .phoneContainer {
     width: 220px;
     height: 500px;
@@ -348,12 +323,21 @@
 
   .sliderSection {
     min-height: 820px;
+    margin: 2rem 0;
   }
 }
 
 @media (max-width: 500px) {
+  .benefits {
+    gap: 1rem;
+  }
+
+  .sliderSection {
+    margin-bottom: 60px;
+  }
+
   .benefitItem {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 164%;
   }
 

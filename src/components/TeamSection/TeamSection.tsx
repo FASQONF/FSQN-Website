@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./TeamSection.module.css";
 import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+import { useMemo } from "react";
 
 interface TeamMember {
   name: string;
@@ -15,26 +16,41 @@ interface TeamMember {
   description: string;
   linkedin: string;
 }
+
 interface Partner {
   title: string;
   subtitle: string;
   description: string;
+  logo: string;
+  href?: string;
 }
+
 interface TeamSectionType {
   title: string;
   subtitle: string;
   members: TeamMember[];
-  partner: Partner;
+  partners: Partner[];
 }
 
 export default function TeamSection() {
   const { translations } = useLocalization();
   const section = (translations.teamSection as unknown) as TeamSectionType;
 
+  const desiredOrder = ["KindGeek", "The Gradient", "Vareger"];
+  const orderedPartners = useMemo(() => {
+    const orderIndex = (name: string) => {
+      const i = desiredOrder.findIndex(n => n.toLowerCase() === name.toLowerCase());
+      return i === -1 ? Number.POSITIVE_INFINITY : i;
+    };
+    return [...(section.partners || [])].sort(
+      (a, b) => orderIndex(a.title) - orderIndex(b.title)
+    );
+  }, [section.partners]);
+
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
-        {/* Header & Description */}
+        {/* Header */}
         <motion.div
           className={styles.header}
           initial={{ y: -50, opacity: 0 }}
@@ -42,10 +58,10 @@ export default function TeamSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={styles.title}>{parse(section.title)}</h2>
+          <h1 className="title">{parse(section.title)}</h1>
         </motion.div>
 
-        {/* Teams cards */}
+        {/* Team cards */}
         <div className={styles.grid}>
           {section.members.map((member, index) => (
             <motion.div
@@ -105,33 +121,50 @@ export default function TeamSection() {
             </motion.div>
           ))}
         </div>
-        <img
-          className={styles.line}
-          src="/icons/line.png"
-        />
 
-        {/* Partner Block */}
+        <img className={styles.line} src="/icons/line.png" alt="" />
+
+        {/* Partners cards */}
         <motion.div
-          className={styles.partnerBlock}
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          className={styles.partnersGrid}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5, delay: section.members.length * 0.1 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className={styles.imageContainer}>
-            <img
-              src="/images/partners/vareger.png"
-              alt="Vareger"
-              className={styles.partnerImage}
-            />
-          </div>
-          <div className={styles.textContainer}>
-            <h3 className={styles.partnerTitle}>{section.partner.title}</h3>
-            <h4 className={styles.partnerSubtitle}>{section.partner.subtitle}</h4>
-            <p className={styles.partnerText}>
-              {section.partner.description}
-            </p>
-          </div>
+          {orderedPartners.map((p, i) => {
+            const CardInner = (
+              <>
+                <div className={styles.logoAvatarWrapper}>
+                  <img
+                    src={p.logo}
+                    alt={p.title}
+                    className={styles.logoAvatar}
+                    width={150}
+                    height={150}
+                  />
+                </div>
+                <div className={styles.partnerInfo}>
+                  <h3 className={styles.partnerName}>{p.title}</h3>
+                  <p className={styles.partnerRole}>{p.subtitle}</p>
+                  <p className={styles.partnerDesc}>{p.description}</p>
+                </div>
+              </>
+            );
+
+            return (
+              <motion.div
+                key={p.title}
+                className={styles.partnerCard}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                {CardInner}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

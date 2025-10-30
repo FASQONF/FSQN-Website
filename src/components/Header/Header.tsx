@@ -19,11 +19,11 @@ function HeaderComponent() {
   const currentLang = searchParams.get("lang") || "en";
 
   const navLinks = [
-    { name: t("header.navLinks.wallet"), href: "#features" },
-    { name: t("header.navLinks.cryptoCard"), href: "#crypto-cards" },
-    { name: t("header.navLinks.passiveIncome"), href: "#passive-income" },
-    { name: t("header.navLinks.aboutUs"), href: "#about-us" },
+    { name: t("header.navLinks.about"), href: "#about", external: false },
+    { name: t("header.navLinks.cryptoCard"), href: "#crypto-cards", external: false },
+    { name: t("header.navLinks.tokensale"), href: "https://tokensale.fasqon.com", external: true }
   ];
+
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const handleAnchorClick = (href: string) => (e: React.MouseEvent) => {
@@ -58,11 +58,12 @@ function HeaderComponent() {
       <div className={styles.left}>
         <Link href={createUrlWithLang("/")}>
           <Image
-            src="/logo.svg"
+            src="/images/contact/fasqon.png"
             alt="Logo"
-            width={40}
-            height={40}
+            width={150}
+            height={30}
             className={styles.logoImage}
+            unoptimized
           />
         </Link>
       </div>
@@ -72,13 +73,24 @@ function HeaderComponent() {
         <ul className={styles.navList}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
-                onClick={handleAnchorClick(link.href)}
-                className={styles.link}
-              >
-                {link.name}
-              </a>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.link} ${styles.activeLink}`}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <a
+                  href={link.href}
+                  onClick={handleAnchorClick(link.href)}
+                  className={styles.link}
+                >
+                  {link.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>

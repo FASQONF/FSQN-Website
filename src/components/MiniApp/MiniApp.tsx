@@ -44,8 +44,8 @@ export default function MiniAppSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1 }}
             >
-                <h2 className={styles.title}>{parse(t("miniAppSection.title"))}</h2>
-                <p className={styles.subtitle}>{t("miniAppSection.subtitle")}</p>
+                <h2 className="title">{parse(t("miniAppSection.title"))}</h2>
+                <p className="subtitle">{t("miniAppSection.subtitle")}</p>
                 {/* Mobile phone image */}
                 <div className={`${styles.phoneContainer} ${styles.phoneContainerMobile}`}>
                     <img

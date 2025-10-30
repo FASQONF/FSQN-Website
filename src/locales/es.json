@@ -1,12 +1,15 @@
 {
-  "title": "Donde <span>Crypto y Banca</span> por fin hacen clic",
-  "description": "Conoce Fasqon: una plataforma Web3 todo en uno que combina la funcionalidad de la banca tradicional con la infraestructura financiera nativa de las criptomonedas, diseñada para potenciar a los emprendedores digitales de hoy.",
+  "title": "Adiós Bancos. <br/><span>¡Hola Fasqon!</span>",
+  "subtitle": "Desliza a la izquierda los viejos bancos — Las finanzas OP de Fasqon.",
+  "description": "<p>¡Gasta, intercambia, comparte y gana con Fasqon! Donde las criptomonedas se encuentran con la vida diaria — Fasqon hace los pagos <strong>simples, seguros e instantáneos.</strong></p><p><strong>$FSQN</strong> impulsa Fasqon — un <strong>neobanco cripto-nativo</strong> creado para la generación en línea: <strong>emprendedores, creadores y profesionales modernos</strong> que viven y ganan más allá de las fronteras.</p><p><span>Hecho para el uso diario real, ¡Fasqon es un estilo de vida!</span></p>",
   "cta": "¡Ve a la venta de tokens!",
   "banerTitle": "<span>ÚNETE A $FSQN</span><br />AIRDROP<br />CAMPAÑA!",
   "header": {
     "navLinks": {
       "wallet": "Billetera",
-      "cryptoCard": "Tarjeta cripto",
+      "about": "Sobre nosotros",
+      "tokensale": "Únete a $FSQN",
+      "cryptoCard": "Tarjeta Fasqon",
       "passiveIncome": "Ingresos pasivos",
       "aboutUs": "Sobre nosotros"
     },
@@ -49,50 +52,56 @@
       }
     ]
   },
+  "whyFasqonSection": {
+    "title": "<span>Por qué</span>",
+    "subtitle": "Donde las Criptomonedas y la Banca Finalmente se Conectan",
+    "description": "<p>¿Por qué usar cinco aplicaciones diferentes solo para mover tu dinero?</p><p>Recibe criptomonedas al instante desde cualquier parte del mundo y paga facturas o suscripciones en euros — sin complicaciones. Crea listas de deseos, comparte tus hallazgos con amigos y haz que cada compra sea social. Compra, viaja, disfruta y vive con Fasqon.</p><p>Haz staking de <strong>$FSQN</strong>, gana recompensas y usa tus rendimientos para tus pagos diarios con tu Tarjeta Fasqon. Sin swaps, sin demoras, sin comisiones ocultas — solo pagos en tiempo real, fluidos y sin fronteras, impulsados por socios bancarios de confianza.</p><p>Diseñado para la vida real y el uso diario, <strong>Fasqon es un estilo de vida</strong> — donde <strong>Pagos con IA, Finanzas Sociales y Rendimientos DeFi</strong> se unen. Todo en Fasqon.</p>",
+    "descriptionShort": "<p>¿Por qué usar cinco aplicaciones solo para mover tu dinero?</p><p>Recibe criptomonedas al instante y paga facturas o suscripciones en euros sin esfuerzo. Haz staking de <strong>$FSQN</strong>, gana recompensas y usa tus rendimientos para tus pagos diarios con tu Tarjeta Fasqon.</p>"
+  },
   "cryptoCardsSection": {
-    "title": "Tarjeta Cripto <span>Fasqon</span>",
-    "subtitle": "Desliza antes del boom — Carga tu tarjeta Fasqon antes que nadie",
+    "title": "Fasqon <span>Tarjeta Cripto</span>",
+    "subtitle": "Desliza antes del boom — Carga tu Tarjeta Fasqon con anticipación",
     "cards": [
       {
-        "title": "Tarjeta Cripto Oro",
-        "description": "Disponible en formatos virtual y físico, con límites más altos y beneficios premium. Compatible con Apple Pay & Google Pay para pagos sin fricción.",
+        "title": "Pide tu Tarjeta Fasqon",
+        "description": "Disponible en formato virtual y físico, con límites más altos y beneficios premium. Compatible con Apple Pay y Google Pay, haciendo que gastar cripto sea sin fricción.",
         "cardImg": "/images/cards/Card2.png"
       },
       {
-        "title": "Tarjeta Cripto Platino",
-        "description": "Tarjeta física con un IBAN único para depósitos y transferencias directas. Disfruta de pagos globales, retiros en cajeros y transferencias entre tarjetas.",
+        "title": "Pide tu Tarjeta Fasqon",
+        "description": "Tarjeta física con IBAN único para depósitos y transferencias directas. Disfruta gastos globales, retiros en cajeros y transacciones sin esfuerzo entre tarjetas.",
         "cardImg": "/images/cards/Card1.png"
       },
       {
-        "title": "Tarjeta Cripto Básica",
-        "description": "Tarjeta cripto virtual para pagos en línea y en tiendas a través de Apple Pay & Google Pay. Se emite instantáneamente con verificación segura.",
+        "title": "Pide tu Tarjeta Fasqon",
+        "description": "Tarjeta virtual instantánea. Compatible con Apple Pay y Google Pay. Elige entre niveles Black, Gold o Premium — disfruta cashback, recompensas y bonos exclusivos cada vez que pagas.",
         "cardImg": "/images/cards/Card3.png"
       }
     ],
-    "ctaText": "¡Ve a la venta de tokens!",
+    "ctaText": "Paga con $FSQN",
     "benefits": [
       {
         "icon": "/icons/check.svg",
-        "text": "IBAN Web3 personal"
+        "text": "IBAN Dedicado"
       },
       {
         "icon": "/icons/check.svg",
-        "text": "Google & Apple Pay"
-      },
-      {
-        "icon": "/icons/check.svg",
-        "text": "Sin KYC (hasta €200)"
+        "text": "Listo para Apple Pay y Google Pay"
       },
       {
         "icon": "/icons/check.svg",
         "text": "Cashback hasta 5%"
+      },
+      {
+        "icon": "/icons/check.svg",
+        "text": "Sin KYC (hasta €200)"
       }
     ]
   },
   "storeToEarn": {
-    "title": "Hold to <span>Earn</span>",
-    "subtitle": "La banca está rota. FASQON la arregló.",
-    "description": "Gana ingresos pasivos simplemente almacenando activos en la billetera Fasqon\n    y gastando tus recompensas en cualquier momento con la tarjeta Fasqon.<br /> Guarda ahora. No pagues nunca.",
+    "title": "Un Banco DeFi <span>para Ganadores Modernos</span>",
+    "subtitle": "Las finanzas viejas quitaban. Las nuevas comparten.",
+    "description": "Fasqon es donde crecemos juntos. Otros bancos se benefician solos del préstamo y el crédito — Fasqon cambia las reglas. Ahora ganamos juntos. Simple, justo, transparente.",
     "items": [
       {
         "icon": "/icons/user.svg",
@@ -133,43 +142,43 @@
     "subtitle": "¡Sigue a Fasqon en redes sociales!"
   },
   "ultimateUX": {
-    "title": "¡Tu primer banco que realmente es divertido!<br/> <span>Juega, Gana, Ahorra y Presume — Todo en FASQON</span>",
-    "subtitle": "Descubre lo mejor con Fasqon",
+    "title": "El banco para la generación en línea",
+    "subtitle": "Pagos con IA. Banca social. Rendimiento real — todo en Fasqon",
     "features": [
       {
         "id": "01",
-        "title": "Tarjeta Crypto con <br/>IBAN Único",
-        "description": "Gasta cripto y fiat en cualquier lugar con un IBAN dedicado para transacciones sin interrupciones.",
+        "title": "Tarjeta Cripto con <br/>IBAN Dedicado",
+        "description": "Gasta y paga sin esfuerzo — transacciones en cripto y euros en un solo toque.",
         "image": "/images/ux/card.png"
       },
       {
         "id": "02",
-        "title": "Mini-Juego y Participación en Telegram",
-        "description": "Juega, invita amigos y gana cripto <br/>con recompensas interactivas.",
+        "title": "Juegos de Participación Comunitaria.",
+        "description": "¡Juega, genera ruido, invita amigos, gana recompensas y <br/>sube en la Clasificación!",
         "image": "/images/ux/minigame.png"
       },
       {
         "id": "03",
-        "title": "Mensajería P2P Segura",
-        "description": "Chatea y realiza transacciones con <br/>cifrado de extremo a extremo para comunicación segura.",
+        "title": "Banca Social",
+        "description": "¡Banca y chatea en una sola app! Comparte hallazgos, crea listas de deseos y divide gastos con amigos.",
         "image": "/images/ux/p2p.png"
       },
       {
         "id": "04",
-        "title": "Asistente de Pago Impulsado por IA",
-        "description": "Paga al instante con automatización de IA, eliminando la entrada manual.",
+        "title": "Asistente de Pagos con IA",
+        "description": "Paga de forma más inteligente y rápida — sin ingreso manual gracias a la automatización con IA.",
         "image": "/images/ux/ai.png"
       },
       {
         "id": "05",
         "title": "Token $FSQN",
-        "description": "Impulsa las transacciones, incluye un mecanismo de quema, y permite la gobernanza dentro del ecosistema.",
+        "description": "Paga con FSQN, obtén descuentos, gana recompensas, haz staking para <br/>rendimiento. Alimenta pagos. Oferta deflacionaria. Utilidad real. <br/>Valor a largo plazo.",
         "image": "/images/ux/token.png"
       },
       {
         "id": "06",
-        "title": "Cartera Web3 Multimoneda de Próxima Generación",
-        "description": "Envía, recibe e intercambia cripto y fiat de forma segura en un solo lugar.",
+        "title": "Neobanco Cripto",
+        "description": "Banco digital de diseño moderno con módulo cripto. Factura en cripto, liquida en euros.",
         "image": "/images/ux/web3.png"
       }
     ]
@@ -272,55 +281,50 @@
         "linkedin": "https://www.linkedin.com/in/nikita-varlygina-b51715160/"
       }
     ],
-    "partner": {
-      "title": "Vareger Group OÜ",
-      "subtitle": "Socio Tecnológico",
-      "description": "Vareger Group OÜ ofrece liderazgo tecnológico de extremo a extremo, actuando como un CTO externo. Con profunda experiencia en Web3 y sistemas informáticos complejos, el equipo supervisa la arquitectura, UX, desarrollo y escalabilidad."
-    }
+    "partners": [
+      {
+        "title": "KindGeek",
+        "subtitle": "Socio de Desarrollo",
+        "description": "Desarrollador de software enfocado en fintech para apps bancarias y Web3 personalizadas o de marca blanca.",
+        "logo": "/images/partners/kindgeek-small.png"
+      },
+      {
+        "title": "The Gradient",
+        "subtitle": "Socio de Diseño",
+        "description": "Agencia de diseño digital centrada en las personas: estrategia, investigación y UX/UI.",
+        "logo": "/images/partners/theGradient.png"
+      },
+      {
+        "title": "Vareger Group OÜ",
+        "subtitle": "Socio Tecnológico",
+        "description": "Ingeniería blockchain y CTO-as-a-Service para soluciones Web3, fintech y de videojuegos.",
+        "logo": "/images/partners/vareger-small.png"
+      }
+    ]
   },
   "partnersSection": {
     "title": "Nuestros <span>Socios</span>",
     "subtitle": "Apoyado y respaldado por empresas altamente profesionales en el mercado",
     "partners": [
       {
-        "name": "Vareger Group OÜ",
-        "logo": "/images/partners/vareger.png"
-      },
-      {
         "name": "Bison Bank",
         "logo": "/images/partners/bisonBank.png"
       },
       {
-        "name": "PureFi",
-        "logo": "/images/partners/purefi.png"
+        "name": "GLE",
+        "logo": "/images/partners/gle.png"
       },
       {
-        "name": "AMLBot",
-        "logo": "/images/partners/amlBot_p.png"
+        "name": "Vareger Group OÜ",
+        "logo": "/images/partners/vareger.png"
       },
       {
-        "name": "Trustify Legal",
-        "logo": "/images/partners/trustifyLegal.png"
+        "name": "KindGeek",
+        "logo": "/images/partners/kindgeek.png"
       },
       {
-        "name": "Ace Capital",
-        "logo": "/images/partners/aceCapital.png"
-      },
-      {
-        "name": "Cross Curve",
-        "logo": "/images/partners/crossCurve.png"
-      },
-      {
-        "name": "Kaizen Finance",
-        "logo": "/images/partners/kaizenFinance.png"
-      },
-      {
-        "name": "Crypto Executives",
-        "logo": "/images/partners/cryptoExecutives.png"
-      },
-      {
-        "name": "Generis",
-        "logo": "/images/partners/generis.png"
+        "name": "Kima Network",
+        "logo": "/images/partners/kima.png"
       },
       {
         "name": "FinPR",
@@ -331,83 +335,125 @@
         "logo": "/images/partners/bdBoost3r.png"
       },
       {
+        "name": "Generis",
+        "logo": "/images/partners/generis.png"
+      },
+      {
+        "name": "Movimentum",
+        "logo": "/images/partners/movimentum.png"
+      },
+      {
+        "name": "Molecule",
+        "logo": "/images/partners/molecule.png"
+      },
+      {
+        "name": "Ace Capital",
+        "logo": "/images/partners/aceCapital.png"
+      },
+      {
+        "name": "Crypto Executives",
+        "logo": "/images/partners/cryptoExecutives.png"
+      },
+      {
+        "name": "Cross Curve",
+        "logo": "/images/partners/crossCurve.png"
+      },
+      {
         "name": "Task On",
         "logo": "/images/partners/taskOn.png"
       },
       {
-        "name": "Zealy",
-        "logo": "/images/partners/zealy.png"
-      },
-      {
-        "name": "Galxe",
-        "logo": "/images/partners/galxe.png"
-      },
-      {
-        "name": "GLE",
-        "logo": "/images/partners/gle.png"
-      },
-      {
-        "name": "Waib3",
-        "logo": "/images/partners/waib3.png"
+        "name": "Mexc",
+        "logo": "/images/partners/mexc.png"
       },
       {
         "name": "White Bit",
         "logo": "/images/partners/whiteBit.png"
       },
       {
-        "name": "Mexc",
-        "logo": "/images/partners/mexc.png"
+        "name": "AlphaMind",
+        "logo": "/images/partners/alphamind.png"
+      },
+      {
+        "name": "InnMind",
+        "logo": "/images/partners/innMind.png"
+      },
+      {
+        "name": "Kaizen Finance",
+        "logo": "/images/partners/kaizenFinance.png"
+      },
+      {
+        "name": "Trustify Legal",
+        "logo": "/images/partners/trustifyLegal.png"
+      },
+      {
+        "name": "AMLBot",
+        "logo": "/images/partners/amlBot_p.png"
+      },
+      {
+        "name": "PureFi",
+        "logo": "/images/partners/purefi.png"
+      },
+      {
+        "name": "The Gradient",
+        "logo": "/images/partners/theGradient.png"
       }
-    ],
+    ]
+  },
+  "mediaSection": {
     "mediaTitle": "Destacado en <span>Medios</span>",
     "media": [
       {
-        "name": "Cointelegraph",
-        "logo": "/images/partners/media/cointelegraph.png"
-      },
-      {
-        "name": "Finbold",
-        "logo": "/images/partners/media/finbold.png"
-      },
-      {
-        "name": "Buisness Insider",
-        "logo": "/images/partners/media/buisnessInsider.png"
-      },
-      {
         "name": "Coin Market Cap",
         "logo": "/images/partners/media/coinMarketCap.png"
-      },
-      {
-        "name": "Crypto Daily",
-        "logo": "/images/partners/media/cryptoDaily.png"
       },
       {
         "name": "Binance Square",
         "logo": "/images/partners/media/binanceSquare.png"
       },
       {
+        "name": "Cointelegraph",
+        "logo": "/images/partners/media/cointelegraph.png"
+      },
+      {
+        "name": "Crypto Daily",
+        "logo": "/images/partners/media/cryptoDaily.png"
+      },
+      {
         "name": "Cryptomode",
         "logo": "/images/partners/media/cryptomode.png"
       },
       {
-        "name": "Morningstar",
-        "logo": "/images/partners/media/morningstar.png"
+        "name": "Associated Press",
+        "logo": "/images/partners/media/associatedPress.png"
       },
       {
-        "name": "Cointrust",
-        "logo": "/images/partners/media/cointrust.png"
+        "name": "Street Insider",
+        "logo": "/images/partners/media/streetInsider.png"
       },
       {
-        "name": "Menafn",
-        "logo": "/images/partners/media/menafn.png"
+        "name": "Barchart",
+        "logo": "/images/partners/media/barchart.png"
       },
       {
-        "name": "Blockchainwire",
-        "logo": "/images/partners/media/blockchainwire.png"
+        "name": "Digital Journal",
+        "logo": "/images/partners/media/digitalJournal.png"
       },
       {
-        "name": "Cryptoreporter",
-        "logo": "/images/partners/media/cryptoreporter.png"
+        "name": "Benzinga",
+        "logo": "/images/partners/media/benzinga.png"
+      },
+      {
+        "name": "Buisness Insider",
+        "logo": "/images/partners/media/buisnessInsider.png"
+      },
+      {
+        "name": "Finbold",
+        "logo": "/images/partners/media/finbold.png"
+      },
+      {
+        "name": "Investing",
+        "logo": "/images/partners/media/investing.png"
       }
     ]
   },
@@ -449,6 +495,7 @@
   },
   "footerSection": {
     "companyName": "Fasqon, Unipessoal LDA (Zona Franca de Madeira)",
+    "slogan": "<span>Tu neobanco cripto</span> <br/>para pagos diarios",
     "nipc": "NIPC: 517395436 (Portugal)",
     "accessCode": "Código de acceso al registro: 2853-2787-4837",
     "email": "support@fasqon.com",

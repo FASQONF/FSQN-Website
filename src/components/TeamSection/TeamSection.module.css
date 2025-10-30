@@ -10,28 +10,6 @@
   margin: 0 3%;
 }
 
-.title {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 128%;
-  margin-bottom: 3rem;
-  font-family: "Franie Test", "Montserrat", serif;
-}
-
-.title span {
-  color: #0e0;
-}
-
-.subtitle {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 144%;
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 60px;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -143,56 +121,70 @@
 }
 
 /* Partner */
-.partnerBlock {
-  display: flex;
-  align-items: center;
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.imageContainer {
-  flex: 1;
+.partnerCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  max-width: 100%;
+}
+
+.logoAvatarWrapper {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-.partnerImage {
-  max-width: 120%;
-  height: 7rem;
+.logoAvatar {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  object-position:  center;
-  transform: translateX(30%);
+  object-position: center;
 }
 
-.textContainer {
-  flex: 2;
-  text-align: left;
+.partnerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.partnerTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: "Franie Test", "Montserrat", serif;
-  color: #fff;
-}
-
-.partnerSubtitle {
+.partnerName {
   font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-  color: #30f427;
+  font-weight: 700;
+  margin: 0;
 }
 
-.partnerText {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ccc;
+.partnerRole {
+  font-size: 1rem;
+  color: #30f427;
   margin: 0;
+}
+
+.partnerDesc {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .partnersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -206,14 +198,6 @@
     max-width: 100%;
     justify-content: center;
     gap: 20px;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
   }
 
   .countryName {
@@ -253,18 +237,25 @@
     letter-spacing: 0.08em;
   }
 
-  .partnerTitle {
+  .partnersGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .logoAvatarWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .partnerName {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
   }
 
-  .partnerSubtitle {
+  .partnerRole {
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
   }
 
-  .partnerText {
-    font-size: 0.7rem;
-    line-height: 1.5;
+  .partnerDesc {
+    font-size: 0.85rem;
   }
 }

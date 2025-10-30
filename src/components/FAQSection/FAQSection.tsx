@@ -47,15 +47,15 @@ export default function FAQSection() {
 
   return (
     <section className={styles.faqSection}>
-      <motion.h2
-        className={styles.title}
+      <motion.h1
+        className="title"
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {section.title}
-      </motion.h2>
+      </motion.h1>
 
       <div className={styles.grid}>
         <div className={styles.column}>

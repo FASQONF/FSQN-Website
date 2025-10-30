@@ -28,9 +28,24 @@
 
 /* Logo + name */
 .logoContainer {
+  font-family: "Franie Test", "Montserrat", serif;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 4px;
+}
+
+.slogan {
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 260px;
+  font-weight: 100;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.8);;
+}
+
+.slogan span {
+  color: rgba(48, 244, 39, 0.8);
 }
 
 .logoBox {
@@ -60,6 +75,10 @@
   fill: #30f427;
   margin-top: 2px;
   flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
 }
 
 .buttons {

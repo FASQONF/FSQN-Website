@@ -3,7 +3,6 @@ import CommonBackground from "@/components/Tokenomica/CommonBackground/CommonBac
 import FSQNTokenSection from "@/components/Tokenomica/FSQNTokenSection/FSQNTokenSection";
 import RoadMapSection from "@/components/Tokenomica/RoadMapSection/RoadMapSection";
 import Graf from "@/components/Tokenomica/TokenomicsSection/TokenomicsSection";
-import TokenomicsSection from "@/components/Tokenomica/TokenomicsSection/TokenomicsSection";
 import TokenUtilitySection from "@/components/Tokenomica/TokenUtilitySection/TokenUtilitySection";
 import { Suspense } from "react";
 

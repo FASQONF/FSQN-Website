@@ -20,24 +20,20 @@
 }
 
 /* Header */
-.title {
-  font-family: "Franie Test", "Montserrat", serif;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 120%;
-  margin-bottom: 40px;
-}
-.title span {
-  color: #30f427;
-}
 
 .description {
   font-weight: 500;
   font-size: 18px;
   line-height: 144%;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
+}
+.description p {
+  margin-bottom: 16px;
+}
+.description span {
+  color: #30f427;
+  font-weight: 700;
 }
 
 .ctaButton {
@@ -162,9 +158,6 @@
     height: 500px;
     z-index: 2;
   }
-  .title{
-    font-size: 36px;
-  }
   .description{
     font-size: 15px;
   }
@@ -233,14 +226,11 @@
     width: 465px;
     object-fit: contain;
   }
-  .title{
-    font-size: 28px;
-  }
   .heroSection {
     padding: 0 1rem;
     min-height: 800px;
   }
   .content{
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
 }

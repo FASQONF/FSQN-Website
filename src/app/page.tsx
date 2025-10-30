@@ -12,6 +12,8 @@ import UltimateUX from "@/components/UltimateUserExperience/UltimateUX";
 import MiniAppSection from "@/components/MiniApp/MiniApp"
 import TeamSection from "@/components/TeamSection/TeamSection";
 import PartnersSection from "@/components/PartnersSection/PartnersSection";
+import MediaSection from "@/components/MediaSection/MediaSection";
+import WhyFasqonSection from "@/components/WhyFasqonSection/WhyFasqonSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 
@@ -22,10 +24,10 @@ export default function Home() {
     if (window.location.hash) {
       // Get the element ID from the hash
       const elementId = window.location.hash.substring(1);
-      
+
       // Find the element
       const element = document.getElementById(elementId);
-      
+
       // If the element exists, scroll to it after a small delay
       // The delay ensures all content is loaded
       if (element) {
@@ -39,26 +41,27 @@ export default function Home() {
   return (
     <div>
       <main className={styles.main}>
-      <Suspense fallback={null}>
-        <HeroSection />
-        <AirdropBanner />
-        <div id="features">
-          <FeaturesSection />
-        </div>
-        <div id="crypto-cards">
-          <CryptoCards />
-        </div>
-        <div id="passive-income">
-          <StoreToEarn />
-        </div>
-        <UltimateUX />
-        <MiniAppSection />
-        <div id="about-us">
-          <TeamSection />
-        </div>
-        <PartnersSection />
-        <FAQSection />
-        <ContactSection />
+        <Suspense fallback={null}>
+          <HeroSection />
+          <UltimateUX />
+          <div id="about">
+            <WhyFasqonSection />
+          </div>
+          {/*<AirdropBanner /> */}
+          <div id="crypto-cards">
+            <CryptoCards />
+          </div>
+          <div id="passive-income">
+            <StoreToEarn />
+          </div>
+          <MiniAppSection />
+          <div id="about-us">
+            <TeamSection />
+          </div>
+          <PartnersSection />
+          <FAQSection />
+          <MediaSection />
+          <ContactSection />
         </Suspense>
       </main>
     </div>

@@ -7,27 +7,31 @@ import Image from "next/image";
 import ModalDocuments from "../ModalDocuments/ModalDocuments";
 import { useLocalization } from '@/context/LocalizationContext';
 import HelpBanner from "@/components/HelpBanner/HelpBanner";
+import parse from "html-react-parser";
 
 export default function Footer() {
   const [showDocumentsModal, setShowDocumentsModal] = useState(false);
   const { t } = useLocalization();
 
   const openModal = () => setShowDocumentsModal(true);
-  const closeModal = () => setShowDocumentsModal(false);
 
   return (
     <footer className={styles.footer}>
-      <HelpBanner />
+      {/* <HelpBanner /> */}
       {/* Top Container */}
       <div className={styles.topContainer}>
         <div className={styles.logoContainer}>
           <Image
-            src="/logo.svg"
+            src="/images/contact/fasqon.png"
             alt="Logo"
-            width={40}
+            width={160}
             height={40}
             className={styles.logoImage}
+            unoptimized
           />
+          <p className={styles.slogan}>
+            {parse(t("footerSection.slogan"))}
+          </p>
         </div>
 
         {/* Left Part: Email + Address */}

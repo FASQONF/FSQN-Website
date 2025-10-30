@@ -86,8 +86,8 @@ export default function CryptoCards() {
         transition={{ duration: 1 }}
       >
         {/* Headers */}
-        <h2 className={styles.mainTitle}>{parse(t("cryptoCardsSection.title"))}</h2>
-        <p className={styles.subtitle}>{parse(t("cryptoCardsSection.subtitle"))}</p>
+        <h2 className="title">{parse(t("cryptoCardsSection.title"))}</h2>
+        <p className="subtitle">{parse(t("cryptoCardsSection.subtitle"))}</p>
         {/* Phone bg */}
         <div className={styles.phoneContainer}>
           <img
@@ -101,19 +101,20 @@ export default function CryptoCards() {
 
         {/* Cards container */}
         <div className={styles.cardsWrapper}>
-          {cards.map((card: any, idx: any) => (<div
-            key={card.title}
-            className={`${styles.card} ${getPositionClass(idx)}`}
-            onClick={() => handleCardClick(idx)}
-          >
-            <img
-              src={card.cardImg}
-              alt={card.title}
-              width={400}
-              height={250}
-              className={styles.cardImage}
-            />
-          </div>
+          {cards.map((card, idx) => (
+            <div
+              key={idx}
+              className={`${styles.card} ${getPositionClass(idx)}`}
+              onClick={() => handleCardClick(idx)}
+            >
+              <img
+                src={card.cardImg}
+                alt={card.title}
+                width={400}
+                height={250}
+                className={styles.cardImage}
+              />
+            </div>
           ))}
         </div>
 

@@ -9,6 +9,7 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-evenly;
+    margin-bottom: 40px;
 }
 
 .miniAppSection::after {
@@ -47,26 +48,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.title {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 120%;
-    color: #fff;
-    font-family: "Franie Test", "Montserrat", serif;
-}
-
-.title span {
-    color: #30f427;
-}
-
-.subtitle {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 144%;
-    letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 .featureGrid {
@@ -155,9 +136,9 @@
 
 .phoneContainer {
     position: relative;
-    width: 100%;
+    width: 80%;
     max-width: 355px;
-    height: 716px;
+    height: 616px;
     z-index: 1;
 }
 
@@ -180,16 +161,6 @@
     .header {
         width: 100%;
         align-items: flex-start;
-        margin-bottom: 30px;
-    }
-
-    .title {
-        font-size: 36px;
-    }
-
-    .title,
-    .subtitle {
-        width: 100%;
     }
 
     .contentWrapper {
@@ -247,7 +218,8 @@
 
     .phoneContainer {
         max-width: 300px;
-        height: 600px;
+        width: 90%;
+        height: 500px;
     }
 
     .ctaSection {
@@ -262,6 +234,7 @@
 @media (max-width: 768px) {
     .miniAppSection {
         padding: 80px 2rem;
+        margin-bottom: 20px;
     }
 
     .leftContent {
@@ -277,19 +250,7 @@
     .header {
         align-items: center;
     }
-
-    .title {
-        font-size: 28px;
-    }
-
-    .subtitle {
-        width: 80%;
-        align-self: start;
-        font-weight: 600;
-        font-size: 20px;
-        letter-spacing: 1px;
-    }
-
+    
     .featureGrid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -342,7 +303,7 @@
         left: 0;
         right: 0;
         height: 100px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
         pointer-events: none;
         z-index: 2;
     }
@@ -355,7 +316,7 @@
 
     .phoneContainerMobile {
         display: block;
-        width: 80%;
+        width: 70%;
         margin: 20px auto 0;
     }
 

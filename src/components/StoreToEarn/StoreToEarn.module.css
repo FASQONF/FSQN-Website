@@ -31,28 +31,6 @@
   text-align: left;
 }
 
-.title {
-  font-family: "Franie Test", "Montserrat", serif;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 128%;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 144%;
-  letter-spacing: 0.06em;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.title span {
-  color: #30f427;
-}
-
 .description {
   font-weight: 500;
   font-size: 18px;
@@ -163,10 +141,6 @@
   .storeSection {
     padding: 30px 20px;
   }
-
-  .title {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 650px) {
@@ -174,6 +148,10 @@
     flex-direction: column;
     justify-content: none;
     gap: 0;
+  }
+
+  .description {
+    margin-bottom: 40px;
   }
 
   .cardsWrapper {

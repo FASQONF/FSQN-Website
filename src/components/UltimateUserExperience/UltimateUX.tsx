@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./UltimateUX.module.css";
 import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+import ResponsiveCarousel from "@/utils/carousel/ResponsiveCarousel";
 
 
 interface FeatureItem {
@@ -54,8 +55,6 @@ export default function UltimateUX() {
   const section = (translations.ultimateUX as unknown) as UltimateUXSection;
   const rawFeatures = section.features ?? [];
 
-  const sequenceOrder = ["01", "02", "03", "04", "05", "06"];
-
   return (
     <div className={styles.container}>
       <motion.div
@@ -65,58 +64,58 @@ export default function UltimateUX() {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className={styles.title}>{parse(t("ultimateUX.title"))}</h1>
+        <h1 className="title">{parse(t("ultimateUX.title"))}</h1>
+        <h2 className={`subtitle ${styles.highlight}`}>{parse(t("ultimateUX.subtitle"))}</h2>
       </motion.div>
 
-      <div className={styles.grid}>
-        {rawFeatures.map((feature: FeatureItem) => {
-          const animationProps = getAnimationProps(feature.id, disableAnimation);
-          const index = sequenceOrder.indexOf(feature.id);
-          const delay = index >= 0 ? index * 0.2 : 0;
-          return (
+      {!isMobile && (
+        <div className={styles.grid}>
+          {rawFeatures.map((feature) => (
             <motion.div
               key={feature.id}
               className={`${styles.card} ${styles["card" + feature.id]}`}
-              initial={animationProps.initial}
-              whileInView={animationProps.animate}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, delay }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
             >
-              {feature.id === "01" ? (
-                <>
-                  <div className={styles.cardNumber}>{feature.id}</div>
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    width={250}
-                    height={400}
-                    className={`${styles.cardImage} ${styles["image" + feature.id]}`}
-                  />
-                  <div className={styles.cardContentBottom}>
-                    <h3 className={styles.cardTitle}>{parse(feature.title)}</h3>
-                    <p className={styles.cardDescription}>{parse(feature.description)}</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className={styles.cardContent}>
-                    <div className={styles.cardNumber}>{feature.id}</div>
-                    <h3 className={styles.cardTitle}>{parse(feature.title)}</h3>
-                    <p className={styles.cardDescription}>{parse(feature.description)}</p>
-                  </div>
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    width={250}
-                    height={400}
-                    className={`${styles.cardImage} ${styles["image" + feature.id]}`}
-                  />
-                </>
-              )}
+              <div className={styles.cardNumber}>{feature.id}</div>
+              <img
+                src={feature.image}
+                alt={feature.title}
+                width={250}
+                height={400}
+                className={`${styles.cardImage} ${styles["image" + feature.id]}`}
+              />
+              <div className={styles.cardContentBottom}>
+                <h3 className={styles.cardTitle}>{parse(feature.title)}</h3>
+                <p className={styles.cardDescription}>{parse(feature.description)}</p>
+              </div>
             </motion.div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      )}
+
+      {isMobile && (
+        <ResponsiveCarousel enableOn="mobile" breakpointPx={768} loop={false} showArrows>
+          {rawFeatures.map((feature) => (
+            <div key={feature.id} className={styles.card}>
+              <div className={styles.cardNumber}>{feature.id}</div>
+              <img
+                src={feature.image}
+                alt={feature.title}
+                width={250}
+                height={400}
+                className={`${styles.cardImage} ${styles["image" + feature.id]}`}
+              />
+              <div className={styles.cardContentBottom}>
+                <h3 className={styles.cardTitle}>{parse(feature.title)}</h3>
+                <p className={styles.cardDescription}>{parse(feature.description)}</p>
+              </div>
+            </div>
+          ))}
+        </ResponsiveCarousel>
+      )}
     </div>
   );
 }
