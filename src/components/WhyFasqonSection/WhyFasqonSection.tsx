@@ -66,7 +66,7 @@ export default function whyFasqonSection() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    <h3 className="subtitle">
+                    <h3 className={`subtitle ${styles.highlight}`}>
                         {parse(t("whyFasqonSection.subtitle"))}
                     </h3>
                     <div className={styles.description}>

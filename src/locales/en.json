@@ -2,6 +2,10 @@
   "title": "Bye Banks. <br/><span>Hi Fasqon!</span>",
   "subtitle": "Swipe Left on Old Banks — <br/>Fasqon's OP Finance.",
   "description": "<p>Spend, Swap, Share & Earn with Fasqon! Where crypto meets daily life — Fasqon makes payments <strong>simple, secure, and instant.</strong></p><p><strong>$FSQN</strong> powers Fasqon — a <strong>crypto-native neobank</strong> built for the online generation: <strong>entrepreneurs, creators, and modern professionals</strong> who live and earn across borders.</p><p><span>Built for real daily use, Fasqon is a Lifestyle!</span></p>",
+  "presaleNotice": {
+    "text": "Official FSQN Pre-sale website:",
+    "link": "tokensale.fasqon.com"
+  },
   "cta": "Go to the Tokensale!",
   "banerTitle": "<span>JOIN $FSQN</span><br />AIRDROP<br />CAMPAIGN!",
   "header": {
@@ -55,7 +59,7 @@
   "whyFasqonSection": {
     "title": "<span>Why</span>",
     "subtitle": "Where Crypto and <br/>Banking Finally Click",
-    "description": "<p>Why juggle five apps just to move your money?</p><p>Receive crypto instantly from anywhere in the world and pay bills or subscriptions in euros — seamlessly. Create shopping wishlists, share your finds with friends, and make every purchase social. Shop, travel, party, live, and spend with Fasqon!</p><p>Stake <strong>$FSQN</strong>, earn rewards, and use your yield for everyday payments with your Fasqon Card. No swaps. No delays. No hidden gas fees — just smooth, compliant, borderless real-time payments powered by trusted banking partners.</p><p>Built for real life and daily use, <strong>Fasqon is a lifestyle</strong> — where <strong>AI Payments, Social Finance, and DeFi Earnings</strong> come together. All in Fasqon.</p>",
+    "description": "<p>Why juggle five apps just to move your money?</p><p>Receive crypto instantly from anywhere in the world and pay bills or subscriptions in euros — seamlessly. Create shopping wishlists, share your finds with friends, and make every purchase social.</p><p>Shop, travel, party, live, and spend with Fasqon!</p><p>Built for real life and daily use, <strong>Fasqon is a lifestyle</strong> — where <strong>AI Payments, Social Finance, and DeFi Earnings</strong> come together. All in Fasqon.</p>",
     "descriptionShort": "<p>Why juggle five apps just to move your money?</p><p>Receive crypto instantly from anywhere in the world and pay bills or subscriptions in euros — seamlessly. Stake <strong>$FSQN</strong>, earn rewards, and use your yield for everyday payments with your Fasqon Card.</p>"
   },
   "cryptoCardsSection": {

@@ -27,6 +27,16 @@ export default function HeroSection() {
         <div className={styles.description}>
           {parse(t("description"))}
         </div>
+        <div className={styles.presaleNotice}>
+          {t("presaleNotice.text")}
+          <a
+            href="https://tokensale.fasqon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("presaleNotice.link")}
+          </a>
+        </div>
         <div className={socialStyles.socials}>
           {SOCIALS.map(s => (
             <a

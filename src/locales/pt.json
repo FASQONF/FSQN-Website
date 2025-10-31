@@ -2,6 +2,10 @@
   "title": "Adeus Bancos. <br/><span>Olá Fasqon!</span>",
   "subtitle": "Deslize para a esquerda nos bancos antigos — As finanças OP da Fasqon.",
   "description": "<p>Gaste, troque, compartilhe e ganhe com a Fasqon! Onde o cripto encontra a vida cotidiana — a Fasqon torna os pagamentos <strong>simples, seguros e instantâneos.</strong></p><p><strong>$FSQN</strong> impulsiona a Fasqon — um <strong>neobanco cripto-nativo</strong> criado para a geração online: <strong>empreendedores, criadores e profissionais modernos</strong> que vivem e ganham além das fronteiras.</p><p><span>Feito para o uso diário real, a Fasqon é um estilo de vida!</span></p>",
+  "presaleNotice": {
+    "text": "Site oficial da pré-venda da FSQN:",
+    "link": "tokensale.fasqon.com"
+  },
   "cta": "Vá para a venda de tokens!",
   "banerTitle": "<span>JUNTE-SE AO $FSQN</span><br />AIRDROP<br />CAMPANHA!",
   "header": {
@@ -55,7 +59,7 @@
   "whyFasqonSection": {
     "title": "<span>Por que</span>",
     "subtitle": "Onde Cripto e Banco Finalmente se Conectam",
-    "description": "<p>Por que usar cinco aplicativos diferentes só para mover seu dinheiro?</p><p>Receba criptomoedas instantaneamente de qualquer lugar do mundo e pague contas ou assinaturas em euros — de forma simples e sem fricção. Crie listas de desejos, compartilhe descobertas com amigos e transforme cada compra em uma experiência social. Compre, viaje, curta e viva com Fasqon.</p><p>Faça staking de <strong>$FSQN</strong>, ganhe recompensas e use seus rendimentos para pagamentos do dia a dia com o seu Cartão Fasqon. Sem swaps, sem atrasos, sem taxas ocultas — apenas pagamentos em tempo real, fluidos e sem fronteiras, com o apoio de parceiros bancários confiáveis.</p><p>Feito para a vida real e o uso diário, <strong>Fasqon é um estilo de vida</strong> — onde <strong>Pagamentos com IA, Finanças Sociais e Ganhos DeFi</strong> se encontram. Tudo no Fasqon.</p>",
+    "description": "<p>Por que usar cinco aplicativos diferentes só para mover seu dinheiro?</p><p>Receba criptomoedas instantaneamente de qualquer lugar do mundo e pague contas ou assinaturas em euros — de forma simples e sem fricção. Crie listas de desejos, compartilhe descobertas com amigos e transforme cada compra em uma experiência social.</p><p>Compre, viaje, curta e viva com Fasqon.</p><p>Feito para a vida real e o uso diário, <strong>Fasqon é um estilo de vida</strong> — onde <strong>Pagamentos com IA, Finanças Sociais e Ganhos DeFi</strong> se encontram. Tudo no Fasqon.</p>",
     "descriptionShort": "<p>Por que usar cinco aplicativos só para mover seu dinheiro?</p><p>Receba cripto instantaneamente e pague contas ou assinaturas em euros sem esforço. Faça staking de <strong>$FSQN</strong>, ganhe recompensas e use seus rendimentos para pagamentos do dia a dia com o seu Cartão Fasqon.</p>"
   },
   "cryptoCardsSection": {

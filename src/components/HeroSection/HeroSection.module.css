@@ -26,14 +26,35 @@
   font-size: 18px;
   line-height: 144%;
   letter-spacing: 0.06em;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
+
 .description p {
   margin-bottom: 16px;
 }
+
 .description span {
   color: #30f427;
   font-weight: 700;
+}
+
+.presaleNotice {
+  color: #30f427;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+
+.presaleNotice a {
+  color: #30f427;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+  margin-left: 8px;
+}
+
+.presaleNotice a:hover {
+  opacity: 0.8;
 }
 
 .ctaButton {
@@ -92,19 +113,24 @@
   animation: sharpDiagonalDown 12s ease-in-out infinite;
 
 }
+
 @keyframes sharpDiagonalUp {
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(15px, -15px);
   }
+
   20% {
     transform: translate(15px, -15px);
   }
+
   55% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -114,15 +140,19 @@
   0% {
     transform: translate(0, 0);
   }
+
   10% {
     transform: translate(-15px, 15px);
   }
+
   20% {
     transform: translate(-15px, 15px);
   }
+
   55% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -132,7 +162,7 @@
   position: absolute;
   bottom: -60px;
   right: -200px;
-  z-index: 0; 
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,33 +173,39 @@
   object-fit: contain;
 }
 
-@media only screen and (max-width: 900px) 
-{  .heroSection {
+@media only screen and (max-width: 900px) {
+  .heroSection {
     flex-direction: column-reverse;
     padding: 2rem 1rem;
   }
+
   .imagesWrapper {
     width: 100%;
     justify-content: center;
   }
+
   .phoneContainer {
     position: relative;
-    width: 450px;;
+    width: 450px;
+    ;
     height: 500px;
     z-index: 2;
   }
-  .description{
+
+  .description,
+  .presaleNotice {
     font-size: 15px;
   }
+
   .phoneLeft {
     width: 284px;
-    height: 470px;  
+    height: 470px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
   }
-  
+
   .phoneRight {
     width: 299px;
     height: 450px;
@@ -178,28 +214,32 @@
     right: 0;
     z-index: 1;
   }
-  .crystalsWrapper{
+
+  .crystalsWrapper {
     right: 0;
     rotate: 15deg;
     bottom: -100px;
   }
+
   .crystalsImage {
     width: 650px;
     object-fit: contain;
   }
 }
+
 @media only screen and (max-width: 550px) {
   .crystalsImage {
     width: 550px;
     object-fit: contain;
   }
+
   .phoneContainer {
     position: relative;
     width: 330px;
     height: 400px;
     z-index: 2;
   }
-  
+
   .phoneLeft {
     width: 209px;
     height: 347px;
@@ -208,7 +248,7 @@
     left: -10px;
     z-index: 2;
   }
-  
+
   .phoneRight {
     width: 220px;
     height: 332px;
@@ -217,20 +257,26 @@
     right: 0;
     z-index: 1;
   }
-  .crystalsWrapper{
+
+  .crystalsWrapper {
     right: -60px;
     rotate: 15deg;
     bottom: -150px;
   }
+
   .crystalsImage {
     width: 465px;
     object-fit: contain;
   }
+
   .heroSection {
     padding: 0 1rem;
     min-height: 800px;
   }
-  .content{
+
+  .content {
     margin-bottom: 40px;
+    max-width: 100%;
+    width: 100%;
   }
 }

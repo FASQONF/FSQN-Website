@@ -209,6 +209,7 @@
 @media (max-width: 768px) {
     .contactSection {
         background-size: 300%;
+        padding: 8% 0;
     }
 
     .inner {
@@ -225,6 +226,7 @@
 
     .tagline {
         font-size: 18px;
+        margin-bottom: 0;
     }
 
     .supportBar {
@@ -246,13 +248,14 @@
     }
 
     .socials {
-        gap: 2px;
+        gap: 0px;
         margin-bottom: 16px;
         margin-left: -10px;
     }
 
     .socialIcon {
-        height: 48px;
+        height: 44px;
+        width: 48px;
     }
 
     .ctaButton {

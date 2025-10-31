@@ -20,19 +20,6 @@ export default function Footer() {
       {/* <HelpBanner /> */}
       {/* Top Container */}
       <div className={styles.topContainer}>
-        <div className={styles.logoContainer}>
-          <Image
-            src="/images/contact/fasqon.png"
-            alt="Logo"
-            width={160}
-            height={40}
-            className={styles.logoImage}
-            unoptimized
-          />
-          <p className={styles.slogan}>
-            {parse(t("footerSection.slogan"))}
-          </p>
-        </div>
 
         {/* Left Part: Email + Address */}
         <div className={styles.leftSide}>
@@ -79,90 +66,6 @@ export default function Footer() {
           </div>
           <div className={styles.copyright}>
             <p className={styles.textGray}>{t("footerSection.copyright")}</p>
-            <div className={styles.social}>
-              {/* X (Twitter) */}
-              <a
-                href="https://x.com/fasqon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/twitter.svg"
-                  alt="X (Twitter)"
-                  width={18}
-                  height={18}
-                />
-              </a>
-
-              {/* Telegram */}
-              <a
-                href="https://t.me/fasqonofficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/telegram.svg"
-                  alt="Telegram"
-                  width={23}
-                  height={23}
-                />
-              </a>
-              <a
-                href="https://t.me/fasqonchat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/telegram2.svg"
-                  alt="Telegram"
-                  width={23}
-                  height={23}
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/fasqon_official/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/instagram.svg"
-                  alt="Instagram"
-                  width={23}
-                  height={23}
-                />
-              </a>
-              <a
-                href="https://medium.com/@fasqon.official"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/medium.svg"
-                  alt="Instagram"
-                  width={23}
-                  height={23}
-                />
-              </a>
-              {/* Discord */}
-              <a
-                href="https://discord.gg/HBwxXCpxy2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconLink}
-              >
-                <Image
-                  src="/icons/mobile/discord.svg"
-                  alt="Discord"
-                  width={23}
-                  height={23}
-                />
-              </a>
-            </div>
           </div>
         </div>
 

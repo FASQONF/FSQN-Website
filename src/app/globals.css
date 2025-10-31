@@ -56,6 +56,7 @@ img {
   line-height: 144%;
   letter-spacing: 0.06em;
   margin-bottom: 2rem;
+  color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -131,23 +131,28 @@ function HeaderComponent() {
         <ul className={styles.mobileNavList}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
-                onClick={handleAnchorClick(link.href)}
-                className={styles.link}
-              >
-                {link.name}
-              </a>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.link} ${styles.activeLink}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <a
+                  href={link.href}
+                  onClick={handleAnchorClick(link.href)}
+                  className={styles.link}
+                >
+                  {link.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
-        <Link
-          href={createUrlWithLang("/tokenomics")}
-          className={styles.mobileWhitePaperBtn}
-          onClick={() => setMenuOpen(false)}
-        >
-          {t("header.tokenomics")}
-        </Link>
         <a
           href="/Presentation.pdf"
           className={styles.mobileWhitePaperBtn}
