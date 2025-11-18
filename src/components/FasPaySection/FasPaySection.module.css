@@ -1,0 +1,181 @@
+.fasPaySection {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 100px 20px;
+    min-height: 100vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Background decoration */
+.bgWrapper {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Area */
+.header {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.badgeWrapper {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.badge {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Grid Area */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #30f427;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardIcon {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.cardTitle {
+    font-family: "Franie Test", "Montserrat", serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: #30f427;
+    margin-bottom: 16px;
+}
+
+.cardDescription {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #ccc;
+}
+
+.cylinderWrapper {
+    position: absolute;
+    bottom: -230px;
+    left: -330px;
+    z-index: 10;
+    width: 350px;
+    pointer-events: none;
+}
+
+.cylinderImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(60deg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .mainTitle {
+        font-size: 42px;
+    }
+
+    .grid {
+        gap: 20px;
+    }
+
+    .cylinderWrapper {
+        width: 250px;
+        left: -180px;
+        bottom: -180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fasPaySection {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .header {
+        margin: 0 auto 40px;
+    }
+
+    .mainTitle {
+        font-size: 32px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .card:hover {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cylinderWrapper {
+        display: none;
+    }
+}

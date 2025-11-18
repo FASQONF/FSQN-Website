@@ -22,7 +22,7 @@
 
 .backgroundImage img {
   max-width: 800px;
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .container {
@@ -55,15 +55,6 @@
   gap: 1rem;
   border: 1px solid #31f427af;
   box-shadow: 0 0 10px rgba(48, 244, 39, 0.25);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.cardHidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(30px);
-  pointer-events: none;
 }
 
 .card:not(:nth-child(4n+1))::before {
@@ -109,17 +100,15 @@
   font-size: 12px;
   line-height: 133%;
   color: #fff;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .item p {
   margin: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: block;
   color: #fff;
-  gap: 0.3rem;
   flex: 1;
+  line-height: 1.35;
 }
 
 .item span {
@@ -133,11 +122,13 @@
   height: 12px;
   align-self: center;
   flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .textWrapperTall {
   align-self: stretch;
-  height: 100%;
+  height: auto;
+  min-height: calc(100% - 6px);
 }
 
 .itemHeading {
@@ -145,7 +136,7 @@
   padding: 4px 10px;
   border-radius: 8px;
   background-color: #30f427;
-  color: #fff;
+  color: #000;
   font-size: 12px;
   line-height: 1.2;
   font-weight: 700;
@@ -158,49 +149,62 @@
 
 .mobileSlider {
   position: relative;
-  margin-top: 80px;
-  margin: 0 auto;
-  margin-top: 130px;
-  margin-bottom: 50px;
-  height: 450px;
+  margin: 0 auto 60px;
+  padding-top: 190px;
+  min-height: 640px;
   touch-action: pan-y;
+  max-width: 340px;
+  width: 100%;
 }
 
 .slide {
-  position: relative;
-  width: 300px;
-  height: 450px;
+  position: absolute;
+  top: 160px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(320px, 100%);
+  height: auto;
   backdrop-filter: blur(15px);
-  background: rgba(16, 16, 16, 0.95);
-  border-radius: 24px;
-  padding: 10px;
+  background: rgba(16, 16, 16, 0.05);
+  border-radius: 0 0 0 24px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .slide.active {
-  z-index: 2;
-  width: 300px;
-  height: 450px;
-  transform: translateX(-50%) translateY(0);
+  z-index: 3;
 }
 
 .slide.previous {
-  position: absolute;
-  z-index: 1;
-  width: 300px;
-  height: 450px;
-  transform: translateX(-50%) translateY(-60px);
+  z-index: 2;
   opacity: 1;
 }
 
 .slide.next {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide.leaving {
+  opacity: 1;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.tapIndicator {
   display: none;
 }
 
 @media (max-width: 1024px) {
+  .container {
+    padding-bottom: 60px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 60px;
   }
 
   .card::before {
@@ -217,6 +221,36 @@
 @media (max-width: 600px) {
   .card {
     padding: 10px;
+    height: 450px;
+  }
+
+  .tapIndicator {
+    display: block;
+    height: 0px;
+    width: auto;
+  }
+  
+  .tapIndicatorAnim {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: tapFrames 1s steps(2) infinite;
+  }
+
+  @keyframes tapFrames {
+    0% {
+      background-image: url("/images/roadmap/tap-1.png");
+    }
+
+    50% {
+      background-image: url("/images/roadmap/tap-2.png");
+    }
+
+    100% {
+      background-image: url("/images/roadmap/tap-1.png");
+    }
   }
 
   .grid {

@@ -1,0 +1,194 @@
+.section {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 50px 20px;
+    min-height: 100vh;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgWrapper {
+    position: absolute;
+    bottom: -450px;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+    opacity: 0.3;
+}
+
+.bgImage {
+    width: 70vw;
+    height: auto;
+    opacity: 0.6;
+    object-fit: contain;
+    transform-origin: bottom right;
+}
+
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.7fr);
+    grid-template-areas:
+        "phone header"
+        "phone content";
+    align-items: start;
+    column-gap: 60px;
+    row-gap: 30px;
+}
+
+.header {
+    grid-area: header;
+    width: 100%;
+    text-align: left;
+    margin-left: -24px;
+    margin-bottom: 0;
+}
+
+.phoneWrapper {
+    grid-area: phone;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phoneImage {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(48, 244, 39, 0.1));
+    transform: rotate(-5deg) scale(1.1) translateY(20px) translateX(-30px);
+}
+
+.contentWrapper {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.iconHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.featureIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.featureTitle {
+    font-family: "Franie Test", "Montserrat", serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #30f427;
+    margin: 0;
+}
+
+.featureDescWrapper {
+    border-left: 3px solid #30f427;
+    padding-left: 16px;
+}
+
+.featureDescription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #ccc;
+    margin: 0;
+}
+
+/* планшет = как десктоп, только чуть поменьше размеры */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 960px;
+        column-gap: 40px;
+    }
+
+    .phoneImage {
+        max-width: 300px;
+        transform: translateY(100px) scale(1.2);
+    }
+
+    .grid {
+        gap: 32px 24px;
+    }
+}
+
+/* телефон: колонка, без смещения хедера */
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 40px;
+    }
+
+    .bgWrapper {
+        bottom: 0px;
+        transform: scale(2) translateX(60px);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .header {
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: -20px;
+        transform: translateX(0);
+    }
+
+    .phoneWrapper {
+        width: 100%;
+        justify-content: center;
+        display: none;
+    }
+
+    .phoneImage {
+        max-width: 200px;
+        transform: rotate(-5deg) scale(1.2);
+    }
+
+    .contentWrapper {
+        width: 100%;
+    }
+
+    .grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 28px 20px;
+    }
+
+    .featureDescWrapper {
+        border-left: none;
+        padding-left: 0;
+    }
+}

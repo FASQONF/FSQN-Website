@@ -230,7 +230,7 @@
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
         "image": "/images/team/orest.png",
-        "mobileImage": "/images/team/orest_s.png",
+        "mobileImage": "/images/team/orest.png",
         "description": "Contador experiente e empreendedor veterano, com mestrado em tributação empresarial e ampla trajetória profissional.",
         "linkedin": "https://www.linkedin.com/in/orestpetryna"
       },
@@ -240,7 +240,7 @@
         "country": "Poland",
         "flag": "/images/flags/poland.svg",
         "image": "/images/team/serhiy.png",
-        "mobileImage": "/images/team/serhiy_s.png",
+        "mobileImage": "/images/team/serhiy.png",
         "description": "Especialista em fintech desenvolvendo soluções de pagamento, com sólida experiência em produto, design e UX.",
         "linkedin": "https://www.linkedin.com/in/serhiykhrun"
       },
@@ -248,41 +248,131 @@
         "name": "Sergio Latansky",
         "role": "COO",
         "country": "Spain",
-        "flag": "/images/flags/portugal.svg",
+        "flag": "/images/flags/spain.svg",
         "image": "/images/team/sergio.png",
-        "mobileImage": "/images/team/sergio_s.png",
+        "mobileImage": "/images/team/sergio.png",
         "description": "Estrategista de crescimento com experiência em análise financeira, liderança de equipes e alcance de metas empresariais.",
         "linkedin": "https://www.linkedin.com/in/sergiolatansky"
       },
       {
         "name": "Kati Aronson",
-        "role": "CBDO",
+        "role": "CBDO, CMO",
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
         "image": "/images/team/kati.png",
-        "mobileImage": "/images/team/kati_s.png",
+        "mobileImage": "/images/team/kati.png",
         "description": "CBDO com experiência em Web3, liderando captação de tokens, estratégia GTM e parcerias Tier 1; mais de US$20 M arrecadados.",
-        "linkedin": "https://www.linkedin.com/in/kati-aronson/"
+        "linkedin": "https://www.linkedin.com/in/kati-aronson"
       },
       {
-        "name": "David",
-        "role": "AMA Host, CM",
-        "country": "Canada",
-        "flag": "/images/flags/canada.svg",
-        "image": "/images/team/david.png",
-        "mobileImage": "/images/team/david_s.png",
-        "description": "Voz da comunidade Fasqon e host de AMA, com 4 anos em Web3 e foco em engajamento, confiança e boas vibes.",
+        "name": "Hanna Herzhod",
+        "role": "CMO",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/hanna.png",
+        "mobileImage": "/images/team/hanna.png",
+        "description": "7 anos em marketing full-stack em Blockchain, Cripto e tecnologias emergentes, usando métodos de crescimento totalmente orgânicos.",
+        "linkedin": "https://www.linkedin.com/in/hanna-yarova"
+      },
+      {
+        "name": "Atlas A.",
+        "role": "Strategic Partnerships",
+        "country": "Turkey",
+        "flag": "/images/flags/turkey.svg",
+        "image": "/images/team/anton.png",
+        "mobileImage": "/images/team/anton.png",
+        "description": "Líder impulsionando integrações e colaborações em todo o cenário Web3 e fintech.",
+        "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
+      },
+      {
+        "name": "Anton",
+        "role": "CPO",
+        "country": "Poland",
+        "flag": "/images/flags/poland.svg",
+        "image": "/images/team/anton.png",
+        "mobileImage": "/images/team/anton.png",
+        "description": "Especialista em FSI ajudando empresas de tecnologia a construir ofertas prontas para Tier-1, sistemas de pré-vendas e estratégias GTM.",
         "linkedin": ""
       },
       {
-        "name": "Nikita",
-        "role": "Public Relations",
-        "country": "UAE",
-        "flag": "/images/flags/uae.svg",
-        "image": "/images/team/nikita.png",
-        "mobileImage": "/images/team/nikita_s.png",
-        "description": "Responsável por relações públicas com 5+ anos em agências e graduação; conduz branding, conteúdo e comunicação Web3.",
-        "linkedin": "https://www.linkedin.com/in/nikita-varlygina-b51715160/"
+        "name": "Oleh Yakubiv",
+        "role": "Project Manager",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/oleh.png",
+        "mobileImage": "/images/team/oleh.png",
+        "description": "9 anos em TI, com experiência no gerenciamento de projetos de grandes players de FinTech, entre os quais payabl, Decta e HyperJar.",
+        "linkedin": "https://www.linkedin.com/in/oleh-yakubiv"
+      },
+      {
+        "name": "Michael Kramarenko",
+        "role": "CTO",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/michael.png",
+        "mobileImage": "/images/team/michael.png",
+        "description": "Mais de 15 anos em TI cobrindo consultoria, pré-vendas, design de sistemas e aplicativos de missão crítica. Especialista em arquitetura empresarial e desenvolvimento offshore.",
+        "linkedin": "https://www.linkedin.com/in/michael-kramarenko"
+      },
+      {
+        "name": "Roxie Slavych",
+        "role": "Business analyst",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/roxie.png",
+        "mobileImage": "/images/team/roxie.png",
+        "description": "Delivery Manager com experiência em serviços de TI, fortes habilidades de negociação e análise, e Mestrado em Engenharia de Software.",
+        "linkedin": "https://www.linkedin.com/in/roxieslavych"
+      },
+      {
+        "name": "Bozhena Sudakova",
+        "role": "Project Manager",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/bozhena.png",
+        "mobileImage": "/images/team/bozhena.png",
+        "description": "Project Manager com 7 anos de experiência e Mestrado em Gestão de Projetos de TI; prospera com desafios, colaboração e aprendizado constante.",
+        "linkedin": "https://www.linkedin.com/in/bozhena-sudakova-556583168"
+      },
+      {
+        "name": "Anatoliy Pylypchuk",
+        "role": "Solution Architect",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/anatoliy.png",
+        "mobileImage": "/images/team/anatoliy.png",
+        "description": "Desenvolvedor de software com 8 anos de experiência, forte em Java e .NET (C#, F#), com habilidades adicionais em Scala, C++ e Angular.",
+        "linkedin": "https://www.linkedin.com/in/anatoliy-pylypchuk"
+      },
+      {
+        "name": "Nazar Vonitovyi",
+        "role": "Product Designer",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/nazar.png",
+        "mobileImage": "/images/team/nazar.png",
+        "description": "Designer UI/UX com 9 anos de experiência criando mockups limpos e impactantes e aprimorando a experiência do usuário.",
+        "linkedin": "https://www.linkedin.com/in/nazarvonitovyi"
+      },
+      {
+        "name": "Eugene Kozak",
+        "role": "Design Director",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/eugene.png",
+        "mobileImage": "/images/team/eugene.png",
+        "description": "Mais de 20 anos de experiência em design. Especializado em fintech, varejo e design de produtos digitais. Lidera a expertise em Fintech na agência.",
+        "linkedin": "https://www.linkedin.com/in/eucodesign"
+      },
+      {
+        "name": "Dmytro Koshevoi",
+        "role": "Agency Partner & Product Strategist",
+        "country": "Ukraine",
+        "flag": "/images/flags/ukraine.svg",
+        "image": "/images/team/dmytro.png",
+        "mobileImage": "/images/team/dmytro.png",
+        "description": "Mais de 15 anos de experiência em estratégia de produtos, ampla expertise em comunicações, branding e crescimento de produtos digitais.",
+        "linkedin": "https://www.linkedin.com/in/dkoshevoi"
       }
     ],
     "partners": [
@@ -614,41 +704,188 @@
     "subtitle": "Principais etapas do desenvolvimento da FASQON",
     "years": [
       {
-        "year": "2024",
+        "year": "2023-2024",
         "items": [
-          "Rodada de pré-venda B",
-          "Desenvolvimento do MVP da Wallet",
-          "Lançamento do mini aplicativo do Telegram",
-          "Registro de licença cripto-fiat"
+          "Sede: Lisboa, Incorp. Portugal, Madeira e República Checa.",
+          "Marca registrada em Portugal",
+          "<span>Licença VASP UE e Licença SDM (totalmente compatível)</span><br/>VASP Portugal (em andamento), VASP > CASP",
+          "Arquitetura da app Fasqon projetada e aprovada pelo Regulador",
+          "<span>Financiamento: Rodada Semente - $1.2M</span>",
+          "Parceiro estratégico - Bison Bank (Portugal) como gateway fiat-cripto",
+          "Pagamentos empresariais habilitados para SEPA"
         ]
       },
       {
         "year": "2025",
         "items": [
-          "Campanha de marketing em massa do aplicativo",
-          "Parcerias estratégicas",
-          "IDO",
-          "Teste Alpha fechado da Wallet",
-          "Listagens em CEX",
-          "Licença bancária da República Tcheca",
-          "Alcançar 1M de usuários ativos"
+          "<span>Pré-venda $FSQN Rodada B & IDO - $3.9M</span>",
+          "<h4>T4</h4> Evento de Venda de Tokens (TGE)",
+          "<span>Listagem do $FSQN em CEXs e DEXs de Nível 1</span>",
+          "Parcerias com Ecossistemas Web3 de Nível 1",
+          "Conceito UI/UX e Desenvolvimento do MVP da app Fasqon",
+          "<span>Comunidade: 100K</span>",
+          "Go-to-Market: UE"
         ]
       },
       {
         "year": "2026",
         "items": [
-          "Captação de recursos Série A",
-          "Expansão para as regiões da Ásia e do Oriente Médio"
+          "<h4>T1</h4> <span>Lançamento do MVP da app Fasqon Neobank</span>",
+          "Comunidade: MAU 0,5M-1M usuários",
+          "Parcerias com Grupos de Banco de Investimento TradFi",
+          "<span>Captação de recursos: Série A</span>",
+          "Expansão para novas regiões: Oriente Médio, Ásia, Licença Global",
+          "App Fasqon v0.1",
+          "Cartões Premium",
+          "<span>144K usuários gerando $2.1M em receita</span>"
         ]
       },
       {
-        "year": "2027-2030",
+        "year": "2027+",
         "items": [
-          "Atração de mais de 10M de usuários ativos",
-          "Expansão e escalabilidade (aumento do volume de transações, mais integrações, novos produtos)",
-          "Assistentes de IA e serviços adicionais",
-          "Lucratividade total com meta de atingir 30% de margem até 2030"
+          "<span>Comunidade Total: 3M+</span>",
+          "App Fasqon v2.0+",
+          "Lançamento de cartões físicos",
+          "<span>1.2M usuários gerando $44.2M em receita</span>",
+          "Expansão global (MENA, Ásia, LATAM)",
+          "<span>EBITDA positivo até 2028, alcançando uma margem de 30% até 2030</span>"
         ]
+      }
+    ]
+  },
+  "fasPaySection": {
+    "title": "<span>FasPay - Pagamentos Instantâneos,</span><br />Velocidade Real. Simplicidade Peer-to-Peer",
+    "badgeImage": "/images/faspay/badge.png",
+    "items": [
+      {
+        "title": "Transferências SEPA em Tempo Real<br />até €100K",
+        "description": "O FasPay permite pagamentos SEPA instantâneos para depósitos e saques abaixo de €100.000, tornando as transferências internacionais tão rápidas quanto enviar uma mensagem...",
+        "icon": "/images/faspay/icon-tokens.png"
+      },
+      {
+        "title": "Pague Qualquer Um, em Qualquer Lugar<br />— Instantaneamente com FasPay",
+        "description": "Usuários Fasqon podem enviar e receber cripto ou fiat de forma instantânea — diretamente no app...",
+        "icon": "/images/faspay/icon-megaphone.png"
+      },
+      {
+        "title": "Confiança Bancária,<br />Velocidade Web3",
+        "description": "Seguro. Inteligente. Fluido. Alimentado por SEPA Instant e construído sobre infraestrutura bancária regulada na Europa...",
+        "icon": "/images/faspay/icon-wallet.png"
+      }
+    ]
+  },
+  "communityHubSection": {
+    "title": "Hub da Comunidade <span>Fasqon</span>",
+    "subtitle": "Complete Missões. Ganhe FSQN. Fortaleça o Banco",
+    "features": [
+      {
+        "title": "Pulso da Comunidade",
+        "description": "$FSQN cresce com a energia da comunidade. Cada tweet, tarefa e conversa aumenta a visibilidade e a força de mercado...",
+        "icon": "/images/communityhub/icon-pulse.png"
+      },
+      {
+        "title": "Impulsionador do Token",
+        "description": "A comunidade impulsiona o token, não apenas hype. Cada ação aumenta visibilidade, demanda e crescimento...",
+        "icon": "/images/communityhub/icon-handshake.png"
+      },
+      {
+        "title": "Fábrica de Recompensas",
+        "description": "Mais que um programa de recompensas — é uma parceria. Airdrops, prêmios, níveis e bônus contínuos...",
+        "icon": "/images/communityhub/icon-rewards.png"
+      },
+      {
+        "title": "Energia do Ecossistema",
+        "description": "$FSQN prospera com colaboração, parcerias e engajamento autêntico...",
+        "icon": "/images/communityhub/icon-energy.png"
+      }
+    ]
+  },
+  "monetizationStreamsSection": {
+    "title": "$FSQN — O Primeiro Token <span>Apoiado pelos Lucros de um Banco</span>",
+    "subtitle": "Apoiado pelo setor bancário, projetado para o crescimento.",
+    "description": "Cada pagamento, troca e assinatura impulsiona a economia $FSQN — transformando a receita real de fintech em valor duradouro para o token. Isso é utilidade real, não apenas mais um meme.",
+    "cards": [
+      {
+        "title": "Taxas de Transação e Processamento de Pagamentos",
+        "category": "*Receita Bancária",
+        "items": [
+          "Comissões FASPay",
+          "Taxas de Conversão FX",
+          "Transações com Cartão Crypto"
+        ]
+      },
+      {
+        "title": "Fluxos de Receita Relacionados a Cripto e DeFi",
+        "category": "*Receita de Crescimento do Ecossistema",
+        "items": [
+          "Serviços de Staking e Rendimento",
+          "Utilidade do Token e Taxas"
+        ]
+      },
+      {
+        "title": "Assinaturas Premium e Serviços com IA",
+        "category": "*Receita Recorrente",
+        "items": [
+          "Planos de Membros em Níveis",
+          "Assistente Financeiro com IA"
+        ]
+      },
+      {
+        "title": "Programas de Afiliados e Integrações Bancárias",
+        "category": "*Receita de Parcerias",
+        "items": [
+          "Programas de Referência e Afiliados",
+          "Integrações com Bancos e Sistemas de Pagamento"
+        ]
+      },
+      {
+        "title": "Serviços Financeiros e Receitas de Empréstimos",
+        "category": "*Receita de Crédito e Empréstimos",
+        "items": [
+          "Empréstimos Garantidos por Cripto",
+          "Microempréstimos e Linhas de Crédito"
+        ]
+      }
+    ]
+  },
+  "advisorsSection": {
+    "title": "<span>Consultores</span>",
+    "advisors": [
+      {
+        "name": "Nelli Orlova",
+        "role": "CEO InnMind | Fundadora AlphaMind | VC e Investimento Anjo",
+        "photo": "/images/advisors/Nelli.png",
+        "companyLogo": "/images/partners/innMind.png"
+      },
+      {
+        "name": "Faraj Abutalibov",
+        "role": "Co-Fundador <span>@crosscurvefi</span> | Fundador da comunidade Crypto Executives (2500+ executivos C-level) <span>@crypto_execs</span> | MBA, Alumni <span>#HarvardHBS</span>",
+        "photo": "/images/advisors/Faraj.png",
+        "companyLogo": "/images/partners/cryptoExecutives.png"
+      },
+      {
+        "name": "Alina Samoylova",
+        "role": "COO @Crypto Executives | Proprietária @Ace Girlies | UTC +5",
+        "photo": "/images/advisors/Alina.png",
+        "companyLogo": "/images/partners/cryptoExecutives.png"
+      },
+      {
+        "name": "Olesya Solomina",
+        "role": "CEO | CBDO | 3000+ conexões em crypto & fintech | Estratégias de crescimento | Parcerias | Departamento de vendas terceirizado",
+        "photo": "/images/advisors/Olesya.png",
+        "companyLogo": "/images/partners/bdboost3r.png"
+      },
+      {
+        "name": "Den",
+        "role": "Co-Fundador na Kaizen.Finance | Lançamos tokens | Incubamos projetos",
+        "photo": "/images/advisors/Den.png",
+        "companyLogo": "/images/partners/kaizenFinance.png"
+      },
+      {
+        "name": "Joe Yu",
+        "role": "Líder de BD <span>@taskonxyz</span> | Consultor Web3 | Opiniões pessoais",
+        "photo": "/images/advisors/Joe.png",
+        "companyLogo": "/images/partners/taskon.png"
       }
     ]
   }

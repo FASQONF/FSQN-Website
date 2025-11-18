@@ -1,0 +1,144 @@
+.section {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 100px 20px;
+    padding-bottom: 0;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+.bgWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.7;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 10px;
+}
+
+.card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.role {
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ccc;
+    margin-bottom: 5px;
+    white-space: pre-line;
+}
+
+.role span {
+    color: #30f427;
+}
+
+.companyLogo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    max-width: 120px;
+    margin-left: -18px;
+}
+
+@media (max-width: 1280px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0px;
+    }
+
+    .bgWrapper {
+        transform: scale(2) translateY(-50px);
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .role {
+        font-size: 11px;
+    }
+
+    .imageWrapper {
+        width: 114px;
+        height: 114px;
+    }
+}

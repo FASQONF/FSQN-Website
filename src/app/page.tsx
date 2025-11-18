@@ -4,8 +4,6 @@ import { Suspense, useEffect } from "react";
 import styles from "./page.module.css";
 
 import HeroSection from "@/components/HeroSection/HeroSection";
-import AirdropBanner from '@/components/AirdropBanner/AirdropBanner';
-import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
 import CryptoCards from "@/components/CryptoCards/CryptoCards";
 import StoreToEarn from "@/components/StoreToEarn/StoreToEarn";
 import UltimateUX from "@/components/UltimateUserExperience/UltimateUX";
@@ -16,6 +14,11 @@ import MediaSection from "@/components/MediaSection/MediaSection";
 import WhyFasqonSection from "@/components/WhyFasqonSection/WhyFasqonSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
+import RoadMapSection from "@/components/RoadMapSection/RoadMapSection";
+import FasPaySection from "@/components/FasPaySection/FasPaySection";
+import CommunityHubSection from "@/components/CommunityHubSection/CommunityHubSection";
+import MonitizationsStreams from "@/components/MonitizationsStreams/MonitizationsStreams";
+import AdvisorsSection from "@/components/AdvisorsSection/AdvisorsSection";
 
 export default function Home() {
   // Handle hash navigation when the page loads
@@ -47,17 +50,21 @@ export default function Home() {
           <div id="about">
             <WhyFasqonSection />
           </div>
-          {/*<AirdropBanner /> */}
           <div id="crypto-cards">
             <CryptoCards />
           </div>
           <div id="passive-income">
             <StoreToEarn />
           </div>
+          <FasPaySection />
+          <CommunityHubSection />
           <MiniAppSection />
+          <MonitizationsStreams />
+          <RoadMapSection />
           <div id="about-us">
             <TeamSection />
           </div>
+          <AdvisorsSection />
           <PartnersSection />
           <FAQSection />
           <MediaSection />

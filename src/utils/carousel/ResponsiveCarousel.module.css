@@ -1,29 +1,88 @@
-.embla {
+.carousel {
     position: relative;
     width: 100%;
-    --embla-gutter: 16px;
-    --slide-size: 80%;
+    box-sizing: border-box;
+    --carousel-gutter: 16px;
+    --carousel-slide-size: 80%;
+    --carousel-side-padding: 0px;
+    --carousel-align-ratio: 0.5;
+    --carousel-edge-left: calc((100% - var(--carousel-slide-size)) * var(--carousel-align-ratio));
+    --carousel-edge-right: calc((100% - var(--carousel-slide-size)) * (1 - var(--carousel-align-ratio)));
 }
 
-.embla__viewport {
-    overflow: hidden;
+.carouselViewport {
     width: 100%;
-    touch-action: pan-y pinch-zoom;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x pan-y pinch-zoom;
+    padding-left: max(var(--carousel-side-padding, 0px), 0px);
+    padding-right: max(var(--carousel-side-padding, 0px), 0px);
+    margin-left: min(var(--carousel-side-padding, 0px), 0px);
+    margin-right: min(var(--carousel-side-padding, 0px), 0px);
+    scroll-padding-left: calc(var(--carousel-edge-left) + max(var(--carousel-side-padding, 0px), 0px));
+    scroll-padding-right: calc(var(--carousel-edge-right) + max(var(--carousel-side-padding, 0px), 0px));
 }
 
-.embla__container {
+.carouselViewport::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselContainer {
     display: flex;
-    gap: var(--embla-gutter);
-    will-change: transform;
+    box-sizing: border-box;
+    align-items: stretch;
 }
 
-.embla__slide {
-    flex: 0 0 var(--slide-size);
-    min-width: var(--slide-size);
+.carouselSpacerStart,
+.carouselSpacerEnd {
+    flex: 0 0 auto;
+    min-width: 0;
+    pointer-events: none;
+}
+
+.carouselSpacerStart {
+    flex-basis: var(--carousel-edge-left);
+    min-width: var(--carousel-edge-left);
+}
+
+.carouselSpacerEnd {
+    flex-basis: var(--carousel-edge-right);
+    min-width: var(--carousel-edge-right);
+}
+
+.carouselSlide {
+    flex: 0 0 var(--carousel-slide-size);
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
+    opacity: 1;
+    transition: opacity 220ms ease;
+    will-change: opacity;
+    margin-left: 0;
+}
+.carouselSlide + .carouselSlide {
+    margin-left: var(--carousel-gutter);
 }
 
-.embla__button {
+.carouselSlideLeaving {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carouselSlideHidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.carouselButton {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -40,29 +99,68 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.embla__button:hover {
+.carouselButton:hover {
     transform: translateY(-50%) scale(1.04);
 }
 
-.embla__button--prev {
+.carouselButton[disabled] {
+    opacity: 0.4;
+    cursor: default;
+    transform: translateY(-50%);
+}
+
+.carouselButtonPrev {
     left: 8px;
 }
 
-.embla__button--next {
+.carouselButtonNext {
     right: 8px;
 }
 
 .staticContainer {
     display: contents;
 }
+.staticWrapper {
+    padding-left: max(var(--carousel-side-padding, 0px), 0px);
+    padding-right: max(var(--carousel-side-padding, 0px), 0px);
+    margin-left: min(var(--carousel-side-padding, 0px), 0px);
+    margin-right: min(var(--carousel-side-padding, 0px), 0px);
+}
+
+.carouselIndicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.carouselIndicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carouselIndicator:hover {
+    transform: scale(1.15);
+}
+
+.carouselIndicatorActive {
+    background: #30f427;
+    border-color: #30f427;
+}
 
 @media (min-width: 769px) {
-    .embla {
-        --slide-size: 33.333%;
+    .carousel {
+        --carousel-slide-size: 33.333%;
     }
 
-    .embla__slide {
-        flex-basis: var(--slide-size);
-        min-width: var(--slide-size);
+    .carouselSlide {
+        flex-basis: var(--carousel-slide-size);
+        min-width: var(--carousel-slide-size);
     }
 }

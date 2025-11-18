@@ -1,7 +1,7 @@
 import StayTuned from "@/components/StayTuned/StayTuned";
 import CommonBackground from "@/components/Tokenomica/CommonBackground/CommonBackground";
 import FSQNTokenSection from "@/components/Tokenomica/FSQNTokenSection/FSQNTokenSection";
-import RoadMapSection from "@/components/Tokenomica/RoadMapSection/RoadMapSection";
+import RoadMapSection from "@/components/RoadMapSection/RoadMapSection";
 import Graf from "@/components/Tokenomica/TokenomicsSection/TokenomicsSection";
 import TokenUtilitySection from "@/components/Tokenomica/TokenUtilitySection/TokenUtilitySection";
 import { Suspense } from "react";
