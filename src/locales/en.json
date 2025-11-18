@@ -146,7 +146,7 @@
     "subtitle": "Follow Fasqon in social media!"
   },
   "ultimateUX": {
-    "title": "The bank for the online generation",
+    "title": "The bank for <br />the online generation",
     "subtitle": "AI payments. Social banking. Real yield — all in Fasqon",
     "features": [
       {
@@ -188,7 +188,7 @@
     ]
   },
   "miniAppSection": {
-    "title": "Fasqon <span>Telegram Mini APP</span>",
+    "title": "Fasqon <span>Telegram Game</span>",
     "subtitle": "Play the Game. Earn $FSQN. Run the Bank",
     "features": [
       {
@@ -805,7 +805,7 @@
     ]
   },
   "monetizationStreamsSection": {
-    "title": "$FSQN — The First Token <span>Backed by a Bank's Earnings</span>",
+    "title": "$FSQN — The First Token <span>Backed by<br /> a Bank's Earnings</span>",
     "subtitle": "Backed by banking, designed for growth.",
     "description": "Every payment, swap, and subscription fuels the $FSQN economy — turning real fintech revenue into lasting token value. This is real utility, not just another meme.",
     "cards": [

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import styles from "./AdvisorsSection.module.css";
 import { useLocalization } from '@/context/LocalizationContext';
 import parse from "html-react-parser";
+import { useEffect, useMemo, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import ResponsiveCarousel from "../../utils/carousel/ResponsiveCarousel";
 
 interface Advisor {
     name: string;
@@ -25,6 +28,21 @@ export default function AdvisorsSection() {
     if (!section) return null;
 
     const advisors = Array.isArray(section.advisors) ? section.advisors : [];
+    const isMobileQuery = useMediaQuery({ query: "(max-width: 768px)" });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(isMobileQuery);
+    }, [isMobileQuery]);
+
+    const mobileSlides = useMemo(() => {
+        if (!isMobile) return [];
+        const slides: Advisor[][] = [];
+        for (let i = 0; i < advisors.length; i += 3) {
+            slides.push(advisors.slice(i, i + 3));
+        }
+        return slides;
+    }, [advisors, isMobile]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -69,40 +87,83 @@ export default function AdvisorsSection() {
                     <h1 className="title">{parse(section.title)}</h1>
                 </motion.div>
 
-                <motion.div
-                    className={styles.grid}
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {advisors.map((advisor, index) => (
-                        <motion.div
-                            key={index}
-                            className={styles.card}
-                            variants={itemVariants}
-                        >
-                            <div className={styles.imageWrapper}>
-                                <img
-                                    src={advisor.photo}
-                                    alt={advisor.name}
-                                    className={styles.avatar}
-                                />
-                            </div>
-                            <div className={styles.content}>
-                                <h3 className={styles.name}>{advisor.name}</h3>
-                                <p className={styles.role}>{parse(advisor.role)}</p>
-                                {advisor.companyLogo && (
+                {!isMobile && (
+                    <motion.div
+                        className={styles.grid}
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {advisors.map((advisor, index) => (
+                            <motion.div
+                                key={index}
+                                className={styles.card}
+                                variants={itemVariants}
+                            >
+                                <div className={styles.imageWrapper}>
                                     <img
-                                        src={advisor.companyLogo}
-                                        alt="Company Logo"
-                                        className={styles.companyLogo}
+                                        src={advisor.photo}
+                                        alt={advisor.name}
+                                        className={styles.avatar}
                                     />
-                                )}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                                </div>
+                                <div className={styles.content}>
+                                    <h3 className={styles.name}>{advisor.name}</h3>
+                                    <p className={styles.role}>{parse(advisor.role)}</p>
+                                    {advisor.companyLogo && (
+                                        <img
+                                            src={advisor.companyLogo}
+                                            alt="Company Logo"
+                                            className={styles.companyLogo}
+                                        />
+                                    )}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+
+                {isMobile && mobileSlides.length > 0 && (
+                    <div className={styles.carouselWrapper}>
+                        <ResponsiveCarousel
+                            enableOn="all"
+                            showArrows={true}
+                            loop={false}
+                            hideNonActiveSlides={true}
+                            showIndicators={true}
+                            slidesToScroll={1}
+                            className={styles.advisorsCarousel}
+                        >
+                            {mobileSlides.map((slide, slideIndex) => (
+                                <div className={styles.mobileCarouselSlide} key={`advisor-slide-${slideIndex}`}>
+                                    {slide.map((advisor, index) => (
+                                        <div className={styles.card} key={`${advisor.name}-${index}`}>
+                                            <div className={styles.imageWrapper}>
+                                                <img
+                                                    src={advisor.photo}
+                                                    alt={advisor.name}
+                                                    className={styles.avatar}
+                                                />
+                                            </div>
+                                            <div className={styles.content}>
+                                                <h3 className={styles.name}>{advisor.name}</h3>
+                                                <p className={styles.role}>{parse(advisor.role)}</p>
+                                                {advisor.companyLogo && (
+                                                    <img
+                                                        src={advisor.companyLogo}
+                                                        alt="Company Logo"
+                                                        className={styles.companyLogo}
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </ResponsiveCarousel>
+                    </div>
+                )}
             </div>
         </section>
     );

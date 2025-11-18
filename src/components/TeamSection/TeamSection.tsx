@@ -56,69 +56,70 @@ export default function TeamSection() {
     );
   }, [section.partners]);
 
-  const staticMembers = isMobile ? section.members.slice(0, 6) : section.members;
-  const carouselMembers = isMobile ? section.members.slice(6) : [];
-
-  const renderMemberCard = (member: TeamMember, index: number, isCarouselItem: boolean = false) => {
-    const delay = isCarouselItem ? 0 : index * 0.1;
-
-    if (isCarouselItem) {
-      return (
-        <div className={styles.carouselCard} key={member.name}>
-          <div className={styles.carouselCardTop}>
-            <div className={styles.avatarWrapper}>
-              <picture>
-                <source media="(max-width: 768px)" srcSet={member.mobileImage} />
-                <source media="(min-width: 769px)" srcSet={member.image} />
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className={styles.carouselAvatar}
-                />
-              </picture>
-            </div>
-
-            <div className={styles.carouselMeta}>
-              <h3 className={styles.memberName}>{member.name}</h3>
-              <p className={styles.memberRole}>{member.role}</p>
-
-              <div className={styles.carouselCountryBlock}>
-                <img
-                  src={member.flag}
-                  alt={member.country}
-                  width={20}
-                  height={14}
-                  className={styles.flag}
-                />
-                <span className={styles.countryName}>{member.country}</span>
-
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkedinLink}
-                    style={{ marginLeft: '10px' }}
-                  >
-                    <img
-                      className={styles.linkedinIcon}
-                      src="/icons/linkedin.svg"
-                      alt="LinkedIn"
-                      width={18}
-                      height={18}
-                    />
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.carouselDescBlock}>
-            <p className={styles.description}>{member.description}</p>
-          </div>
-        </div>
-      );
+  const staticMembers = isMobile ? [] : section.members;
+  const carouselMembers = isMobile ? section.members : [];
+  const carouselSlides = useMemo(() => {
+    if (!isMobile) return [];
+    const slides: TeamMember[][] = [];
+    for (let i = 0; i < carouselMembers.length; i += 3) {
+      slides.push(carouselMembers.slice(i, i + 3));
     }
+    return slides;
+  }, [carouselMembers, isMobile]);
+
+  const renderMemberCardContent = (member: TeamMember) => (
+    <>
+      <div className={styles.avatarWrapper}>
+        <picture>
+          <source media="(max-width: 768px)" srcSet={member.mobileImage} />
+          <source media="(min-width: 769px)" srcSet={member.image} />
+          <img
+            src={member.image}
+            alt={member.name}
+            width={150}
+            height={150}
+            className={styles.avatar}
+          />
+        </picture>
+      </div>
+      <div className={styles.cardInfo}>
+        <h3 className={styles.memberName}>{member.name}</h3>
+        <p className={styles.memberRole}>{member.role}</p>
+        <p className={styles.description}>{member.description}</p>
+        <div className={styles.bottomRow}>
+          <div className={styles.countryBlock}>
+            <img
+              src={member.flag}
+              alt={member.country}
+              width={24}
+              height={16}
+              className={styles.flag}
+            />
+            <span className={styles.countryName}>{member.country}</span>
+          </div>
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.linkedinLink}
+            >
+              <img
+                className={styles.linkedinIcon}
+                src="/icons/linkedin.svg"
+                alt="LinkedIn"
+                width={21}
+                height={21}
+              />
+            </a>
+          )}
+        </div>
+      </div>
+    </>
+  );
+
+  const renderMemberCard = (member: TeamMember, index: number) => {
+    const delay = index * 0.1;
 
     return (
       <motion.div
@@ -129,52 +130,7 @@ export default function TeamSection() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, delay: delay }}
       >
-        <div className={styles.avatarWrapper}>
-          <picture>
-            <source media="(max-width: 768px)" srcSet={member.mobileImage} />
-            <source media="(min-width: 769px)" srcSet={member.image} />
-            <img
-              src={member.image}
-              alt={member.name}
-              width={150}
-              height={150}
-              className={styles.avatar}
-            />
-          </picture>
-        </div>
-        <div className={styles.cardInfo}>
-          <h3 className={styles.memberName}>{member.name}</h3>
-          <p className={styles.memberRole}>{member.role}</p>
-          <p className={styles.description}>{member.description}</p>
-          <div className={styles.bottomRow}>
-            <div className={styles.countryBlock}>
-              <img
-                src={member.flag}
-                alt={member.country}
-                width={24}
-                height={16}
-                className={styles.flag}
-              />
-              <span className={styles.countryName}>{member.country}</span>
-            </div>
-            {member.linkedin && (
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.linkedinLink}
-              >
-                <img
-                  className={styles.linkedinIcon}
-                  src="/icons/linkedin.svg"
-                  alt="LinkedIn"
-                  width={21}
-                  height={21}
-                />
-              </a>
-            )}
-          </div>
-        </div>
+        {renderMemberCardContent(member)}
       </motion.div>
     );
   };
@@ -192,11 +148,13 @@ export default function TeamSection() {
           <h1 className="title">{parse(section.title)}</h1>
         </motion.div>
 
-        <div className={styles.grid}>
-          {staticMembers.map((member, index) => renderMemberCard(member, index))}
-        </div>
+        {!isMobile && (
+          <div className={styles.grid}>
+            {staticMembers.map((member, index) => renderMemberCard(member, index))}
+          </div>
+        )}
 
-        {isMobile && carouselMembers.length > 0 && (
+        {isMobile && carouselSlides.length > 0 && (
           <div className={styles.teamCarouselWrapper}>
             <ResponsiveCarousel
               enableOn="all"
@@ -204,10 +162,18 @@ export default function TeamSection() {
               loop={false}
               hideNonActiveSlides={true}
               showIndicators={true}
+              slidesToScroll={1}
+              className={styles.teamCarousel}
             >
-              {carouselMembers.map((member, index) =>
-                renderMemberCard(member, index, true)
-              )}
+              {carouselSlides.map((slideMembers, slideIndex) => (
+                <div className={styles.mobileCarouselSlide} key={`team-slide-${slideIndex}`}>
+                  {slideMembers.map((member, memberIndex) => (
+                    <div className={styles.card} key={`${member.name}-${memberIndex}`}>
+                      {renderMemberCardContent(member)}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </ResponsiveCarousel>
           </div>
         )}

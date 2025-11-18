@@ -45,6 +45,21 @@
     gap: 10px 10px;
 }
 
+.carouselWrapper {
+    margin-top: 24px;
+}
+
+.advisorsCarousel {
+    --carousel-slide-size: 100%;
+}
+
+.mobileCarouselSlide {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
 .card {
     display: flex;
     align-items: flex-start;
@@ -125,8 +140,11 @@
     }
 
     .grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        display: none;
+    }
+
+    .carouselWrapper {
+        margin-top: 12px;
     }
 
     .name {
@@ -140,5 +158,13 @@
     .imageWrapper {
         width: 114px;
         height: 114px;
+    }
+
+    .mobileCarouselSlide {
+        gap: 20px;
+    }
+
+    .mobileCarouselSlide .card {
+        width: 100%;
     }
 }
