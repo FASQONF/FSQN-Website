@@ -125,8 +125,8 @@
 }
 
 .avatar {
-  width: 150%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -300,8 +300,8 @@
   }
 
   .carouselCardTop .avatarWrapper img {
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
   }
 
   .card {
