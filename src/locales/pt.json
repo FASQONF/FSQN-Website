@@ -226,152 +226,152 @@
     "members": [
       {
         "name": "Orest Petryna",
-        "role": "Founder",
+        "role": "Fundador",
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
         "image": "/images/team/orest.png",
         "mobileImage": "/images/team/orest.png",
-        "description": "Contador experiente e empreendedor veterano, com mestrado em tributação empresarial e ampla trajetória profissional.",
+        "description": "Contabilista e empreendedor experiente, com mestrado em tributação empresarial. Lidera a estratégia financeira e a conformidade regulatória.",
         "linkedin": "https://www.linkedin.com/in/orestpetryna"
       },
       {
         "name": "Serhiy Khrun",
-        "role": "Co-Founder",
-        "country": "Poland",
+        "role": "Co-Fundador",
+        "country": "Polónia",
         "flag": "/images/flags/poland.svg",
         "image": "/images/team/serhiy.png",
         "mobileImage": "/images/team/serhiy.png",
-        "description": "Especialista em fintech desenvolvendo soluções de pagamento, com sólida experiência em produto, design e UX.",
+        "description": "Especialista em fintech com profundo conhecimento em sistemas de pagamento, design de produto, UX e infraestrutura bancária digital.",
         "linkedin": "https://www.linkedin.com/in/serhiykhrun"
       },
       {
         "name": "Sergio Latansky",
         "role": "COO",
-        "country": "Spain",
+        "country": "Espanha",
         "flag": "/images/flags/spain.svg",
         "image": "/images/team/sergio.png",
         "mobileImage": "/images/team/sergio.png",
-        "description": "Estrategista de crescimento com experiência em análise financeira, liderança de equipes e alcance de metas empresariais.",
+        "description": "Estrategista de crescimento focado em operações, análise e gestão de equipas multifuncionais. Conduz a execução em produto, finanças e parcerias.",
         "linkedin": "https://www.linkedin.com/in/sergiolatansky"
       },
       {
         "name": "Kati Aronson",
-        "role": "CBDO, CMO",
+        "role": "CBDO",
         "country": "Portugal",
         "flag": "/images/flags/portugal.svg",
         "image": "/images/team/kati.png",
         "mobileImage": "/images/team/kati.png",
-        "description": "CBDO com experiência em Web3, liderando captação de tokens, estratégia GTM e parcerias Tier 1; mais de US$20 M arrecadados.",
+        "description": "Especialista em desenvolvimento de negócios Web3. Lidera captação de tokens, estratégia GTM e parcerias Tier-1. Mais de $20M arrecadados em projetos anteriores.",
         "linkedin": "https://www.linkedin.com/in/kati-aronson"
       },
       {
         "name": "Hanna Herzhod",
         "role": "CMO",
-        "country": "Ukraine",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/hanna.png",
         "mobileImage": "/images/team/hanna.png",
-        "description": "7 anos em marketing full-stack em Blockchain, Cripto e tecnologias emergentes, usando métodos de crescimento totalmente orgânicos.",
+        "description": "7 anos em marketing de blockchain e tecnologias emergentes. Especializada em crescimento orgânico, estratégia de marca e funis digitais multicanal.",
         "linkedin": "https://www.linkedin.com/in/hanna-yarova"
       },
       {
         "name": "Atlas A.",
-        "role": "Strategic Partnerships",
-        "country": "Turkey",
+        "role": "Parcerias Estratégicas",
+        "country": "Turquia",
         "flag": "/images/flags/turkey.svg",
         "image": "/images/team/anton.png",
         "mobileImage": "/images/team/anton.png",
-        "description": "Líder impulsionando integrações e colaborações em todo o cenário Web3 e fintech.",
+        "description": "Lidera integrações e colaborações nos ecossistemas fintech e Web3. Foco em parcerias e infraestrutura de desenvolvimento de negócios.",
         "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
       },
       {
         "name": "Anton",
         "role": "CPO",
-        "country": "Poland",
+        "country": "Polónia",
         "flag": "/images/flags/poland.svg",
         "image": "/images/team/anton.png",
         "mobileImage": "/images/team/anton.png",
-        "description": "Especialista em FSI ajudando empresas de tecnologia a construir ofertas prontas para Tier-1, sistemas de pré-vendas e estratégias GTM.",
+        "description": "Especialista em FSI com experiência em sistemas bancários, fluxos de compliance, arquitetura de pré-vendas e entrega de produtos Tier-1.",
         "linkedin": ""
       },
       {
         "name": "Oleh Yakubiv",
         "role": "Project Manager",
-        "country": "Ukraine",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/oleh.png",
         "mobileImage": "/images/team/oleh.png",
-        "description": "9 anos em TI, com experiência no gerenciamento de projetos de grandes players de FinTech, entre os quais payabl, Decta e HyperJar.",
+        "description": "Mais de 9 anos em gestão de projetos de TI. Experiência com grandes empresas fintech como Payabl, Decta e HyperJar.",
         "linkedin": "https://www.linkedin.com/in/oleh-yakubiv"
       },
       {
         "name": "Michael Kramarenko",
         "role": "CTO",
-        "country": "Ukraine",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/michael.png",
         "mobileImage": "/images/team/michael.png",
-        "description": "Mais de 15 anos em TI cobrindo consultoria, pré-vendas, design de sistemas e aplicativos de missão crítica. Especialista em arquitetura empresarial e desenvolvimento offshore.",
+        "description": "15+ anos em TI em arquitetura de sistemas, aplicações críticas, consultoria e liderança de desenvolvimento offshore.",
         "linkedin": "https://www.linkedin.com/in/michael-kramarenko"
       },
       {
         "name": "Roxie Slavych",
-        "role": "Business analyst",
-        "country": "Ukraine",
+        "role": "Analista de Negócios",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/roxie.png",
         "mobileImage": "/images/team/roxie.png",
-        "description": "Delivery Manager com experiência em serviços de TI, fortes habilidades de negociação e análise, e Mestrado em Engenharia de Software.",
+        "description": "Delivery Manager e Analista com fortes capacidades analíticas, experiência em negociação e mestrado em Engenharia de Software.",
         "linkedin": "https://www.linkedin.com/in/roxieslavych"
       },
       {
         "name": "Bozhena Sudakova",
         "role": "Project Manager",
-        "country": "Ukraine",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/bozhena.png",
         "mobileImage": "/images/team/bozhena.png",
-        "description": "Project Manager com 7 anos de experiência e Mestrado em Gestão de Projetos de TI; prospera com desafios, colaboração e aprendizado constante.",
+        "description": "7 anos em gestão de projetos de TI. Gere equipas multifuncionais com foco em entregas estruturadas e qualidade do produto.",
         "linkedin": "https://www.linkedin.com/in/bozhena-sudakova-556583168"
       },
       {
         "name": "Anatoliy Pylypchuk",
-        "role": "Solution Architect",
-        "country": "Ukraine",
+        "role": "Arquiteto de Soluções",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/anatoliy.png",
         "mobileImage": "/images/team/anatoliy.png",
-        "description": "Desenvolvedor de software com 8 anos de experiência, forte em Java e .NET (C#, F#), com habilidades adicionais em Scala, C++ e Angular.",
+        "description": "Engenheiro de software com forte base em Java/.NET e experiência adicional em Scala, C++ e Angular.",
         "linkedin": "https://www.linkedin.com/in/anatoliy-pylypchuk"
       },
       {
         "name": "Nazar Vonitovyi",
         "role": "Product Designer",
-        "country": "Ukraine",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/nazar.png",
         "mobileImage": "/images/team/nazar.png",
-        "description": "Designer UI/UX com 9 anos de experiência criando mockups limpos e impactantes e aprimorando a experiência do usuário.",
+        "description": "Designer UI/UX com 9 anos de experiência. Foco em interfaces limpas, design centrado no utilizador e fluxos fintech.",
         "linkedin": "https://www.linkedin.com/in/nazarvonitovyi"
       },
       {
         "name": "Eugene Kozak",
-        "role": "Design Director",
-        "country": "Ukraine",
+        "role": "Diretor de Design",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/eugene.png",
         "mobileImage": "/images/team/eugene.png",
-        "description": "Mais de 20 anos de experiência em design. Especializado em fintech, varejo e design de produtos digitais. Lidera a expertise em Fintech na agência.",
+        "description": "20+ anos em design digital. Lidera a expertise de design fintech, incluindo UX complexo e identidade de produto.",
         "linkedin": "https://www.linkedin.com/in/eucodesign"
       },
       {
         "name": "Dmytro Koshevoi",
-        "role": "Agency Partner & Product Strategist",
-        "country": "Ukraine",
+        "role": "Sócio da Agência e Estrategista de Produto",
+        "country": "Ucrânia",
         "flag": "/images/flags/ukraine.svg",
         "image": "/images/team/dmytro.png",
         "mobileImage": "/images/team/dmytro.png",
-        "description": "Mais de 15 anos de experiência em estratégia de produtos, ampla expertise em comunicações, branding e crescimento de produtos digitais.",
+        "description": "Mais de 15 anos em estratégia de produto, comunicação, posicionamento de marca e desenvolvimento digital.",
         "linkedin": "https://www.linkedin.com/in/dkoshevoi"
       }
     ],
@@ -853,39 +853,45 @@
     "advisors": [
       {
         "name": "Nelli Orlova",
-        "role": "CEO InnMind | Fundadora AlphaMind | VC e Investimento Anjo",
+        "role": "CEO da InnMind, fundadora da AlphaMind. Investidora de VC e angel apoiando startups globais de tecnologia e Web3, consultoria de lançamento de tokens, parcerias estratégicas em Web3 e fintech.",
         "photo": "/images/advisors/Nelli.png",
-        "companyLogo": "/images/partners/innMind.png"
+        "companyLogo": "/images/partners/innMind.png",
+        "link": "https://www.linkedin.com/in/nelli-orlova"
       },
       {
         "name": "Faraj Abutalibov",
-        "role": "Co-Fundador <span>@crosscurvefi</span> | Fundador da comunidade Crypto Executives (2500+ executivos C-level) <span>@crypto_execs</span> | MBA, Alumni <span>#HarvardHBS</span>",
+        "role": "Fundador da Crypto Executives, a maior comunidade de C-levels em cripto (2500+ executivos), ACE Capital, cofundador da Crosscurve MetaLayer, infraestrutura descentralizada para liquidez e incentivos cross-chain.",
         "photo": "/images/advisors/Faraj.png",
-        "companyLogo": "/images/partners/cryptoExecutives.png"
+        "companyLogo": "/images/partners/cryptoExecutives.png",
+        "link": "https://www.linkedin.com/in/farajabutalibov"
       },
       {
         "name": "Alina Samoylova",
-        "role": "COO @Crypto Executives | Proprietária @Ace Girlies | UTC +5",
+        "role": "COO na Crypto Executives, a maior comunidade de C-levels em cripto (2500+ executivos), fundadora da Ace Girlies, comunidade feminina de C-levels em cripto e fintech. Parcerias estratégicas no ecossistema Web3 e consultoria de lançamento de tokens.",
         "photo": "/images/advisors/Alina.png",
-        "companyLogo": "/images/partners/cryptoExecutives.png"
+        "companyLogo": "/images/partners/cryptoExecutives.png",
+        "link": "https://cryptoexecutives.io"
       },
       {
         "name": "Olesya Solomina",
-        "role": "CEO | CBDO | 3000+ conexões em crypto & fintech | Estratégias de crescimento | Parcerias | Departamento de vendas terceirizado",
+        "role": "CEO na BD Booster (3000+ relações em cripto e fintech). Parcerias estratégicas no ecossistema Web3, crescimento B2B e relações com investidores Tier-1 de Web3 VC.",
         "photo": "/images/advisors/Olesya.png",
-        "companyLogo": "/images/partners/bdBoost3r.png"
+        "companyLogo": "/images/partners/bdBoost3r.png",
+        "link": "https://www.linkedin.com/in/olesya-solomina"
       },
       {
         "name": "Den",
-        "role": "Co-Fundador na Kaizen.Finance | Lançamos tokens | Incubamos projetos",
+        "role": "Co-fundador na Kaizen.Finance. Desenvolvimento do portal de TokenSale Fasqon, desenvolvimento de smart contracts, auditoria e consultoria de lançamento de tokens.",
         "photo": "/images/advisors/Den.png",
-        "companyLogo": "/images/partners/kaizenFinance.png"
+        "companyLogo": "/images/partners/kaizenFinance.png",
+        "link": "https://kaizen.finance"
       },
       {
         "name": "Joe Yu",
-        "role": "Líder de BD <span>@taskonxyz</span> | Consultor Web3 | Opiniões pessoais",
+        "role": "Líder de BD na TaskOn, plataforma de crescimento de comunidade Web3. Crescimento de ecossistemas cripto, parcerias estratégicas e marketing.",
         "photo": "/images/advisors/Joe.png",
-        "companyLogo": "/images/partners/taskOn.png"
+        "companyLogo": "/images/partners/taskOn.png",
+        "link": "https://taskon.xyz"
       }
     ]
   }

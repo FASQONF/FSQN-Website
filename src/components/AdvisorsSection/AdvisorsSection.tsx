@@ -13,6 +13,7 @@ interface Advisor {
     role: string;
     photo: string;
     companyLogo: string;
+    link?: string;
 }
 
 interface AdvisorsSectionType {
@@ -109,7 +110,23 @@ export default function AdvisorsSection() {
                                     />
                                 </div>
                                 <div className={styles.content}>
-                                    <h3 className={styles.name}>{advisor.name}</h3>
+                                    <div className={styles.nameWrapper}>
+                                        <h3 className={styles.name}>{advisor.name}</h3>
+                                        {advisor.link && (
+                                            <a
+                                                href={advisor.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={styles.linkIconWrapper}
+                                            >
+                                                <img
+                                                    src="/icons/web.svg"
+                                                    alt={`${advisor.name} website`}
+                                                    className={styles.linkIcon}
+                                                />
+                                            </a>
+                                        )}
+                                    </div>
                                     <p className={styles.role}>{parse(advisor.role)}</p>
                                     {advisor.companyLogo && (
                                         <img
@@ -147,7 +164,23 @@ export default function AdvisorsSection() {
                                                 />
                                             </div>
                                             <div className={styles.content}>
-                                                <h3 className={styles.name}>{advisor.name}</h3>
+                                                <div className={styles.nameWrapper}>
+                                                    <h3 className={styles.name}>{advisor.name}</h3>
+                                                    {advisor.link && (
+                                                        <a
+                                                            href={advisor.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className={styles.linkIconWrapper}
+                                                        >
+                                                            <img
+                                                                src="/icons/web.svg"
+                                                                alt={`${advisor.name} website`}
+                                                                className={styles.linkIcon}
+                                                            />
+                                                        </a>
+                                                    )}
+                                                </div>
                                                 <p className={styles.role}>{parse(advisor.role)}</p>
                                                 {advisor.companyLogo && (
                                                     <img
