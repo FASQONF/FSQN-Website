@@ -102,7 +102,7 @@ export default function StayTuned() {
           </a>
           {/* Discord */}
           <a
-            href="https://discord.gg/HBwxXCpxy2"
+            href="https://discord.com/invite/53Kg3d7nbq"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}

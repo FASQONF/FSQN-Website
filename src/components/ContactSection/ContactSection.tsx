@@ -10,7 +10,7 @@ export const SOCIALS = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/fasqon-official/', icon: '/images/contact/icons/linkedin.svg' },
     { name: 'Telegram', url: 'https://t.me/fasqonofficial', icon: '/images/contact/icons/telegram.svg' },
     { name: 'Telegram Chat', url: 'https://t.me/fasqonchat', icon: '/images/contact/icons/telegram-chat.svg' },
-    { name: 'Discord', url: 'https://discord.gg/HBwxXCpxy2', icon: '/images/contact/icons/discord.svg' },
+    { name: 'Discord', url: 'https://discord.com/invite/53Kg3d7nbq', icon: '/images/contact/icons/discord.svg' },
     { name: 'Instagram', url: 'https://www.instagram.com/fasqon_official/', icon: '/images/contact/icons/instagram.svg' },
     { name: 'CoinMarketCap', url: 'https://coinmarketcap.com/community/profile/Fasqon/', icon: '/images/contact/icons/coinmarketcap.svg' },
 ];
