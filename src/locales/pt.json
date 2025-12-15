@@ -78,7 +78,7 @@
       },
       {
         "title": "Peça seu Cartão Fasqon",
-        "description": "Cartão virtual instantâneo. Pronto para Apple Pay e Google Pay. Escolha entre Black, Gold ou Premium — aproveite cashback, recompensas e bônus exclusivos a cada pagamento.",
+        "description": "Cartão virtual instantâneo. Pronto para Apple Pay e Google Pay.",
         "cardImg": "/images/cards/Card3.png"
       }
     ],
@@ -279,8 +279,8 @@
         "role": "Parcerias Estratégicas",
         "country": "Turquia",
         "flag": "/images/flags/turkey.svg",
-        "image": "/images/team/anton.png",
-        "mobileImage": "/images/team/anton.png",
+        "image": "/images/team/ano.png",
+        "mobileImage": "/images/team/ano.png",
         "description": "Lidera integrações e colaborações nos ecossistemas fintech e Web3. Foco em parcerias e infraestrutura de desenvolvimento de negócios.",
         "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
       },

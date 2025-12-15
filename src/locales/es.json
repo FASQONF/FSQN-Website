@@ -78,7 +78,7 @@
       },
       {
         "title": "Pide tu Tarjeta Fasqon",
-        "description": "Tarjeta virtual instantánea. Compatible con Apple Pay y Google Pay. Elige entre niveles Black, Gold o Premium — disfruta cashback, recompensas y bonos exclusivos cada vez que pagas.",
+        "description": "Tarjeta virtual instantánea. Compatible con Apple Pay y Google Pay.",
         "cardImg": "/images/cards/Card3.png"
       }
     ],
@@ -279,8 +279,8 @@
         "role": "Alianzas Estratégicas",
         "country": "Turquía",
         "flag": "/images/flags/turkey.svg",
-        "image": "/images/team/anton.png",
-        "mobileImage": "/images/team/anton.png",
+        "image": "/images/team/ano.png",
+        "mobileImage": "/images/team/ano.png",
         "description": "Lidera integraciones y colaboraciones en los ecosistemas fintech y Web3. Enfoque en alianzas y estructura de desarrollo de negocios.",
         "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
       },

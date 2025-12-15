@@ -137,10 +137,13 @@
 
 .card {
   position: absolute;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.25s ease;
   width: 410px;
   height: 250px;
   cursor: pointer;
+  filter:
+    drop-shadow(0 0 30px rgba(49, 244, 39, 0.091))
+    drop-shadow(0 20px 20px rgba(49, 244, 39, 0.139));
 }
 
 .cardImage {
@@ -152,17 +155,17 @@
 
 
 .centerCard {
-  transform: translateX(0) scale(1) rotateY(0deg);
+  transform: translateX(0) scale(.9) rotateY(0deg);
   z-index: 3;
 }
 
 .leftCard {
-  transform: translateX(-100%) scale(0.75) rotateY(-10deg);
+  transform: translateX(-100%) scale(0.7) rotateY(-10deg);
   z-index: 2;
 }
 
 .rightCard {
-  transform: translateX(100%) scale(0.75) rotateY(10deg);
+  transform: translateX(100%) scale(0.7) rotateY(10deg);
   z-index: 2;
 }
 

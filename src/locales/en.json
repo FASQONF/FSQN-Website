@@ -78,7 +78,7 @@
       },
       {
         "title": "Order Fasqon Card",
-        "description": "Instant virtual card. Apple Pay and Google Pay ready. Choose from Black, Gold, or Premium tiers — enjoy cashbacks, rewards, and exclusive bonuses every time you pay.",
+        "description": "Instant virtual card. Apple Pay and Google Pay ready.",
         "cardImg": "/images/cards/Card3.png"
       }
     ],
@@ -279,8 +279,8 @@
         "role": "Strategic Partnerships",
         "country": "Turkey",
         "flag": "/images/flags/turkey.svg",
-        "image": "/images/team/anton.png",
-        "mobileImage": "/images/team/anton.png",
+        "image": "/images/team/ano.png",
+        "mobileImage": "/images/team/ano.png",
         "description": "Leads integrations and collaborations across fintech and Web3 ecosystems. Focus on ecosystem partnerships and BD infrastructure.",
         "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
       },
