@@ -150,6 +150,7 @@
 @media (max-width: 768px) {
     .fasPaySection {
         padding: 60px 20px;
+        padding-bottom: 0px;
         text-align: center;
     }
 
