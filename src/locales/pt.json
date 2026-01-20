@@ -188,37 +188,37 @@
     ]
   },
   "miniAppSection": {
-    "title": "<span>Mini APP do Telegram</span> Fasqon",
-    "subtitle": "Jogue o Jogo. Ganhe $FSQN. Administre o Banco",
+    "title": "Fasqon <span>Copiloto IA</span>",
+    "subtitle": "Copiloto de IA para pagamentos, faturamento e caixa.",
     "features": [
       {
-        "icon": "/images/miniapp/user-magnet.png",
-        "title": "Imã de Usuários",
-        "description": "Atraia usuários com jogabilidade divertida e viciante. Usa UX familiar e baixa fricção para atrair rapidamente usuários Web2/Web3. É o primeiro passo para uma jornada tokenizada.",
-        "altDescription": "Atraia usuários com jogabilidade divertida e viciante."
+        "icon": "/images/miniapp/Invoice-to-Cash.png",
+        "title": "Da Fatura ao Caixa",
+        "description": "Transforme uma fatura em dinheiro mais rápido. A Fasqon ajuda a solicitar pagamentos, acompanhar o status e fechar o ciclo — sem cobranças manuais.",
+        "altDescription": "Receba faturas mais rápido, sem perseguição."
       },
       {
-        "icon": "/images/miniapp/smooth-onboarding.png",
-        "title": "Onboarding Suave",
-        "description": "Transição perfeita dos jogadores do jogo para a carteira. Sem KYC, sem configuração — basta tocar para desbloquear o acesso. O onboarding se torna parte do jogo, sem fricção e rápido.",
-        "altDescription": "Transição perfeita dos jogadores do jogo para a carteira."
+        "icon": "/images/miniapp/Smart-Payouts.png",
+        "title": "Pagamentos Inteligentes",
+        "description": "Envie um link de pagamento ou dados bancários instantaneamente. O cliente paga em minutos e os fundos vão para saldos dedicados — conciliação limpa e previsível.",
+        "altDescription": "Envie links de pagamento e acompanhe."
       },
       {
-        "icon": "/images/miniapp/growth-funnel.png",
-        "title": "Funil de Crescimento",
-        "description": "Transforme o gameplay em fluxo de usuários. O mini app impulsiona a adoção da carteira enquanto alimenta o tráfego contínuo. É um loop viral embutido para o crescimento do ecossistema.",
-        "altDescription": "O mini app impulsiona a adoção de carteiras enquanto alimenta o tráfego contínuo."
+        "icon": "/images/miniapp/Auto-Reconciliation.png",
+        "title": "Conciliação Automática",
+        "description": "Pagamentos são conciliados automaticamente com faturas. Sem planilhas, sem dúvidas e sem perda de tempo no fechamento.",
+        "altDescription": "Pagamentos conciliados automaticamente."
       },
       {
-        "icon": "/images/miniapp/engagement-engine.png",
-        "title": "Motor de Engajamento",
-        "description": "Torne as finanças envolventes com loops de jogo. Os usuários jogam, ganham, atualizam e retornam diariamente. Não é bancário — é diversão viciante com valor financeiro real.",
-        "altDescription": "Os usuários jogam, ganham, evoluem e retornam diariamente."
+        "icon": "/images/miniapp/Risk-Compliance-Ready.png",
+        "title": "Risco e Conformidade",
+        "description": "Projetado para infraestruturas reguladas e negócios reais. Liquidação rápida com controles sólidos para operações globais.",
+        "altDescription": "Pagamentos globais, regulados e confiáveis."
       }
     ],
-    "ctaText": "Ganhe até <span>185% de APY</span>",
-    "ctaButtonText": "Construa meu Banco!",
-    "ctaButtonLink": "https://t.me/fasqonbot"
+    "ctaText": "Caixa mais rápido. <span>Operações mais limpas</span>",
+    "ctaButtonText": "Explorar Fasqon IA",
+    "ctaButtonLink": "/Presentation.pdf"
   },
   "teamSection": {
     "title": "Nosso <span>Time</span>",
@@ -265,14 +265,14 @@
         "linkedin": "https://www.linkedin.com/in/kati-aronson"
       },
       {
-        "name": "Hanna Herzhod",
-        "role": "CMO",
-        "country": "Ucrânia",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/hanna.png",
-        "mobileImage": "/images/team/hanna.png",
-        "description": "7 anos em marketing de blockchain e tecnologias emergentes. Especializada em crescimento orgânico, estratégia de marca e funis digitais multicanal.",
-        "linkedin": "https://www.linkedin.com/in/hanna-yarova"
+        "name": "David Dobrovitsky",
+        "role": "Consultor Estratégico & BD",
+        "country": "França",
+        "flag": "/images/flags/france.svg",
+        "image": "/images/team/david.png",
+        "mobileImage": "/images/team/david.png",
+        "description": "Líder em crescimento e operações Web3. Conduziu captações de milhões, escalou plataformas e wallets, construiu comunidades com mais de 60 mil usuários e liderou estratégias GTM orientadas por dados com equipes globais.",
+        "linkedin": "https://www.linkedin.com/in/david-dobrovitsky"
       },
       {
         "name": "Atlas A.",
@@ -775,27 +775,31 @@
     ]
   },
   "communityHubSection": {
-    "title": "Hub da Comunidade <span>Fasqon</span>",
-    "subtitle": "Complete Missões. Ganhe FSQN. Fortaleça o Banco",
+    "title": "Pagamentos <span>Empresariais</span>",
+    "subtitle": "Liquidação B2B, pagamentos e tesouraria — simplificados.",
     "features": [
       {
-        "title": "Pulso da Comunidade",
-        "description": "$FSQN cresce com a energia da comunidade. Cada tweet, tarefa e conversa aumenta a visibilidade e a força de mercado...",
+        "title": "Liquidação B2B",
+        "description": "Movimente dinheiro empresarial mais rápido entre países. A Fasqon ajuda equipes a liquidar faturas e transferências com status claro, menos atrasos e um fluxo único do pedido ao recebimento.",
+        "altDescription": "Liquide mais rápido com status claros.",
         "icon": "/images/communityhub/icon-pulse.png"
       },
       {
-        "title": "Impulsionador do Token",
-        "description": "A comunidade impulsiona o token, não apenas hype. Cada ação aumenta visibilidade, demanda e crescimento...",
+        "title": "Pagamentos Inteligentes",
+        "description": "Envie pagamentos em massa para fornecedores, freelancers e parceiros em minutos. Automatize quem recebe, quando e por quê — sem operações manuais ou arquivos confusos.",
+        "altDescription": "Automatize pagamentos a parceiros e fornecedores.",
         "icon": "/images/communityhub/icon-handshake.png"
       },
       {
-        "title": "Fábrica de Recompensas",
-        "description": "Mais que um programa de recompensas — é uma parceria. Airdrops, prêmios, níveis e bônus contínuos...",
+        "title": "Controle de Tesouraria",
+        "description": "Gerencie saldos multimoeda com mais visibilidade. Acompanhe entradas, saídas e liquidez disponível em um só lugar — feito para operações globais.",
+        "altDescription": "Veja a liquidez multimoeda em uma visão única.",
         "icon": "/images/communityhub/icon-rewards.png"
       },
       {
-        "title": "Energia do Ecossistema",
-        "description": "$FSQN prospera com colaboração, parcerias e engajamento autêntico...",
+        "title": "Camada Operacional com IA",
+        "description": "A IA estrutura pedidos de pagamento, reduz erros e mantém os dados organizados. Menos trabalho administrativo e relatórios mais limpos.",
+        "altDescription": "Menos esforço, menos erros, melhores relatórios.",
         "icon": "/images/communityhub/icon-energy.png"
       }
     ]

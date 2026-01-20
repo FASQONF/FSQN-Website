@@ -188,37 +188,37 @@
     ]
   },
   "miniAppSection": {
-    "title": "Fasqon <span>Telegram Game</span>",
-    "subtitle": "Play the Game. Earn $FSQN. Run the Bank",
+    "title": "Fasqon <span>AI Copilot</span>",
+    "subtitle": "AI Copilot for payments, invoicing, and cashflow.",
     "features": [
       {
-        "icon": "/images/miniapp/user-magnet.png",
-        "title": "User Magnet",
-        "description": "Attract users with fun, addictive gameplay. Uses familiar UX and low friction to pull in Web2/Web3 users fast. It's the first step into a tokenized journey.",
-        "altDescription": "Attract users with fun, addictive gameplay."
+        "icon": "/images/miniapp/Invoice-to-Cash.png",
+        "title": "Invoice-to-Cash",
+        "description": "Turn an invoice into money faster. Fasqon helps businesses request payment, track status, and close the loop — without chasing clients across emails and bank screenshots.",
+        "altDescription": "Get invoices paid faster, with less chasing."
       },
       {
-        "icon": "/images/miniapp/smooth-onboarding.png",
-        "title": "Smooth Onboarding",
-        "description": "Seamlessly transition players from game to wallet. No KYC, no setup — just tap to unlock access. Onboarding becomes part of the play, frictionless and fast.",
-        "altDescription": "Seamlessly transition players from game to wallet."
+        "icon": "/images/miniapp/Smart-Payouts.png",
+        "title": "Smart Payments",
+        "description": "Send a payment link or bank details instantly. Clients pay in minutes, and your funds land into dedicated balances — so reconciliation is clean and cashflow is predictable.",
+        "altDescription": "Send payment links and track completion."
       },
       {
-        "icon": "/images/miniapp/growth-funnel.png",
-        "title": "Growth Funnel",
-        "description": "Turn gameplay into user flow. The mini app drives wallet adoption while fueling ongoing traffic. It's a built-in viral loop for ecosystem growth.",
-        "altDescription": "The mini app drives wallet adoption while fueling ongoing traffic."
+        "icon": "/images/miniapp/Auto-Reconciliation.png",
+        "title": "Auto Reconciliation",
+        "description": "Payments match to invoices automatically. No more manual spreadsheets, no “what was this transfer for?”, and no lost time at month end — everything stays organised in one flow.",
+        "altDescription": "Payments match invoices automatically, no spreadsheets."
       },
       {
-        "icon": "/images/miniapp/engagement-engine.png",
-        "title": "Engagement Engine",
-        "description": "Make finance sticky with game loops. Users play, earn, upgrade, and return daily. It's not banking — it's habit-forming fun with real financial value.",
-        "altDescription": "Users play, earn, upgrade, and return daily."
+        "icon": "/images/miniapp/Risk-Compliance-Ready.png",
+        "title": "Risk and Compliance Ready",
+        "description": "Designed for regulated rails and real businesses. You get faster settlement and better controls — built for teams that move money globally and need reliability, not hacks.",
+        "altDescription": "Built for regulated, global business payments."
       }
     ],
-    "ctaText": "Earn up to <span>185% APY</span>",
-    "ctaButtonText": "Build my Bank!",
-    "ctaButtonLink": "https://t.me/fasqonbot"
+    "ctaText": "Faster cashflow. <span>Cleaner operations</span>",
+    "ctaButtonText": "Learn More",
+    "ctaButtonLink": "/Presentation.pdf"
   },
   "teamSection": {
     "title": "Our <span>Team</span>",
@@ -265,14 +265,14 @@
         "linkedin": "https://www.linkedin.com/in/kati-aronson"
       },
       {
-        "name": "Hanna Herzhod",
-        "role": "CMO",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/hanna.png",
-        "mobileImage": "/images/team/hanna.png",
-        "description": "7 years in blockchain and emerging tech marketing. Specializes in organic growth, brand strategy, and multi-channel digital funnels.",
-        "linkedin": "https://www.linkedin.com/in/hanna-yarova"
+        "name": "David Dobrovitsky",
+        "role": "Strategic Advisor & BD",
+        "country": "France",
+        "flag": "/images/flags/france.svg",
+        "image": "/images/team/david.png",
+        "mobileImage": "/images/team/david.png",
+        "description": "Web3 growth & operations leader. Led $MM fundraising, scaled platforms and wallets, built 60k+ communities, drove data-led GTM with global teams.",
+        "linkedin": "https://www.linkedin.com/in/david-dobrovitsky"
       },
       {
         "name": "Atlas A.",
@@ -779,28 +779,32 @@
     ]
   },
   "communityHubSection": {
-    "title": "Fasqon <span>Community Hub</span>",
-    "subtitle": "Complete Missions. Earn FSQN. Grow the Bank",
+    "title": "Business <span>Payments</span>",
+    "subtitle": "B2B settlement, payouts, and treasury — streamlined.",
     "features": [
       {
-        "title": "Community Pulse",
-        "description": "$FSQN grows with community energy. Every tweet, task, and conversation boosts visibility and market strength. As Fasqon scales, the community’s voice becomes its biggest catalyst — transforming engagement into lasting token value.",
-        "icon": "/images/communityhub/icon-pulse.png"
+        "title": "B2B Settlement",
+        "description": "Move business money faster across borders. Fasqon helps teams settle invoices and transfers with clear status, fewer delays, and a single flow from request to receipt.",
+        "altDescription": "Settle faster with clear payment status.",
+        "icon": "/images/communityhub/B2B-Settlement.png"
       },
       {
-        "title": "Token Booster",
-        "description": "Community drives the token, not hype alone. Every share, mention, and mission fuels visibility, demand, and growth. Each post and friend’s invite adds strength to $FSQN — building trust, awareness, and market depth.",
-        "icon": "/images/communityhub/icon-handshake.png"
+        "title": "Smart Payouts",
+        "description": "Send mass payouts to suppliers, freelancers, and partners in minutes. Automate who gets paid, when, and why — without manual ops or payment file chaos.",
+        "altDescription": "Automate partner and supplier payouts.",
+        "icon": "/images/communityhub/Smart-Payments.png"
       },
       {
-        "title": "Rewards Factory",
-        "description": "This is more than a Rewards program — it’s a partnership. At Fasqon, rewards never stop. From airdrops and prize pools to membership tiers and referral bonuses — your activity builds the bank, and we share the value back.",
-        "icon": "/images/communityhub/icon-rewards.png"
+        "title": "Treasury Control",
+        "description": "Run multi-currency balances with better visibility. Track inflows, outflows, and available liquidity in one place — built for teams managing global operations.",
+        "altDescription": "Track liquidity across currencies in one view.",
+        "icon": "/images/communityhub/Treasury-Control.png"
       },
       {
-        "title": "Ecosystem Energy",
-        "description": "$FSQN thrives through collaboration, partnerships, and authentic engagement. Together, we amplify the brand, attract new users, and scale utility — turning collective action into real growth momentum.",
-        "icon": "/images/communityhub/icon-energy.png"
+        "title": "AI Operations Layer",
+        "description": "AI helps structure payment requests, reduce errors, and keep settlement data organised. Less admin work, fewer disputes, and cleaner reporting for finance teams.",
+        "altDescription": "Less admin, fewer errors, cleaner reporting.",
+        "icon": "/images/communityhub/AI-Operations-Layer.png"
       }
     ]
   },

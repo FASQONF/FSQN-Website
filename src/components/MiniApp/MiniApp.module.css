@@ -71,6 +71,7 @@
 }
 
 .featureTitle {
+    align-self: flex-start;
     font-weight: 100;
     font-size: 24px;
     line-height: 21px;
@@ -137,8 +138,8 @@
 
 .phoneContainer {
     position: relative;
-    width: 80%;
-    max-width: 355px;
+    width: 100%;
+    max-width: 330px;
     height: 616px;
     z-index: 1;
 }
@@ -295,6 +296,7 @@
         max-width: 355px;
         height: 400px;
         margin: 0 auto;
+        margin-top: -10px!important;
     }
 
     .phoneContainer::after {

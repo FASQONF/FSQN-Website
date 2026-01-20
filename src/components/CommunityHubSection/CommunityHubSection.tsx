@@ -8,6 +8,7 @@ import parse from "html-react-parser";
 interface HubFeature {
     title: string;
     description: string;
+    altDescription?: string;
     icon: string;
 }
 
@@ -100,6 +101,9 @@ export default function CommunityHubSection() {
                                 <div className={styles.featureDescWrapper}>
                                     <p className={styles.featureDescription}>
                                         {feature.description}
+                                    </p>
+                                    <p className={styles.featureDescriptionMobile}>
+                                        {feature.altDescription ?? feature.description}
                                     </p>
                                 </div>
                             </motion.div>
