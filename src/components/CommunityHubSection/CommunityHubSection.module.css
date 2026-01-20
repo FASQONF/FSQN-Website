@@ -153,6 +153,8 @@
 @media (max-width: 600px) {
     .section {
         padding: 0px 40px;
+        margin-top: -20px;
+        margin-bottom: -20px;
     }
 
     .bgWrapper {
