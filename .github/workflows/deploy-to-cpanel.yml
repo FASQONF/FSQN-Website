@@ -28,7 +28,7 @@ jobs:
         with:
           path: .next/cache
           key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}
-      
+
       - name: Install dependencies
         run: npm ci
 
@@ -38,8 +38,12 @@ jobs:
           NODE_ENV: production
 
       - name: Copy custom .htaccess into output folder
+        run: cp .htaccess out/.htaccess
+
+      - name: Copy admin folder into export output
         run: |
-          cp .htaccess out/.htaccess
+          rm -rf out/admin
+          cp -R admin out/admin
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -48,5 +52,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port:     ${{ secrets.FTP_PORT || 21 }}
-          local-dir:  out/
+          local-dir: out/
           include: '**/*'
