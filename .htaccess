@@ -51,13 +51,13 @@ RewriteCond %{REQUEST_URI} !^/assets/ [NC]
 RewriteCond %{REQUEST_URI} !^/favicon\.ico$ [NC]
 RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
 RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC]
-RewriteRule ^(.*)$ /waitlist/$1 [L]
+# RewriteRule ^(.*)$ /waitlist/$1 [L]
 
 # SPA fallback only for main host
-RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /index.html [L]
+# RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^ /index.html [L]
 
 # Default charset and disable directory listing
 AddDefaultCharset UTF-8

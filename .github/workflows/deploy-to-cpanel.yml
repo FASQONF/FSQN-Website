@@ -40,10 +40,15 @@ jobs:
       - name: Copy custom .htaccess into output folder
         run: cp .htaccess out/.htaccess
 
-      - name: Copy admin folder into export output
+      - name: Copy admin folder into output folder
         run: |
-          rm -rf out/admin
-          cp -R admin out/admin
+          mkdir -p out/admin
+          cp -R admin/. out/admin/
+
+      - name: Verify admin files
+        run: |
+          ls -la out/admin
+          test -f out/admin/download.php
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
