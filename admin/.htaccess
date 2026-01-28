@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Restricted"
+AuthUserFile /ABS/PATH/TO/.htpasswd
+Require valid-user
+
+Header always set Cache-Control "no-store"
+Header always set Pragma "no-cache"

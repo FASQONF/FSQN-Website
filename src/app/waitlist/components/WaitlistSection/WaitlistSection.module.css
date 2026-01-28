@@ -1,0 +1,244 @@
+.section {
+    position: relative;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    padding: 64px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.inner {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.bgLeft,
+.bgRight {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: min(44vw, 520px);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bgLeft {
+    left: 0;
+    background-image: url("/images/waitlist/left.png");
+    background-position: left center;
+}
+
+.bgRight {
+    right: 0;
+    height: 80%;
+    transform: translateY(100px);
+    background-image: url("/images/waitlist/right.png");
+    background-position: right center;
+}
+
+.card {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto 22px;
+    border-radius: 18px;
+    background: rgba(10, 10, 10, 0.82);
+    border: 1px solid rgba(48, 244, 39, 0.25);
+    box-shadow: 0 0 0 2px rgba(48, 244, 39, 0.12), 0 0 36px rgba(48, 244, 39, 0.18);
+    backdrop-filter: blur(12px);
+    padding: 26px 22px 22px;
+}
+
+.cardHead {
+    margin-bottom: 16px;
+}
+
+.cardHeadGreen {
+    color: #30f427;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.cardHeadText {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.input {
+    width: 100%;
+    height: 46px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 0 18px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.input:focus {
+    border-color: rgba(48, 244, 39, 0.7);
+    box-shadow: 0 0 0 3px rgba(48, 244, 39, 0.18);
+}
+
+.inputError {
+    border-color: rgba(255, 72, 72, 0.95);
+    box-shadow: 0 0 0 3px rgba(255, 72, 72, 0.18);
+}
+
+.checkboxRow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkboxDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 2px rgba(48, 244, 39, 0);
+    transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.checkboxText {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.checkboxRow:hover .checkboxDot {
+    border-color: rgba(48, 244, 39, 0.6);
+}
+
+.checkbox:checked+.checkboxDot {
+    background: #30f427;
+    border-color: rgba(48, 244, 39, 0.9);
+    box-shadow: 0 0 0 3px rgba(48, 244, 39, 0.18);
+}
+
+.checkbox:focus-visible+.checkboxDot {
+    box-shadow: 0 0 0 4px rgba(48, 244, 39, 0.22);
+}
+
+.checkbox:active+.checkboxDot {
+    transform: scale(0.96);
+}
+
+.cta {
+    width: 260px;
+    height: 52px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    background: #30f427;
+    color: #0e0e0e;
+    font-weight: 800;
+    font-size: 16px;
+    transition: transform 0.15s ease, filter 0.15s ease, opacity 0.15s ease;
+}
+
+.cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+}
+
+.cta:disabled {
+    cursor: default;
+    opacity: 0.75;
+    transform: none;
+}
+
+.privacy {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.errorText {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(255, 72, 72, 0.95);
+}
+
+.successText {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(48, 244, 39, 0.95);
+}
+
+@media (max-width: 1024px) {
+
+    .bgLeft,
+    .bgRight {
+        width: min(52vw, 460px);
+        opacity: 0.75;
+    }
+
+    .bgLeft {
+        transform: translateX(-150px);
+    }
+
+    .bgRight {
+        transform: translateX(120px);
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 56px 16px;
+    }
+
+    .bgLeft,
+    .bgRight {
+        width: 70vw;
+        opacity: 0.55;
+    }
+
+    .bgLeft {
+        transform: translate(0px, -100px);
+    }
+
+    .bgRight {
+        transform: translateY(220px);
+    }
+
+    .card {
+        padding: 22px 16px 18px;
+    }
+
+    .cta {
+        width: 220px;
+        height: 50px;
+    }
+}

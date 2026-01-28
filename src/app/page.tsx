@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect } from "react";
 import styles from "./page.module.css";
+import Header from "@/components/Header/Header";
 
 import HeroSection from "@/components/HeroSection/HeroSection";
 import CryptoCards from "@/components/CryptoCards/CryptoCards";
@@ -23,16 +24,10 @@ import AdvisorsSection from "@/components/AdvisorsSection/AdvisorsSection";
 export default function Home() {
   // Handle hash navigation when the page loads
   useEffect(() => {
-    // Check if there's a hash in the URL
     if (window.location.hash) {
-      // Get the element ID from the hash
       const elementId = window.location.hash.substring(1);
-
-      // Find the element
       const element = document.getElementById(elementId);
 
-      // If the element exists, scroll to it after a small delay
-      // The delay ensures all content is loaded
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth" });
@@ -44,6 +39,7 @@ export default function Home() {
   return (
     <div>
       <main className={styles.main}>
+        <Header />
         <Suspense fallback={null}>
           <HeroSection />
           <UltimateUX />

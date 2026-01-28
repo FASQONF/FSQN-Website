@@ -902,5 +902,47 @@
         "link": "https://taskon.xyz"
       }
     ]
+  },
+  "waitlistPage": {
+    "header": {
+      "navLinks": {
+        "waitlist": "Waitlist",
+        "about": "Why Fasqon?",
+        "benefits": "Benefits"
+      },
+      "learnMore": "Visit Official Website"
+    },
+    "waitlistSection": {
+      "hero": {
+        "title": "<span>A better way</span> to bank",
+        "subtitle": "A crypto-native neobank built<br/>for speed, clarity, and control —<br/>designed for daily payments"
+      },
+      "card": {
+        "headline1": "Be among the first to use Fasqon app",
+        "headline2": "when we launch!",
+        "helper": "Enter your email below to join the waitlist"
+      },
+      "form": {
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "Email",
+        "subscribeLabel": "Subscribe to product updates"
+      },
+      "cta": {
+        "idle": "Join Waitlist",
+        "loading": "Submitting...",
+        "success": "Submitted"
+      },
+      "messages": {
+        "success": "Thank you, we'll notify you soon!"
+      },
+      "footer": {
+        "privacy": "We respect your privacy. No spam."
+      },
+      "errors": {
+        "generic": "Something went wrong. Try again.",
+        "emailExists": "This email is already registered.",
+        "network": "Network error. Try again."
+      }
+    }
   }
 }

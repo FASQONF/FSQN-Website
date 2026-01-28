@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
 import "./globals.css";
-import Header from "@/components/Header/Header";
 import Footer from "@/components/FooterSection/FooterSection";
 import CookieBanner from "@/components/CookieBanner/CookieBanner";
 import { LocalizationProvider } from '../context/LocalizationContext';
@@ -90,7 +89,6 @@ export default function RootLayout({
         <meta name="image_src" content="https://fasqon.com/og-image.jpg" />
         <LocalizationProvider>
           <Suspense fallback={null}>
-            <Header />
             <CookieBanner />
             {children}
             <Footer />
