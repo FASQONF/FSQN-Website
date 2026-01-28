@@ -39,8 +39,8 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # fasqon.com/waitlist(/...) -> waitlist.fasqon.com(/...)
-RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-RewriteRule ^waitlist(?:/(.*))?$ https://waitlist.fasqon.com/$1 [R=302,L]
+# RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
+# RewriteRule ^waitlist(?:/(.*))?$ https://waitlist.fasqon.com/$1 [R=302,L]
 
 # waitlist.fasqon.com(/...) -> internally serve /waitlist(/...)
 RewriteCond %{HTTP_HOST} ^waitlist\.fasqon\.com$ [NC]
