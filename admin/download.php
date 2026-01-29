@@ -1,5 +1,7 @@
 <?php
-$SECRET = 'TEMP_ADMIN_WAITLIST_KEY';
+$SECRET =
+  getenv('WAITLIST_ADMIN_KEY')
+  ?: 'TEMP_ADMIN_WAITLIST_KEY';
 
 if (!isset($_SERVER['PHP_AUTH_PW']) || !hash_equals($SECRET, $_SERVER['PHP_AUTH_PW'])) {
   header('WWW-Authenticate: Basic realm="Waitlist Export"');

@@ -1,4 +1,10 @@
 Options -Indexes
 
+Include ".env.htaccess"
+
+<Files ".env.htaccess">
+  Require all denied
+</Files>
+
 Header always set Cache-Control "no-store"
 Header always set Pragma "no-cache"

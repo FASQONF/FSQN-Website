@@ -56,6 +56,10 @@ jobs:
           mkdir -p out/_data
           test -f _data/.keep && cp _data/.keep out/_data/.keep || true
 
+      - name: Write env for PHP
+        run: |
+          printf 'SetEnv WAITLIST_ADMIN_KEY "%s"\n' "${{ secrets.WAITLIST_ADMIN_KEY }}" > out/.env.htaccess
+
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
