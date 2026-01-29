@@ -60,6 +60,11 @@ jobs:
         run: |
           printf 'SetEnv WAITLIST_ADMIN_KEY "%s"\n' "${{ secrets.WAITLIST_ADMIN_KEY }}" > out/env.htaccess
 
+      - name: Debug env file exists
+        run: test -f out/env.htaccess|
+          ls -la out
+          test -f out/env.htaccess && echo "env.htaccess OK" || (echo "env.htaccess MISSING" && exit 1)
+
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
