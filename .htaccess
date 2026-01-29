@@ -40,20 +40,10 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Waitlist
 RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-RewriteCond %{REQUEST_URI} ^/waitlist(?:/.*)?$ [NC]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^waitlist(?:/.*)?$ /waitlist/index.html [L]
+RewriteRule ^waitlist/?$ /waitlist.html [L,NC]
 
-# fasqon.com/waitlist(/...) -> waitlist.fasqon.com(/...)
-# RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-# RewriteRule ^waitlist(?:/(.*))?$ https://waitlist.fasqon.com/$1 [R=302,L]
-
-# SPA fallback only for main host
-# RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^ /index.html [L]
+RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
+RewriteRule ^waitlist/(.+)$ /waitlist.html [L,NC]
 
 # Default charset and disable directory listing
 AddDefaultCharset UTF-8
