@@ -40,10 +40,8 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Waitlist
 RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-RewriteRule ^waitlist/?$ /waitlist.html [L,NC]
-
-RewriteCond %{HTTP_HOST} ^(www\.)?fasqon\.com$ [NC]
-RewriteRule ^waitlist/(.+)$ /waitlist.html [L,NC]
+RewriteRule ^waitlist$ /waitlist/ [R=301,L]
+RewriteRule ^waitlist/index\.html$ /waitlist/ [R=301,L,NC]
 
 # Default charset and disable directory listing
 AddDefaultCharset UTF-8
