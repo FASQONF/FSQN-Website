@@ -1,8 +1,8 @@
 Options -Indexes
 
-Include ".env.htaccess"
+Include "env.htaccess"
 
-<Files ".env.htaccess">
+<Files "env.htaccess">
   Require all denied
 </Files>
 

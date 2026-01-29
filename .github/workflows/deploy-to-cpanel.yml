@@ -58,7 +58,7 @@ jobs:
 
       - name: Write env for PHP
         run: |
-          printf 'SetEnv WAITLIST_ADMIN_KEY "%s"\n' "${{ secrets.WAITLIST_ADMIN_KEY }}" > out/.env.htaccess
+          printf 'SetEnv WAITLIST_ADMIN_KEY "%s"\n' "${{ secrets.WAITLIST_ADMIN_KEY }}" > out/env.htaccess
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
