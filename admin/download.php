@@ -1,6 +1,10 @@
 <?php
+$secretsPath = __DIR__ . '/_secrets.php';
+$secrets = is_file($secretsPath) ? require $secretsPath : [];
+
 $SECRET =
-  getenv('WAITLIST_ADMIN_KEY')
+  ($secrets['WAITLIST_ADMIN_KEY'] ?? null)
+  ?: (getenv('WAITLIST_ADMIN_KEY') ?: null)
   ?: 'TEMP_ADMIN_WAITLIST_KEY';
 
 if (!isset($_SERVER['PHP_AUTH_PW']) || !hash_equals($SECRET, $_SERVER['PHP_AUTH_PW'])) {

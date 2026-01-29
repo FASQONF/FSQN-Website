@@ -56,14 +56,14 @@ jobs:
           mkdir -p out/_data
           test -f _data/.keep && cp _data/.keep out/_data/.keep || true
 
-      - name: Write env for PHP
+      - name: Write PHP secrets file
         run: |
-          printf 'SetEnv WAITLIST_ADMIN_KEY "%s"\n' "${{ secrets.WAITLIST_ADMIN_KEY }}" > out/env.htaccess
-
-      - name: Debug env file exists
-        run: |
-          ls -la out
-          test -f out/env.htaccess && echo "env.htaccess OK" || (echo "env.htaccess MISSING" && exit 1)
+          cat > out/admin/_secrets.php <<'PHP'
+          <?php
+          return [
+            'WAITLIST_ADMIN_KEY' => '${{ secrets.WAITLIST_ADMIN_KEY }}',
+          ];
+          PHP
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
