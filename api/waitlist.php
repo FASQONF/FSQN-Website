@@ -8,6 +8,59 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
+// rate limiting
+
+$RATE_LIMIT_MAX = 4;
+$RATE_LIMIT_WINDOW = 120;
+
+$ip =
+  $_SERVER['HTTP_CF_CONNECTING_IP']
+  ?? ($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '')
+  ?: $_SERVER['REMOTE_ADDR']
+  ?: 'unknown';
+
+$baseDataDir = realpath(__DIR__ . '/../_data') ?: (__DIR__ . '/../_data');
+if (!is_dir($baseDataDir)) @mkdir($baseDataDir, 0755, true);
+
+$rateDir = $baseDataDir . '/ratelimit';
+if (!is_dir($rateDir)) @mkdir($rateDir, 0755, true);
+
+$key = sha1($ip);
+$rateFile = $rateDir . '/' . $key . '.json';
+$now = time();
+
+$data = ['hits' => []];
+
+if (is_file($rateFile)) {
+  $json = file_get_contents($rateFile);
+  $decoded = json_decode($json, true);
+  if (is_array($decoded)) {
+    $data = $decoded;
+  }
+}
+
+$data['hits'] = array_values(array_filter(
+  $data['hits'],
+  fn($ts) => ($now - $ts) < $RATE_LIMIT_WINDOW
+));
+
+if (count($data['hits']) >= $RATE_LIMIT_MAX) {
+  $retryAfter = $RATE_LIMIT_WINDOW - ($now - $data['hits'][0]);
+
+  http_response_code(429);
+  header('Retry-After: ' . max(1, $retryAfter));
+  echo json_encode([
+    'ok' => false,
+    'error' => 'Too many requests. Try again later.'
+  ]);
+  exit;
+}
+
+$data['hits'][] = $now;
+file_put_contents($rateFile, json_encode($data), LOCK_EX);
+
+// main logic
+
 $raw = file_get_contents('php://input');
 $body = json_decode($raw, true);
 if (!is_array($body)) {
@@ -32,10 +85,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   exit;
 }
 
-$dataDir = realpath(__DIR__ . '/../_data') ?: (__DIR__ . '/../_data');
-if (!is_dir($dataDir)) @mkdir($dataDir, 0755, true);
-
-$csvPath = $dataDir . '/waitlist.csv';
+$csvPath = $baseDataDir . '/waitlist.csv';
 
 $fp = fopen($csvPath, 'c+');
 if (!$fp) {
