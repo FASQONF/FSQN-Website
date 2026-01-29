@@ -45,10 +45,16 @@ jobs:
           mkdir -p out/admin
           cp -R admin/. out/admin/
 
-      - name: Verify admin files
+      - name: Copy api folder into output folder
         run: |
-          ls -la out/admin
-          test -f out/admin/download.php
+          mkdir -p out/api
+          cp -R api/. out/api/
+          test -f out/api/waitlist.php
+
+      - name: Create persistent data folder in output
+        run: |
+          mkdir -p out/_data
+          test -f _data/.keep && cp _data/.keep out/_data/.keep || true
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -58,4 +64,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port:     ${{ secrets.FTP_PORT || 21 }}
           local-dir: out/
+          dangerous-clean-slate: false
           include: '**/*'
+          exclude: |
+            **/_data/waitlist.csv
+            **/_data/*.lock
