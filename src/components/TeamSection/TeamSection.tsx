@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import styles from "./TeamSection.module.css";
-import { useLocalization } from '@/context/LocalizationContext';
+import { useLocalization } from "@/context/LocalizationContext";
 import parse from "html-react-parser";
-import { useMemo, useState, useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
-import ResponsiveCarousel from "../../utils/carousel/ResponsiveCarousel";
+import { useMemo } from "react";
 
 interface TeamMember {
   name: string;
@@ -36,36 +34,20 @@ interface TeamSectionType {
 
 export default function TeamSection() {
   const { translations } = useLocalization();
-  const section = (translations.teamSection as unknown) as TeamSectionType;
-
-  const isMobileQuery = useMediaQuery({ query: "(max-width: 768px)" });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(isMobileQuery);
-  }, [isMobileQuery]);
+  const section = translations.teamSection as unknown as TeamSectionType;
 
   const desiredOrder = ["KindGeek", "The Gradient", "Vareger"];
   const orderedPartners = useMemo(() => {
     const orderIndex = (name: string) => {
-      const i = desiredOrder.findIndex(n => n.toLowerCase() === name.toLowerCase());
+      const i = desiredOrder.findIndex(
+        (n) => n.toLowerCase() === name.toLowerCase()
+      );
       return i === -1 ? Number.POSITIVE_INFINITY : i;
     };
     return [...(section.partners || [])].sort(
       (a, b) => orderIndex(a.title) - orderIndex(b.title)
     );
   }, [section.partners]);
-
-  const staticMembers = isMobile ? [] : section.members;
-  const carouselMembers = isMobile ? section.members : [];
-  const carouselSlides = useMemo(() => {
-    if (!isMobile) return [];
-    const slides: TeamMember[][] = [];
-    for (let i = 0; i < carouselMembers.length; i += 3) {
-      slides.push(carouselMembers.slice(i, i + 3));
-    }
-    return slides;
-  }, [carouselMembers, isMobile]);
 
   const renderMemberCardContent = (member: TeamMember) => (
     <>
@@ -82,10 +64,12 @@ export default function TeamSection() {
           />
         </picture>
       </div>
+
       <div className={styles.cardInfo}>
         <h3 className={styles.memberName}>{member.name}</h3>
         <p className={styles.memberRole}>{member.role}</p>
         <p className={styles.description}>{member.description}</p>
+
         <div className={styles.bottomRow}>
           <div className={styles.countryBlock}>
             <img
@@ -97,6 +81,7 @@ export default function TeamSection() {
             />
             <span className={styles.countryName}>{member.country}</span>
           </div>
+
           {member.linkedin && (
             <a
               href={member.linkedin}
@@ -118,22 +103,18 @@ export default function TeamSection() {
     </>
   );
 
-  const renderMemberCard = (member: TeamMember, index: number) => {
-    const delay = index * 0.1;
-
-    return (
-      <motion.div
-        key={member.name}
-        className={styles.card}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, delay: delay }}
-      >
-        {renderMemberCardContent(member)}
-      </motion.div>
-    );
-  };
+  const renderMemberCard = (member: TeamMember, index: number) => (
+    <motion.div
+      key={member.name}
+      className={styles.card}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      {renderMemberCardContent(member)}
+    </motion.div>
+  );
 
   return (
     <section className={styles.teamSection}>
@@ -148,35 +129,11 @@ export default function TeamSection() {
           <h1 className="title">{parse(section.title)}</h1>
         </motion.div>
 
-        {!isMobile && (
-          <div className={styles.grid}>
-            {staticMembers.map((member, index) => renderMemberCard(member, index))}
-          </div>
-        )}
-
-        {isMobile && carouselSlides.length > 0 && (
-          <div className={styles.teamCarouselWrapper}>
-            <ResponsiveCarousel
-              enableOn="all"
-              showArrows={true}
-              loop={false}
-              hideNonActiveSlides={true}
-              showIndicators={true}
-              slidesToScroll={1}
-              className={styles.teamCarousel}
-            >
-              {carouselSlides.map((slideMembers, slideIndex) => (
-                <div className={styles.mobileCarouselSlide} key={`team-slide-${slideIndex}`}>
-                  {slideMembers.map((member, memberIndex) => (
-                    <div className={styles.card} key={`${member.name}-${memberIndex}`}>
-                      {renderMemberCardContent(member)}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </ResponsiveCarousel>
-          </div>
-        )}
+        <div className={styles.grid}>
+          {(section.members || []).map((member, index) =>
+            renderMemberCard(member, index)
+          )}
+        </div>
 
         <img className={styles.line} src="/icons/line.png" alt="" />
 
@@ -205,6 +162,7 @@ export default function TeamSection() {
                   height={150}
                 />
               </div>
+
               <div className={styles.partnerInfo}>
                 <h3 className={styles.partnerName}>{p.title}</h3>
                 <p className={styles.partnerRole}>{p.subtitle}</p>

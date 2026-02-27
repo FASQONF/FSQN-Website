@@ -261,118 +261,8 @@
         "flag": "/images/flags/portugal.svg",
         "image": "/images/team/kati.png",
         "mobileImage": "/images/team/kati.png",
-        "description": "Experienced Web3 business development lead. Drives tokensale fundraising, GTM strategy, and Tier-1 partnerships. Over $20M raised across previous projects.",
+        "description": "Fintech business development leader driving fundraising, GTM strategy, Tier-1 partnerships across banking, payments, and digital assets. $20M+ raised across prior ventures",
         "linkedin": "https://www.linkedin.com/in/kati-aronson"
-      },
-      {
-        "name": "David Dobrovitsky",
-        "role": "Strategic Advisor & BD",
-        "country": "France",
-        "flag": "/images/flags/france.svg",
-        "image": "/images/team/david.png",
-        "mobileImage": "/images/team/david.png",
-        "description": "Web3 growth & operations leader. Led $MM fundraising, scaled platforms and wallets, built 60k+ communities, drove data-led GTM with global teams.",
-        "linkedin": "https://www.linkedin.com/in/david-dobrovitsky"
-      },
-      {
-        "name": "Atlas A.",
-        "role": "Strategic Partnerships",
-        "country": "Turkey",
-        "flag": "/images/flags/turkey.svg",
-        "image": "/images/team/ano.png",
-        "mobileImage": "/images/team/ano.png",
-        "description": "Leads integrations and collaborations across fintech and Web3 ecosystems. Focus on ecosystem partnerships and BD infrastructure.",
-        "linkedin": "https://www.linkedin.com/in/atlas-a-406434154"
-      },
-      {
-        "name": "Anton",
-        "role": "CPO",
-        "country": "Poland",
-        "flag": "/images/flags/poland.svg",
-        "image": "/images/team/anton.png",
-        "mobileImage": "/images/team/anton.png",
-        "description": "FSI specialist with expertise in banking systems, compliance workflows, presales architecture, and Tier-1 product delivery.",
-        "linkedin": ""
-      },
-      {
-        "name": "Oleh Yakubiv",
-        "role": "Project Manager",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/oleh.png",
-        "mobileImage": "/images/team/oleh.png",
-        "description": "9+ years in IT project management. Experience with major fintech companies including Payabl, Decta, HyperJar.",
-        "linkedin": "https://www.linkedin.com/in/oleh-yakubiv"
-      },
-      {
-        "name": "Michael Kramarenko",
-        "role": "CTO",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/michael.png",
-        "mobileImage": "/images/team/michael.png",
-        "description": "15+ years in IT across system architecture, mission-critical apps, consulting, and offshore development leadership.",
-        "linkedin": "https://www.linkedin.com/in/michael-kramarenko"
-      },
-      {
-        "name": "Roxie Slavych",
-        "role": "Business analyst",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/roxie.png",
-        "mobileImage": "/images/team/roxie.png",
-        "description": "Delivery Manager & BA with strong analytical skills, negotiation experience, and a Master's in Software Engineering.",
-        "linkedin": "https://www.linkedin.com/in/roxieslavych"
-      },
-      {
-        "name": "Bozhena Sudakova",
-        "role": "Project Manager",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/bozhena.png",
-        "mobileImage": "/images/team/bozhena.png",
-        "description": "7 years in IT PM. Manages cross-functional teams with focus on structured delivery and product quality.",
-        "linkedin": "https://www.linkedin.com/in/bozhena-sudakova-556583168"
-      },
-      {
-        "name": "Anatoliy Pylypchuk",
-        "role": "Solution Architect",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/anatoliy.png",
-        "mobileImage": "/images/team/anatoliy.png",
-        "description": "Software engineer with strong Java/.NET background and additional experience in Scala, C++, and Angular.",
-        "linkedin": "https://www.linkedin.com/in/anatoliy-pylypchuk"
-      },
-      {
-        "name": "Nazar Vonitovyi",
-        "role": "Product Designer",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/nazar.png",
-        "mobileImage": "/images/team/nazar.png",
-        "description": "UI/UX designer with 9 years’ experience. Focus on clean interfaces, user-centered design, and fintech product flows.",
-        "linkedin": "https://www.linkedin.com/in/nazarvonitovyi"
-      },
-      {
-        "name": "Eugene Kozak",
-        "role": "Design Director",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/eugene.png",
-        "mobileImage": "/images/team/eugene.png",
-        "description": "20+ years in digital design. Leads fintech design expertise, including complex UX systems and product identity.",
-        "linkedin": "https://www.linkedin.com/in/eucodesign"
-      },
-      {
-        "name": "Dmytro Koshevoi",
-        "role": "Agency Partner & Product Strategist",
-        "country": "Ukraine",
-        "flag": "/images/flags/ukraine.svg",
-        "image": "/images/team/dmytro.png",
-        "mobileImage": "/images/team/dmytro.png",
-        "description": "15+ years in product strategy, communications, brand positioning, and digital product development.",
-        "linkedin": "https://www.linkedin.com/in/dkoshevoi"
       }
     ],
     "partners": [
@@ -943,6 +833,38 @@
         "emailExists": "This email is already registered.",
         "network": "Network error. Try again."
       }
+    },
+    "whatIsSection": {
+      "title": "What is <span>Fasqon?</span>",
+      "description": "Fasqon is a next-generation digital bank that helps you manage and move money simply — with clear pricing, fast transfers, and a modern card experience.",
+      "ctaText": "Visit official website"
+    },
+    "whySection": {
+      "title": "Why <span>Fasqon?</span>",
+      "benefits": [
+        {
+          "icon": "/images/waitlist/whyFasqon/fast.png",
+          "title": "Fast",
+          "description": "Open your account in minutes. Move your money in seconds."
+        },
+        {
+          "icon": "/images/waitlist/whyFasqon/simple.png",
+          "title": "Simple",
+          "description": "A clean app built for everyday use."
+        },
+        {
+          "icon": "/images/waitlist/whyFasqon/transparent.png",
+          "title": "Transparent",
+          "description": "Clear pricing. No surprises."
+        },
+        {
+          "icon": "/images/waitlist/whyFasqon/secure.png",
+          "title": "Secure",
+          "description": "Built with modern, bank-grade security."
+        }
+      ],
+      "ctaText": "Faster cashflow. <span>Cleaner operations.</span>",
+      "ctaButtonText": "Join Waitlist"
     }
   }
 }
